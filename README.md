@@ -185,6 +185,54 @@ Conservo el repositorio original como registro de mi evolución profesional y de
 
 [Ver portfolio anterior](https://github.com/agustin-lovagnini/agustin-lovagnini-cv-web)
 
+## Enlaces para el contenido del portfolio
+
+Recursos proporcionados por el autor para incorporar progresivamente al sitio. La selección de proyectos destacados se realizará durante el desarrollo.
+
+### Redes profesionales y contacto
+
+- [GitHub — repositorios y código fuente](https://github.com/agustin-lovagnini).
+- [LinkedIn — perfil profesional](https://www.linkedin.com/in/agustinlovagnini).
+- [Correo — agustin.lovagnini.v@gmail.com](mailto:agustin.lovagnini.v@gmail.com): oportunidades laborales, consultas profesionales y proyectos freelance.
+
+### Certificaciones de Coderhouse
+
+| Certificación | Área de formación |
+|---|---|
+| [Desarrollo Web Flex — Top 10](https://www.linkedin.com/in/agustinlovagnini/overlay/Certifications/435541435/treasury/?profileId=ACoAADUciO0Btx7NrzK3aqS5P6xOTskRv7LxLdw) | HTML, CSS, Sass/SCSS, Bootstrap y diseño responsive. |
+| [JavaScript — Top 10](https://www.linkedin.com/in/agustinlovagnini/overlay/Certifications/54933819/treasury/?profileId=ACoAADUciO0Btx7NrzK3aqS5P6xOTskRv7LxLdw) | DOM, eventos, estructuras de datos, asincronismo y APIs. |
+| [React JS](https://app.coderhouse.com/certificates/CERT-MOZ6JCR6-BB4B7477) | Componentes, props, hooks, estado y navegación. |
+| [SQL — Bases de Datos](https://www.linkedin.com/in/agustinlovagnini/overlay/Certifications/1395359304/treasury/?profileId=ACoAADUciO0Btx7NrzK3aqS5P6xOTskRv7LxLdw) | Bases relacionales, consultas y procedimientos almacenados. |
+| [Programación Backend I — Desarrollo Avanzado de Backend](https://www.linkedin.com/in/agustinlovagnini/overlay/Certifications/825450174/treasury/?profileId=ACoAADUciO0Btx7NrzK3aqS5P6xOTskRv7LxLdw) | Node.js, Express, APIs REST y organización de aplicaciones. |
+| [Programación Backend II — Diseño y Arquitectura Backend Flex](https://app.coderhouse.com/certificates/CERT-MQLCIQVM-F7EA4E3F) | Arquitectura, patrones, persistencia y separación de responsabilidades. |
+| [Programación Backend III — Testing y Escalabilidad](https://app.coderhouse.com/certificates/CERT-MUPQ7CWN-90006A33) | Testing, escalabilidad y buenas prácticas de backend. |
+
+### Certificaciones de freeCodeCamp
+
+- [Responsive Web Design](https://www.freecodecamp.org/espanol/certification/agustinlovagnini/responsive-web-design): HTML, CSS, accesibilidad y diseño adaptable.
+- [JavaScript](https://www.freecodecamp.org/certification/agustinlovagnini/javascript-v9): lógica, estructuras de datos y resolución de problemas.
+
+### Proyectos y portfolios anteriores
+
+| Proyecto | Descripción |
+|---|---|
+| [Luzu TV — Rediseño de plataforma de streaming](https://agustin-lovagnini.github.io/proyecto-paginaweb-luzu-radio-streaming/) | Proyecto frontend sobre organización de contenido, diseño visual y navegación. |
+| [Formulario de contacto](https://agustin-lovagnini.github.io/proyecto-formlario-de-contactos/) | Práctica de estructura HTML, campos de entrada y presentación visual. |
+| [Primer portfolio personal](https://agustin-lovagnini.github.io/portfolio-AgustinLovagnini/) | Primera presentación web del perfil profesional. |
+| [Segundo portfolio personal — HTML, CSS y Sass](https://agustin-lovagnini.github.io/agustin-lovagnini-cv-web/pages/proyectos.html) | Evolución del portfolio con secciones y presentación de proyectos. |
+
+### Prototipos y prácticas
+
+| Proyecto | Descripción |
+|---|---|
+| [ChatBox](https://agustin-lovagnini.github.io/proyecto-chatbox/) | Interfaz de chat con HTML y CSS. |
+| [Flip Card](https://agustin-lovagnini.github.io/proyecto-flipCard/) | Tarjeta interactiva con giro 3D y transiciones. |
+| [Menú Acordeón](https://agustin-lovagnini.github.io/proyecto-menu-acordeon/) | Organización de contenido mediante un menú acordeón. |
+| [Vista Previa](https://agustin-lovagnini.github.io/proyecto-pagina-de-vista/) | Experimento con video de fondo y efectos de desplazamiento. |
+| [Presentación Web](https://agustin-lovagnini.github.io/proyecto-pagina-web-presentacion-personal-ejercicio/) | Práctica de composición, tipografía y espaciado. |
+| [Sidebar Menu](https://agustin-lovagnini.github.io/proyecto-sidebar-menu/) | Menú lateral y navegación con HTML y CSS. |
+| [Tarjeta de Presentación](https://agustin-lovagnini.github.io/proyecto-tarjeta-de-presentacion/) | Diseño de tarjeta profesional con información de contacto. |
+
 ## Autor
 
 **Agustín Lovagnini**
