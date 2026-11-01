@@ -15,6 +15,7 @@ export default function Header() {
 
     return (
         <header className="px-8 py-2.5 flex items-center justify-between bg-surface relative">
+            <span aria-hidden="true" className="edge-line bottom-0" />
             <Link href="/">
                 <img
                     src="/images/logo.svg"
