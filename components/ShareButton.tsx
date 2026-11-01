@@ -40,7 +40,7 @@ export default function ShareButton() {
             onClick={handleShare}
             className="flex items-center gap-2 cursor-pointer"
         >
-            <Share2 size={20} color="#3e9392" />
+            <Share2 className="size-7 md:size-5" color="#3e9392" />
         </button>
     );
 }
