@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa";
+import TechnologiesMarquee from "../components/TechnologiesMarquee";
 
 export default function Home() {
   return (
@@ -46,7 +47,7 @@ export default function Home() {
           <p>Ecosistema moderno concentrado en la solidez tipeada, la velocidad de ejecucion y componenetes reutlilizables</p>
         </div>
         <div>
-
+          <TechnologiesMarquee />
         </div>
 
       </section>
