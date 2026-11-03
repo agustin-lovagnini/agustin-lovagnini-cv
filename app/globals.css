@@ -76,7 +76,7 @@
   .nav-link:hover,
   .nav-link[aria-current="page"] {
     @apply text-gold-light;
-    filter: drop-shadow(0 2px 3px #000);
+    filter: drop-shadow(0 0 6px #E9B767);
   }
 
   /*? Subrayado */
