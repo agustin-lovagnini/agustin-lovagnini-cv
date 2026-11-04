@@ -41,6 +41,56 @@
 
 @layer components {
 
+  /*? Acciones de la presentación */
+  .action-button {
+    @apply inline-flex min-h-11 shrink-0 flex-row flex-nowrap items-center justify-center gap-1 whitespace-nowrap rounded-lg border px-2 py-2 text-[11px] font-semibold sm:px-4 sm:text-sm;
+    transition: color 300ms, background-color 300ms, border-color 300ms, box-shadow 300ms, filter 300ms;
+  }
+
+  .action-button:focus-visible {
+    outline: 2px solid var(--color-gold-light);
+    outline-offset: 4px;
+  }
+
+  .action-primary {
+    border-color: var(--color-gold);
+    background-color: var(--color-gold);
+    color: var(--color-background);
+  }
+
+  .action-primary:hover {
+    @apply border-gold-light bg-gold-light;
+    box-shadow: 0 0 16px rgb(233 183 103 / 0.3);
+  }
+
+  .action-secondary {
+    border-color: var(--color-muted);
+    background-color: var(--color-muted);
+    color: var(--color-background);
+  }
+
+  .action-secondary:hover {
+    @apply border-foreground bg-foreground;
+    box-shadow: 0 0 12px rgb(181 181 181 / 0.15);
+  }
+
+  .action-social {
+    @apply size-11 shrink-0 border-subtle bg-background p-0 text-foreground;
+  }
+
+  .action-social:hover {
+    @apply border-muted;
+    filter: drop-shadow(0 0 5px #fff);
+  }
+
+  /* Halo difuso alrededor del borde, conservando su línea visible */
+  .border-glow {
+    box-shadow:
+      0 0 8px rgb(233 183 103 / 0.35),
+      0 0 20px rgb(233 183 103 / 0.15),
+      inset 0 0 8px rgb(233 183 103 / 0.12);
+  }
+
   /*? Línea decorativa que se desvanece hacia los extremos */
   .edge-line {
     position: absolute;
