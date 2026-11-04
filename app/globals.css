@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* ===== Tema: tipografías y paleta ===== */
 @theme inline {
   --font-sans: var(--font-inter);
   --font-heading: var(--font-space-grotesk);
@@ -17,7 +18,7 @@
   --color-subtle: #858585;
 }
 
-
+/* ===== Estilos base ===== */
 /*? @layer: agrupa estilos de componentes reutilizables. */
 @layer base {
   body {
@@ -36,15 +37,25 @@
   main {
     @apply flex-1;
   }
-  
 }
 
+/* ===== Componentes reutilizables ===== */
 @layer components {
+  /* ----- Contenedores de sección ----- */
+  .style-section {
+    @apply bg-surface border border-gold p-5;
+  }
 
+  /* ----- Botones de la presentación ----- */
   /*? Acciones de la presentación */
   .action-button {
     @apply inline-flex min-h-11 shrink-0 flex-row flex-nowrap items-center justify-center gap-1 whitespace-nowrap rounded-lg border px-2 py-2 text-[11px] font-semibold sm:px-4 sm:text-sm;
-    transition: color 300ms, background-color 300ms, border-color 300ms, box-shadow 300ms, filter 300ms;
+    transition:
+      color 300ms,
+      background-color 300ms,
+      border-color 300ms,
+      box-shadow 300ms,
+      filter 300ms;
   }
 
   .action-button:focus-visible {
@@ -83,6 +94,7 @@
     filter: drop-shadow(0 0 5px #fff);
   }
 
+  /* ----- Efectos decorativos de los marcos ----- */
   /* Halo difuso alrededor del borde, conservando su línea visible */
   .border-glow {
     box-shadow:
@@ -107,6 +119,7 @@
     filter: drop-shadow(0 0 2px rgb(245 212 154 / 0.3));
   }
 
+  /* ----- Enlaces del Header y del Footer ----- */
   /*? Estilo base de link de navegación header */
   .nav-link {
     @apply relative transition-[color,filter] duration-300;
@@ -151,7 +164,7 @@
   }
 
   /*? Punto de destaque */
-  .nav-link::before{
+  .nav-link::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -168,5 +181,32 @@
   .nav-link:hover::before,
   .nav-link[aria-current="page"]::before {
     opacity: 1;
+  }
+
+  /* ----- Marquesina de tecnologías ----- */
+  .marquee-track {
+    animation: marquee-scroll 45s linear infinite;
+  }
+
+  .marquee:active .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+/* ===== Interacción con dispositivos que permiten hover ===== */
+@media (hover: hover) {
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+/* ===== Animaciones ===== */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
   }
 }

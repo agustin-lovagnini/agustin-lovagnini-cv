@@ -10,7 +10,7 @@ export default function Home() {
         aria-labelledby="presentacion-personal"
         className="grid grid-cols-1 items-center gap-8 md:grid-cols-[2fr_1fr] md:gap-12"
       >
-        <div className="flex flex-col gap-1 bg-surface border border-gold p-5  border-glow">
+        <div className="flex flex-col gap-1 style-section border-glow">
           <span className="my-1 inline-flex items-center justify-start gap-1 px-2 py-1 bg-gold-dark select-none rounded-full text-xs text-gold-light font-bold drop-shadow-[0_1px_2px_#00000099] self-start">
             <span
               aria-hidden="true"
@@ -50,7 +50,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex justify-center bg-surface border border-gold p-5  border-glow">
+        <div className="flex justify-center style-section border-glow">
           <img
             src="/images/img-perfil-agustin.webp"
             alt="Agustín Lovagnini"
@@ -61,15 +61,17 @@ export default function Home() {
 
 
 
-      <section aria-labelledby="tecnologias-y-habilidades">
+      <section aria-labelledby="tecnologias-y-habilidades" className="style-section w-full">
         <div>
-          <span>Stack Principal</span>
-          <h2 id="tecnologias-y-habilidades">Tecnologías y Habilidades</h2>
+          <span className="mb-3 block w-full border-b border-gold-light pb-1 text-gold-light tracking-tight text-2xl">Stack Principal</span>
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-[3fr_2fr] md:items-center md:gap-8">
+            <h2 id="tecnologias-y-habilidades" className="text-xl">Tecnologías y Habilidades</h2>
+
+            <p className="text-gold-light opacity-75 text-sm">Ecosistema moderno concentrado en la solidez tipeada, la velocidad de ejecucion y componenetes reutlilizables</p>
+          </div>
         </div>
-        <div>
-          <p>Ecosistema moderno concentrado en la solidez tipeada, la velocidad de ejecucion y componenetes reutlilizables</p>
-        </div>
-        <div>
+
+        <div className="mt-6  rounded-xl border border-outline bg-background p-4">
           <TechnologiesMarquee />
         </div>
 
