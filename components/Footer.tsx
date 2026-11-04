@@ -42,7 +42,7 @@ export default function Footer() {
                 </nav>
             </div>
 
-            <p className="mt-4 text-center text-xs leading-relaxed select-none">
+            <p className="mt-2 text-center text-xs leading-relaxed select-none">
                 &copy; 2026 Agustín Lovagnini · Portfolio profesional
             </p>
         </footer>

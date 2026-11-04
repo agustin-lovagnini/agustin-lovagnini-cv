@@ -6,16 +6,28 @@ export default function TechnologiesMarquee() {
             <div className="marquee-track flex w-max">
                 <ul className="flex w-max shrink-0 gap-4 pr-4">
                     {technologies.map((technology) => (
-                        <li key={technology.id} className="shrink-0 whitespace-nowrap rounded-lg border border-outline bg-surface px-4 py-3">
-                            {technology.name}
+                        <li key={technology.id} className="flex flex-col items-center gap-2 shrink-0 whitespace-nowrap rounded-lg border border-outline bg-surface px-4 py-3">
+                            {technology.icon && (
+                                <technology.icon
+                                    aria-hidden="true"
+                                    className="size-10 text-gold"
+                                />
+                            )}
+                            <span>{technology.name}</span>
                         </li>
                     ))}
                 </ul>
 
                 <ul aria-hidden="true" className="flex w-max shrink-0 gap-4 pr-4">
                     {technologies.map((technology) => (
-                        <li key={technology.id} className="shrink-0 whitespace-nowrap rounded-lg border border-outline bg-surface px-4 py-3">
-                            {technology.name}
+                        <li key={technology.id} className="flex flex-col items-center gap-2 shrink-0 whitespace-nowrap rounded-lg border border-outline bg-surface px-4 py-3">
+                            {technology.icon && (
+                                <technology.icon
+                                    aria-hidden="true"
+                                    className="size-10 text-gold"
+                                />
+                            )}
+                            <span>{technology.name}</span>
                         </li>
                     ))}
                 </ul>

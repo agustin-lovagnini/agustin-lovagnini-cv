@@ -5,7 +5,7 @@ import TechnologiesMarquee from "../components/TechnologiesMarquee";
 
 export default function Home() {
   return (
-    <main className="w-full min-h-screen flex flex-col items-center justify-center gap-16 px-4 py-8 ">
+    <main className="w-full min-h-screen flex flex-col items-center justify-center gap-8 px-4 py-8 ">
       <section
         aria-labelledby="presentacion-personal"
         className="grid grid-cols-1 items-center gap-8 md:grid-cols-[2fr_1fr] md:gap-12"

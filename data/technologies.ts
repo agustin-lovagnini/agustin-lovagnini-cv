@@ -1,24 +1,43 @@
+import type { IconType } from "react-icons";
+import { FaDatabase } from "react-icons/fa";
+import {
+    SiHtml5,
+    SiCss,
+    SiSass,
+    SiJavascript,
+    SiTypescript,
+    SiReact,
+    SiNextdotjs,
+    SiTailwindcss,
+    SiBootstrap,
+    SiNodedotjs,
+    SiExpress,
+    SiMongodb,
+    SiGit,
+    SiGithub,
+} from "react-icons/si";
+
+
 export interface Technology {
     id: string,
     name: string,
+    icon: IconType;
 }
-
 export const technologies: Technology[] = [
-    { id: 'html', name: 'HTML5' },
-    { id: 'css', name: 'CSS3' },
-    { id: 'sass', name: 'Sass' },
-    { id: 'javascript', name: 'JavaScript' },
-    { id: 'typescript', name: 'TypeScript' },
-    { id: 'react', name: 'React' },
-    { id: 'nextjs', name: 'Next.js' },
-    { id: 'tailwindcss', name: 'Tailwind CSS' },
-    { id: 'bootstrap', name: 'Bootstrap' },
-    { id: 'nodejs', name: 'Node.js' },
-    { id: 'express', name: 'Express' },
-    { id: 'mongodb', name: 'MongoDB' },
-    { id: 'sql', name: 'SQL' },
-    { id: 'git', name: 'Git' },
-    { id: 'github', name: 'GitHub' },
+    { id: "html", name: "HTML5", icon: SiHtml5 },
+    { id: "css", name: "CSS3", icon: SiCss },
+    { id: "sass", name: "Sass", icon: SiSass },
+    { id: "javascript", name: "JavaScript", icon: SiJavascript },
+    { id: "typescript", name: "TypeScript", icon: SiTypescript },
+    { id: "react", name: "React", icon: SiReact },
+    { id: "nextjs", name: "Next.js", icon: SiNextdotjs },
+    { id: "tailwindcss", name: "Tailwind CSS", icon: SiTailwindcss },
+    { id: "bootstrap", name: "Bootstrap", icon: SiBootstrap },
+    { id: "nodejs", name: "Node.js", icon: SiNodedotjs },
+    { id: "express", name: "Express", icon: SiExpress },
+    { id: "mongodb", name: "MongoDB", icon: SiMongodb },
+    { id: "sql", name: "SQL", icon: FaDatabase },
+    { id: "git", name: "Git", icon: SiGit },
+    { id: "github", name: "GitHub", icon: SiGithub },
 ];
-
 
