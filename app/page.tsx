@@ -5,16 +5,16 @@ import TechnologiesMarquee from "../components/TechnologiesMarquee";
 
 export default function Home() {
   return (
-    <main className="w-full min-h-screen flex flex-col items-center justify-center gap-8 px-4 py-8 ">
+    <main className="w-full min-h-screen flex flex-col items-center justify-center gap-8 px-4 py-8">
       <section
         aria-labelledby="presentacion-personal"
-        className="grid grid-cols-1 items-center gap-8 md:grid-cols-[2fr_1fr] md:gap-12"
+        className="grid grid-cols-1 items-center gap-8 md:grid-cols-[2fr_1fr] md:gap-10"
       >
         <div className="flex flex-col gap-1 style-section border-glow">
-          <span className="my-1 inline-flex self-start items-center gap-2 rounded-full border border-gold/25 bg-[#986A2B] px-3 py-1.5 text-xs font-semibold tracking-[0.01em] text-[#FFF2D9] shadow-[0_2px_8px_#00000040] select-none">
+          <span className="eyebrow-badge">
             <span
               aria-hidden="true"
-              className="size-2 shrink-0 rounded-full bg-gold-light"
+              className="eyebrow-dot"
             />
             Disponible para nuevas oportunidades
           </span>
@@ -75,12 +75,18 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex justify-center style-section border-glow">
-          <img
-            src="/images/img-perfil-agustin.webp"
-            alt="Agustín Lovagnini"
-            className="h-64 w-64 rounded-2xl border-3 border-surface object-cover"
+        <div className="relative isolate mx-auto flex w-full max-w-[340px] items-center justify-center">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -inset-1 -z-10 rounded-3xl bg-gold/35 blur-lg"
           />
+          <div className="w-full max-w-[340px] overflow-hidden rounded-2xl border border-outline bg-surface">
+            <img
+              src="/images/img-perfil-agustin.webp"
+              alt="Retrato de Agustín Lovagnini"
+              className="aspect-[3/4] w-full object-cover object-center"
+            />
+          </div>
         </div>
       </section>
 
@@ -111,7 +117,7 @@ export default function Home() {
 
       </section>
 
-      <section aria-labelledby="tecnologias-y-habilidades" className="style-section w-full">
+      <section aria-labelledby="llamado-accion" className="style-section w-full">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <h3 className="font-heading text-2xl md:text-3xl font-bold leading-tight tracking-tight pb-1">

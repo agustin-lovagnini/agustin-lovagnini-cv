@@ -191,6 +191,17 @@
   .marquee:active .marquee-track {
     animation-play-state: paused;
   }
+
+  .eyebrow-badge {
+  @apply my-1 inline-flex self-start items-center gap-2 rounded-full
+    border border-gold/25 bg-[#986A2B] px-3 py-1.5 text-xs
+    font-semibold tracking-[0.01em] text-[#FFF2D9]
+    shadow-[0_2px_8px_#00000040] select-none;
+}
+
+.eyebrow-dot {
+  @apply size-2 shrink-0 rounded-full bg-gold-light;
+}
 }
 
 /* ===== Interacción con dispositivos que permiten hover ===== */
