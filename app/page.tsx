@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import TechnologiesMarquee from "../components/TechnologiesMarquee";
 
@@ -11,7 +11,7 @@ export default function Home() {
         className="grid grid-cols-1 items-center gap-8 md:grid-cols-[2fr_1fr] md:gap-12"
       >
         <div className="flex flex-col gap-1 style-section border-glow">
-          <span className="my-1 inline-flex items-center justify-start gap-1 px-2 py-1 bg-gold-dark select-none rounded-full text-xs text-gold-light font-bold drop-shadow-[0_1px_2px_#00000099] self-start">
+          <span className="my-1 inline-flex self-start items-center gap-2 rounded-full border border-gold/25 bg-[#986A2B] px-3 py-1.5 text-xs font-semibold tracking-[0.01em] text-[#FFF2D9] shadow-[0_2px_8px_#00000040] select-none">
             <span
               aria-hidden="true"
               className="size-2 shrink-0 rounded-full bg-gold-light"
@@ -19,16 +19,32 @@ export default function Home() {
             Disponible para nuevas oportunidades
           </span>
 
-          <span className="block tracking-tight text-sm">Full Stack Developer
-            <span className="pl-1 text-gold-light">+3 años de código</span>
+          <span className="block text-sm font-medium tracking-tight sm:text-base">
+            Full Stack Developer
+            <span className="pl-1 font-semibold text-gold-light">
+              +3 años de código
+            </span>
           </span>
 
-          <h1 id="presentacion-personal" className="text-4xl font-bold leading-tight md:text-5xl">
-            Agustin Lovagnini<span className="text-gold-light">.</span>
+          <h1
+            id="presentacion-personal"
+            className="font-heading text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"
+          >
+            Agustin Lovagnini
+            <span className="text-gold-light">.</span>
           </h1>
 
-          <p><span className="text-gold-light">Transformando ideas en</span> realidades digitales</p>
-          <p>Soy desarrollador web Full Stack, con especial interés en el Frontend y la experiencia de usuario. Me apasiona crear interfaces modernas, intuitivas y responsivas, combinando diseño y funcionalidad. Trabajo con tecnologías como React, JavaScript, Node.js y Express, desarrollando proyectos que integran soluciones tanto del lado del cliente como del servidor.</p>
+          <p className="font-heading text-lg font-medium leading-snug md:text-xl">
+            <span className="text-gold-light">
+              Transformando ideas en
+            </span>{" "}
+            realidades digitales
+          </p>
+
+          <p className="text-sm leading-relaxed text-muted md:text-base">
+            Soy desarrollador web Full Stack, con especial interés en el Frontend y la experiencia de usuario. Me apasiona crear interfaces modernas, intuitivas y responsivas, combinando diseño y funcionalidad. Trabajo con tecnologías como React, JavaScript, Node.js y Express, desarrollando proyectos que integran soluciones tanto del lado del cliente como del servidor.
+          </p>
+
           <div className="mt-4 flex flex-wrap items-center gap-1.5 sm:gap-3">
             <Link href="/proyectos" className="action-button action-primary">
               <span>Ver proyectos</span>
@@ -47,6 +63,15 @@ export default function Home() {
             >
               <FaLinkedin size={22} aria-hidden="true" />
             </a>
+            <a
+              href="https://github.com/agustin-lovagnini"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-button action-social"
+              aria-label="GitHub"
+            >
+              <FaGithub size={22} aria-hidden="true" />
+            </a>
           </div>
         </div>
 
@@ -59,22 +84,50 @@ export default function Home() {
         </div>
       </section>
 
-
-
       <section aria-labelledby="tecnologias-y-habilidades" className="style-section w-full">
         <div>
-          <span className="mb-3 block w-full border-b border-gold-light pb-1 text-gold-light tracking-tight text-2xl">Stack Principal</span>
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-[3fr_2fr] md:items-center md:gap-8">
-            <h2 id="tecnologias-y-habilidades" className="text-xl">Tecnologías y Habilidades</h2>
+          <span className="mb-3 block w-full border-b border-gold-light pb-1 font-heading text-xl font-semibold tracking-tight text-gold-light md:text-2xl">
+            Stack Principal
+          </span>
 
-            <p className="text-gold-light opacity-75 text-sm">Ecosistema moderno concentrado en la solidez tipeada, la velocidad de ejecucion y componenetes reutlilizables</p>
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-[1fr_1fr] md:items-center md:gap-8">
+            <h2
+              id="tecnologias-y-habilidades"
+              className="font-heading text-xl font-semibold tracking-tight md:text-2xl"
+            >
+              Tecnologías y Habilidades
+            </h2>
+
+            <p className="text-sm leading-relaxed text-muted">
+              Un ecosistema moderno enfocado en el desarrollo de
+              aplicaciones robustas, escalables y con componentes reutilizables.
+            </p>
           </div>
         </div>
 
-        <div className="mt-6  rounded-xl border border-outline bg-background p-4">
+        <div className="mt-3 rounded-xl border border-outline bg-background p-4">
           <TechnologiesMarquee />
         </div>
 
+      </section>
+
+      <section aria-labelledby="tecnologias-y-habilidades" className="style-section w-full">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <h3 className="font-heading text-2xl md:text-3xl font-bold leading-tight tracking-tight pb-1">
+              ¿Tenés un proyecto en mente?
+            </h3>
+
+            <p className="text-sm md:text-base font-normal leading-relaxed text-muted">
+              Contame tu idea y veamos cómo podemos hacerla realidad
+              en el mundo digital
+            </p>
+          </div>
+          <Link href="/contacto" className="action-button action-primary">
+            <span>Iniciar Conversación</span>
+            <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
+          </Link>
+        </div>
       </section>
     </main>
   );

@@ -26,7 +26,7 @@ export default function Header() {
 
             <button
                 type="button"
-                aria-label="Abrir menú"
+                aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
                 className="md:hidden cursor-pointer"
                 onClick={alternarMenu}
                 aria-expanded={isMenuOpen}
@@ -40,7 +40,7 @@ export default function Header() {
                 id="menu-mobile"
                 aria-label="Navegación móvil"
                 inert={!isMenuOpen}
-                className={`fixed top-0 right-0 z-50 h-dvh w-72 max-w-full flex flex-col items-center gap-6 bg-surface p-6 md:hidden transition-transform duration-300 motion-reduce:transition-none text-xl  ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+                className={`fixed top-0 right-0 z-50 h-dvh w-72 max-w-full flex flex-col items-center gap-6 bg-surface p-6 md:hidden transition-transform duration-300 motion-reduce:transition-none text-xl font-medium tracking-tight ${isMenuOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
                 <button
@@ -69,7 +69,7 @@ export default function Header() {
             {/* nav desktop */}
             <nav
                 aria-label="Navegación principal"
-                className="hidden md:flex items-center gap-6 text-foreground"
+                className="hidden md:flex items-center gap-6 text-sm font-medium text-foreground"
             >
                 <Link href="/" className="nav-link" aria-current={pathname === "/" ? "page" : undefined}>
                     Inicio
