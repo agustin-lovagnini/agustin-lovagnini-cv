@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export default function Header() {
+    // ITEM - Estado y control del menú móvil
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
 
@@ -16,6 +17,7 @@ export default function Header() {
     return (
         <header className="px-8 py-2.5 flex items-center justify-between bg-surface relative">
             <span aria-hidden="true" className="edge-line bottom-0" />
+            {/* ITEM - Logo y acceso a Inicio */}
             <Link href="/">
                 <img
                     src="/images/logo.svg"
@@ -24,6 +26,7 @@ export default function Header() {
                 />
             </Link>
 
+            {/* ITEM - Botón de apertura del menú móvil */}
             <button
                 type="button"
                 aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
@@ -35,7 +38,8 @@ export default function Header() {
                 <Menu size={24} />
             </button>
 
-            {/* nav mobile */}
+            {/* SUBSECTION - Panel de navegación móvil */}
+            {/* NOTE - El panel permanece montado para animar su salida; inert desactiva su contenido al cerrarse. */}
             <nav
                 id="menu-mobile"
                 aria-label="Navegación móvil"
@@ -66,7 +70,7 @@ export default function Header() {
                 <ShareButton />
             </nav>
 
-            {/* nav desktop */}
+            {/* SUBSECTION - Navegación de escritorio */}
             <nav
                 aria-label="Navegación principal"
                 className="hidden md:flex items-center gap-6 text-sm font-medium text-foreground"
@@ -85,6 +89,7 @@ export default function Header() {
                 </Link>
             </nav>
 
+            {/* ITEM - Compartir desde escritorio */}
             <div className="hidden md:block p-1 hover:drop-shadow-[0_0_10px_#fff] transition-[filter] duration-300">
                 <ShareButton />
             </div>

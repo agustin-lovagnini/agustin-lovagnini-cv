@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ===== Tema: tipografías y paleta ===== */
+/* SUBSECTION - Tema: tipografías y paleta */
 @theme inline {
   --font-sans: var(--font-inter);
   --font-heading: var(--font-space-grotesk);
@@ -17,12 +17,11 @@
   --color-muted: #B5B5B5;
   --color-subtle: #858585;
 
-  /* Animaciones disponibles como utilidades de Tailwind */
-  --animate-scroll-down: scroll-down 2.2s ease-in-out infinite;
+  /* NOTE - Estas variables exponen las animaciones como clases de Tailwind. */
+  --animate-scroll-down: scroll-down 1.8s ease-in-out infinite;
 }
 
-/* ===== Estilos base ===== */
-/*? @layer: agrupa estilos de componentes reutilizables. */
+/* SUBSECTION - Estilos base del documento */
 @layer base {
   body {
     @apply bg-background text-foreground font-sans;
@@ -42,9 +41,9 @@
   }
 }
 
-/* ===== Componentes reutilizables ===== */
+/* SUBSECTION - Estilos de componentes reutilizables */
 @layer components {
-  /* ----- Contenedores de sección ----- */
+  /* SUBSECTION - Contenedores y separadores de sección */
   .style-section {
     @apply bg-surface border border-gold p-5;
   }
@@ -53,8 +52,7 @@
     @apply h-px w-full border-0 bg-linear-to-r from-transparent via-subtle to-transparent;
   }
 
-  /* ----- Botones de la presentación ----- */
-  /*? Acciones de la presentación */
+  /* SUBSECTION - Botones de acción: base y foco */
   .action-button {
     @apply inline-flex min-h-11 shrink-0 flex-row flex-nowrap items-center justify-center gap-1 whitespace-nowrap rounded-lg border px-2 py-2 text-[11px] font-semibold sm:px-4 sm:text-sm;
     transition:
@@ -70,6 +68,7 @@
     outline-offset: 4px;
   }
 
+  /* SUBSECTION - Variantes de botones: principal, secundario y redes */
   .action-primary {
     border-color: var(--color-gold);
     background-color: var(--color-gold);
@@ -101,8 +100,7 @@
     filter: drop-shadow(0 0 5px #fff);
   }
 
-  /* ----- Efectos decorativos de los marcos ----- */
-  /* Halo difuso alrededor del borde, conservando su línea visible */
+  /* ITEM - Halo de los marcos */
   .border-glow {
     box-shadow:
       0 0 8px rgb(233 183 103 / 0.35),
@@ -110,7 +108,7 @@
       inset 0 0 8px rgb(233 183 103 / 0.12);
   }
 
-  /*? Línea decorativa que se desvanece hacia los extremos */
+  /* ITEM - Línea decorativa de Header y Footer */
   .edge-line {
     position: absolute;
     inset-inline: 0;
@@ -126,13 +124,11 @@
     filter: drop-shadow(0 0 2px rgb(245 212 154 / 0.3));
   }
 
-  /* ----- Enlaces del Header y del Footer ----- */
-  /*? Estilo base de link de navegación header */
+  /* SUBSECTION - Enlaces del Header y del Footer */
   .nav-link {
     @apply relative transition-[color,filter] duration-300;
   }
 
-  /*? Estilo base de link de pie de página */
   .footer-link {
     @apply relative text-subtle transition-colors duration-300;
   }
@@ -142,14 +138,14 @@
     @apply text-muted;
   }
 
-  /*? Hover effect */
+  /* ITEM - Enlace activo y efectos de navegación */
   .nav-link:hover,
   .nav-link[aria-current="page"] {
     @apply text-gold-light;
     filter: drop-shadow(0 0 6px #E9B767);
   }
 
-  /*? Subrayado */
+  /* ITEM - Subrayado de enlaces */
   .nav-link::after,
   .footer-link::after {
     content: "";
@@ -170,7 +166,7 @@
     opacity: 1;
   }
 
-  /*? Punto de destaque */
+  /* ITEM - Punto decorativo del enlace activo */
   .nav-link::before {
     content: "";
     position: absolute;
@@ -190,7 +186,8 @@
     opacity: 1;
   }
 
-  /* ----- Marquesina de tecnologías ----- */
+  /* SUBSECTION - Movimiento y pausa de la marquesina */
+  /* TODO - Desactivar la animación de la marquesina con prefers-reduced-motion. */
   .marquee-track {
     animation: marquee-scroll 45s linear infinite;
   }
@@ -199,7 +196,7 @@
     animation-play-state: paused;
   }
 
-  /* ----- Insignia de disponibilidad ----- */
+  /* SUBSECTION - Etiquetas de presentación y punto decorativo */
   .eyebrow-badge {
     @apply my-1 inline-flex self-start items-center gap-2 rounded-full
       border border-gold/25 bg-[#986A2B] px-3 py-1.5 text-xs
@@ -212,15 +209,15 @@
   }
 }
 
-/* ===== Interacción con dispositivos que permiten hover ===== */
+/* ITEM - Pausa de la marquesina con mouse */
 @media (hover: hover) {
   .marquee:hover .marquee-track {
     animation-play-state: paused;
   }
 }
 
-/* ===== Animaciones ===== */
-/* Movimiento horizontal de la marquesina */
+/* ITEM - Animación horizontal de la marquesina */
+/* NOTE - El recorrido equivale a un grupo porque la pista contiene dos listas idénticas. */
 @keyframes marquee-scroll {
   from {
     transform: translateX(0);
@@ -231,7 +228,7 @@
   }
 }
 
-/* Movimiento vertical de las flechas para explorar */
+/* ITEM - Animación de las flechas para explorar */
 @keyframes scroll-down {
   0% {
     transform: translateY(-7px);

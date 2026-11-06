@@ -18,11 +18,13 @@ import {
 } from "react-icons/si";
 
 
+// ITEM - Estructura de una tecnología
 export interface Technology {
     id: string,
     name: string,
     icon: IconType;
 }
+// ITEM - Catálogo de tecnologías e iconos
 export const technologies: Technology[] = [
     { id: "html", name: "HTML5", icon: SiHtml5 },
     { id: "css", name: "CSS3", icon: SiCss },

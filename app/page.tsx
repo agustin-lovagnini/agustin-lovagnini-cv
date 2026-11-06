@@ -6,6 +6,7 @@ import TechnologiesMarquee from "../components/TechnologiesMarquee";
 export default function Home() {
   return (
     <main className="w-full min-h-screen flex flex-col items-center justify-center gap-8 px-4 py-8">
+      {/* SECTION - Presentación personal */}
       <section
         aria-labelledby="presentacion-personal"
         className="grid grid-cols-1 items-center gap-8 md:grid-cols-[2fr_1fr] md:gap-10"
@@ -75,6 +76,8 @@ export default function Home() {
           </div>
         </div>
 
+        {/* ITEM - Retrato y halo decorativo */}
+        {/* NOTE - El halo queda fuera del marco para que overflow-hidden no lo recorte. */}
         <div className="relative isolate mx-auto flex w-full max-w-[340px] items-center justify-center">
           <div
             aria-hidden="true"
@@ -90,6 +93,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECTION - Stack principal y marquesina */}
       <section aria-labelledby="tecnologias-y-habilidades" className="style-section w-full">
         <div>
           <span className="mb-3 block w-full border-b border-gold-light pb-1 font-heading text-xl font-semibold tracking-tight text-gold-light md:text-2xl">
@@ -117,6 +121,7 @@ export default function Home() {
 
       </section>
 
+      {/* SECTION - Invitación a contactar */}
       <section aria-labelledby="llamado-accion" className="style-section w-full">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>

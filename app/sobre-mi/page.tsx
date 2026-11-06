@@ -1,8 +1,14 @@
-import { ChevronsDown } from "lucide-react";
+import {
+    ChevronsDown,
+    BriefcaseBusiness,
+    Languages,
+    MapPin,
+} from "lucide-react";
 
 export default function SobreMi() {
     return (
         <main className="w-full flex flex-col gap-8 px-4 py-8">
+            {/* SUBSECTION - Introducción de Sobre mí */}
             <header className="flex flex-col items-center gap-2 text-center">
                 <span className="eyebrow-badge mb-5 self-center">
                     <span aria-hidden="true" className="eyebrow-dot" />
@@ -25,6 +31,7 @@ export default function SobreMi() {
                 </p>
             </header>
 
+            {/* ITEM - Invitación a explorar */}
             <div className="flex items-center justify-center gap-3">
                 <ChevronsDown aria-hidden="true"
                     className="size-9 text-subtle animate-scroll-down motion-reduce:animate-none"
@@ -44,35 +51,109 @@ export default function SobreMi() {
 
             <hr className="section-divider" />
 
-            {/* CONTENEDORES AMARILLO SECTION */}
-            <section id="sobre-mi" aria-labelledby="sobre-mi-descripcion">
-                {/* CONTENEDORES VERDES */}
-                <div>
-                    <h2 id="sobre-mi-descripcion">Perfil profesional</h2>
-                    <p>Especializado en desarrollo web...</p>
+            {/* SECTION - Perfil profesional */}
+            <section id="sobre-mi" aria-labelledby="sobre-mi-descripcion" className=" w-full max-w-7xl mx-auto grid grid-cols-1 items-stretch gap-8 md:grid-cols-[2fr_1fr] md:gap-10">
 
-                    <blockquote>
-                        Creo en la combinación de interfaces...
-                    </blockquote>
+                <div className="flex flex-col style-section shadow-[0_0_10px_rgb(233_183_103_/_0.15)] p-0">
+                    <div className="flex flex-1 flex-col gap-6 p-5">
+                        <div className="flex flex-col gap-4">
+                            <h2 id="sobre-mi-descripcion" className="text-gold font-medium uppercase underline underline-offset-4 text-lg">Perfil profesional
+                            </h2>
+                            <p className="leading-relaxed tracking-wide">Soy desarrollador web <span className="font-bold text-gold-light">Full Stack</span>, formado en tecnologías Frontend y Backend. A lo largo de mi formación desarrollé aplicaciones con React, JavaScript, Node.js y Express, integrando autenticación, APIs REST y bases de datos relacionales y no relacionales.
 
-                    <p>Basado en Argentina...</p>
+                                Me interesa especialmente el desarrollo Frontend, la creación de interfaces accesibles y responsivas, y la construcción de aplicaciones que combinen una buena experiencia de usuario con una arquitectura sólida.</p>
+                        </div>
 
-                    <div>
-                        {/* Ubicación, idiomas y modalidad */}
+                        <blockquote className="my-1 border-l-2 border-gold-light pl-4 italic text-muted bg-background rounded-r-lg py-4">
+                            &quot;Creo que una buena aplicación no solo debe funcionar correctamente: también debe ser intuitiva, accesible y estar construida para evolucionar&quot;.
+                        </blockquote>
+
+                        <p className="leading-relaxed tracking-wide">Resido en la Ciudad Autónoma de Buenos Aires, Argentina. Me interesa formar parte de equipos donde pueda aportar mis conocimientos, seguir aprendiendo y participar en el desarrollo de productos digitales reales.</p>
+                    </div>
+                    <div className="relative">
+                        <dl className="grid w-full grid-cols-1 gap-4 bg-background p-8 text-sm md:grid-cols-[auto_auto_auto] md:justify-between">
+
+                            <div>
+                                <span aria-hidden="true" className="edge-line top-0 opacity-45" />
+
+                                <dt className="flex flex-row gap-1 text-gold font-light leading-tight tracking-wide opacity-95">
+                                    <MapPin aria-hidden="true" className="size-4 shrink-0 text-gold" />
+                                    Ubicación
+                                </dt>
+                                <dd className="opacity-90 mt-[0.5]">CABA, Argentina</dd>
+                            </div>
+
+                            <div>
+                                <dt className="flex flex-row gap-1 text-gold font-light leading-tight tracking-wide opacity-95">
+                                    <Languages aria-hidden="true" className="size-4 shrink-0 text-gold" />
+                                    Idiomas
+                                </dt>
+                                <dd className="opacity-90 mt-[0.5]">Español nativo · Inglés en formación</dd>
+                            </div>
+
+                            <div>
+                                <dt className="flex flex-row gap-1 text-gold font-light leading-tight tracking-wide opacity-95">
+                                    <BriefcaseBusiness aria-hidden="true" className="size-4 shrink-0 text-gold" />
+                                    Modalidad
+                                </dt>
+                                <dd className="opacity-90 mt-[0.5]">Remoto · Híbrido · Presencial</dd>
+                            </div>
+                        </dl>
                     </div>
                 </div>
 
-                {/* CONTENEDORES AZULES */}
-                <div>
-                    {/* AZUL 1: Tarjeta personal */}
-                    <div></div>
-                    {/* AZUL 2: Tarjeta personal */}
-                    <div></div>
+                {/* SUBSECTION - Tarjetas personales */}
+
+                <div className="flex flex-col gap-4">
+                    {/*ITEM - TARJETA PERSONAL 1*/}
+                    <div className="flex flex-col gap-1 items-center text-center style-section shadow-[0_0_10px_rgb(233_183_103_/_0.15)] p-4">
+
+                        <div className="size-24 overflow-hidden rounded-full">
+                            <img
+                                src="/images/img-perfil-agustin.webp"
+                                alt="Retrato de Agustín Lovagnini"
+                                className="size-full scale-110 object-cover"
+                            />
+                        </div>
+
+                        <h3 className="font-bold text-lg">Agustín Lovagnini</h3>
+                        <p className="text-gold font-medium text-sm">Full Stack Developer</p>
+                        <p className="text-muted text-sm">Desarrollador orientado a crear experiencias web modernas, combinando interfaces funcionales con soluciones backend. En constante aprendizaje y evolución profesional.</p>
+
+                        <dl className="mt-3 grid w-full max-w-xs grid-cols-2 gap-3 rounded-lg bg-outline p-3 text-sm">
+                            <div className="flex min-w-0 flex-col text-center">
+                                <dt className="order-2 w-full text-xs tracking-widest text-gold-light opacity-80">Compromiso</dt>
+                                <dd className="order-1 w-full text-4xl">100%</dd>
+                            </div>
+                            <div className="flex min-w-0 flex-col text-center">
+                                <dt className="order-2 w-full text-xs tracking-widest text-gold-light opacity-80">Certificaciones</dt>
+                                <dd className="order-1 w-full text-4xl text-gold-dark">6+</dd>
+                            </div>
+                        </dl>
+                    </div>
+                    
+                    {/*ITEM - TARJETA PERSONAL 2*/}
+                    <div className="flex flex-col gap-1 text-center style-section shadow-[0_0_10px_rgb(233_183_103_/_0.15)] p-4">
+                        <div>
+                            {/* Acá irá el icono decorativo */}
+                            <h3 className="font-bold text-lg">Mi enfoque de desarrollo:</h3>
+                        </div>
+
+                        <p className="text-muted text-sm">Me enfoco en escribir código claro, reutilizable y mantenible. Busco comprender cómo funciona cada tecnología, aplicar buenas prácticas y construir soluciones que puedan evolucionar con el tiempo.</p>
+
+                        <p className="text-gold text-sm font-medium mt-3">Código limpio · Accesibilidad · Aprendizaje continuo</p>
+                    </div>
                 </div>
             </section>
+
+            {/* SECTION - Formación y certificaciones */}
             <section aria-labelledby="formacion-y-certificaciones" className="w-full"></section>
+
+            {/* SECTION - Tecnologías principales */}
             <section aria-labelledby="tecnologias-principales" className="w-full"></section>
-            <section aria-labelledby="competencias-y-habilidades-profecionales" className="w-full"></section>
+
+            {/* SECTION - Competencias y habilidades profesionales */}
+            <section aria-labelledby="competencias-y-habiliades-profecionales" className="w-full"></section>
         </main>
     );
 }

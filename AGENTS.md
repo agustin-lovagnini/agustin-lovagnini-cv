@@ -85,6 +85,32 @@ No implementar diseños completos ni animaciones complejas sin aprobación.
 - No introducir Redux, React Router ni un backend independiente sin justificación.
 - Mantener las responsabilidades de los archivos bien definidas.
 
+### Marcadores de comentarios
+
+- `SECTION`: únicamente antes de bloques `<section>` para localizar las secciones principales de la página. Reemplaza al marcador anterior `ANCHOR`.
+- `SUBSECTION`: bloques internos o grupos de contenido, como una tarjeta personal, una navegación o un grupo de estilos.
+- `ITEM`: elementos o declaraciones puntuales que convenga localizar, como una imagen, un botón, un estado o un tipo de datos.
+- `NOTE`: explicaciones necesarias sobre un contenedor, una lógica o una decisión que no resulte evidente.
+- `TODO`: tareas pendientes concretas.
+- `FIXME`: errores conocidos que deben corregirse.
+- `REVIEW`: aspectos que necesitan una revisión concreta.
+
+`SECTION`, `SUBSECTION` e `ITEM` identifican y organizan; `NOTE` explica qué hace algo o por qué se tomó una decisión. Mantener el separador ` - ` y la sintaxis de comentarios correspondiente a cada archivo.
+
+El resaltado de líneas se configura mediante `highlight.regexes` en `.vscode/settings.json`, utilizando la extensión Highlight de VS Code. Esta configuración del proyecto se versiona para mantener los mismos colores entre computadoras; no afecta los estilos del sitio.
+
+| Marcador | Color del texto | Color del fondo |
+|---|---|---|
+| `SECTION` | `#79C7FF` | `#214A6B` |
+| `SUBSECTION` | `#FFAB70` | `#5C3018` |
+| `ITEM` | `#E6D39A` | `#403B2A` |
+| `NOTE` | `#78E6AB` | `#244D3C` |
+| `TODO` | `#FFD166` | `#59411E` |
+| `FIXME` | `#FF7B89` | `#642B35` |
+| `REVIEW` | `#C9A4FF` | `#483462` |
+
+Respetar los comentarios existentes y reclasificarlos según su propósito cuando sea necesario. Evitar marcar cada variable, función o contenedor. No agregar marcadores sin una necesidad real ni inventar tareas o errores para utilizarlos.
+
 ## 6. Forma de trabajo con el desarrollador
 
 **Esta es la regla más importante del proyecto: el propietario quiere aprender programando personalmente.**

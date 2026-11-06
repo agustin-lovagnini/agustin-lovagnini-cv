@@ -6,10 +6,12 @@ import { CheckCircle2, CircleX, Share2, X } from "lucide-react";
 import type { MouseEvent } from "react";
 
 export default function ShareButton() {
+    // ITEM - Estado del aviso
     const [message, setMessage] = useState("");
     const [isError, setIsError] = useState(false);
     const [position, setPosition] = useState({ top: 0, left: 16, width: 352 });
 
+    // ITEM - Posición del aviso y preparación del intento
     const handleShare = async (event: MouseEvent<HTMLButtonElement>) => {
         const rect = event.currentTarget.getBoundingClientRect();
         const width = Math.min(384, window.innerWidth - 32);
@@ -21,6 +23,7 @@ export default function ShareButton() {
         setMessage("");
         setIsError(false);
 
+        // ITEM - Copiar el enlace si compartir no está disponible
         if (!navigator.share) {
             try {
                 await navigator.clipboard.writeText(window.location.origin);
@@ -34,6 +37,7 @@ export default function ShareButton() {
             return;
         }
 
+        // ITEM - Compartir mediante el panel del dispositivo
         try {
             await navigator.share({
                 title: "Agustín Lovagnini | Portfolio",
@@ -53,6 +57,7 @@ export default function ShareButton() {
 
     return (
         <>
+            {/* ITEM - Botón de compartir */}
             <button
                 type="button"
                 aria-label="Compartir portfolio"
@@ -61,6 +66,8 @@ export default function ShareButton() {
             >
                 <Share2 className="size-7 md:size-5" color="#3e9392" />
             </button>
+            {/* SUBSECTION - Aviso de resultado */}
+            {/* NOTE - El portal evita que el filtro del Header altere la posición del aviso. */}
             {message && createPortal(
                 <div
                     className={`fixed z-[100] max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-xl border-2 bg-surface p-5 text-foreground shadow-2xl ${isError ? "border-red-400" : "border-gold"}`}

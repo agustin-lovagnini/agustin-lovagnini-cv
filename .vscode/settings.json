@@ -1,0 +1,81 @@
+{
+  "highlight.regexes": {
+    ".*\\bSECTION\\s*[:-].*": {
+      "regexFlags": "g",
+      "decorations": [
+        {
+          "isWholeLine": true,
+          "backgroundColor": "#214A6B",
+          "color": "#79C7FF",
+          "fontWeight": "bold"
+        }
+      ]
+    },
+    ".*\\bSUBSECTION\\s*[:-].*": {
+      "regexFlags": "g",
+      "decorations": [
+        {
+          "isWholeLine": true,
+          "backgroundColor": "#5C3018",
+          "color": "#FFAB70",
+          "fontWeight": "bold"
+        }
+      ]
+    },
+    ".*\\bITEM\\s*[:-].*": {
+      "regexFlags": "g",
+      "decorations": [
+        {
+          "isWholeLine": true,
+          "backgroundColor": "#403B2A",
+          "color": "#E6D39A",
+          "fontWeight": "bold"
+        }
+      ]
+    },
+    ".*\\bTODO\\s*[:-].*": {
+      "regexFlags": "g",
+      "decorations": [
+        {
+          "isWholeLine": true,
+          "backgroundColor": "#59411E",
+          "color": "#FFD166",
+          "fontWeight": "bold"
+        }
+      ]
+    },
+    ".*\\bFIXME\\s*[:-].*": {
+      "regexFlags": "g",
+      "decorations": [
+        {
+          "isWholeLine": true,
+          "backgroundColor": "#642B35",
+          "color": "#FF7B89",
+          "fontWeight": "bold"
+        }
+      ]
+    },
+    ".*\\bNOTE\\s*[:-].*": {
+      "regexFlags": "g",
+      "decorations": [
+        {
+          "isWholeLine": true,
+          "backgroundColor": "#244D3C",
+          "color": "#78E6AB",
+          "fontWeight": "bold"
+        }
+      ]
+    },
+    ".*\\bREVIEW\\s*[:-].*": {
+      "regexFlags": "g",
+      "decorations": [
+        {
+          "isWholeLine": true,
+          "backgroundColor": "#483462",
+          "color": "#C9A4FF",
+          "fontWeight": "bold"
+        }
+      ]
+    }
+  }
+}
