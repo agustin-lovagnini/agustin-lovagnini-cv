@@ -16,6 +16,9 @@
   --color-foreground: #FFFFFF;
   --color-muted: #B5B5B5;
   --color-subtle: #858585;
+
+  /* Animaciones disponibles como utilidades de Tailwind */
+  --animate-scroll-down: scroll-down 2.2s ease-in-out infinite;
 }
 
 /* ===== Estilos base ===== */
@@ -44,6 +47,10 @@
   /* ----- Contenedores de sección ----- */
   .style-section {
     @apply bg-surface border border-gold p-5;
+  }
+
+  .section-divider {
+    @apply h-px w-full border-0 bg-linear-to-r from-transparent via-subtle to-transparent;
   }
 
   /* ----- Botones de la presentación ----- */
@@ -192,16 +199,17 @@
     animation-play-state: paused;
   }
 
+  /* ----- Insignia de disponibilidad ----- */
   .eyebrow-badge {
-  @apply my-1 inline-flex self-start items-center gap-2 rounded-full
-    border border-gold/25 bg-[#986A2B] px-3 py-1.5 text-xs
-    font-semibold tracking-[0.01em] text-[#FFF2D9]
-    shadow-[0_2px_8px_#00000040] select-none;
-}
+    @apply my-1 inline-flex self-start items-center gap-2 rounded-full
+      border border-gold/25 bg-[#986A2B] px-3 py-1.5 text-xs
+      font-semibold tracking-[0.01em] text-[#FFF2D9]
+      shadow-[0_2px_8px_#00000040] select-none;
+  }
 
-.eyebrow-dot {
-  @apply size-2 shrink-0 rounded-full bg-gold-light;
-}
+  .eyebrow-dot {
+    @apply size-2 shrink-0 rounded-full bg-gold-light;
+  }
 }
 
 /* ===== Interacción con dispositivos que permiten hover ===== */
@@ -212,6 +220,7 @@
 }
 
 /* ===== Animaciones ===== */
+/* Movimiento horizontal de la marquesina */
 @keyframes marquee-scroll {
   from {
     transform: translateX(0);
@@ -219,5 +228,23 @@
 
   to {
     transform: translateX(-50%);
+  }
+}
+
+/* Movimiento vertical de las flechas para explorar */
+@keyframes scroll-down {
+  0% {
+    transform: translateY(-7px);
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  85%,
+  100% {
+    transform: translateY(11px);
+    opacity: 0;
   }
 }
