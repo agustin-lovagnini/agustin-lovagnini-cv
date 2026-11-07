@@ -11,16 +11,6 @@ export interface Certification {
 // ITEM - Catálogo de certificaciones
 export const certifications: Certification[] = [
     {
-        id: "backend-3",
-        institution: "Coderhouse",
-        status: "Certificado oficial",
-        title: "Backend III — Testing y Escalabilidad",
-        description:
-            "Formación avanzada en desarrollo backend, testing, escalabilidad y buenas prácticas para construir aplicaciones robustas y mantenibles.",
-        certificateUrl:
-            "https://app.coderhouse.com/certificates/CERT-MUPQ7CWN-90006A33",
-    },
-    {
         id: "coderhouse-fullstack",
         institution: "Coderhouse",
         status: "Carrera completada",
@@ -29,6 +19,16 @@ export const certifications: Certification[] = [
             "Formación integral en desarrollo web Frontend y Backend, abarcando HTML, CSS, JavaScript, React, Node.js, Express, APIs REST, autenticación y bases de datos. Carrera completada en 53 semanas, con 106 horas de clases.",
         certificateUrl:
             "https://www.linkedin.com/in/agustinlovagnini/overlay/Certifications/914704506/treasury/?profileId=ACoAADUciO0Btx7NrzK3aqS5P6xOTskRv7LxLdw",
+    },
+    {
+        id: "backend-3",
+        institution: "Coderhouse",
+        status: "Certificado oficial",
+        title: "Backend III — Testing y Escalabilidad",
+        description:
+            "Formación avanzada en desarrollo backend, testing, escalabilidad y buenas prácticas para construir aplicaciones robustas y mantenibles.",
+        certificateUrl:
+            "https://app.coderhouse.com/certificates/CERT-MUPQ7CWN-90006A33",
     },
     {
         id: "backend-2",
@@ -73,7 +73,7 @@ export const certifications: Certification[] = [
     {
         id: "javascript",
         institution: "Coderhouse",
-        status: "Top 10",
+        status: "Certificado oficial",
         title: "JavaScript",
         description:
             "Programación con JavaScript ES6+, manipulación del DOM, eventos, asincronía, consumo de APIs y desarrollo de aplicaciones interactivas.",
@@ -83,7 +83,7 @@ export const certifications: Certification[] = [
     {
         id: "desarrollo-web",
         institution: "Coderhouse",
-        status: "Top 10",
+        status: "Certificado oficial",
         title: "Desarrollo Web",
         description:
             "Desarrollo de sitios web responsivos utilizando HTML5, CSS3, Sass, Bootstrap, Flexbox, Grid y buenas prácticas de maquetación.",

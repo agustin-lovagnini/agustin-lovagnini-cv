@@ -8,9 +8,9 @@ interface CertificationCardProps {
 
 export default function CertificationCard({ certification, }: CertificationCardProps) {
     return (
-        <article className="flex flex-col gap-3 style-section p-4 rounded-2xl">
-            <div className="flex items-center justify-between gap-2 pr-3 mb-2">
-                <span className="text-gold font-bold uppercase text-sm">
+        <article className="flex min-w-0 flex-col gap-3 style-section p-4 rounded-xl">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="text-gold font-bold uppercase text-xs">
                     {certification.institution}
                 </span>
 
@@ -18,32 +18,32 @@ export default function CertificationCard({ certification, }: CertificationCardP
                     {certification.status}
                 </span>
             </div>
-            <h3 className="font-bold text-2xl">
+            <h4 className="font-bold text-lg leading-snug break-words">
                 {certification.title}
-            </h3>
+            </h4>
 
-            <p className="text-muted">
+            <p className="text-sm leading-relaxed text-muted">
                 {certification.description}
             </p>
 
-            <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-4">
+            <div className="mt-auto flex flex-col items-center justify-center gap-3 pt-2 text-center lg:flex-row lg:flex-wrap">
                 <a
                     href={certification.certificateUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="action-button action-primary"
+                    className="action-button action-primary whitespace-normal text-center"
                 >
                     Ver certificado
                     <ArrowRight size={16} className="shrink-0" aria-hidden="true" />
                 </a>
 
-                <div className="flex items-center gap-2">
-                    <span className="text-gold-light text-sm underline underline-offset-4 select-none">
+                <div className="flex items-center gap-1.5">
+                    <span className="text-gold-light text-xs underline underline-offset-4 select-none">
                         Certificado Oficial
                     </span>
 
                     <ShieldCheck
-                        size={30}
+                        size={20}
                         strokeWidth={2}
                         className="shrink-0 text-gold-light"
                         aria-hidden="true"

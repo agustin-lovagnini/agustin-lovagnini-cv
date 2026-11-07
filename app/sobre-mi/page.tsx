@@ -3,16 +3,49 @@ import {
     BriefcaseBusiness,
     Languages,
     MapPin,
-    ArrowRight,
-    ShieldCheck,
+    Code2,
+    Database,
+    Layers3,
+    Server,
+    Wrench,
     Award,
     BadgeCheck
 } from "lucide-react";
-import CertificationCard from "../../components/CertificationCard";
-import { certifications } from "../../data/certifications";
+import CertificationsList from "../../components/CertificationsList";
 
 
 export default function SobreMi() {
+    const technologyGroups = [
+        {
+            id: "frontend",
+            title: "Frontend",
+            icon: Code2,
+            description: "Interfaces responsivas y accesibles, con componentes reutilizables y atención a la experiencia de usuario.",
+            technologies: ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Sass", "Bootstrap"],
+        },
+        {
+            id: "backend",
+            title: "Backend",
+            icon: Server,
+            description: "Aplicaciones del lado del servidor, APIs REST, autenticación y organización del código por responsabilidades.",
+            technologies: ["Node.js", "Express", "APIs REST", "Autenticación", "Swagger / OpenAPI"],
+        },
+        {
+            id: "databases",
+            title: "Bases de datos",
+            icon: Database,
+            description: "Persistencia de información, modelado de datos y consultas en bases relacionales y no relacionales.",
+            technologies: ["MongoDB", "Mongoose", "SQL", "Firebase"],
+        },
+        {
+            id: "workflow",
+            title: "Herramientas de trabajo",
+            icon: Wrench,
+            description: "Control de versiones, pruebas de APIs y herramientas para desarrollar, organizar y compartir mis proyectos.",
+            technologies: ["Git", "GitHub", "VS Code", "npm", "Postman", "Docker"],
+        },
+    ];
+
     return (
         <main className="w-full flex flex-col gap-8 px-4 py-8">
             {/* SECTION - Introducción de Sobre mí */}
@@ -154,14 +187,14 @@ export default function SobreMi() {
             </section>
 
             {/* SECTION - Formación y certificaciones */}
-            <section aria-labelledby="formacion-y-certificaciones" className="w-full style-section">
-                <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-6">
+            <section aria-labelledby="formacion-y-certificaciones" className="mx-auto w-full max-w-[1440px] style-section p-4 md:p-5">
+                <div className="mb-5 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:gap-5">
                     <div className="flex items-start gap-3 md:items-center">
-                        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-gold/20 bg-surface text-gold-light">
-                            <Award size={24} aria-hidden="true" />
+                        <span className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-gold/20 bg-surface text-gold-light">
+                            <Award size={20} aria-hidden="true" />
                         </span>
                         <div>
-                            <h2 id="formacion-y-certificaciones" className="font-heading text-2xl font-bold leading-tight tracking-tight md:text-3xl">
+                            <h2 id="formacion-y-certificaciones" className="font-heading text-xl font-bold leading-tight tracking-tight md:text-2xl">
                                 Formación y Certificaciones
                             </h2>
                             <p className="mt-0.5 text-sm leading-relaxed text-muted">
@@ -170,24 +203,59 @@ export default function SobreMi() {
                         </div>
                     </div>
 
-                    <span className="inline-flex self-start items-center gap-2 rounded-full border border-gold bg-surface px-3 py-1.5 text-sm font-medium text-gold-light shadow-[0_0_12px_rgb(233_183_103/0.25)] md:shrink-0 md:self-center">
+                    <span className="inline-flex self-start items-center gap-2 rounded-full border border-gold bg-surface px-3 py-1.5 text-xs font-medium text-gold-light shadow-[0_0_12px_rgb(233_183_103/0.25)] lg:shrink-0 lg:self-center">
                         <BadgeCheck size={16} className="shrink-0 text-gold-light" aria-hidden="true" />
                         Instituciones reconocidas
                     </span>
                 </div>
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {certifications.map((certificadoActual) => (
-                        <CertificationCard
-                            key={certificadoActual.id}
-                            certification={certificadoActual}
-                        />
-                    ))}
+                {/* SUBSECTION - Certificaciones académicas de Coderhouse */}
+                <div className="mb-6">
+                    <h3 className="mb-2 font-heading text-lg font-semibold text-gold-light">Certificaciones académicas</h3>
+                    <p className="mb-4 text-sm text-muted">Coderhouse · Cursos y carrera aprobados.</p>
+                    <CertificationsList />
                 </div>
-
             </section>
 
+            <hr className="section-divider" />
+
             {/* SECTION - Tecnologías principales */}
-            <section aria-labelledby="tecnologias-principales" className="w-full"></section>
+            <section aria-labelledby="tecnologias-principales" className="mx-auto w-full max-w-[1440px]">
+                <header className="flex items-start gap-3">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-outline bg-surface text-gold-light">
+                        <Layers3 size={22} aria-hidden="true" />
+                    </span>
+                    <div>
+                        <h2 id="tecnologias-principales" className="font-heading text-xl font-bold tracking-tight md:text-2xl">
+                            Tecnologías principales
+                        </h2>
+                        <p className="mt-1 text-sm text-muted">Herramientas y lenguajes que utilizo en mis proyectos.</p>
+                    </div>
+                </header>
+
+
+
+                {/* SUBSECTION - Tecnologías organizadas por área */}
+                <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                    {technologyGroups.map((group) => (
+                        <article key={group.id} className="flex min-w-0 flex-col gap-4 rounded-2xl border border-outline bg-surface p-5">
+                            <div className="flex items-start justify-between gap-3">
+                                <h3 className="font-heading text-lg font-semibold">{group.title}</h3>
+                                <group.icon size={20} className="mt-1 shrink-0 text-gold-light" aria-hidden="true" />
+                            </div>
+                            <p className="text-sm leading-relaxed text-muted">{group.description}</p>
+                            <ul className="mt-auto flex flex-wrap gap-2 pt-3" aria-label={`Tecnologías de ${group.title}`}>
+                                {group.technologies.map((technology) => (
+                                    <li key={technology} className="max-w-full break-words rounded border border-outline bg-background px-2 py-1 text-xs font-medium text-gold-light">
+                                        {technology}
+                                    </li>
+                                ))}
+                            </ul>
+                        </article>
+                    ))}
+                </div>
+            </section>
+
+            <hr className="section-divider" />
 
             {/* SECTION - Competencias y habilidades profesionales */}
             <section aria-labelledby="competencias-y-habiliades-profecionales" className="w-full"></section>

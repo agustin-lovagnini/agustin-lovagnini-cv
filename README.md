@@ -195,19 +195,19 @@ Recursos proporcionados por el autor para incorporar progresivamente al sitio. L
 - [LinkedIn — perfil profesional](https://www.linkedin.com/in/agustinlovagnini).
 - [Correo — agustin.lovagnini.v@gmail.com](mailto:agustin.lovagnini.v@gmail.com): oportunidades laborales, consultas profesionales y proyectos freelance.
 
-### Certificaciones de Coderhouse
+### Certificaciones académicas — Coderhouse
 
 | Certificación | Área de formación |
 |---|---|
-| [Desarrollo Web Flex — Top 10](https://www.linkedin.com/in/agustinlovagnini/overlay/Certifications/435541435/treasury/?profileId=ACoAADUciO0Btx7NrzK3aqS5P6xOTskRv7LxLdw) | HTML, CSS, Sass/SCSS, Bootstrap y diseño responsive. |
-| [JavaScript — Top 10](https://www.linkedin.com/in/agustinlovagnini/overlay/Certifications/54933819/treasury/?profileId=ACoAADUciO0Btx7NrzK3aqS5P6xOTskRv7LxLdw) | DOM, eventos, estructuras de datos, asincronismo y APIs. |
+| [Desarrollo Web Flex](https://www.linkedin.com/in/agustinlovagnini/overlay/Certifications/435541435/treasury/?profileId=ACoAADUciO0Btx7NrzK3aqS5P6xOTskRv7LxLdw) | HTML, CSS, Sass/SCSS, Bootstrap y diseño responsive. |
+| [JavaScript](https://www.linkedin.com/in/agustinlovagnini/overlay/Certifications/54933819/treasury/?profileId=ACoAADUciO0Btx7NrzK3aqS5P6xOTskRv7LxLdw) | DOM, eventos, estructuras de datos, asincronismo y APIs. |
 | [React JS](https://app.coderhouse.com/certificates/CERT-MOZ6JCR6-BB4B7477) | Componentes, props, hooks, estado y navegación. |
 | [SQL — Bases de Datos](https://www.linkedin.com/in/agustinlovagnini/overlay/Certifications/1395359304/treasury/?profileId=ACoAADUciO0Btx7NrzK3aqS5P6xOTskRv7LxLdw) | Bases relacionales, consultas y procedimientos almacenados. |
 | [Programación Backend I — Desarrollo Avanzado de Backend](https://www.linkedin.com/in/agustinlovagnini/overlay/Certifications/825450174/treasury/?profileId=ACoAADUciO0Btx7NrzK3aqS5P6xOTskRv7LxLdw) | Node.js, Express, APIs REST y organización de aplicaciones. |
 | [Programación Backend II — Diseño y Arquitectura Backend Flex](https://app.coderhouse.com/certificates/CERT-MQLCIQVM-F7EA4E3F) | Arquitectura, patrones, persistencia y separación de responsabilidades. |
 | [Programación Backend III — Testing y Escalabilidad](https://app.coderhouse.com/certificates/CERT-MUPQ7CWN-90006A33) | Testing, escalabilidad y buenas prácticas de backend. |
 
-### Certificaciones de freeCodeCamp
+### Certificaciones complementarias — freeCodeCamp
 
 - [Responsive Web Design](https://www.freecodecamp.org/espanol/certification/agustinlovagnini/responsive-web-design): HTML, CSS, accesibilidad y diseño adaptable.
 - [JavaScript](https://www.freecodecamp.org/certification/agustinlovagnini/javascript-v9): lógica, estructuras de datos y resolución de problemas.
