@@ -28,7 +28,7 @@ export const certifications: Certification[] = [
         description:
             "Desarrollo de aplicaciones backend con Node.js, Express y MongoDB, implementando autenticación, autorización, arquitectura por capas y APIs REST.",
         certificateUrl:
-            "https://app.coderhouse.com/certificates/CERT-MQLCIQVM-F7EA4E3F",
+            "https://app.coderhouse.com/certificates/CERT-MQUCIQVM-E7EA4E3F",
     },
     {
         id: "backend-1",
@@ -89,6 +89,16 @@ export const certifications: Certification[] = [
             "Fundamentos de programación con JavaScript, estructuras de datos, algoritmos, funciones y resolución de desafíos prácticos.",
         certificateUrl:
             "https://www.freecodecamp.org/certification/agustinlovagnini/javascript-v9",
+    },
+    {
+        id: "freecodecamp-frontend-libraries",
+        institution: "freeCodeCamp",
+        status: "Certificación oficial",
+        title: "Bibliotecas de Desarrollo Frontend",
+        description:
+            "Formación de aproximadamente 300 horas en React, Hooks, React Router, TypeScript, Next.js, testing y frameworks CSS. Desarrollo de proyectos prácticos con componentes reutilizables e interfaces interactivas.",
+        certificateUrl:
+            "https://www.freecodecamp.org/certification/agustinlovagnini/front-end-development-libraries-v9",
     },
     {
         id: "freecodecamp-responsive",
