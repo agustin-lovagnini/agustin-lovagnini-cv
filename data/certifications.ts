@@ -21,6 +21,16 @@ export const certifications: Certification[] = [
             "https://app.coderhouse.com/certificates/CERT-MUPQ7CWN-90006A33",
     },
     {
+        id: "coderhouse-fullstack",
+        institution: "Coderhouse",
+        status: "Carrera completada",
+        title: "Carrera de Desarrollo Full Stack",
+        description:
+            "Formación integral en desarrollo web Frontend y Backend, abarcando HTML, CSS, JavaScript, React, Node.js, Express, APIs REST, autenticación y bases de datos. Carrera completada en 53 semanas, con 106 horas de clases.",
+        certificateUrl:
+            "https://www.linkedin.com/in/agustinlovagnini/overlay/Certifications/914704506/treasury/?profileId=ACoAADUciO0Btx7NrzK3aqS5P6xOTskRv7LxLdw",
+    },
+    {
         id: "backend-2",
         institution: "Coderhouse",
         status: "Certificado oficial",
