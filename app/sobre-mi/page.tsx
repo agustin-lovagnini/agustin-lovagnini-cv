@@ -3,12 +3,19 @@ import {
     BriefcaseBusiness,
     Languages,
     MapPin,
+    ArrowRight,
+    ShieldCheck,
+    Award,
+    BadgeCheck
 } from "lucide-react";
+import CertificationCard from "../../components/CertificationCard";
+import { certifications } from "../../data/certifications";
+
 
 export default function SobreMi() {
     return (
         <main className="w-full flex flex-col gap-8 px-4 py-8">
-            {/* SUBSECTION - Introducción de Sobre mí */}
+            {/* SECTION - Introducción de Sobre mí */}
             <header className="flex flex-col items-center gap-2 text-center">
                 <span className="eyebrow-badge mb-5 self-center">
                     <span aria-hidden="true" className="eyebrow-dot" />
@@ -54,7 +61,7 @@ export default function SobreMi() {
             {/* SECTION - Perfil profesional */}
             <section id="sobre-mi" aria-labelledby="sobre-mi-descripcion" className=" w-full max-w-7xl mx-auto grid grid-cols-1 items-stretch gap-8 md:grid-cols-[2fr_1fr] md:gap-10">
 
-                <div className="flex flex-col style-section shadow-[0_0_10px_rgb(233_183_103_/_0.15)] p-0">
+                <div className="flex flex-col style-section p-0">
                     <div className="flex flex-1 flex-col gap-6 p-5">
                         <div className="flex flex-col gap-4">
                             <h2 id="sobre-mi-descripcion" className="text-gold font-medium uppercase underline underline-offset-4 text-lg">Perfil profesional
@@ -71,7 +78,7 @@ export default function SobreMi() {
                         <p className="leading-relaxed tracking-wide">Resido en la Ciudad Autónoma de Buenos Aires, Argentina. Me interesa formar parte de equipos donde pueda aportar mis conocimientos, seguir aprendiendo y participar en el desarrollo de productos digitales reales.</p>
                     </div>
                     <div className="relative">
-                        <dl className="grid w-full grid-cols-1 gap-4 bg-background p-8 text-sm md:grid-cols-[auto_auto_auto] md:justify-between">
+                        <dl className="grid w-full grid-cols-1 gap-4 bg-background p-8 text-sm md:grid-cols-2 xl:grid-cols-[auto_auto_auto] xl:justify-between">
 
                             <div>
                                 <span aria-hidden="true" className="edge-line top-0 opacity-45" />
@@ -80,7 +87,7 @@ export default function SobreMi() {
                                     <MapPin aria-hidden="true" className="size-4 shrink-0 text-gold" />
                                     Ubicación
                                 </dt>
-                                <dd className="opacity-90 mt-[0.5]">CABA, Argentina</dd>
+                                <dd className="opacity-90 mt-[0.5] xl:whitespace-nowrap">CABA, Argentina</dd>
                             </div>
 
                             <div>
@@ -88,7 +95,7 @@ export default function SobreMi() {
                                     <Languages aria-hidden="true" className="size-4 shrink-0 text-gold" />
                                     Idiomas
                                 </dt>
-                                <dd className="opacity-90 mt-[0.5]">Español nativo · Inglés en formación</dd>
+                                <dd className="opacity-90 mt-[0.5] xl:whitespace-nowrap">Español nativo · Inglés en formación</dd>
                             </div>
 
                             <div>
@@ -96,7 +103,7 @@ export default function SobreMi() {
                                     <BriefcaseBusiness aria-hidden="true" className="size-4 shrink-0 text-gold" />
                                     Modalidad
                                 </dt>
-                                <dd className="opacity-90 mt-[0.5]">Remoto · Híbrido · Presencial</dd>
+                                <dd className="opacity-90 mt-[0.5] xl:whitespace-nowrap">Remoto · Híbrido · Presencial</dd>
                             </div>
                         </dl>
                     </div>
@@ -106,7 +113,7 @@ export default function SobreMi() {
 
                 <div className="flex flex-col gap-4">
                     {/*ITEM - TARJETA PERSONAL 1*/}
-                    <div className="flex flex-col gap-1 items-center text-center style-section shadow-[0_0_10px_rgb(233_183_103_/_0.15)] p-4">
+                    <div className="flex flex-col gap-1 items-center text-center style-section p-4">
 
                         <div className="size-24 overflow-hidden rounded-full">
                             <img
@@ -131,9 +138,9 @@ export default function SobreMi() {
                             </div>
                         </dl>
                     </div>
-                    
+
                     {/*ITEM - TARJETA PERSONAL 2*/}
-                    <div className="flex flex-col gap-1 text-center style-section shadow-[0_0_10px_rgb(233_183_103_/_0.15)] p-4">
+                    <div className="flex flex-col gap-1 text-center style-section p-4">
                         <div>
                             {/* Acá irá el icono decorativo */}
                             <h3 className="font-bold text-lg">Mi enfoque de desarrollo:</h3>
@@ -147,7 +154,37 @@ export default function SobreMi() {
             </section>
 
             {/* SECTION - Formación y certificaciones */}
-            <section aria-labelledby="formacion-y-certificaciones" className="w-full"></section>
+            <section aria-labelledby="formacion-y-certificaciones" className="w-full style-section">
+                <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-6">
+                    <div className="flex items-start gap-3 md:items-center">
+                        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-gold/20 bg-surface text-gold-light">
+                            <Award size={24} aria-hidden="true" />
+                        </span>
+                        <div>
+                            <h2 id="formacion-y-certificaciones" className="font-heading text-2xl font-bold leading-tight tracking-tight md:text-3xl">
+                                Formación y Certificaciones
+                            </h2>
+                            <p className="mt-0.5 text-sm leading-relaxed text-muted">
+                                Trayecto académico y profesional en desarrollo de software.
+                            </p>
+                        </div>
+                    </div>
+
+                    <span className="inline-flex self-start items-center gap-2 rounded-full border border-gold bg-surface px-3 py-1.5 text-sm font-medium text-gold-light shadow-[0_0_12px_rgb(233_183_103/0.25)] md:shrink-0 md:self-center">
+                        <BadgeCheck size={16} className="shrink-0 text-gold-light" aria-hidden="true" />
+                        Instituciones reconocidas
+                    </span>
+                </div>
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {certifications.map((certificadoActual) => (
+                        <CertificationCard
+                            key={certificadoActual.id}
+                            certification={certificadoActual}
+                        />
+                    ))}
+                </div>
+
+            </section>
 
             {/* SECTION - Tecnologías principales */}
             <section aria-labelledby="tecnologias-principales" className="w-full"></section>

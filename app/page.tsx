@@ -11,7 +11,7 @@ export default function Home() {
         aria-labelledby="presentacion-personal"
         className="grid grid-cols-1 items-center gap-8 md:grid-cols-[2fr_1fr] md:gap-10"
       >
-        <div className="flex flex-col gap-1 style-section border-glow">
+        <div className="flex flex-col gap-1 style-section">
           <span className="eyebrow-badge">
             <span
               aria-hidden="true"
@@ -76,14 +76,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* ITEM - Retrato y halo decorativo */}
-        {/* NOTE - El halo queda fuera del marco para que overflow-hidden no lo recorte. */}
+        {/* ITEM - Retrato con sombra dorada */}
         <div className="relative isolate mx-auto flex w-full max-w-[340px] items-center justify-center">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -inset-1 -z-10 rounded-3xl bg-gold/35 blur-lg"
-          />
-          <div className="w-full max-w-[340px] overflow-hidden rounded-2xl border border-outline bg-surface">
+          <div className="w-full max-w-[340px] overflow-hidden rounded-lg border border-outline bg-surface shadow-[0_0_20px_rgba(233,183,103,0.12),0_8px_24px_rgba(0,0,0,0.3)]">
             <img
               src="/images/img-perfil-agustin.webp"
               alt="Retrato de Agustín Lovagnini"

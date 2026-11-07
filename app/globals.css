@@ -46,6 +46,7 @@
   /* SUBSECTION - Contenedores y separadores de sección */
   .style-section {
     @apply bg-surface border border-gold p-5;
+    box-shadow: 0 0 10px rgb(233 183 103 / 0.30);
   }
 
   .section-divider {
