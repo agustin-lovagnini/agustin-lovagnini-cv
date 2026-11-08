@@ -16,7 +16,7 @@ export const certifications: Certification[] = [
         status: "Carrera completada",
         title: "Carrera de Desarrollo Full Stack",
         description:
-            "Formación integral en desarrollo web Frontend y Backend, abarcando HTML, CSS, JavaScript, React, Node.js, Express, APIs REST, autenticación y bases de datos. Carrera completada en 53 semanas, con 106 horas de clases.",
+            "Formación integral en desarrollo web Frontend y Backend, abarcando HTML, CSS, JavaScript, React, Node.js, Express, APIs REST, autenticación y bases de datos.",
         certificateUrl:
             "https://www.linkedin.com/in/agustinlovagnini/overlay/Certifications/914704506/treasury/?profileId=ACoAADUciO0Btx7NrzK3aqS5P6xOTskRv7LxLdw",
     },
@@ -26,7 +26,7 @@ export const certifications: Certification[] = [
         status: "Certificado oficial",
         title: "Backend III — Testing y Escalabilidad",
         description:
-            "Formación avanzada en desarrollo backend, testing, escalabilidad y buenas prácticas para construir aplicaciones robustas y mantenibles.",
+            "Formación en desarrollo backend, testing, escalabilidad y buenas prácticas para construir aplicaciones robustas y mantenibles.",
         certificateUrl:
             "https://app.coderhouse.com/certificates/CERT-MUPQ7CWN-90006A33",
     },
@@ -103,10 +103,10 @@ export const certifications: Certification[] = [
     {
         id: "freecodecamp-frontend-libraries",
         institution: "freeCodeCamp",
-        status: "Certificación oficial",
+        status: "Certificación",
         title: "Bibliotecas de Desarrollo Frontend",
         description:
-            "Formación de aproximadamente 300 horas en React, Hooks, React Router, TypeScript, Next.js, testing y frameworks CSS. Desarrollo de proyectos prácticos con componentes reutilizables e interfaces interactivas.",
+            "Desarrollo de aplicaciones e interfaces interactivas con React, Hooks, React Router, TypeScript, Next.js y Tailwind CSS. Aplicación de testing y componentes reutilizables mediante proyectos prácticos.",
         certificateUrl:
             "https://www.freecodecamp.org/certification/agustinlovagnini/front-end-development-libraries-v9",
     },

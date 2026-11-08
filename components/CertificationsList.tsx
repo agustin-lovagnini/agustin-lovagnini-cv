@@ -23,7 +23,7 @@ export default function CertificationsList() {
     return (
         <div>
             {/* ITEM - primera vista, certificado coderhouse */}
-            <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {initialCertifications.map((certification) => (
                     <CertificationCard
                         key={certification.id}
@@ -42,7 +42,7 @@ export default function CertificationsList() {
             >
                 <div className="min-h-0 overflow-hidden">
                     <div className="pt-3">
-                        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+                        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
                             {remainingCertifications.map((certification) => (
                                 <CertificationCard
                                     key={certification.id}
@@ -60,7 +60,7 @@ export default function CertificationsList() {
                         freeCodeCamp · Formación práctica y autodidacta.
                     </p>
 
-                    <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
                         {complementaryCertifications.map((certificationComplementary) => (
                             <CertificationCard
                                 key={certificationComplementary.id}
@@ -78,7 +78,7 @@ export default function CertificationsList() {
                 onClick={() => setIsExpanded((previous) => !previous)}
                 aria-expanded={isExpanded}
                 aria-controls={expandedContentId}
-                className="mx-auto mt-5 flex cursor-pointer items-center gap-2 rounded-lg border border-gold px-4 py-2 text-gold-light focus-visible:outline-2 focus-visible:outline-gold"
+                className="mx-auto mt-8 flex cursor-pointer items-center gap-2 rounded-lg border border-gold px-4 py-2 text-gold-light focus-visible:outline-2 focus-visible:outline-gold"
             >
                 {isExpanded ? "Ver menos" : "Ver más"}
 

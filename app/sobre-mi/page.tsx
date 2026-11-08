@@ -3,49 +3,24 @@ import {
     BriefcaseBusiness,
     Languages,
     MapPin,
-    Code2,
-    Database,
     Layers3,
-    Server,
-    Wrench,
     Award,
-    BadgeCheck
+    BadgeCheck,
+    ArrowUpRight,
 } from "lucide-react";
 import CertificationsList from "../../components/CertificationsList";
+import { technologyGroups } from "../../data/technologyGroups";
+import { competencies } from "../../data/competencies";
+import { certifications } from "../../data/certifications";
+import Link from "next/link";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+    title: "Sobre mí | Agustín Lovagnini",
+    description: "Conocé mi perfil como desarrollador Full Stack Junior, mi formación, certificaciones, tecnologías y enfoque de trabajo.",
+};
 
 export default function SobreMi() {
-    const technologyGroups = [
-        {
-            id: "frontend",
-            title: "Frontend",
-            icon: Code2,
-            description: "Interfaces responsivas y accesibles, con componentes reutilizables y atención a la experiencia de usuario.",
-            technologies: ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Sass", "Bootstrap"],
-        },
-        {
-            id: "backend",
-            title: "Backend",
-            icon: Server,
-            description: "Aplicaciones del lado del servidor, APIs REST, autenticación y organización del código por responsabilidades.",
-            technologies: ["Node.js", "Express", "APIs REST", "Autenticación", "Swagger / OpenAPI"],
-        },
-        {
-            id: "databases",
-            title: "Bases de datos",
-            icon: Database,
-            description: "Persistencia de información, modelado de datos y consultas en bases relacionales y no relacionales.",
-            technologies: ["MongoDB", "Mongoose", "SQL", "Firebase"],
-        },
-        {
-            id: "workflow",
-            title: "Herramientas de trabajo",
-            icon: Wrench,
-            description: "Control de versiones, pruebas de APIs y herramientas para desarrollar, organizar y compartir mis proyectos.",
-            technologies: ["Git", "GitHub", "VS Code", "npm", "Postman", "Docker"],
-        },
-    ];
-
     return (
         <main className="w-full flex flex-col gap-8 px-4 py-8">
             {/* SECTION - Introducción de Sobre mí */}
@@ -92,7 +67,7 @@ export default function SobreMi() {
             <hr className="section-divider" />
 
             {/* SECTION - Perfil profesional */}
-            <section id="sobre-mi" aria-labelledby="sobre-mi-descripcion" className=" w-full max-w-7xl mx-auto grid grid-cols-1 items-stretch gap-8 md:grid-cols-[2fr_1fr] md:gap-10">
+            <section id="sobre-mi" aria-labelledby="sobre-mi-descripcion" className="w-full max-w-[1440px] mx-auto grid grid-cols-1 items-stretch gap-8 md:grid-cols-[2fr_1fr] md:gap-10">
 
                 <div className="flex flex-col style-section p-0">
                     <div className="flex flex-1 flex-col gap-6 p-5">
@@ -120,7 +95,7 @@ export default function SobreMi() {
                                     <MapPin aria-hidden="true" className="size-4 shrink-0 text-gold" />
                                     Ubicación
                                 </dt>
-                                <dd className="opacity-90 mt-[0.5] xl:whitespace-nowrap">CABA, Argentina</dd>
+                                <dd className="opacity-90 mt-0.5 xl:whitespace-nowrap">CABA, Argentina</dd>
                             </div>
 
                             <div>
@@ -128,7 +103,7 @@ export default function SobreMi() {
                                     <Languages aria-hidden="true" className="size-4 shrink-0 text-gold" />
                                     Idiomas
                                 </dt>
-                                <dd className="opacity-90 mt-[0.5] xl:whitespace-nowrap">Español nativo · Inglés en formación</dd>
+                                <dd className="opacity-90 mt-0.5 xl:whitespace-nowrap">Español nativo · Inglés en formación</dd>
                             </div>
 
                             <div>
@@ -136,7 +111,7 @@ export default function SobreMi() {
                                     <BriefcaseBusiness aria-hidden="true" className="size-4 shrink-0 text-gold" />
                                     Modalidad
                                 </dt>
-                                <dd className="opacity-90 mt-[0.5] xl:whitespace-nowrap">Remoto · Híbrido · Presencial</dd>
+                                <dd className="opacity-90 mt-0.5 xl:whitespace-nowrap">Remoto · Híbrido · Presencial</dd>
                             </div>
                         </dl>
                     </div>
@@ -167,7 +142,7 @@ export default function SobreMi() {
                             </div>
                             <div className="flex min-w-0 flex-col text-center">
                                 <dt className="order-2 w-full text-xs tracking-widest text-gold-light opacity-80">Certificaciones</dt>
-                                <dd className="order-1 w-full text-4xl text-gold-dark">6+</dd>
+                                <dd className="order-1 w-full text-4xl text-gold-dark">{certifications.length}</dd>
                             </div>
                         </dl>
                     </div>
@@ -237,7 +212,7 @@ export default function SobreMi() {
                 {/* SUBSECTION - Tecnologías organizadas por área */}
                 <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
                     {technologyGroups.map((group) => (
-                        <article key={group.id} className="flex min-w-0 flex-col gap-4 rounded-2xl border border-outline bg-surface p-5">
+                        <article key={group.id} className="flex min-w-0 flex-col gap-4 rounded-2xl border border-gold/25 bg-surface p-5 shadow-[0_4px_20px_rgb(0_0_0/0.25),0_0_10px_rgb(233_183_103/0.08)]">
                             <div className="flex items-start justify-between gap-3">
                                 <h3 className="font-heading text-lg font-semibold">{group.title}</h3>
                                 <group.icon size={20} className="mt-1 shrink-0 text-gold-light" aria-hidden="true" />
@@ -245,7 +220,7 @@ export default function SobreMi() {
                             <p className="text-sm leading-relaxed text-muted">{group.description}</p>
                             <ul className="mt-auto flex flex-wrap gap-2 pt-3" aria-label={`Tecnologías de ${group.title}`}>
                                 {group.technologies.map((technology) => (
-                                    <li key={technology} className="max-w-full break-words rounded border border-outline bg-background px-2 py-1 text-xs font-medium text-gold-light">
+                                    <li key={technology} className="max-w-full break-words rounded border border-gold/30 bg-gold/10 px-2 py-1 text-xs font-medium text-gold-light">
                                         {technology}
                                     </li>
                                 ))}
@@ -258,7 +233,57 @@ export default function SobreMi() {
             <hr className="section-divider" />
 
             {/* SECTION - Competencias y habilidades profesionales */}
-            <section aria-labelledby="competencias-y-habiliades-profecionales" className="w-full"></section>
+            <section aria-labelledby="competencias-y-habilidades-profesionales" className="mx-auto w-full max-w-[1440px] style-section p-4 md:p-5">
+                <header className="flex items-start gap-3">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-gold/20 bg-background text-gold-light">
+                        <BriefcaseBusiness size={22} aria-hidden="true" />
+                    </span>
+                    <div>
+                        <h2 id="competencias-y-habilidades-profesionales" className="font-heading text-xl font-bold leading-tight tracking-tight md:text-2xl">
+                            Competencias y habilidades profesionales
+                        </h2>
+                        <p className="mt-1 max-w-3xl text-sm leading-relaxed text-muted">
+                            Cómo abordo los desafíos técnicos, organizo mi trabajo y colaboro con otras personas para seguir creciendo como desarrollador.
+                        </p>
+                    </div>
+                </header>
+
+                {/* SUBSECTION - Competencias aplicadas al desarrollo */}
+                <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+                    {competencies.map((competency) => (
+                        <article key={competency.id} className="flex min-w-0 flex-col gap-3 rounded-xl border border-gold/20 bg-background p-5">
+                            <div className="flex items-start gap-3">
+                                <span className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-gold/20 bg-gold/10 text-gold-light">
+                                    <competency.icon size={20} aria-hidden="true" />
+                                </span>
+                                <h3 className="font-heading text-lg font-semibold leading-snug">
+                                    {competency.title}
+                                </h3>
+                            </div>
+                            <p className="text-sm leading-relaxed text-muted">{competency.description}</p>
+                        </article>
+                    ))}
+                </div>
+            </section>
+
+            {/* SECTION - llamada a la accion */}
+            <section aria-labelledby="llamado-accion" className="mx-auto w-full max-w-[1440px] style-section">
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                    <div>
+                        <h2 id="llamado-accion" className="font-heading text-2xl md:text-3xl font-bold leading-tight tracking-tight pb-1">
+                            ¿Tenés un proyecto o una oportunidad laboral?
+                        </h2>
+
+                        <p className="text-sm md:text-base font-normal leading-relaxed text-muted">
+                            Estoy abierto a oportunidades como desarrollador Frontend o Full Stack Junior, así como a proyectos freelance. Me interesa aportar soluciones funcionales, seguir creciendo profesionalmente y colaborar en productos digitales que generen valor.
+                        </p>
+                    </div>
+                    <Link href="/contacto" className="action-button action-primary self-start md:self-center">
+                        <span>Hablemos</span>
+                        <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
+                    </Link>
+                </div>
+            </section>
         </main>
     );
 }

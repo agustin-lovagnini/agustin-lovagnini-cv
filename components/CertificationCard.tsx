@@ -14,7 +14,8 @@ export default function CertificationCard({ certification, }: CertificationCardP
                     {certification.institution}
                 </span>
 
-                <span className="inline-flex items-center rounded-full border border-gold/20 bg-gold/10 px-2 py-0.5 text-xs font-medium text-gold-light select-none">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-gold/20 bg-gold/10 px-2 py-0.5 text-xs font-medium text-gold-light select-none">
+                    <ShieldCheck size={14} className="shrink-0" aria-hidden="true" />
                     {certification.status}
                 </span>
             </div>
@@ -26,7 +27,7 @@ export default function CertificationCard({ certification, }: CertificationCardP
                 {certification.description}
             </p>
 
-            <div className="mt-auto flex flex-col items-center justify-center gap-3 pt-2 text-center lg:flex-row lg:flex-wrap">
+            <div className="mt-auto flex justify-center pt-2">
                 <a
                     href={certification.certificateUrl}
                     target="_blank"
@@ -37,18 +38,6 @@ export default function CertificationCard({ certification, }: CertificationCardP
                     <ArrowRight size={16} className="shrink-0" aria-hidden="true" />
                 </a>
 
-                <div className="flex items-center gap-1.5">
-                    <span className="text-gold-light text-xs underline underline-offset-4 select-none">
-                        Certificado Oficial
-                    </span>
-
-                    <ShieldCheck
-                        size={20}
-                        strokeWidth={2}
-                        className="shrink-0 text-gold-light"
-                        aria-hidden="true"
-                    />
-                </div>
             </div>
         </article>
     );
