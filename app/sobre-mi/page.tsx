@@ -1,5 +1,4 @@
 import {
-    ChevronsDown,
     BriefcaseBusiness,
     Languages,
     MapPin,
@@ -14,6 +13,7 @@ import { competencies } from "../../data/competencies";
 import { certifications } from "../../data/certifications";
 import Link from "next/link";
 import type { Metadata } from "next";
+import ScrollPrompt from "../../components/ScrollPrompt";
 
 export const metadata: Metadata = {
     title: "Sobre mí | Agustín Lovagnini",
@@ -47,22 +47,7 @@ export default function SobreMi() {
             </header>
 
             {/* ITEM - Invitación a explorar */}
-            <div className="flex items-center justify-center gap-3">
-                <ChevronsDown aria-hidden="true"
-                    className="size-9 text-subtle animate-scroll-down motion-reduce:animate-none"
-                />
-                <a
-                    href="#sobre-mi"
-                    className="text-subtle transition-colors duration-300 hover:text-gold-light focus-visible:text-gold-light"
-                >
-                    <span className="text-sm font-medium tracking-[0.2em] uppercase">
-                        Deslizá para explorar
-                    </span>
-                </a>
-                <ChevronsDown aria-hidden="true"
-                    className="size-9 text-subtle animate-scroll-down motion-reduce:animate-none"
-                />
-            </div>
+            <ScrollPrompt href="#sobre-mi" />
 
             <hr className="section-divider" />
 
@@ -270,6 +255,9 @@ export default function SobreMi() {
             <section aria-labelledby="llamado-accion" className="mx-auto w-full max-w-[1440px] style-section">
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                     <div>
+                        <span className="mb-2 block border-l-2 border-gold pl-3 text-xs font-semibold uppercase tracking-[0.15em] text-gold-light">
+                            Conectemos y sumemos valor
+                        </span>
                         <h2 id="llamado-accion" className="font-heading text-2xl md:text-3xl font-bold leading-tight tracking-tight pb-1">
                             ¿Tenés un proyecto o una oportunidad laboral?
                         </h2>

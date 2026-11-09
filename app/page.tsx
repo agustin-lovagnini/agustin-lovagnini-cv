@@ -120,6 +120,9 @@ export default function Home() {
       <section aria-labelledby="llamado-accion" className="style-section w-full">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
+            <span className="mb-2 block border-l-2 border-gold pl-3 text-xs font-semibold uppercase tracking-[0.15em] text-gold-light">
+              Construyamos algo juntos
+            </span>
             <h2 id="llamado-accion" className="font-heading text-2xl md:text-3xl font-bold leading-tight tracking-tight pb-1">
               ¿Tenés un proyecto en mente?
             </h2>
