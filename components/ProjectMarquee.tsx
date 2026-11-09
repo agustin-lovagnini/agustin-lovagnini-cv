@@ -39,7 +39,7 @@ export default function ProjectMarquee({
                                     {project.title}
                                 </h3>
 
-                                <p className="mt-3 text-sm leading-relaxed text-muted">
+                                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
                                     {project.description}
                                 </p>
                                 <ul className="mt-3 flex flex-wrap gap-2">
@@ -92,7 +92,7 @@ export default function ProjectMarquee({
                                     {project.title}
                                 </h3>
 
-                                <p className="mt-3 text-sm leading-relaxed text-muted">
+                                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
                                     {project.description}
                                 </p>
                                 <ul className="mt-3 flex flex-wrap gap-2">

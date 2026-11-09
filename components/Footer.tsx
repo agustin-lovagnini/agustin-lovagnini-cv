@@ -40,7 +40,7 @@ export default function Footer() {
                         <FaGithub size={30} aria-hidden="true" />
                     </a>
                     <a
-                        href="mailto:agustin.lovagnini.v@gmail.com"
+                        href="mailto:agustin.lovagnini.a@gmail.com"
                         className="footer-link hover:drop-shadow-[0_0_1px_#fff] transition-[filter] duration-300"
                         aria-label="Correo electrónico"
                     >

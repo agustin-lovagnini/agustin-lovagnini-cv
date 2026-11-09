@@ -65,6 +65,8 @@ export default function Proyectos() {
                 ))}
             </section>
 
+            <hr className="section-divider my-3" />
+
             {/* SECTION - evolucion */}
             <section
                 aria-labelledby="titulo-evolucion"
@@ -86,6 +88,8 @@ export default function Proyectos() {
 
                 <ProjectMarquee projects={secondaryProjects} />
             </section>
+
+            <hr className="section-divider my-3" />
 
             {/* SECTION - llamada a la accion */}
             <section aria-labelledby="llamado-accion" className="mx-auto w-full max-w-[1440px] style-section">
