@@ -28,6 +28,14 @@ export default function FeaturedProjectCard({
                     {project.description}
                 </p>
 
+                <ul className="flex flex-wrap gap-2 pt-1" aria-label={`Tecnologías de ${project.title}`}>
+                    {project.technologies.map((technology) => (
+                        <li key={technology} className="rounded border border-gold/20 bg-outline px-2.5 py-1 text-xs font-medium text-gold-light shadow-sm">
+                            {technology}
+                        </li>
+                    ))}
+                </ul>
+
                 <a
                     href={project.demoUrl}
                     target="_blank"

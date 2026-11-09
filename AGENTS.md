@@ -53,7 +53,7 @@ El Header y Footer deberán compartirse mediante el layout principal.
 - Cada proyecto debe incluir `featured: boolean` y `date: string`. `date` representa la fecha de su primer commit en GitHub, en formato `YYYY-MM-DD`.
 - Antes de incorporar un proyecto nuevo, preguntar al propietario si será destacado o secundario y solicitar la fecha de su primer commit. Si ya proporcionó esos datos, utilizarlos sin volver a preguntarlos. No inventar fechas ni clasificaciones.
 - La sección «Proyectos destacados» mostrará únicamente los proyectos con `featured: true`, con mayor protagonismo visual.
-- La sección «Mi evolución como desarrollador» mostrará una línea de tiempo con todos los proyectos, incluidos los destacados, ordenados por `date` del más antiguo al más reciente.
+- La sección «Mi evolución como desarrollador» mostrará únicamente los proyectos secundarios (`featured: false`; actualmente ocho), ordenados por `date` del más antiguo al más reciente, en una marquesina horizontal infinita de tarjetas. No incluir los proyectos destacados en esta sección.
 - Obtener ambas vistas desde el mismo array mediante `filter()`, `sort()` y `map()` según corresponda. Al ordenar, trabajar sobre una copia para no modificar el orden del array original.
 - Estas decisiones documentan la organización prevista; la implementación visual requiere una tarea autorizada por el propietario.
 

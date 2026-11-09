@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight, } from "lucide-react";
 import { projects } from "../../data/projects";
 import FeaturedProjectCard from "../../components/FeaturedProjectCard";
+import ProjectMarquee from "../../components/ProjectMarquee";
 
 
 export default function Proyectos() {
@@ -10,6 +11,11 @@ export default function Proyectos() {
     const featuredProjects = projects.filter(
         (project) => project.featured
     );
+
+    const secondaryProjects = projects
+        .filter((project) => project.featured === false)
+        .sort((a, b) => a.date.localeCompare(b.date));
+
     return (
         <main className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-4 py-8 md:px-8 md:py-12">
             {/* SECTION - Presentación de los proyectos destacados */}
@@ -44,8 +50,11 @@ export default function Proyectos() {
                 aria-labelledby="titulo-proyectos-destacados"
                 className="flex flex-col gap-6"
             >
-                <h2 id="titulo-proyectos-destacados">
-                    Selección de proyectos
+                <h2
+                    id="titulo-proyectos-destacados"
+                    className="text-center font-heading text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"
+                >
+                    Selección de proyectos destacados<span className="text-gold-light">.</span>
                 </h2>
 
                 {featuredProjects.map((project) => (
@@ -56,8 +65,27 @@ export default function Proyectos() {
                 ))}
             </section>
 
-            {/* SECTION - proyectos destacados */}
-            <section aria-labelledby="mi-evolución-desarrollador"></section>
+            {/* SECTION - evolucion */}
+            <section
+                aria-labelledby="titulo-evolucion"
+                className="flex min-w-0 flex-col gap-6"
+            >
+                <div>
+                    <h2
+                        id="titulo-evolucion"
+                        className="font-heading text-2xl font-bold md:text-3xl"
+                    >
+                        Mi evolución como desarrollador
+                    </h2>
+
+                    <p className="mt-2 text-sm leading-relaxed text-muted">
+                        Un recorrido por mis primeras prácticas y proyectos,
+                        ordenados desde los más antiguos hasta los más recientes.
+                    </p>
+                </div>
+
+                <ProjectMarquee projects={secondaryProjects} />
+            </section>
 
             {/* SECTION - llamada a la accion */}
             <section aria-labelledby="llamado-accion" className="mx-auto w-full max-w-[1440px] style-section">

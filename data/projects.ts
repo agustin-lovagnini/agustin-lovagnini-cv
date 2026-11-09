@@ -7,6 +7,7 @@ export interface Project {
     featured: boolean;
     date: string;
     image: string;
+    technologies: string[];
 }
 
 // ITEM - Catálogo de proyectos
@@ -17,6 +18,7 @@ export const projects: Project[] = [
         featured: true,
         date: "2025-04-06",
         title: "Portfolio con HTML, CSS y Sass",
+        technologies: ["HTML", "CSS", "Sass/SCSS"],
         description:
             "Evolución de mi portfolio personal, con secciones dedicadas a mi perfil y la presentación de proyectos.",
         demoUrl:
@@ -28,6 +30,7 @@ export const projects: Project[] = [
         featured: true,
         date: "2024-12-06",
         title: "Luzu TV",
+        technologies: ["JavaScript", "React", "Vite", "CSS", "Font Awesome"],
         description:
             "Rediseño de una plataforma de streaming, enfocado en la organización del contenido, el diseño visual y la navegación.",
         demoUrl:
@@ -39,6 +42,7 @@ export const projects: Project[] = [
         featured: false,
         date: "2024-12-03",
         title: "Formulario de contacto",
+        technologies: ["HTML", "CSS"],
         description:
             "Práctica de estructura HTML, campos de entrada y presentación visual de un formulario de contacto.",
         demoUrl:
@@ -50,6 +54,7 @@ export const projects: Project[] = [
         featured: true,
         date: "2024-12-03",
         title: "Primer portfolio personal",
+        technologies: ["HTML", "CSS", "JavaScript"],
         description:
             "Primera presentación web de mi perfil profesional y mis proyectos.",
         demoUrl:
@@ -61,6 +66,7 @@ export const projects: Project[] = [
         featured: false,
         date: "2024-11-22",
         title: "ChatBox",
+        technologies: ["HTML", "CSS"],
         description:
             "Interfaz de chat desarrollada con HTML y CSS.",
         demoUrl:
@@ -72,6 +78,7 @@ export const projects: Project[] = [
         featured: false,
         date: "2024-11-25",
         title: "Flip Card",
+        technologies: ["HTML", "CSS"],
         description:
             "Tarjeta interactiva con giro 3D y transiciones.",
         demoUrl:
@@ -83,6 +90,7 @@ export const projects: Project[] = [
         featured: false,
         date: "2024-11-29",
         title: "Menú Acordeón",
+        technologies: ["HTML", "CSS"],
         description:
             "Organización de contenido mediante un menú acordeón.",
         demoUrl:
@@ -94,6 +102,7 @@ export const projects: Project[] = [
         featured: false,
         date: "2024-11-26",
         title: "Vista Previa",
+        technologies: ["HTML", "CSS"],
         description:
             "Experimento visual con video de fondo y efectos de desplazamiento.",
         demoUrl:
@@ -105,6 +114,7 @@ export const projects: Project[] = [
         featured: false,
         date: "2024-12-03",
         title: "Presentación Web",
+        technologies: ["HTML", "CSS"],
         description:
             "Práctica de composición, tipografía y espaciado en una presentación personal.",
         demoUrl:
@@ -116,6 +126,7 @@ export const projects: Project[] = [
         featured: false,
         date: "2024-11-11",
         title: "Sidebar Menu",
+        technologies: ["HTML", "CSS"],
         description:
             "Menú lateral y navegación desarrollados con HTML y CSS.",
         demoUrl:
@@ -127,6 +138,7 @@ export const projects: Project[] = [
         featured: false,
         date: "2024-12-03",
         title: "Tarjeta de Presentación",
+        technologies: ["HTML", "CSS"],
         description:
             "Diseño de una tarjeta profesional con información de contacto.",
         demoUrl:
