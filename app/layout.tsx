@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import MobilePageNavigation from "../components/MobilePageNavigation";
 
 
 // ITEM - Fuentes compartidas
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         {/* NOTE - Next.js coloca en children el contenido de la ruta actual. */}
         {children}
+        <MobilePageNavigation />
         <Footer />
       </body>
     </html>

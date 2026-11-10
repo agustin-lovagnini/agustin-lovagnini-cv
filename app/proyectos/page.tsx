@@ -17,7 +17,7 @@ export default function Proyectos() {
         .sort((a, b) => a.date.localeCompare(b.date));
 
     return (
-        <main className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-4 py-8 md:px-8 md:py-12">
+        <main className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
             {/* SECTION - Presentación de los proyectos destacados */}
             <header className="flex flex-col items-start gap-5 md:gap-6">
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-medium tracking-wide">

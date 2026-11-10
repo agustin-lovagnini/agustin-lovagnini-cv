@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* NOTE - Las utilidades hover: se activan solo en escritorio con mouse o trackpad. */
+@custom-variant hover {
+  @media (min-width: 64rem) and (hover: hover) and (pointer: fine) {
+    &:hover {
+      @slot;
+    }
+  }
+}
+
 /* SUBSECTION - Tema: tipografías y paleta */
 @theme inline {
   --font-sans: var(--font-inter);
@@ -76,29 +85,14 @@
     color: var(--color-background);
   }
 
-  .action-primary:hover {
-    @apply border-gold-light bg-gold-light;
-    box-shadow: 0 0 16px rgb(233 183 103 / 0.3);
-  }
-
   .action-secondary {
     border-color: var(--color-muted);
     background-color: var(--color-muted);
     color: var(--color-background);
   }
 
-  .action-secondary:hover {
-    @apply border-foreground bg-foreground;
-    box-shadow: 0 0 12px rgb(181 181 181 / 0.15);
-  }
-
   .action-social {
     @apply size-11 shrink-0 border-subtle bg-background p-0 text-foreground;
-  }
-
-  .action-social:hover {
-    @apply border-muted;
-    filter: drop-shadow(0 0 5px #fff);
   }
 
   /* ITEM - Halo de los marcos */
@@ -134,13 +128,11 @@
     @apply relative text-subtle transition-colors duration-300;
   }
 
-  .footer-link:hover,
   .footer-link:focus-visible {
     @apply text-muted;
   }
 
   /* ITEM - Enlace activo y efectos de navegación */
-  .nav-link:hover,
   .nav-link[aria-current="page"] {
     @apply text-gold-light;
     filter: drop-shadow(0 0 6px #E9B767);
@@ -160,9 +152,7 @@
     transition: opacity 300ms;
   }
 
-  .nav-link:hover::after,
   .nav-link[aria-current="page"]::after,
-  .footer-link:hover::after,
   .footer-link:focus-visible::after {
     opacity: 1;
   }
@@ -182,9 +172,41 @@
     transition: opacity 300ms;
   }
 
-  .nav-link:hover::before,
   .nav-link[aria-current="page"]::before {
     opacity: 1;
+  }
+
+  /* SUBSECTION - Efectos de hover exclusivos de escritorio */
+  @media (min-width: 64rem) and (hover: hover) and (pointer: fine) {
+    .action-primary:hover {
+      @apply border-gold-light bg-gold-light;
+      box-shadow: 0 0 16px rgb(233 183 103 / 0.3);
+    }
+
+    .action-secondary:hover {
+      @apply border-foreground bg-foreground;
+      box-shadow: 0 0 12px rgb(181 181 181 / 0.15);
+    }
+
+    .action-social:hover {
+      @apply border-muted;
+      filter: drop-shadow(0 0 5px #fff);
+    }
+
+    .footer-link:hover {
+      @apply text-muted;
+    }
+
+    .nav-link:hover {
+      @apply text-gold-light;
+      filter: drop-shadow(0 0 6px #E9B767);
+    }
+
+    .nav-link:hover::after,
+    .footer-link:hover::after,
+    .nav-link:hover::before {
+      opacity: 1;
+    }
   }
 
   /* SUBSECTION - Movimiento y pausa de la marquesina */
@@ -211,7 +233,7 @@
 }
 
 /* ITEM - Pausa de la marquesina con mouse */
-@media (hover: hover) {
+@media (min-width: 64rem) and (hover: hover) and (pointer: fine) {
   .marquee:hover .marquee-track {
     animation-play-state: paused;
   }

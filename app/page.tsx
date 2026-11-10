@@ -5,7 +5,7 @@ import TechnologiesMarquee from "../components/TechnologiesMarquee";
 
 export default function Home() {
   return (
-    <main className="w-full min-h-screen flex flex-col items-center justify-center gap-8 px-4 py-8">
+    <main className="w-full min-h-screen flex flex-col items-center justify-center gap-8 px-4 pt-8 pb-2 md:pb-8">
       {/* SECTION - Presentación personal */}
       <section
         aria-labelledby="presentacion-personal"
@@ -42,7 +42,7 @@ export default function Home() {
             realidades digitales
           </p>
 
-          <p className="text-sm leading-relaxed text-muted md:text-base">
+          <p className="text-sm pt-2 leading-relaxed text-muted md:text-base md:pt-0">
             Soy desarrollador web Full Stack, con especial interés en el Frontend y la experiencia de usuario. Me apasiona crear interfaces modernas, intuitivas y responsivas, combinando diseño y funcionalidad. Trabajo con tecnologías como React, JavaScript, Node.js y Express, desarrollando proyectos que integran soluciones tanto del lado del cliente como del servidor.
           </p>
 
@@ -77,12 +77,12 @@ export default function Home() {
         </div>
 
         {/* ITEM - Retrato con sombra dorada */}
-        <div className="relative isolate mx-auto flex w-full max-w-[340px] items-center justify-center">
-          <div className="w-full max-w-[340px] overflow-hidden rounded-lg border border-outline bg-surface shadow-[0_0_20px_rgba(233,183,103,0.12),0_8px_24px_rgba(0,0,0,0.3)]">
+        <div className="relative isolate mx-auto flex w-full max-w-[220px] items-center justify-center md:max-w-[340px]">
+          <div className="w-full max-w-[340px] overflow-hidden rounded-full border border-outline bg-surface shadow-[0_0_20px_rgba(233,183,103,0.12),0_8px_24px_rgba(0,0,0,0.3)] md:rounded-lg">
             <img
               src="/images/img-perfil-agustin.webp"
               alt="Retrato de Agustín Lovagnini"
-              className="aspect-[3/4] w-full object-cover object-center"
+              className="aspect-square w-full object-cover object-center md:aspect-[3/4]"
             />
           </div>
         </div>

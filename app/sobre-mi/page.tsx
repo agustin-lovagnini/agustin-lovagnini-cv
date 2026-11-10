@@ -48,7 +48,7 @@ export default function SobreMi() {
     ];
 
     return (
-        <main className="w-full flex flex-col gap-8 px-4 py-8">
+        <main className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
             {/* SECTION - Introducción de Sobre mí */}
             <header className="flex flex-col items-center gap-2 text-center">
                 <span className="eyebrow-badge mb-5 self-center">
