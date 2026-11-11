@@ -9,10 +9,11 @@ import {
     Server,
     Wrench,
     Award,
-    BadgeCheck
+    BadgeCheck, ArrowUpRight
 } from "lucide-react";
 import CertificationsList from "../../components/CertificationsList";
 import { certifications } from "@/data/certifications";
+import Link from "next/link";
 
 
 export default function SobreMi() {
@@ -50,25 +51,18 @@ export default function SobreMi() {
     return (
         <main className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
             {/* SECTION - Introducción de Sobre mí */}
-            <header className="flex flex-col items-center gap-2 text-center">
-                <span className="eyebrow-badge mb-5 self-center">
+            <header className="flex flex-col items-start gap-5 md:gap-6">
+                <span className="eyebrow-badge">
                     <span aria-hidden="true" className="eyebrow-dot" />
                     Trayectoria y enfoque
                 </span>
 
-                <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
+                <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl">
                     Sobre mí<span className="text-gold-light">.</span>
                 </h1>
 
                 <p className="max-w-3xl font-heading text-lg text-gold-light opacity-90 leading-snug md:text-xl">
-                    Desarrollador Full Stack orientado a crear aplicaciones web modernas,
-                    funcionales y escalables. Combino el desarrollo de interfaces intuitivas
-                    con soluciones backend, priorizando la experiencia de usuario,
-                    la organización del código y el aprendizaje continuo.
-                </p>
-
-                <p className="text-muted mt-5">
-                    Disponible para oportunidades laborales y proyectos freelance.
+                    Desarrollador Full Stack con especial interés en el Frontend y la experiencia de usuario. Combino diseño y funcionalidad con conocimientos en Backend para desarrollar aplicaciones web completas, utilizando tecnologías como React, Next.js, Node.js y Express.
                 </p>
             </header>
 
@@ -96,20 +90,18 @@ export default function SobreMi() {
             <section id="sobre-mi" aria-labelledby="sobre-mi-descripcion" className=" w-full max-w-7xl mx-auto grid grid-cols-1 items-stretch gap-8 md:grid-cols-[2fr_1fr] md:gap-10">
 
                 <div className="flex flex-col style-section p-0">
-                    <div className="flex flex-1 flex-col gap-6 p-5">
-                        <div className="flex flex-col gap-4">
-                            <h2 id="sobre-mi-descripcion" className="text-gold font-medium uppercase underline underline-offset-4 text-lg">Perfil profesional
+                    <div className="flex flex-1 flex-col gap-4 p-5">
+                        <div className="flex flex-col gap-2">
+                            <h2 id="sobre-mi-descripcion" className="mb-1 block w-full border-b border-gold-light pb-1 font-heading text-xl font-semibold tracking-tight text-gold-light md:text-2xl">Perfil profesional
                             </h2>
-                            <p className="leading-relaxed tracking-wide">Soy desarrollador web <span className="font-bold text-gold-light">Full Stack</span>, formado en tecnologías Frontend y Backend. A lo largo de mi formación desarrollé aplicaciones con React, JavaScript, Node.js y Express, integrando autenticación, APIs REST y bases de datos relacionales y no relacionales.
-
-                                Me interesa especialmente el desarrollo Frontend, la creación de interfaces accesibles y responsivas, y la construcción de aplicaciones que combinen una buena experiencia de usuario con una arquitectura sólida.</p>
+                            <p className="leading-relaxed tracking-wide">Soy desarrollador web <span className="font-bold text-gold-light">Full Stack</span>, formado en tecnologías Frontend y Backend. A lo largo de mi formación desarrollé aplicaciones integrando autenticación, APIs REST y bases de datos relacionales y no relacionales. Aunque mi mayor interés siempre estuvo en el aspecto visual, decidí profundizar también en Backend para comprender cómo funciona una aplicación de principio a fin y poder aportar soluciones completas y sólidas.</p>
                         </div>
 
                         <blockquote className="my-1 border-l-2 border-gold-light pl-4 italic text-muted bg-background rounded-r-lg py-4">
-                            &quot;Creo que una buena aplicación no solo debe funcionar correctamente: también debe ser intuitiva, accesible y estar construida para evolucionar&quot;.
+                            &quot;Lo que me apasiona de la programación es que no tiene límites, está en constante evolución, siempre presenta nuevos desafíos y oportunidades para aprender, crear y mejorar. Creo en desarrollar experiencias funcionales, intuitivas y accesibles para todos, que crezcan y evolucionen junto a cada marca.&quot;.
                         </blockquote>
 
-                        <p className="leading-relaxed tracking-wide">Resido en la Ciudad Autónoma de Buenos Aires, Argentina. Me interesa formar parte de equipos donde pueda aportar mis conocimientos, seguir aprendiendo y participar en el desarrollo de productos digitales reales.</p>
+                        <p className="leading-relaxed tracking-wide">Resido en la Ciudad Autónoma de Buenos Aires, Argentina. Busco formar parte de un equipo donde pueda aportar mis conocimientos, ideas e iniciativa, participar en proyectos reales y crecer junto a otros profesionales. También disfruto desarrollar proyectos propios, explorar nuevas posibilidades y llevar mis ideas a la práctica..</p>
                     </div>
                     <div className="relative">
                         <dl className="grid w-full grid-cols-1 gap-4 bg-background p-8 text-sm md:grid-cols-2 xl:grid-cols-[auto_auto_auto] xl:justify-between">
@@ -159,7 +151,7 @@ export default function SobreMi() {
 
                         <h3 className="font-bold text-lg">Agustín Lovagnini</h3>
                         <p className="text-gold font-medium text-sm">Full Stack Developer</p>
-                        <p className="text-muted text-sm">Desarrollador orientado a crear experiencias web modernas, combinando interfaces funcionales con soluciones backend. En constante aprendizaje y evolución profesional.</p>
+                        <p className="text-muted text-sm">Desarrollador Full Stack con vocación por el diseño y la tecnología. Me caracterizan la curiosidad, la iniciativa y el compromiso por aportar valor en cada proyecto.</p>
 
                         <dl className="mt-3 grid w-full max-w-xs grid-cols-2 gap-3 rounded-lg bg-outline p-3 text-sm">
                             <div className="flex min-w-0 flex-col text-center">
@@ -180,7 +172,7 @@ export default function SobreMi() {
                             <h3 className="font-bold text-lg">Mi enfoque de desarrollo:</h3>
                         </div>
 
-                        <p className="text-muted text-sm">Me enfoco en escribir código claro, reutilizable y mantenible. Busco comprender cómo funciona cada tecnología, aplicar buenas prácticas y construir soluciones que puedan evolucionar con el tiempo.</p>
+                        <p className="text-muted text-sm">Priorizo la organización del código, la reutilización de componentes y las buenas prácticas de desarrollo. Busco construir soluciones mantenibles, escalables y preparadas para adaptarse a nuevas necesidades.</p>
 
                         <p className="text-gold text-sm font-medium mt-3">Código limpio · Accesibilidad · Aprendizaje continuo</p>
                     </div>
@@ -257,6 +249,28 @@ export default function SobreMi() {
             </section>
 
             <hr className="section-divider" />
+
+            <section aria-labelledby="llamado-accion" className="style-section w-full">
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                    <div>
+                        <span className="mb-2 block border-l-2 border-gold pl-3 text-xs font-semibold uppercase tracking-[0.15em] text-gold-light">
+                            El próximo paso
+                        </span>
+                        <h2 id="llamado-accion" className="font-heading text-2xl md:text-3xl font-bold leading-tight tracking-tight pb-1">
+                            ¿Trabajamos juntos?
+                        </h2>
+
+                        <p className="text-sm md:text-base font-normal leading-relaxed text-muted">
+                            Ya sea para formar parte de un equipo o desarrollar una nueva idea, estoy abierto a conectar, intercambiar propuestas y explorar oportunidades de colaboración.
+                        </p>
+                    </div>
+                    <Link href="/contacto" className="action-button action-primary">
+                        <span>Iniciar Conversación</span>
+                        <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
+                    </Link>
+                </div>
+            </section>
+
         </main>
     );
 }

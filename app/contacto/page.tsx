@@ -17,7 +17,7 @@ export default function Contacto() {
                 </div>
 
                 <p className="max-w-3xl font-heading text-lg text-gold-light opacity-90 leading-snug md:text-xl">
-                    Estoy abierto a oportunidades laborales como desarrollador Frontend o Full Stack, colaboraciones y proyectos freelance. Si querés conocer más sobre mi trabajo o tenés una propuesta, podés escribirme a través del formulario o mis canales de contacto.
+                    Ya sea por una oportunidad laboral, una colaboración o un proyecto que tengas en mente, me encantaría conocer tu propuesta. Podés escribirme a través del formulario o contactarme directamente por mis redes profesionales.
                 </p>
             </header>
 
@@ -108,9 +108,7 @@ export default function Contacto() {
                         </p>
 
                         <p className="mt-2 text-sm leading-relaxed text-muted">
-                            Busco oportunidades como desarrollador Frontend o Full Stack
-                            Junior. También estoy disponible para conversar sobre proyectos
-                            freelance.
+                            Me interesa incorporarme a equipos de desarrollo y participar en proyectos Frontend o Full Stack. También estoy disponible para conversar sobre colaboraciones y propuestas freelance.
                         </p>
                     </section>
 
@@ -198,11 +196,10 @@ export default function Contacto() {
 
                         <ul className="mt-4 flex flex-col gap-3 text-sm leading-relaxed text-muted">
                             <li>
-                                Comunicación clara para entender tu propuesta y acordar
-                                los próximos pasos.
+                                Me gusta escuchar cada propuesta, comprender sus objetivos y aportar ideas para encontrar la mejor solución.
                             </li>
                             <li>
-                                Alcance y tiempos conversados antes de comenzar cada proyecto.
+                                Valoro la comunicación clara, la organización y el compromiso durante cada etapa del proyecto.
                             </li>
                         </ul>
                     </section>

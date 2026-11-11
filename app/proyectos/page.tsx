@@ -33,9 +33,7 @@ export default function Proyectos() {
                 </h1>
 
                 <p className="max-w-3xl font-heading text-lg text-gold-light opacity-90 leading-snug md:text-xl">
-                    Una selección de proyectos donde aplico mis conocimientos en desarrollo Frontend y Backend,
-                    combinando interfaces responsivas, lógica de aplicaciones, integración de APIs y bases de datos.
-                    Cada proyecto representa una oportunidad para resolver desafíos técnicos y seguir mejorando mis habilidades.
+                    Explorá algunos de los proyectos que desarrollé, desde interfaces web hasta aplicaciones Full Stack. Cada uno refleja diferentes desafíos, tecnologías y soluciones que fui implementando a lo largo de mi recorrido como desarrollador.
                 </p>
             </header>
 
@@ -54,7 +52,7 @@ export default function Proyectos() {
                     id="titulo-proyectos-destacados"
                     className="text-center font-heading text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"
                 >
-                    Selección de proyectos destacados<span className="text-gold-light">.</span>
+                    Proyectos que representan mi trabajo<span className="text-gold-light">.</span>
                 </h2>
 
                 {featuredProjects.map((project) => (
@@ -103,7 +101,8 @@ export default function Proyectos() {
                         </h2>
 
                         <p className="text-sm md:text-base font-normal leading-relaxed text-muted">
-                            Estoy abierto a oportunidades laborales como desarrollador Frontend o Full Stack, así como a proyectos freelance. Me interesa aportar mis conocimientos, colaborar en nuevos desafíos y participar en el desarrollo de soluciones digitales que generen valor.                        </p>
+                            Estoy abierto a oportunidades laborales y colaboraciones freelance, tanto en Frontend como en Full Stack. Si buscás alguien con iniciativa, compromiso y ganas de aportar soluciones, me encantaría conocer tu propuesta.
+                        </p>
                     </div>
                     <Link href="/contacto" className="action-button action-primary self-start md:self-center">
                         <span>Contactame</span>

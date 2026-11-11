@@ -5,7 +5,7 @@ import TechnologiesMarquee from "../components/TechnologiesMarquee";
 
 export default function Home() {
   return (
-    <main className="w-full min-h-screen flex flex-col items-center justify-center gap-8 px-4 pt-8 pb-2 md:pb-8">
+    <main className="mx-auto flex w-full max-w-[1536px] flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
       {/* SECTION - Presentación personal */}
       <section
         aria-labelledby="presentacion-personal"
@@ -17,14 +17,7 @@ export default function Home() {
               aria-hidden="true"
               className="eyebrow-dot"
             />
-            Disponible para nuevas oportunidades
-          </span>
-
-          <span className="block text-sm font-medium tracking-tight sm:text-base">
-            Full Stack Developer
-            <span className="pl-1 font-semibold text-gold-light">
-              +3 años de código
-            </span>
+            Full Stack Developer +3 años de código
           </span>
 
           <h1
@@ -37,16 +30,17 @@ export default function Home() {
 
           <p className="font-heading text-lg font-medium leading-snug md:text-xl">
             <span className="text-gold-light">
-              Transformando ideas en
+              Cada idea tiene una identidad.
             </span>{" "}
-            realidades digitales
+            Mi trabajo es darle vida.
           </p>
 
           <p className="text-sm pt-2 leading-relaxed text-muted md:text-base md:pt-0">
-            Soy desarrollador web Full Stack, con especial interés en el Frontend y la experiencia de usuario. Me apasiona crear interfaces modernas, intuitivas y responsivas, combinando diseño y funcionalidad. Trabajo con tecnologías como React, JavaScript, Node.js y Express, desarrollando proyectos que integran soluciones tanto del lado del cliente como del servidor.
+            Soy desarrollador web <strong className="underline">Full Stack</strong>, apasionado por el Frontend, el diseño y la experiencia de usuario. Siempre me atrajo crear interfaces modernas, intuitivas y responsivas que combinen estética y funcionalidad. Decidí formarme también en Backend para comprender el desarrollo de aplicaciones de principio a fin y crear soluciones completas. Mi objetivo es marcar la diferencia y aportar valor a una empresa o equipo de desarrollo, contribuyendo con conocimientos, ideas, soluciones y compromiso, mientras continúo aprendiendo y creciendo profesionalmente junto a mis compañeros.
           </p>
 
-          <div className="mt-4 flex flex-wrap items-center gap-1.5 sm:gap-3">
+          <div className="mt-4 flex flex-col items-center gap-5 md:flex-row md:flex-wrap md:gap-3 ">
+            <div className="flex items-center gap-2 sm:gap-3">
             <Link href="/proyectos" className="action-button action-primary">
               <span>Ver proyectos</span>
               <ArrowRight size={16} className="shrink-0" aria-hidden="true" />
@@ -55,6 +49,8 @@ export default function Home() {
               <span>Contactar</span>
               <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
             </Link>
+            </div>
+            <div className="flex items-center gap-2 sm:gap-3">
             <a
               href="https://www.linkedin.com/in/agustinlovagnini"
               target="_blank"
@@ -73,6 +69,7 @@ export default function Home() {
             >
               <FaGithub size={22} aria-hidden="true" />
             </a>
+            </div>
           </div>
         </div>
 
@@ -104,8 +101,7 @@ export default function Home() {
             </h2>
 
             <p className="text-sm leading-relaxed text-muted">
-              Un ecosistema moderno enfocado en el desarrollo de
-              aplicaciones robustas, escalables y con componentes reutilizables.
+              Me motiva formar parte de un ecosistema de desarrollo moderno, enfocado en crear aplicaciones robustas, escalables y con componentes reutilizables.
             </p>
           </div>
         </div>
@@ -121,16 +117,11 @@ export default function Home() {
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <span className="mb-2 block border-l-2 border-gold pl-3 text-xs font-semibold uppercase tracking-[0.15em] text-gold-light">
-              Construyamos algo juntos
+              Contame tu idea y vamos a darle vida
             </span>
             <h2 id="llamado-accion" className="font-heading text-2xl md:text-3xl font-bold leading-tight tracking-tight pb-1">
               ¿Tenés un proyecto en mente?
             </h2>
-
-            <p className="text-sm md:text-base font-normal leading-relaxed text-muted">
-              Contame tu idea y veamos cómo podemos hacerla realidad
-              en el mundo digital
-            </p>
           </div>
           <Link href="/contacto" className="action-button action-primary">
             <span>Iniciar Conversación</span>
