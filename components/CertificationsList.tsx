@@ -17,18 +17,22 @@ export default function CertificationsList() {
         (certification) => certification.institution === "freeCodeCamp"
     );
 
+    {/* NOTE - los que aparecen al entrar. */}
     const initialCertifications = academicCertifications.slice(0, 4);
-    const remainingCertifications = academicCertifications.slice(4);
+    {/* NOTE - los que aparecen al tocar "ver mas" */}
+    const remainingCertifications = academicCertifications.slice(2);
 
     return (
         <div>
             {/* ITEM - primera vista, certificado coderhouse */}
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                {initialCertifications.map((certification) => (
-                    <CertificationCard
+                {initialCertifications.map((certification, index) => (
+                    <div
                         key={certification.id}
-                        certification={certification}
-                    />
+                        className={index >= 2 ? "hidden sm:block" : ""}
+                    >
+                        <CertificationCard certification={certification} />
+                    </div>
                 ))}
             </div>
 
@@ -43,31 +47,33 @@ export default function CertificationsList() {
                 <div className="min-h-0 overflow-hidden">
                     <div className="pt-3">
                         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                            {remainingCertifications.map((certification) => (
-                                <CertificationCard
+                            {remainingCertifications.map((certification, index) => (
+                                <div
                                     key={certification.id}
-                                    certification={certification}
-                                />
+                                    className={index < 2 ? "sm:hidden" : ""}
+                                >
+                                    <CertificationCard certification={certification} />
+                                </div>
                             ))}
                         </div>
 
                         <div className="mt-6">
-                    <h3 className="mb-2 font-heading text-lg font-semibold text-gold-light">
-                        Certificaciones complementarias
-                    </h3>
+                            <h3 className="mb-2 font-heading text-lg font-semibold text-gold-light">
+                                Certificaciones complementarias
+                            </h3>
 
-                    <p className="mb-4 text-sm text-muted">
-                        freeCodeCamp · Formación práctica y autodidacta.
-                    </p>
+                            <p className="mb-4 text-sm text-muted">
+                                freeCodeCamp · Formación práctica y autodidacta.
+                            </p>
 
-                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                        {complementaryCertifications.map((certificationComplementary) => (
-                            <CertificationCard
-                                key={certificationComplementary.id}
-                                certification={certificationComplementary}
-                            />
-                        ))}
-                    </div>
+                            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                                {complementaryCertifications.map((certificationComplementary) => (
+                                    <CertificationCard
+                                        key={certificationComplementary.id}
+                                        certification={certificationComplementary}
+                                    />
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

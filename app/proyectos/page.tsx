@@ -6,7 +6,7 @@ import FeaturedProjectCard from "../../components/FeaturedProjectCard";
 import ProjectMarquee from "../../components/ProjectMarquee";
 
 
-export default function Proyectos() {
+export default function ProjectsPage() {
 
     const featuredProjects = projects.filter(
         (project) => project.featured

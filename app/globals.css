@@ -64,7 +64,7 @@
 
   /* SUBSECTION - Botones de acción: base y foco */
   .action-button {
-    @apply inline-flex min-h-11 shrink-0 flex-row flex-nowrap items-center justify-center gap-1 whitespace-nowrap rounded-lg border px-2 py-2 text-[11px] font-semibold sm:px-4 sm:text-sm;
+    @apply inline-flex min-h-12 shrink-0 flex-row flex-nowrap items-center justify-center gap-2 whitespace-nowrap rounded-lg border px-3 py-3 text-sm font-semibold sm:min-h-11 sm:gap-1 sm:px-4 sm:py-2;
     transition:
       color 300ms,
       background-color 300ms,
@@ -92,7 +92,7 @@
   }
 
   .action-social {
-    @apply size-11 shrink-0 border-subtle bg-background p-0 text-foreground;
+    @apply size-12 shrink-0 border-subtle bg-background p-0 text-foreground sm:size-11;
   }
 
   /* ITEM - Halo de los marcos */
@@ -223,7 +223,7 @@
   .eyebrow-badge {
     @apply my-1 inline-flex self-start items-center gap-2 rounded-full
       border border-gold/25 bg-[#986A2B] px-3 py-1.5 text-xs
-      font-semibold tracking-[0.01em] text-[#FFF2D9]
+      font-semibold tracking-[0.01em] text-white
       shadow-[0_2px_8px_#00000040] select-none;
   }
 
@@ -266,5 +266,20 @@
   100% {
     transform: translateY(11px);
     opacity: 0;
+  }
+}
+
+/* SUBSECTION - Marquesinas sin movimiento automático */
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+
+  .marquee-track > ul[aria-hidden="true"] {
+    display: none;
   }
 }

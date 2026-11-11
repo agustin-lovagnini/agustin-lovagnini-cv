@@ -3,15 +3,34 @@ import { usePathname } from "next/navigation";
 import ShareButton from "./ShareButton";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Header() {
     // ITEM - Estado y control del menú móvil
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
+    const menuButtonRef = useRef<HTMLButtonElement>(null);
+    const closeButtonRef = useRef<HTMLButtonElement>(null);
 
-    function alternarMenu() {
+    useEffect(() => {
+        if (isMenuOpen) {
+            closeButtonRef.current?.focus();
+        }
+    }, [isMenuOpen]);
+
+    function toggleMenu() {
         setIsMenuOpen(!isMenuOpen);
+    }
+
+    function closeMenu() {
+        setIsMenuOpen(false);
+        menuButtonRef.current?.focus();
+    }
+
+    function handleMenuKeyDown(event: React.KeyboardEvent<HTMLElement>) {
+        if (event.key === "Escape") {
+            closeMenu();
+        }
     }
 
     return (
@@ -30,8 +49,9 @@ export default function Header() {
             <button
                 type="button"
                 aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
-                className="md:hidden cursor-pointer"
-                onClick={alternarMenu}
+                ref={menuButtonRef}
+                className="flex size-11 items-center justify-center md:hidden cursor-pointer"
+                onClick={toggleMenu}
                 aria-expanded={isMenuOpen}
                 aria-controls="menu-mobile"
             >
@@ -42,29 +62,31 @@ export default function Header() {
             {/* NOTE - El panel permanece montado para animar su salida; inert desactiva su contenido al cerrarse. */}
             <nav
                 id="menu-mobile"
+                onKeyDown={handleMenuKeyDown}
                 aria-label="Navegación móvil"
                 inert={!isMenuOpen}
-                className={`fixed top-0 right-0 z-50 h-dvh w-72 max-w-full flex flex-col items-center gap-6 bg-surface p-6 md:hidden transition-transform duration-300 motion-reduce:transition-none text-xl font-medium tracking-tight ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+                className={`fixed top-0 right-0 z-50 h-dvh overflow-y-auto w-72 max-w-full flex flex-col items-center gap-6 bg-surface p-6 md:hidden transition-transform duration-300 motion-reduce:transition-none text-xl font-medium tracking-tight ${isMenuOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
                 <button
+                    ref={closeButtonRef}
                     type="button"
                     aria-label="Cerrar menú"
-                    onClick={alternarMenu}
-                    className="self-end cursor-pointer"
+                    onClick={closeMenu}
+                    className="flex size-11 shrink-0 self-end items-center justify-center cursor-pointer"
                 >
                     <X size={24} />
                 </button>
-                <Link href="/" onClick={alternarMenu}>
+                <Link href="/" onClick={toggleMenu}>
                     Inicio
                 </Link>
-                <Link href="/sobre-mi" onClick={alternarMenu}>
+                <Link href="/sobre-mi" onClick={toggleMenu}>
                     Sobre mí
                 </Link>
-                <Link href="/proyectos" onClick={alternarMenu}>
+                <Link href="/proyectos" onClick={toggleMenu}>
                     Proyectos
                 </Link>
-                <Link href="/contacto" onClick={alternarMenu}>
+                <Link href="/contacto" onClick={toggleMenu}>
                     Contacto
                 </Link>
                 <ShareButton />

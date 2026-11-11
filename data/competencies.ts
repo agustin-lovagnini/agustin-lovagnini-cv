@@ -1,14 +1,14 @@
 import { Puzzle, ListChecks, Users, Lightbulb } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-export interface Competencia  {
+export interface Competency {
     id: string;
     title: string;
     icon: LucideIcon;
     description: string;
 }
 
-export const competencies: Competencia [] = [
+export const competencies: Competency[] = [
     {
         id: "resolucion-problemas",
         title: "Resolución de problemas técnicos",

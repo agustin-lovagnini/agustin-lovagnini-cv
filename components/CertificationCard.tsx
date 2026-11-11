@@ -8,7 +8,7 @@ interface CertificationCardProps {
 
 export default function CertificationCard({ certification, }: CertificationCardProps) {
     return (
-        <article className="flex min-w-0 flex-col gap-3 style-section p-4 rounded-xl">
+        <article className="flex h-full min-w-0 flex-col gap-3 style-section p-4 rounded-xl">
             <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="text-gold font-bold uppercase text-xs">
                     {certification.institution}

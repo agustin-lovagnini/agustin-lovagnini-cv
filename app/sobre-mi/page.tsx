@@ -16,7 +16,7 @@ import { certifications } from "@/data/certifications";
 import Link from "next/link";
 
 
-export default function SobreMi() {
+export default function AboutPage() {
     const technologyGroups = [
         {
             id: "frontend",
