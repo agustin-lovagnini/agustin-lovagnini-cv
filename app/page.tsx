@@ -2,6 +2,8 @@ import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import TechnologiesMarquee from "../components/TechnologiesMarquee";
+import Image from "next/image";
+import fotoPerfil from "../public/images/img-perfil-agustin.webp";
 
 export default function Home() {
   return (
@@ -41,34 +43,34 @@ export default function Home() {
 
           <div className="mt-4 flex flex-col items-center gap-5 md:flex-row md:flex-wrap md:gap-3 ">
             <div className="flex items-center gap-2 sm:gap-3">
-            <Link href="/proyectos" className="action-button action-primary">
-              <span>Ver proyectos</span>
-              <ArrowRight size={16} className="shrink-0" aria-hidden="true" />
-            </Link>
-            <Link href="/contacto" className="action-button action-secondary">
-              <span>Contactar</span>
-              <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
-            </Link>
+              <Link href="/proyectos" className="action-button action-primary">
+                <span>Ver proyectos</span>
+                <ArrowRight size={16} className="shrink-0" aria-hidden="true" />
+              </Link>
+              <Link href="/contacto" className="action-button action-secondary">
+                <span>Contactar</span>
+                <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
+              </Link>
             </div>
             <div className="flex items-center gap-2 sm:gap-3">
-            <a
-              href="https://www.linkedin.com/in/agustinlovagnini"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="action-button action-social"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin size={22} aria-hidden="true" />
-            </a>
-            <a
-              href="https://github.com/agustin-lovagnini"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="action-button action-social"
-              aria-label="GitHub"
-            >
-              <FaGithub size={22} aria-hidden="true" />
-            </a>
+              <a
+                href="https://www.linkedin.com/in/agustinlovagnini"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="action-button action-social"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin size={22} aria-hidden="true" />
+              </a>
+              <a
+                href="https://github.com/agustin-lovagnini"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="action-button action-social"
+                aria-label="GitHub"
+              >
+                <FaGithub size={22} aria-hidden="true" />
+              </a>
             </div>
           </div>
         </div>
@@ -76,9 +78,10 @@ export default function Home() {
         {/* ITEM - Retrato con sombra dorada */}
         <div className="relative isolate mx-auto flex w-full max-w-[220px] items-center justify-center md:max-w-[340px]">
           <div className="w-full max-w-[340px] overflow-hidden rounded-full border border-outline bg-surface shadow-[0_0_20px_rgba(233,183,103,0.12),0_8px_24px_rgba(0,0,0,0.3)] md:rounded-lg">
-            <img
-              src="/images/img-perfil-agustin.webp"
+            <Image
+              src={fotoPerfil}
               alt="Retrato de Agustín Lovagnini"
+              sizes="(min-width: 768px) 340px, 220px"
               className="aspect-square w-full object-cover object-center md:aspect-[3/4]"
             />
           </div>

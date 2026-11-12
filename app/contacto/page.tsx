@@ -23,11 +23,18 @@ export default function ContactPage() {
 
             {/* SUBSECTION - Contenedor: una columna en móvil y dos en pantallas grandes */}
             <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[3fr_2fr]">
-                {/* SECTION - formulario*/}
+                {/* SECTION - Formulario de contacto */}
                 <section className="style-section" aria-labelledby="formulario-contacto">
-                    <h2 id="formulario-contacto">Enviar mensaje directo</h2>
+                    <h2 id="formulario-contacto" className="mb-1 block w-full border-b border-gold-light pb-1 font-heading text-xl font-semibold tracking-tight text-gold-light md:text-2xl">Enviar mensaje directo</h2>
                     <form action="https://formspree.io/f/mnppeqkb"
                         method="POST" className="mt-5 flex flex-col gap-5">
+                        <input
+                            type="text"
+                            name="_gotcha"
+                            className="hidden"
+                            tabIndex={-1}
+                            autoComplete="off"
+                        />
                         <div className="flex flex-col gap-2">
                             <label htmlFor="nombre">Nombre completo o empresa</label>
 
@@ -35,9 +42,10 @@ export default function ContactPage() {
                                 id="nombre"
                                 name="nombre"
                                 type="text"
+                                maxLength={100}
                                 placeholder="Tu nombre o empresa"
                                 required
-                                className="w-full rounded-lg border border-outline bg-background px-4 py-3 text-foreground placeholder:text-subtle focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                                className="w-full rounded-lg border border-subtle bg-background px-4 py-3 text-foreground placeholder:text-subtle focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                             />
                         </div>
                         <div className="flex flex-col gap-2">
@@ -47,10 +55,11 @@ export default function ContactPage() {
                                 id="email"
                                 name="email"
                                 type="email"
+                                maxLength={254}
                                 autoComplete="email"
                                 placeholder="tu@email.com"
                                 required
-                                className="w-full rounded-lg border border-outline bg-background px-4 py-3 text-foreground placeholder:text-subtle focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                                className="w-full rounded-lg border border-subtle bg-background px-4 py-3 text-foreground placeholder:text-subtle focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
 
                             />
                         </div>
@@ -58,7 +67,7 @@ export default function ContactPage() {
                         <div className="flex flex-col gap-2">
                             <label htmlFor="asunto">Asunto</label>
 
-                            <select id="asunto" name="asunto" defaultValue="" required className="w-full rounded-lg border border-outline bg-background px-4 py-3 text-foreground placeholder:text-subtle focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+                            <select id="asunto" name="asunto" defaultValue="" required className="w-full rounded-lg border border-subtle bg-background px-4 py-3 text-foreground placeholder:text-subtle focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
                                 <option value="" disabled>
                                     Seleccioná un asunto
                                 </option>
@@ -80,21 +89,49 @@ export default function ContactPage() {
                                 id="mensaje"
                                 name="mensaje"
                                 rows={6}
+                                maxLength={5000}
                                 placeholder="Contame sobre tu propuesta o consulta..."
                                 required
-                                className="w-full resize-y rounded-lg border border-outline bg-background px-4 py-3 text-foreground placeholder:text-subtle focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                                className="w-full resize-y rounded-lg border border-subtle bg-background px-4 py-3 text-foreground placeholder:text-subtle focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                             />
                         </div>
                         <button type="submit" className="action-button action-primary cursor-pointer">
                             Enviar mensaje
                         </button>
+                        <p className="text-sm leading-relaxed text-muted text-center">
+                            Usaré tu nombre, correo y mensaje para responder a tu consulta. El envío se procesa mediante{" "}
+                            <a
+                                href="https://formspree.io/legal/privacy-policy/"
+                                className="text-gold-light underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                            >
+                                Formspree
+                            </a>
+                            . No incluyas contraseñas ni información sensible. Si preferís no usar este formulario, podés contactarme por{" "}
+                            <a
+                                href="https://www.linkedin.com/in/agustinlovagnini"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn (abre en otra pestaña)"
+                                className="text-gold-light underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                            >
+                                LinkedIn
+                            </a>
+                            {" "}o escribirme directamente a{" "}
+                            <a
+                                href="mailto:agustin.lovagnini.a@gmail.com"
+                                className="break-words text-gold-light underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                            >
+                                agustin.lovagnini.a@gmail.com
+                            </a>
+                            .
+                        </p>
                     </form>
 
                 </section>
 
                 {/* SUBSECTION - Columna de tarjetas apiladas con separación */}
                 <div className="flex flex-col gap-4">
-                    {/* SECTION - disponibilidad actual*/}
+                    {/* SECTION - Disponibilidad actual */}
                     <section className="style-section" aria-labelledby="disponibilidad-actual">
                         <h2
                             id="disponibilidad-actual"
@@ -185,7 +222,7 @@ export default function ContactPage() {
                         </div>
                     </section>
 
-                    {/* SECTION - garantia de trato*/}
+                    {/* SECTION - Forma de trabajar */}
                     <section className="style-section" aria-labelledby="garantia-del-contrato">
                         <h2
                             id="garantia-del-contrato"

@@ -210,7 +210,6 @@
   }
 
   /* SUBSECTION - Movimiento y pausa de la marquesina */
-  /* TODO - Desactivar la animación de la marquesina con prefers-reduced-motion. */
   .marquee-track {
     animation: marquee-scroll 45s linear infinite;
   }

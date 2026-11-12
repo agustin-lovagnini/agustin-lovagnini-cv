@@ -1,28 +1,34 @@
-## Punto de continuidad — 29 de octubre de 2026
+## Punto de continuidad — 12 de noviembre de 2026
 
 **Rama de trabajo:** `estructura-proyecto`.
 
 ### Dónde quedamos
 
-- Next.js está instalado con React, TypeScript y Tailwind CSS. Se utiliza `app/` en la raíz.
-- Las cuatro páginas tienen contenido mínimo: `/`, `/sobre-mi`, `/proyectos` y `/contacto`.
-- `components/Header.tsx` ya se muestra desde `app/layout.tsx` en todas las páginas.
-- El Header contiene el texto provisional «Header» y un único enlace a Inicio mediante `Link`.
-- El aviso de hidratación observado en el navegador se resolvió desactivando ColorZilla.
-- `AGENTS.md` documenta el contexto y la forma de trabajo: el propietario programa y Codex acompaña como mentor.
+- Las cuatro páginas tienen contenido y diseño implementados: `/`, `/sobre-mi`, `/proyectos` y `/contacto`. Se utiliza `app/` en la raíz con Next.js, React, TypeScript y Tailwind CSS v4.
+- Header y Footer se comparten desde `app/layout.tsx`. Hay navegación de escritorio, panel móvil con cierre mediante X y Escape, y navegación anterior/siguiente visible solo en móvil.
+- La identidad visual utiliza fondo oscuro, detalles dorados, Inter y Space Grotesk. El documento tiene `lang="es"` y metadatos generales.
+- Sobre mí incluye perfil profesional, certificaciones desplegables, tecnologías y competencias profesionales. Los catálogos se mantienen en `data/`; `technologyGroups` y `competencies` se importan desde sus archivos.
+- Proyectos utiliza un único array con 11 proyectos: tres destacados y ocho secundarios. Los secundarios se ordenan por fecha y se muestran en una marquesina. Las imágenes están en `public/images/projects/`.
+- Contacto envía directamente a Formspree. Se probaron la recepción del correo y rechazos del proveedor por nombre vacío, nombre de más de 100 caracteres, mensaje de más de 5000 y correo con formato inválido. Hay CAPTCHA y Formshield habilitados, honeypot y aviso sobre el uso de datos.
+- Los retratos de Inicio y Sobre mí usan `next/image` con importación estática. El logo SVG usa `Image` con `unoptimized`; las tarjetas de proyectos también usan `Image`.
+- La última auditoría aportada por el propietario informó 0 vulnerabilidades conocidas tras fijar `minimatch` a `11.0.1` mediante un override limitado a `@typescript-eslint/typescript-estree`.
+- Se comprobaron tres cabeceras en `/contacto`, en desarrollo y producción local: `X-Content-Type-Options: nosniff`, `Content-Security-Policy: frame-ancestors 'none'` y `Referrer-Policy: strict-origin-when-cross-origin`.
+- Últimas comprobaciones del propietario: `npm run lint` sin errores ni advertencias y `npm run build` correcto, incluido TypeScript. `npm run start` también se probó localmente; esto no implica que el sitio esté publicado.
+- `AGENTS.md`, sección 11, contiene el seguimiento de las 12 etapas, con avances, evidencia y pendientes. El propietario programa y Codex acompaña como mentor.
 
 ### Próximo paso y pendientes
 
-1. Agregar a `components/Header.tsx` los enlaces a Sobre mí (`/sobre-mi`), Proyectos (`/proyectos`) y Contacto (`/contacto`). Probar la navegación entre las cuatro páginas.
-2. Reemplazar el texto provisional del encabezado por el nombre y revisar los textos iniciales: actualmente Inicio y Sobre mí dicen «Stack Developer».
-3. Crear el Footer compartido e incorporarlo al layout.
-4. Cambiar `lang="en"` por el idioma del sitio y reemplazar los metadatos de ejemplo en `app/layout.tsx`.
-5. Definir juntos el diseño antes de implementar estilos: colores, tipografías, distribución y responsive. Las fuentes actuales siguen siendo Geist y Geist Mono; Inter y Space Grotesk están previstas.
-6. Incorporar contenido profesional, proyectos e imágenes; después resolver contacto, SEO, accesibilidad, pruebas y publicación.
+1. Retomar el registro de `AGENTS.md` y cerrar los hallazgos de código que se acuerden con el propietario. La conservación del estado del menú al cambiar de ancho se dejó como está por decisión del propietario.
+2. Comprobar visualmente los retratos y el logo tras migrar a `Image`, tanto en móvil como en escritorio; completar la revisión responsive y de navegación de las cuatro páginas.
+3. Resolver o evaluar la pausa accesible de las marquesinas y completar las pruebas de teclado, foco, zoom al 200 % y lector de pantalla. El movimiento reducido ya tiene reglas implementadas.
+4. Ejecutar Lighthouse en producción local e inspeccionar las interacciones con React Developer Tools. Medir antes de agregar optimizaciones.
+5. Completar SEO: metadatos por página, Open Graph, URL definitiva, sitemap y robots.
+6. Antes de publicar, revisar parches vigentes de Next.js y React, el override temporal, información de privacidad, archivos incluidos y configuración del hosting. Confirmar el proveedor y autorizar el despliegue con el propietario.
+7. En la web publicada, verificar HTTPS, cabeceras, formulario, enlaces y errores, y repetir Lighthouse. La revisión local no sustituye estas pruebas.
 
 ### Para retomar desde casa
 
-Antes de salir, revisar y guardar los avances mediante un commit en `estructura-proyecto`, y subir esa rama a GitHub. Al registrar esta nota, la configuración y los componentes nuevos todavía no estaban incluidos en un commit.
+Antes de cambiar de computadora, revisar `git status` y el diff. El propietario debe guardar mediante commit y push los avances que decida compartir en `estructura-proyecto`; no se realizan automáticamente. No asumir que los cambios locales ya están en GitHub.
 
 En casa, clonar el repositorio si todavía no existe allí. Si ya existe, comprobar primero que no haya cambios locales pendientes, ejecutar `git fetch origin`, cambiar a `estructura-proyecto` y actualizarla con `git pull --ff-only`. Si la rama solo existe en GitHub, crear su seguimiento local con `git switch --track origin/estructura-proyecto`.
 

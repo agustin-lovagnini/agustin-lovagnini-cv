@@ -1,53 +1,22 @@
 import {
-    ChevronsDown,
     BriefcaseBusiness,
     Languages,
     MapPin,
-    Code2,
-    Database,
     Layers3,
-    Server,
-    Wrench,
     Award,
-    BadgeCheck, ArrowUpRight
+    BadgeCheck,
+    ArrowUpRight,
 } from "lucide-react";
 import CertificationsList from "../../components/CertificationsList";
 import { certifications } from "@/data/certifications";
 import Link from "next/link";
-
+import { technologyGroups } from "../../data/technologyGroups";
+import { competencies } from "../../data/competencies";
+import ScrollPrompt from "../../components/ScrollPrompt";
+import Image from "next/image";
+import fotoPerfil from "../../public/images/img-perfil-agustin.webp";
 
 export default function AboutPage() {
-    const technologyGroups = [
-        {
-            id: "frontend",
-            title: "Frontend",
-            icon: Code2,
-            description: "Interfaces responsivas y accesibles, con componentes reutilizables y atención a la experiencia de usuario.",
-            technologies: ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Sass", "Bootstrap"],
-        },
-        {
-            id: "backend",
-            title: "Backend",
-            icon: Server,
-            description: "Aplicaciones del lado del servidor, APIs REST, autenticación y organización del código por responsabilidades.",
-            technologies: ["Node.js", "Express", "APIs REST", "Autenticación", "Swagger / OpenAPI"],
-        },
-        {
-            id: "databases",
-            title: "Bases de datos",
-            icon: Database,
-            description: "Persistencia de información, modelado de datos y consultas en bases relacionales y no relacionales.",
-            technologies: ["MongoDB", "Mongoose", "SQL", "Firebase"],
-        },
-        {
-            id: "workflow",
-            title: "Herramientas de trabajo",
-            icon: Wrench,
-            description: "Control de versiones, pruebas de APIs y herramientas para desarrollar, organizar y compartir mis proyectos.",
-            technologies: ["Git", "GitHub", "VS Code", "npm", "Postman", "Docker"],
-        },
-    ];
-
     return (
         <main className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
             {/* SECTION - Introducción de Sobre mí */}
@@ -67,22 +36,7 @@ export default function AboutPage() {
             </header>
 
             {/* ITEM - Invitación a explorar */}
-            <div className="flex items-center justify-center gap-3">
-                <ChevronsDown aria-hidden="true"
-                    className="size-9 text-subtle animate-scroll-down motion-reduce:animate-none"
-                />
-                <a
-                    href="#sobre-mi"
-                    className="text-subtle transition-colors duration-300 hover:text-gold-light focus-visible:text-gold-light"
-                >
-                    <span className="text-sm font-medium tracking-[0.2em] uppercase">
-                        Deslizá para explorar
-                    </span>
-                </a>
-                <ChevronsDown aria-hidden="true"
-                    className="size-9 text-subtle animate-scroll-down motion-reduce:animate-none"
-                />
-            </div>
+            <ScrollPrompt href="#sobre-mi" />
 
             <hr className="section-divider" />
 
@@ -101,7 +55,7 @@ export default function AboutPage() {
                             &quot;Lo que me apasiona de la programación es que no tiene límites, está en constante evolución, siempre presenta nuevos desafíos y oportunidades para aprender, crear y mejorar. Creo en desarrollar experiencias funcionales, intuitivas y accesibles para todos, que crezcan y evolucionen junto a cada marca.&quot;.
                         </blockquote>
 
-                        <p className="leading-relaxed tracking-wide">Resido en la Ciudad Autónoma de Buenos Aires, Argentina. Busco formar parte de un equipo donde pueda aportar mis conocimientos, ideas e iniciativa, participar en proyectos reales y crecer junto a otros profesionales. También disfruto desarrollar proyectos propios, explorar nuevas posibilidades y llevar mis ideas a la práctica..</p>
+                        <p className="leading-relaxed tracking-wide">Resido en la Ciudad Autónoma de Buenos Aires, Argentina. Busco formar parte de un equipo donde pueda aportar mis conocimientos, ideas e iniciativa, participar en proyectos reales y crecer junto a otros profesionales. También disfruto desarrollar proyectos propios, explorar nuevas posibilidades y llevar mis ideas a la práctica.</p>
                     </div>
                     <div className="relative">
                         <dl className="grid w-full grid-cols-1 gap-4 bg-background p-8 text-sm md:grid-cols-2 xl:grid-cols-[auto_auto_auto] xl:justify-between">
@@ -113,7 +67,7 @@ export default function AboutPage() {
                                     <MapPin aria-hidden="true" className="size-4 shrink-0 text-gold" />
                                     Ubicación
                                 </dt>
-                                <dd className="opacity-90 mt-[0.5] xl:whitespace-nowrap">CABA, Argentina</dd>
+                                <dd className="opacity-90 mt-0.5 xl:whitespace-nowrap">CABA, Argentina</dd>
                             </div>
 
                             <div>
@@ -121,7 +75,7 @@ export default function AboutPage() {
                                     <Languages aria-hidden="true" className="size-4 shrink-0 text-gold" />
                                     Idiomas
                                 </dt>
-                                <dd className="opacity-90 mt-[0.5] xl:whitespace-nowrap">Español nativo · Inglés en formación</dd>
+                                <dd className="opacity-90 mt-0.5 xl:whitespace-nowrap">Español nativo · Inglés en formación</dd>
                             </div>
 
                             <div>
@@ -129,7 +83,7 @@ export default function AboutPage() {
                                     <BriefcaseBusiness aria-hidden="true" className="size-4 shrink-0 text-gold" />
                                     Modalidad
                                 </dt>
-                                <dd className="opacity-90 mt-[0.5] xl:whitespace-nowrap">Remoto · Híbrido · Presencial</dd>
+                                <dd className="opacity-90 mt-0.5 xl:whitespace-nowrap">Remoto · Híbrido · Presencial</dd>
                             </div>
                         </dl>
                     </div>
@@ -138,13 +92,14 @@ export default function AboutPage() {
                 {/* SUBSECTION - Tarjetas personales */}
 
                 <div className="flex flex-col gap-4">
-                    {/*ITEM - TARJETA PERSONAL 1*/}
+                    {/* SUBSECTION - Presentación y certificaciones */}
                     <div className="flex flex-col gap-1 items-center text-center style-section p-4">
 
                         <div className="size-24 overflow-hidden rounded-full">
-                            <img
-                                src="/images/img-perfil-agustin.webp"
+                            <Image
+                                src={fotoPerfil}
                                 alt="Retrato de Agustín Lovagnini"
+                                sizes="96px"
                                 className="size-full scale-110 object-cover"
                             />
                         </div>
@@ -165,10 +120,9 @@ export default function AboutPage() {
                         </dl>
                     </div>
 
-                    {/*ITEM - TARJETA PERSONAL 2*/}
+                    {/* SUBSECTION - Enfoque de desarrollo */}
                     <div className="flex flex-col gap-1 text-center style-section p-4">
                         <div>
-                            {/* Acá irá el icono decorativo */}
                             <h3 className="font-bold text-lg">Mi enfoque de desarrollo:</h3>
                         </div>
 
@@ -250,6 +204,42 @@ export default function AboutPage() {
 
             <hr className="section-divider" />
 
+            {/* SECTION - Competencias profesionales */}
+            <section aria-labelledby="competencias-profesionales" className="w-full">
+                <header className="flex items-start gap-3">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-outline bg-surface text-gold-light">
+                        <BriefcaseBusiness size={22} aria-hidden="true" />
+                    </span>
+                    <div>
+                        <h2 id="competencias-profesionales" className="font-heading text-xl font-bold tracking-tight md:text-2xl">
+                            Competencias profesionales
+                        </h2>
+                        <p className="mt-1 text-sm text-muted">
+                            Mi forma de resolver desafíos, organizar proyectos y colaborar con otras personas.
+                        </p>
+                    </div>
+                </header>
+
+                <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+                    {competencies.map((competency) => (
+                        <article key={competency.id} className="style-section flex min-w-0 flex-col gap-3 rounded-xl">
+                            <div className="flex items-start gap-3">
+                                <competency.icon size={22} className="mt-0.5 shrink-0 text-gold-light" aria-hidden="true" />
+                                <h3 className="font-heading text-lg font-semibold">
+                                    {competency.title}
+                                </h3>
+                            </div>
+                            <p className="text-sm leading-relaxed text-muted">
+                                {competency.description}
+                            </p>
+                        </article>
+                    ))}
+                </div>
+            </section>
+
+            <hr className="section-divider" />
+
+            {/* SECTION - Invitación a contactar */}
             <section aria-labelledby="llamado-accion" className="style-section w-full">
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                     <div>

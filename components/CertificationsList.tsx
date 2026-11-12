@@ -17,14 +17,14 @@ export default function CertificationsList() {
         (certification) => certification.institution === "freeCodeCamp"
     );
 
-    {/* NOTE - los que aparecen al entrar. */}
+    // NOTE - Se muestran cuatro certificaciones desde sm; en móvil se ocultan las dos últimas.
     const initialCertifications = academicCertifications.slice(0, 4);
-    {/* NOTE - los que aparecen al tocar "ver mas" */}
+    // NOTE - Las dos certificaciones solapadas solo se muestran aquí en móvil.
     const remainingCertifications = academicCertifications.slice(2);
 
     return (
         <div>
-            {/* ITEM - primera vista, certificado coderhouse */}
+            {/* SUBSECTION - Certificaciones de Coderhouse visibles inicialmente */}
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {initialCertifications.map((certification, index) => (
                     <div

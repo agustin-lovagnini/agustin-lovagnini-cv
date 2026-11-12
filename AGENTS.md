@@ -97,7 +97,7 @@ No implementar diseños completos ni animaciones complejas sin aprobación.
 
 ### Marcadores de comentarios
 
-- `SECTION`: únicamente antes de bloques `<section>` para localizar las secciones principales de la página. Reemplaza al marcador anterior `ANCHOR`.
+- `SECTION`: antes de bloques `<section>` y `<header>` para localizar secciones y encabezados de la página. Los comentarios de un `<header>` pueden conservar este marcador; no reclasificarlos como `SUBSECTION` solo por la etiqueta HTML. Reemplaza al marcador anterior `ANCHOR`.
 - `SUBSECTION`: bloques internos o grupos de contenido, como una tarjeta personal, una navegación o un grupo de estilos.
 - `ITEM`: elementos o declaraciones puntuales que convenga localizar, como una imagen, un botón, un estado o un tipo de datos.
 - `NOTE`: explicaciones necesarias sobre un contenedor, una lógica o una decisión que no resulte evidente.
@@ -216,5 +216,92 @@ Antes de modificar cualquier archivo:
 6. Explicar el resultado y cómo comprobarlo.
 
 Se permite inspeccionar y leer archivos para comprender el proyecto, sin modificarlos.
+
+## 11. Seguimiento de revisión y publicación
+
+Registro actualizado el 2026-11-12 con las comprobaciones realizadas en esta sesión y los resultados aportados por el propietario.
+
+### Cómo mantener esta lista
+
+- Seguir las 12 etapas con el propietario, de a un paso por vez. Esta lista no autoriza cambios, instalaciones ni publicaciones por sí sola.
+- Usar `[ ]` para pendientes o etapas parciales y `[x]` únicamente para comprobaciones terminadas con evidencia. Anotar la fecha, el alcance y el resultado al actualizar una etapa.
+- Se autoriza mantener este registro al corroborar los puntos junto al propietario. Conservar las reglas existentes y no marcar una etapa por haber agregado código sin verificar su comportamiento.
+- Distinguir revisión del código, pruebas manuales del propietario y comprobaciones del sitio publicado. No presentar una búsqueda de patrones o un audit sin avisos como garantía absoluta de seguridad.
+- Repetir las comprobaciones afectadas cuando cambien el código, las dependencias o el despliegue. Los resultados describen la versión revisada, no todas las versiones futuras.
+- El propietario indicó un contador externo de 4/12 sin identificar las cuatro etapas. Confirmar cuáles son antes de trasladar esas marcas; no asumir que corresponden a las etapas 1 a 4.
+
+### Lista de las 12 etapas
+
+- [x] **1. Revisar código y estructura — revisión y limpieza acordada completadas el 2026-11-12.**
+  - [x] Revisadas las cuatro páginas, los componentes compartidos, los catálogos de datos y la configuración. ESLint y TypeScript no detectaron errores; IDs de datos sin duplicados e imágenes locales referenciadas presentes.
+  - [x] Eliminada la lista local duplicada de tecnologías en Sobre mí: se importa `data/technologyGroups.ts`. Retirados los imports de íconos que quedaron sin uso.
+  - [x] Integradas las cuatro competencias de `data/competencies.ts` en Sobre mí mediante `map()`, después de Tecnologías y antes de la llamada a la acción.
+  - [x] Reutilizado `ScrollPrompt` en Sobre mí y eliminado su bloque equivalente escrito directamente en la página.
+  - [x] Corregido el doble punto de «práctica..» y retirado el TODO de movimiento reducido que ya estaba implementado.
+  - [x] Actualizada la nota de continuidad del README con el estado real, comprobaciones y próximos pasos.
+  - [x] Acordado que `SECTION` también se permite antes de `<header>`; no reclasificar esos comentarios únicamente por la etiqueta.
+  - [x] Por decisión explícita del propietario, conservar el estado actual del menú al cambiar de móvil a escritorio y volver. No agregar el efecto de `matchMedia` propuesto.
+  - [x] Revisados `filter().sort()` de Proyectos y los `slice()` de certificaciones: no requieren corrección con la lógica actual; `filter()` crea una copia y las clases responsive compensan el solapamiento.
+  - [x] Corregidos los márgenes de Idiomas y Modalidad en Sobre mí: `mt-[0.5]` pasó a `mt-0.5`, equivalente a 2 px y consistente con Ubicación.
+  - [x] Ordenados detalles de indentación e imports, normalizados marcadores y textos de comentarios, y cambiados los comentarios de lógica de certificaciones a sintaxis TypeScript. Conservado `SECTION` en los encabezados y la lógica actual.
+  - [x] Tras esta limpieza, `npm run lint` sin errores ni advertencias, `tsc --noEmit --incremental false` sin errores y `git diff --check` correcto. Las pruebas visuales, de teclado y de rendimiento siguen en sus etapas correspondientes.
+
+- [ ] **2. Comprobar funcionalidad — parcial.**
+  - [x] El propietario confirmó envío normal del formulario y recepción del correo.
+  - [x] Probada pérdida de conexión: error del navegador y conservación de los campos visibles al volver atrás.
+  - [ ] Comprobar sistemáticamente navegación, enlaces externos, certificados, desplegables, menú y rutas de error.
+  - Mejorar los errores dentro del portfolio es una decisión de experiencia de uso pendiente; no se ha demostrado una vulnerabilidad por usar la respuesta de Formspree.
+
+- [ ] **3. Probar responsive — parcial.**
+  - Se realizaron ajustes de ancho, retrato y botones móviles. No hay evidencia suficiente de una prueba completa en celular, tablet, escritorio y tamaños intermedios.
+  - Pendiente: comprobar desbordamientos, orientación horizontal y contenido en las cuatro páginas.
+
+- [ ] **4. Revisar accesibilidad — parcial.**
+  - [x] Revisados en el código landmarks, jerarquía de encabezados, etiquetas del formulario, textos alternativos y reglas de movimiento reducido.
+  - [x] Reforzados los bordes de los cuatro campos del formulario con `border-subtle`.
+  - [ ] Revisar pausa accesible de las marquesinas: se detectó falta de un control de pausa por teclado y de pausa al enfocar los enlaces. Volver a comprobar el estado actual antes de corregir.
+  - [ ] Probar recorrido completo con Tab y Shift+Tab, foco visible, menú móvil, zoom al 200 % y lector de pantalla.
+
+- [ ] **5. Analizar con Lighthouse — pendiente.**
+  - Ejecutar sobre producción local y registrar ruta, modo móvil/escritorio, resultados y problemas relevantes. La prueba pública final corresponde a la etapa 12.
+
+- [ ] **6. Inspeccionar con React Developer Tools — pendiente.**
+  - Revisar componentes, props y estado de las interacciones. Analizar renderizados si aparece una necesidad concreta, sin optimizaciones prematuras.
+
+- [ ] **7. Revisar seguridad — revisión local realizada; cierre previo a publicación pendiente.**
+  - [x] El propietario obtuvo 0 vulnerabilidades conocidas tras aplicar el override de `minimatch` a `11.0.1`; lint y build posteriores correctos.
+  - [x] Revisados `.gitignore`, archivos versionados y el historial disponible localmente: sin indicadores de secretos encontrados. No se verificaron referencias remotas ausentes de esta PC.
+  - [x] Configurados límites del navegador: nombre 100, correo 254 y mensaje 5000 caracteres; campo honeypot `_gotcha` agregado.
+  - [x] El propietario mostró Formshield y CAPTCHA habilitados en Formspree, y reglas obligatorias para `nombre`, `email`, `asunto` y `mensaje`.
+  - [x] Pruebas del proveedor confirmadas: nombre vacío rechazado, nombre de 101 caracteres rechazado, mensaje de 5001 rechazado y correo `hola` rechazado.
+  - [x] Agregado aviso de uso de datos con enlace a privacidad de Formspree y alternativas de contacto.
+  - [x] Revisión del código sin encontrar Route Handlers/Server Actions propios, inserción directa de HTML no confiable ni redirecciones programadas. Enlaces externos revisados con HTTPS y `noopener` cuando abren otra pestaña.
+  - [x] El propietario comprobó en `/contacto`, en desarrollo y producción local: `X-Content-Type-Options: nosniff`, `Content-Security-Policy: frame-ancestors 'none'` y `Referrer-Policy: strict-origin-when-cross-origin`.
+  - [ ] Verificar parches vigentes de Next.js y React antes de publicar; revisar el override cuando la dependencia original incorpore la corrección.
+  - [ ] Revisar archivos a publicar, variables del hosting y alcance de la información de privacidad según el uso real del sitio.
+  - Límites conocidos: no se configuró máximo de longitud de correo en el proveedor ni una lista de asuntos permitidos; no se probaron individualmente todas las reglas. Una CSP limitada a `frame-ancestors` no restringe scripts ni recursos.
+  - HTTPS y verificación de las protecciones en el dominio definitivo quedan para las etapas 11 y 12.
+
+- [ ] **8. Optimizar imágenes y recursos — parcial.**
+  - [x] Imágenes de proyectos organizadas en WebP y uso de `next/image` en sus tarjetas.
+  - [x] El 2026-11-12 se migraron los retratos de Inicio y Sobre mí a `next/image` con importación estática y `sizes`; el logo SVG se sirve con `Image` y `unoptimized`.
+  - [x] El propietario aportó lint sin errores ni advertencias y build correcto tras los cambios de imágenes.
+  - [ ] Comprobar visualmente los recortes, dimensiones y comportamiento responsive, y medir carga y peso real de recursos según su uso.
+
+- [ ] **9. Preparar SEO — parcial.**
+  - Existen metadatos generales; falta comprobar de manera integral metadata por página, Open Graph, URL definitiva, sitemap y robots.
+
+- [x] **10. Ejecutar build de producción — comprobado el 2026-11-12.**
+  - Última comprobación aportada por el propietario el 2026-11-12, tras los cambios de imágenes: lint sin errores ni advertencias.
+  - Build posterior a los cambios de imágenes correcto: TypeScript y generación de páginas sin errores.
+  - `npm run start` inició correctamente y se comprobaron las tres cabeceras en producción local.
+  - Repetir lint y build si se realizan nuevos cambios antes de desplegar.
+
+- [ ] **11. Publicar en Vercel — pendiente de confirmar hosting y autorizar despliegue.**
+  - Confirmar el proveedor con el propietario. Revisar condiciones de uso, variables por entorno y dominio/HTTPS antes de publicar. No desplegar automáticamente.
+
+- [ ] **12. Verificar el sitio publicado — pendiente.**
+  - Probar las cuatro páginas, enlaces, formulario y respuestas de error. Comprobar HTTPS, cabeceras y recursos externos en la URL pública.
+  - Repetir Lighthouse en producción y registrar los resultados. No confundir producción local con publicación en Internet.
 
 **Objetivo principal: construir un portfolio profesional mientras el desarrollador aprende y mantiene el control de todas las decisiones y modificaciones.**

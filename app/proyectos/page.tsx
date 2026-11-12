@@ -1,6 +1,6 @@
 import ScrollPrompt from "../../components/ScrollPrompt";
 import Link from "next/link";
-import { ArrowUpRight, } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { projects } from "../../data/projects";
 import FeaturedProjectCard from "../../components/FeaturedProjectCard";
 import ProjectMarquee from "../../components/ProjectMarquee";
@@ -42,7 +42,7 @@ export default function ProjectsPage() {
 
             <hr className="section-divider" />
 
-            {/* SECTION - proyectos destacados */}
+            {/* SECTION - Proyectos destacados */}
             <section
                 id="proyectos-destacados"
                 aria-labelledby="titulo-proyectos-destacados"
@@ -65,7 +65,7 @@ export default function ProjectsPage() {
 
             <hr className="section-divider my-3" />
 
-            {/* SECTION - evolucion */}
+            {/* SECTION - Evolución como desarrollador */}
             <section
                 aria-labelledby="titulo-evolucion"
                 className="flex min-w-0 flex-col gap-6"
@@ -89,7 +89,7 @@ export default function ProjectsPage() {
 
             <hr className="section-divider my-3" />
 
-            {/* SECTION - llamada a la accion */}
+            {/* SECTION - Llamada a la acción */}
             <section aria-labelledby="llamado-accion" className="mx-auto w-full max-w-[1440px] style-section">
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                     <div>

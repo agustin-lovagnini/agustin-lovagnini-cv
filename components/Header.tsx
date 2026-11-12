@@ -4,11 +4,13 @@ import ShareButton from "./ShareButton";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export default function Header() {
     // ITEM - Estado y control del menú móvil
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
+
     const menuButtonRef = useRef<HTMLButtonElement>(null);
     const closeButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -38,9 +40,12 @@ export default function Header() {
             <span aria-hidden="true" className="edge-line bottom-0" />
             {/* ITEM - Logo y acceso a Inicio */}
             <Link href="/">
-                <img
+                <Image
                     src="/images/logo.svg"
                     alt="Agustín Lovagnini"
+                    width={40}
+                    height={40}
+                    unoptimized
                     className="w-10 h-10"
                 />
             </Link>
