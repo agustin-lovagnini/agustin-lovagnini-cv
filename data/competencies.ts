@@ -14,27 +14,27 @@ export const competencies: Competency[] = [
         title: "Resolución de problemas técnicos",
         icon: Puzzle,
         description:
-            "Iniciativa para investigar, analizar problemas e identificar soluciones de manera autónoma. Experiencia práctica resolviendo desafíos relacionados con interfaces, lógica de aplicaciones, APIs y bases de datos, buscando comprender sus causas y mejorar cada implementación.",
+            "Me gusta investigar, analizar problemas y comprender sus causas antes de implementar una solución. Busco resolver cada desafío con criterio propio, evaluando alternativas y priorizando soluciones funcionales y mantenibles.",
     },
     {
         id: "organizacion-metodologias",
         title: "Organización y metodologías",
         icon: ListChecks,
         description:
-            "Organización de proyectos mediante planificación de tareas, separación de responsabilidades y control de versiones con Git y GitHub. Interés por mantener un código claro, reutilizable y documentado, incorporando progresivamente buenas prácticas y metodologías ágiles.",
+            "Organizo mis proyectos mediante la planificación de tareas, la separación de responsabilidades y el control de versiones con Git y GitHub. Valoro la documentación, el seguimiento del trabajo y una estructura clara que facilite el desarrollo y mantenimiento.",
     },
     {
         id: "trabajo-equipo",
         title: "Trabajo en equipo y comunicación",
         icon: Users,
         description:
-            "Comunicación clara, escucha activa y disposición para compartir conocimientos e intercambiar ideas. Valoro el trabajo colaborativo, las devoluciones constructivas y el respeto por diferentes perspectivas para encontrar soluciones y alcanzar objetivos comunes.",
+            "Valoro la comunicación clara, la escucha activa y el intercambio de ideas. Me interesa colaborar con otros desarrolladores, compartir conocimientos, recibir devoluciones constructivas y aportar diferentes perspectivas para alcanzar objetivos comunes.",
     },
     {
         id: "aprendizaje-continuo",
         title: "Adaptabilidad y aprendizaje continuo",
         icon: Lightbulb,
         description:
-            "Curiosidad técnica, iniciativa y compromiso con el aprendizaje autodidacta. Capacidad para investigar nuevas herramientas, profundizar en sus fundamentos y aplicar los conocimientos adquiridos en proyectos prácticos, adaptándome a nuevos desafíos y tecnologías.",
+            "Disfruto explorar nuevas herramientas, comprender cómo funcionan y ponerlas en práctica. Me adapto a diferentes desafíos y tecnologías, buscando ampliar mis capacidades y mantenerme actualizado en un entorno que evoluciona constantemente.",
     },
 ];

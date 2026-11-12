@@ -155,6 +155,20 @@ Abrir en el navegador:
 
 http://localhost:3000
 
+### Ver desde el celular
+
+Conectar el celular y la computadora a la misma red Wi-Fi. Si el servidor ya está ejecutándose, detenerlo con `Ctrl + C` y luego iniciarlo permitiendo conexiones desde la red local:
+
+```bash
+npm run dev -- --hostname 0.0.0.0
+```
+
+Abrir en el navegador del celular la dirección **Network** que muestre Next.js, por ejemplo `http://192.168.0.129:3000`. La IP y el puerto pueden variar.
+
+Si Next.js bloquea los recursos de desarrollo, comprobar que la IP actual esté incluida en `allowedDevOrigins` dentro de `next.config.ts` y reiniciar el servidor.
+
+Para detener el servidor y cortar el acceso, presionar `Ctrl + C` en esa terminal. Este comando permite acceso desde la red local; por sí solo no publica el sitio en Internet.
+
 ## Plan de desarrollo
 
 - [x] Crear el repositorio y configurar Git.
