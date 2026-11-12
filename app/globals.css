@@ -52,6 +52,7 @@
 
 /* SUBSECTION - Estilos de componentes reutilizables */
 @layer components {
+
   /* SUBSECTION - Contenedores y separadores de sección */
   .style-section {
     @apply bg-surface border border-gold p-5;
@@ -109,19 +110,17 @@
     inset-inline: 0;
     height: 1px;
     pointer-events: none;
-    background: linear-gradient(
-      to right,
-      transparent,
-      var(--color-gold-light) 35%,
-      var(--color-gold-light) 65%,
-      transparent
-    );
+    background: linear-gradient(to right,
+        transparent,
+        var(--color-gold-light) 35%,
+        var(--color-gold-light) 65%,
+        transparent);
     filter: drop-shadow(0 0 2px rgb(245 212 154 / 0.3));
   }
 
   /* SUBSECTION - Enlaces del Header y del Footer */
   .nav-link {
-    @apply relative transition-[color,filter] duration-300;
+    @apply relative transition-[color, filter] duration-300;
   }
 
   .footer-link {
@@ -277,7 +276,7 @@
   }
 
   /* NOTE - Oculta visualmente la copia que solo se necesita para el movimiento infinito. */
-  .marquee-track > ul[aria-hidden="true"] {
+  .marquee-track>ul[aria-hidden="true"] {
     display: none;
   }
 }
@@ -296,7 +295,7 @@
   }
 
   /* NOTE - Conserva una sola lista visible para que los proyectos no se repitan al deslizar. */
-  .project-marquee .marquee-track > ul[aria-hidden="true"] {
+  .project-marquee .marquee-track>ul[aria-hidden="true"] {
     display: none;
   }
 
@@ -319,6 +318,10 @@
     background: var(--color-gold);
     pointer-events: none;
     opacity: 0;
+  }
+
+  .project-marquee .marquee-track>ul:first-child {
+    padding-left: 1rem;
   }
 
   .project-marquee-frame::before {
