@@ -1,0 +1,41 @@
+/* SUBSECTION - Estilos propios del Header */
+@layer components {
+
+  /* SUBSECTION - Enlaces del Header */
+  .nav-link {
+    @apply relative transition-[color,filter] duration-300;
+  }
+
+  /* ITEM - Enlace activo y efectos de navegación */
+  .nav-link[aria-current="page"] {
+    @apply text-gold-light;
+    filter: drop-shadow(0 0 6px #E9B767);
+  }
+
+  /* ITEM - Punto decorativo del enlace activo */
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: currentColor;
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+
+  .nav-link[aria-current="page"]::before {
+    opacity: 1;
+  }
+
+  @media (min-width: 64rem) and (hover: hover) and (pointer: fine) {
+
+    .nav-link:hover {
+      @apply text-gold-light;
+      filter: drop-shadow(0 0 6px #E9B767);
+    }
+  }
+}

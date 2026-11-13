@@ -47,7 +47,7 @@ export default function FeaturedProjectCard({
                     <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
                 </a>
             </div>
-            <div className="mx-auto w-full max-w-md overflow-hidden rounded-lg border border-outline lg:w-[90%]">
+            <div className="mx-auto w-full max-w-md overflow-hidden rounded-lg border border-outline lg:w-9/10">
                 <Image
                     src={project.image}
                     alt={`Vista previa de ${project.title}`}

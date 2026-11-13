@@ -18,7 +18,7 @@ import fotoPerfil from "../../public/images/img-perfil-agustin.webp";
 
 export default function AboutPage() {
     return (
-        <main className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
+        <main className="mx-auto flex w-full max-w-360 flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
             {/* SECTION - Introducción de Sobre mí */}
             <header className="flex flex-col items-start gap-5 md:gap-6">
                 <span className="eyebrow-badge">
@@ -134,7 +134,7 @@ export default function AboutPage() {
             </section>
 
             {/* SECTION - Formación y certificaciones */}
-            <section aria-labelledby="formacion-y-certificaciones" className="mx-auto w-full max-w-[1440px] style-section p-4 md:p-5">
+            <section aria-labelledby="formacion-y-certificaciones" className="mx-auto w-full max-w-360 style-section p-4 md:p-5">
                 <div className="mb-5 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:gap-5">
                     <div className="flex items-start gap-3 md:items-center">
                         <span className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-gold/20 bg-surface text-gold-light">
@@ -166,7 +166,7 @@ export default function AboutPage() {
             <hr className="section-divider" />
 
             {/* SECTION - Tecnologías principales */}
-            <section aria-labelledby="tecnologias-principales" className="mx-auto w-full max-w-[1440px]">
+            <section aria-labelledby="tecnologias-principales" className="mx-auto w-full max-w-360">
                 <header className="flex items-start gap-3">
                     <span className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-outline bg-surface text-gold-light">
                         <Layers3 size={22} aria-hidden="true" />

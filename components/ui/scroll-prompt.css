@@ -1,0 +1,17 @@
+/* ITEM - Animación de las flechas para explorar */
+@keyframes scroll-down {
+  0% {
+    transform: translateY(-7px);
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  85%,
+  100% {
+    transform: translateY(11px);
+    opacity: 0;
+  }
+}

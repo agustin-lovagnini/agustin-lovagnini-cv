@@ -1,0 +1,18 @@
+/* SUBSECTION - Estilos propios del Footer */
+@layer components {
+
+  .footer-link {
+    @apply relative text-subtle transition-colors duration-300;
+  }
+
+  .footer-link:focus-visible {
+    @apply text-muted;
+  }
+
+  @media (min-width: 64rem) and (hover: hover) and (pointer: fine) {
+
+    .footer-link:hover {
+      @apply text-muted;
+    }
+  }
+}

@@ -7,7 +7,7 @@ import fotoPerfil from "../public/images/img-perfil-agustin.webp";
 
 export default function Home() {
   return (
-    <main className="mx-auto flex w-full max-w-[1536px] flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
+    <main className="mx-auto flex w-full max-w-384 flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
       {/* SECTION - Presentación personal */}
       <section
         aria-labelledby="presentacion-personal"
@@ -76,13 +76,13 @@ export default function Home() {
         </div>
 
         {/* ITEM - Retrato con sombra dorada */}
-        <div className="relative isolate mx-auto flex w-full max-w-[220px] items-center justify-center md:max-w-[340px]">
-          <div className="w-full max-w-[340px] overflow-hidden rounded-full border border-outline bg-surface shadow-[0_0_20px_rgba(233,183,103,0.12),0_8px_24px_rgba(0,0,0,0.3)] md:rounded-lg">
+        <div className="relative isolate mx-auto flex w-full max-w-55 items-center justify-center md:max-w-85">
+          <div className="w-full max-w-85 overflow-hidden rounded-full border border-outline bg-surface shadow-[0_0_20px_rgba(233,183,103,0.12),0_8px_24px_rgba(0,0,0,0.3)] md:rounded-lg">
             <Image
               src={fotoPerfil}
               alt="Retrato de Agustín Lovagnini"
               sizes="(min-width: 768px) 340px, 220px"
-              className="aspect-square w-full object-cover object-center md:aspect-[3/4]"
+              className="aspect-square w-full object-cover object-center md:aspect-3/4"
             />
           </div>
         </div>

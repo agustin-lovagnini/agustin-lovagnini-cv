@@ -55,6 +55,14 @@ El Header y Footer deberán compartirse mediante el layout principal.
 - `components/ui/`: `ScrollPrompt`, `ShareButton` y `TechnologiesMarquee`.
 - Esta organización por responsabilidad fue acordada con el propietario. Al mover componentes, actualizar los imports de páginas, datos y componentes relacionados; no crear componentes duplicados ni archivos de reexportación sin necesidad.
 
+### Organización de estilos
+
+- `app/globals.css` es el punto de entrada: importa Tailwind y las hojas CSS separadas; conserva el tema, las fuentes, la variante de hover y los estilos base.
+- `styles/shared.css` contiene clases globales compartidas, como botones, tarjetas, separadores, etiquetas y decoraciones. `styles/animations.css` contiene el movimiento, pausa y reglas de movimiento reducido comunes a las marquesinas.
+- Los estilos propios se guardan junto a su componente como CSS común: `components/layout/header.css`, `components/layout/footer.css`, `components/projects/project-marquee.css` y `components/ui/scroll-prompt.css`.
+- Por decisión del propietario, conservar los nombres de clase y su uso directo en `className`. No migrar esta estructura a CSS Modules ni introducir `styles.clase` sin acordarlo. La cercanía del CSS al componente no implica aislamiento: estas clases siguen siendo globales y se importan desde `globals.css`.
+- Mantener las capas `@layer`, los breakpoints, los selectores y su prioridad. Las clases Tailwind permanecen en los TSX. No duplicar imports CSS en componentes ni mover reglas compartidas a un único componente.
+
 ### Organización de los proyectos
 
 - Mantener un único array `projects` en `data/projects.ts`, respetando la estructura actual del repositorio sin crear `src/`.
@@ -241,6 +249,8 @@ Registro actualizado el 2026-11-12 con las comprobaciones realizadas en esta ses
 ### Lista de las 12 etapas
 
 - [x] **1. Revisar código y estructura — revisión y limpieza acordada completadas el 2026-11-12.**
+  - [x] El 2026-11-12 se normalizaron diez clases de medidas en seis TSX a sus formas directas de Tailwind: anchos con escala de espaciado, `z-100`, `aspect-3/4` y `w-9/10`. Revisadas las declaraciones generadas con la escala actual; lint y build correctos. Conservados los valores arbitrarios necesarios para sombras, columnas personalizadas, transiciones y cálculos.
+  - [x] El 2026-11-12 se separó el CSS global en seis hojas comunes, con estilos propios junto al componente y estilos compartidos en `styles/`. Los 15 TSX se conservaron idénticos. Comparadas 423 reglas compiladas por selector, declaraciones y contexto de media queries/capas; lint sin errores ni advertencias y build correcto. La comparación visual y responsive queda pendiente de prueba manual; no se ejecutó navegador.
   - [x] El 2026-11-12 se reorganizaron los diez componentes en `layout`, `projects`, `certifications` y `ui`, según la estructura solicitada. Actualizados imports y README; lint sin errores ni advertencias y build correcto, incluido TypeScript.
   - [x] Revisadas las cuatro páginas, los componentes compartidos, los catálogos de datos y la configuración. ESLint y TypeScript no detectaron errores; IDs de datos sin duplicados e imágenes locales referenciadas presentes.
   - [x] Eliminada la lista local duplicada de tecnologías en Sobre mí: se importa `data/technologyGroups.ts`. Retirados los imports de íconos que quedaron sin uso.

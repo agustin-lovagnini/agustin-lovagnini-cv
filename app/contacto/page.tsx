@@ -2,7 +2,7 @@ import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function ContactPage() {
     return (
-        <main className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
+        <main className="mx-auto flex w-full max-w-360 flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
             <header className="flex flex-col items-start gap-2 md:gap-6">
                 <div className="flex flex-col items-start gap-2">
                     <span className="eyebrow-badge">

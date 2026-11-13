@@ -1,0 +1,48 @@
+/* SUBSECTION - Estilos de componentes reutilizables */
+@layer components {
+
+  /* SUBSECTION - Movimiento y pausa de la marquesina */
+  .marquee-track {
+    animation: marquee-scroll 45s linear infinite;
+  }
+
+  .marquee:active .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+/* ITEM - Pausa de la marquesina con mouse */
+@media (min-width: 64rem) and (hover: hover) and (pointer: fine) {
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+/* ITEM - Animación horizontal de la marquesina */
+/* NOTE - El recorrido equivale a un grupo porque la pista contiene dos listas idénticas. */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* SUBSECTION - Marquesinas sin movimiento automático */
+/* NOTE - Respeta la preferencia del dispositivo y permite recorrer manualmente el contenido. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+
+  /* NOTE - Oculta visualmente la copia que solo se necesita para el movimiento infinito. */
+  .marquee-track>ul[aria-hidden="true"] {
+    display: none;
+  }
+}

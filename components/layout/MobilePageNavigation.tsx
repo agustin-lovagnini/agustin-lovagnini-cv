@@ -32,7 +32,7 @@ export default function MobilePageNavigation() {
     return (
         <nav
             aria-label="Navegación entre páginas"
-            className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-3 px-4 py-6 md:hidden"
+            className="mx-auto flex w-full max-w-360 items-center justify-between gap-3 px-4 py-6 md:hidden"
         >
             <Link
                 href={previousPage.href}

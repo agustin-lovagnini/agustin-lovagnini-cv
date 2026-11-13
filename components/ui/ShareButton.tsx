@@ -70,7 +70,7 @@ export default function ShareButton() {
             {/* NOTE - El portal evita que el filtro del Header altere la posición del aviso. */}
             {message && createPortal(
                 <div
-                    className={`fixed z-[100] max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-xl border-2 bg-surface p-5 text-foreground shadow-2xl ${isError ? "border-red-400" : "border-gold"}`}
+                    className={`fixed z-100 max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-xl border-2 bg-surface p-5 text-foreground shadow-2xl ${isError ? "border-red-400" : "border-gold"}`}
                     style={position}
                 >
                     <div className="flex items-start gap-3">

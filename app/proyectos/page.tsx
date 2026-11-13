@@ -17,7 +17,7 @@ export default function ProjectsPage() {
         .sort((a, b) => a.date.localeCompare(b.date));
 
     return (
-        <main className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
+        <main className="mx-auto flex w-full max-w-360 flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
             {/* SECTION - Presentación de los proyectos destacados */}
             <header className="flex flex-col items-start gap-5 md:gap-6">
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-medium tracking-wide">
@@ -90,7 +90,7 @@ export default function ProjectsPage() {
             <hr className="section-divider my-3" />
 
             {/* SECTION - Llamada a la acción */}
-            <section aria-labelledby="llamado-accion" className="mx-auto w-full max-w-[1440px] style-section">
+            <section aria-labelledby="llamado-accion" className="mx-auto w-full max-w-360 style-section">
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                     <div>
                         <span className="mb-2 block border-l-2 border-gold pl-3 text-xs font-semibold uppercase tracking-[0.15em] text-gold-light">

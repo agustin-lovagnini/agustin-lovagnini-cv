@@ -84,19 +84,33 @@ Los componentes se agrupan por responsabilidad:
 components/
 ├── layout/
 │   ├── Header.tsx
+│   ├── header.css
 │   ├── Footer.tsx
+│   ├── footer.css
 │   └── MobilePageNavigation.tsx
 ├── projects/
 │   ├── FeaturedProjectCard.tsx
-│   └── ProjectMarquee.tsx
+│   ├── ProjectMarquee.tsx
+│   └── project-marquee.css
 ├── certifications/
 │   ├── CertificationCard.tsx
 │   └── CertificationsList.tsx
 └── ui/
     ├── ScrollPrompt.tsx
+    ├── scroll-prompt.css
     ├── ShareButton.tsx
     └── TechnologiesMarquee.tsx
 ```
+
+Los estilos propios se guardan junto al componente como CSS común, conservando los nombres de las clases usados en `className`. Los estilos compartidos están en:
+
+```text
+styles/
+├── shared.css
+└── animations.css
+```
+
+`app/globals.css` importa estas seis hojas CSS y conserva Tailwind, el tema y los estilos base. No se utilizan CSS Modules; las clases siguen siendo globales. Las utilidades Tailwind permanecen en los archivos TSX.
 
 ## Estructura del sitio
 

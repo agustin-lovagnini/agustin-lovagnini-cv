@@ -1,0 +1,58 @@
+/* SUBSECTION - Deslizamiento manual de proyectos en móvil */
+/* NOTE - Estas reglas solo se aplican por debajo de 640 px con el tamaño inicial habitual de fuente. */
+@media (width < 40rem) {
+  .project-marquee {
+    overflow-x: auto;
+    scrollbar-color: var(--color-gold) var(--color-background);
+  }
+
+  /* NOTE - En móvil, React controla el avance mediante scrollLeft; se desactiva la animación CSS. */
+  .project-marquee .marquee-track {
+    animation: none;
+  }
+
+  .project-marquee .marquee-track>ul[aria-hidden="true"] {
+    display: none;
+  }
+
+  /* SUBSECTION - Indicadores de inicio y fin del recorrido */
+  /* NOTE - El marco mantiene las líneas en los bordes mientras las tarjetas se desplazan por dentro. */
+  .project-marquee-frame {
+    position: relative;
+    min-width: 0;
+  }
+
+  .project-marquee-frame::before,
+  .project-marquee-frame::after {
+    content: "";
+    position: absolute;
+    top: 0.75rem;
+    bottom: 1.25rem;
+    width: 2px;
+    z-index: 1;
+    background: var(--color-gold);
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .project-marquee .marquee-track>ul:first-child {
+    padding-left: 1rem;
+  }
+
+  .project-marquee-frame::before {
+    left: 0;
+  }
+
+  .project-marquee-frame::after {
+    right: 0;
+  }
+
+  /* NOTE - React actualiza estos atributos según el scroll: true muestra la línea del extremo correspondiente. */
+  .project-marquee-frame[data-at-start="true"]::before {
+    opacity: 1;
+  }
+
+  .project-marquee-frame[data-at-end="true"]::after {
+    opacity: 1;
+  }
+}
