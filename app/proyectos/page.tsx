@@ -1,9 +1,9 @@
-import ScrollPrompt from "../../components/ui/ScrollPrompt";
+import ScrollPrompt from "../../components/ui/ScrollPrompt/ScrollPrompt";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "../../data/projects";
 import FeaturedProjectCard from "../../components/projects/FeaturedProjectCard";
-import ProjectMarquee from "../../components/projects/ProjectMarquee";
+import ProjectMarquee from "../../components/projects/ProjectMarquee/ProjectMarquee";
 
 
 export default function ProjectsPage() {

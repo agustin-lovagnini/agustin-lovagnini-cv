@@ -12,7 +12,7 @@ import { certifications } from "@/data/certifications";
 import Link from "next/link";
 import { technologyGroups } from "../../data/technologyGroups";
 import { competencies } from "../../data/competencies";
-import ScrollPrompt from "../../components/ui/ScrollPrompt";
+import ScrollPrompt from "../../components/ui/ScrollPrompt/ScrollPrompt";
 import Image from "next/image";
 import fotoPerfil from "../../public/images/img-perfil-agustin.webp";
 

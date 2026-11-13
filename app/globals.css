@@ -1,10 +1,10 @@
 @import "tailwindcss";
 @import "../styles/shared.css";
 @import "../styles/animations.css";
-@import "../components/layout/header.css";
-@import "../components/layout/footer.css";
-@import "../components/projects/project-marquee.css";
-@import "../components/ui/scroll-prompt.css";
+@import "../components/layout/Header/header.css";
+@import "../components/layout/Footer/footer.css";
+@import "../components/projects/ProjectMarquee/project-marquee.css";
+@import "../components/ui/ScrollPrompt/scroll-prompt.css";
 
 /* NOTE - Las utilidades hover: se activan solo en escritorio con mouse o trackpad. */
 @custom-variant hover {

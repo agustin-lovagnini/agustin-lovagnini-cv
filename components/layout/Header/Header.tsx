@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import ShareButton from "../ui/ShareButton";
+import ShareButton from "../../ui/ShareButton";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";

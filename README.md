@@ -83,26 +83,30 @@ Los componentes se agrupan por responsabilidad:
 ```text
 components/
 ├── layout/
-│   ├── Header.tsx
-│   ├── header.css
-│   ├── Footer.tsx
-│   ├── footer.css
+│   ├── Header/
+│   │   ├── Header.tsx
+│   │   └── header.css
+│   ├── Footer/
+│   │   ├── Footer.tsx
+│   │   └── footer.css
 │   └── MobilePageNavigation.tsx
 ├── projects/
 │   ├── FeaturedProjectCard.tsx
-│   ├── ProjectMarquee.tsx
-│   └── project-marquee.css
+│   └── ProjectMarquee/
+│       ├── ProjectMarquee.tsx
+│       └── project-marquee.css
 ├── certifications/
 │   ├── CertificationCard.tsx
 │   └── CertificationsList.tsx
 └── ui/
-    ├── ScrollPrompt.tsx
-    ├── scroll-prompt.css
+    ├── ScrollPrompt/
+    │   ├── ScrollPrompt.tsx
+    │   └── scroll-prompt.css
     ├── ShareButton.tsx
     └── TechnologiesMarquee.tsx
 ```
 
-Los estilos propios se guardan junto al componente como CSS común, conservando los nombres de las clases usados en `className`. Los estilos compartidos están en:
+Los componentes con CSS propio tienen una subcarpeta que reúne su TSX y su CSS. Los estilos propios se guardan como CSS común, conservando los nombres de las clases usados en `className`. Los estilos compartidos están en:
 
 ```text
 styles/

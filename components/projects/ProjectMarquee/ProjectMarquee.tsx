@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import type { Project } from "../../data/projects";
+import type { Project } from "../../../data/projects";
 
 interface ProjectMarqueeProps {
     projects: Project[];

@@ -55,11 +55,13 @@ El Header y Footer deberán compartirse mediante el layout principal.
 - `components/ui/`: `ScrollPrompt`, `ShareButton` y `TechnologiesMarquee`.
 - Esta organización por responsabilidad fue acordada con el propietario. Al mover componentes, actualizar los imports de páginas, datos y componentes relacionados; no crear componentes duplicados ni archivos de reexportación sin necesidad.
 
+- Los componentes con CSS propio se agrupan en una subcarpeta con el nombre del componente: `Header/`, `Footer/`, `ProjectMarquee/` y `ScrollPrompt/`. Cada una contiene su TSX y su CSS; los componentes sin CSS propio permanecen directamente en su grupo.
+
 ### Organización de estilos
 
 - `app/globals.css` es el punto de entrada: importa Tailwind y las hojas CSS separadas; conserva el tema, las fuentes, la variante de hover y los estilos base.
 - `styles/shared.css` contiene clases globales compartidas, como botones, tarjetas, separadores, etiquetas y decoraciones. `styles/animations.css` contiene el movimiento, pausa y reglas de movimiento reducido comunes a las marquesinas.
-- Los estilos propios se guardan junto a su componente como CSS común: `components/layout/header.css`, `components/layout/footer.css`, `components/projects/project-marquee.css` y `components/ui/scroll-prompt.css`.
+- Los estilos propios se guardan junto a su componente como CSS común: `components/layout/Header/header.css`, `components/layout/Footer/footer.css`, `components/projects/ProjectMarquee/project-marquee.css` y `components/ui/ScrollPrompt/scroll-prompt.css`.
 - Por decisión del propietario, conservar los nombres de clase y su uso directo en `className`. No migrar esta estructura a CSS Modules ni introducir `styles.clase` sin acordarlo. La cercanía del CSS al componente no implica aislamiento: estas clases siguen siendo globales y se importan desde `globals.css`.
 - Mantener las capas `@layer`, los breakpoints, los selectores y su prioridad. Las clases Tailwind permanecen en los TSX. No duplicar imports CSS en componentes ni mover reglas compartidas a un único componente.
 
