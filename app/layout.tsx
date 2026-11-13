@@ -1,11 +1,11 @@
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import MobilePageNavigation from "../components/MobilePageNavigation";
+import MobilePageNavigation from "../components/layout/MobilePageNavigation";
 
 
 // ITEM - Fuentes compartidas

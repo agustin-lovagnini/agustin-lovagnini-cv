@@ -8,7 +8,7 @@
 - Header y Footer se comparten desde `app/layout.tsx`. Hay navegación de escritorio, panel móvil con cierre mediante X y Escape, y navegación anterior/siguiente visible solo en móvil.
 - La identidad visual utiliza fondo oscuro, detalles dorados, Inter y Space Grotesk. El documento tiene `lang="es"` y metadatos generales.
 - Sobre mí incluye perfil profesional, certificaciones desplegables, tecnologías y competencias profesionales. Los catálogos se mantienen en `data/`; `technologyGroups` y `competencies` se importan desde sus archivos.
-- Proyectos utiliza un único array con 11 proyectos: tres destacados y ocho secundarios. Los secundarios se ordenan por fecha y se muestran en una marquesina. Las imágenes están en `public/images/projects/`.
+- Proyectos utiliza un único array con 12 proyectos: tres destacados y nueve secundarios. Los destacados son Portfolio con HTML, CSS y Sass, Luzu TV y Simulador de Inversiones, en ese orden. Primer portfolio personal forma parte de los secundarios, que se ordenan por fecha y se muestran en una marquesina. Las imágenes están en `public/images/projects/`.
 - Contacto envía directamente a Formspree. Se probaron la recepción del correo y rechazos del proveedor por nombre vacío, nombre de más de 100 caracteres, mensaje de más de 5000 y correo con formato inválido. Hay CAPTCHA y Formshield habilitados, honeypot y aviso sobre el uso de datos.
 - Los retratos de Inicio y Sobre mí usan `next/image` con importación estática. El logo SVG usa `Image` con `unoptimized`; las tarjetas de proyectos también usan `Image`.
 - La última auditoría aportada por el propietario informó 0 vulnerabilidades conocidas tras fijar `minimatch` a `11.0.1` mediante un override limitado a `@typescript-eslint/typescript-estree`.
@@ -75,6 +75,28 @@ Este proyecto también forma parte de mi aprendizaje continuo, especialmente en 
 | Git | Control de versiones |
 | GitHub | Repositorio y seguimiento del proyecto |
 | npm | Gestión de dependencias |
+
+## Organización de componentes
+
+Los componentes se agrupan por responsabilidad:
+
+```text
+components/
+├── layout/
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   └── MobilePageNavigation.tsx
+├── projects/
+│   ├── FeaturedProjectCard.tsx
+│   └── ProjectMarquee.tsx
+├── certifications/
+│   ├── CertificationCard.tsx
+│   └── CertificationsList.tsx
+└── ui/
+    ├── ScrollPrompt.tsx
+    ├── ShareButton.tsx
+    └── TechnologiesMarquee.tsx
+```
 
 ## Estructura del sitio
 

@@ -120,7 +120,7 @@
 
   /* SUBSECTION - Enlaces del Header y del Footer */
   .nav-link {
-    @apply relative transition-[color, filter] duration-300;
+    @apply relative transition-[color,filter] duration-300;
   }
 
   .footer-link {

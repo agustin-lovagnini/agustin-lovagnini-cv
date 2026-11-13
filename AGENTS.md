@@ -47,13 +47,21 @@ Utilizar el App Router de Next.js y componentes reutilizables cuando sea conveni
 
 El Header y Footer deberán compartirse mediante el layout principal.
 
+### Organización de componentes
+
+- `components/layout/`: `Header`, `Footer` y `MobilePageNavigation`.
+- `components/projects/`: `FeaturedProjectCard` y `ProjectMarquee`.
+- `components/certifications/`: `CertificationCard` y `CertificationsList`.
+- `components/ui/`: `ScrollPrompt`, `ShareButton` y `TechnologiesMarquee`.
+- Esta organización por responsabilidad fue acordada con el propietario. Al mover componentes, actualizar los imports de páginas, datos y componentes relacionados; no crear componentes duplicados ni archivos de reexportación sin necesidad.
+
 ### Organización de los proyectos
 
 - Mantener un único array `projects` en `data/projects.ts`, respetando la estructura actual del repositorio sin crear `src/`.
 - Cada proyecto debe incluir `featured: boolean` y `date: string`. `date` representa la fecha de su primer commit en GitHub, en formato `YYYY-MM-DD`.
 - Antes de incorporar un proyecto nuevo, preguntar al propietario si será destacado o secundario y solicitar la fecha de su primer commit. Si ya proporcionó esos datos, utilizarlos sin volver a preguntarlos. No inventar fechas ni clasificaciones.
 - La sección «Proyectos destacados» mostrará únicamente los proyectos con `featured: true`, con mayor protagonismo visual.
-- La sección «Mi evolución como desarrollador» mostrará únicamente los proyectos secundarios (`featured: false`; actualmente ocho), ordenados por `date` del más antiguo al más reciente, en una marquesina horizontal infinita de tarjetas. No incluir los proyectos destacados en esta sección.
+- La sección «Mi evolución como desarrollador» mostrará únicamente los proyectos secundarios (`featured: false`; actualmente nueve), ordenados por `date` del más antiguo al más reciente, en una marquesina horizontal infinita de tarjetas. No incluir los proyectos destacados en esta sección.
 - Obtener ambas vistas desde el mismo array mediante `filter()`, `sort()` y `map()` según corresponda. Al ordenar, trabajar sobre una copia para no modificar el orden del array original.
 - Estas decisiones documentan la organización prevista; la implementación visual requiere una tarea autorizada por el propietario.
 
@@ -233,6 +241,7 @@ Registro actualizado el 2026-11-12 con las comprobaciones realizadas en esta ses
 ### Lista de las 12 etapas
 
 - [x] **1. Revisar código y estructura — revisión y limpieza acordada completadas el 2026-11-12.**
+  - [x] El 2026-11-12 se reorganizaron los diez componentes en `layout`, `projects`, `certifications` y `ui`, según la estructura solicitada. Actualizados imports y README; lint sin errores ni advertencias y build correcto, incluido TypeScript.
   - [x] Revisadas las cuatro páginas, los componentes compartidos, los catálogos de datos y la configuración. ESLint y TypeScript no detectaron errores; IDs de datos sin duplicados e imágenes locales referenciadas presentes.
   - [x] Eliminada la lista local duplicada de tecnologías en Sobre mí: se importa `data/technologyGroups.ts`. Retirados los imports de íconos que quedaron sin uso.
   - [x] Integradas las cuatro competencias de `data/competencies.ts` en Sobre mí mediante `map()`, después de Tecnologías y antes de la llamada a la acción.
@@ -283,6 +292,11 @@ Registro actualizado el 2026-11-12 con las comprobaciones realizadas en esta ses
   - HTTPS y verificación de las protecciones en el dominio definitivo quedan para las etapas 11 y 12.
 
 - [ ] **8. Optimizar imágenes y recursos — parcial.**
+  - [x] El 2026-11-12 se reemplazaron las capturas de Portfolio HTML/CSS/Sass y Simulador de Inversiones por los nuevos WebP proporcionados por el propietario, ambos de 600 × 233 px. Actualizadas sus dimensiones en el catálogo; las medidas anteriores quedan sustituidas por estas.
+  - [x] El 2026-11-12 se extendió el ajuste de proporción original a las dos listas de `ProjectMarquee`: dimensiones del catálogo y `w-full h-auto`, sin `fill` ni marco `aspect-video`. Lint y build correctos; conservada la lógica de movimiento y controles existente.
+  - [x] El 2026-11-12 las imágenes destacadas pasaron a usar sus dimensiones reales (`imageWidth` e `imageHeight` en el catálogo) y `w-full h-auto`, sin marco `aspect-video` ni `fill`. Se conserva la captura completa, sin recortarla ni añadir franjas por diferencia de proporción. Dimensiones de los 12 archivos leídas de sus metadatos; lint y build correctos tras el cambio. La marquesina conserva su diseño.
+  - [x] El 2026-11-12 se incorporó la captura WebP original del Simulador de Inversiones como `public/images/projects/simulador-inversiones.webp`, vinculada en el catálogo. «Primer portfolio personal» pasó a secundario; quedan 12 proyectos, tres destacados y nueve secundarios.
+  - [x] Tras incorporar el simulador, lint sin errores ni advertencias y build correcto. Verificados los recuentos, orden de destacados, secundarios cronológicos, IDs únicos, imágenes presentes y copia de la captura idéntica al original.
   - [x] Imágenes de proyectos organizadas en WebP y uso de `next/image` en sus tarjetas.
   - [x] El 2026-11-12 se migraron los retratos de Inicio y Sobre mí a `next/image` con importación estática y `sizes`; el logo SVG se sirve con `Image` y `unoptimized`.
   - [x] El propietario aportó lint sin errores ni advertencias y build correcto tras los cambios de imágenes.
@@ -292,6 +306,7 @@ Registro actualizado el 2026-11-12 con las comprobaciones realizadas en esta ses
   - Existen metadatos generales; falta comprobar de manera integral metadata por página, Open Graph, URL definitiva, sitemap y robots.
 
 - [x] **10. Ejecutar build de producción — comprobado el 2026-11-12.**
+  - Verificación tras actualizar Node.js el 2026-11-12: Node `26.13.1`, npm `11.12.1`; lint sin errores ni advertencias y build correcto, incluida la comprobación de TypeScript y generación de páginas. La versión de Node cumple los requisitos declarados de Next.js instalado.
   - Última comprobación aportada por el propietario el 2026-11-12, tras los cambios de imágenes: lint sin errores ni advertencias.
   - Build posterior a los cambios de imágenes correcto: TypeScript y generación de páginas sin errores.
   - `npm run start` inició correctamente y se comprobaron las tres cabeceras en producción local.

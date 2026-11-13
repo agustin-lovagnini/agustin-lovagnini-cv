@@ -1,4 +1,4 @@
-import { technologies } from "../data/technologies";
+import { technologies } from "../../data/technologies";
 
 export default function TechnologiesMarquee() {
     return (

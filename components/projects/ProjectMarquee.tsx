@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import type { Project } from "../data/projects";
+import type { Project } from "../../data/projects";
 
 interface ProjectMarqueeProps {
     projects: Project[];
@@ -94,13 +94,14 @@ export default function ProjectMarquee({
                                 className="w-72 shrink-0"
                             >
                                 <article className="style-section flex h-full flex-col rounded-xl">
-                                    <div className="relative mb-4 aspect-video overflow-hidden rounded-lg border border-outline bg-background">
+                                    <div className="mb-4 overflow-hidden rounded-lg border border-outline">
                                         <Image
                                             src={project.image}
                                             alt={`Vista previa de ${project.title}`}
-                                            fill
+                                            width={project.imageWidth}
+                                            height={project.imageHeight}
                                             sizes="246px"
-                                            className="object-contain"
+                                            className="block h-auto w-full"
                                         />
                                     </div>
                                     <time
@@ -147,13 +148,14 @@ export default function ProjectMarquee({
                                 className="w-72 shrink-0"
                             >
                                 <article className="style-section flex h-full flex-col rounded-xl">
-                                    <div className="relative mb-4 aspect-video overflow-hidden rounded-lg border border-outline bg-background">
+                                    <div className="mb-4 overflow-hidden rounded-lg border border-outline">
                                         <Image
                                             src={project.image}
                                             alt={`Vista previa de ${project.title}`}
-                                            fill
+                                            width={project.imageWidth}
+                                            height={project.imageHeight}
                                             sizes="246px"
-                                            className="object-contain"
+                                            className="block h-auto w-full"
                                         />
                                     </div>
                                     <time

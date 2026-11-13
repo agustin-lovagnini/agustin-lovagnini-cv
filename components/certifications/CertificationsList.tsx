@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import { certifications } from "../data/certifications";
+import { certifications } from "../../data/certifications";
 import CertificationCard from "./CertificationCard";
 import { ChevronDown, ChevronUp } from "lucide-react";
 

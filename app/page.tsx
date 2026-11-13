@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import TechnologiesMarquee from "../components/TechnologiesMarquee";
+import TechnologiesMarquee from "../components/ui/TechnologiesMarquee";
 import Image from "next/image";
 import fotoPerfil from "../public/images/img-perfil-agustin.webp";
 

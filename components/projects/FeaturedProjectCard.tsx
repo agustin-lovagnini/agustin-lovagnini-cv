@@ -1,4 +1,4 @@
-import type { Project } from "../data/projects";
+import type { Project } from "../../data/projects";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
@@ -47,13 +47,14 @@ export default function FeaturedProjectCard({
                     <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
                 </a>
             </div>
-            <div className="relative mx-auto aspect-video w-full max-w-md overflow-hidden rounded-lg border border-outline bg-background lg:w-[90%]">
+            <div className="mx-auto w-full max-w-md overflow-hidden rounded-lg border border-outline lg:w-[90%]">
                 <Image
                     src={project.image}
                     alt={`Vista previa de ${project.title}`}
-                    fill
+                    width={project.imageWidth}
+                    height={project.imageHeight}
                     sizes="(min-width: 1024px) 448px, (min-width: 480px) 448px, 100vw"
-                    className="object-contain"
+                    className="block h-auto w-full"
                 />
             </div>
         </article>
