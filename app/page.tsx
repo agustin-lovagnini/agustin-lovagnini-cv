@@ -1,9 +1,34 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import TechnologiesMarquee from "../components/ui/TechnologiesMarquee";
 import Image from "next/image";
 import fotoPerfil from "../public/images/img-perfil-agustin.webp";
+
+// ITEM - Metadatos de Inicio
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    url: "/",
+    title: "Agustín Lovagnini | Full Stack Developer",
+    description:
+      "Conocé mis proyectos, tecnologías y experiencia en desarrollo web.",
+    siteName: "Portfolio de Agustín Lovagnini",
+    locale: "es_AR",
+    type: "website",
+    images: [
+      {
+        url: "/images/og/og-agustin-lovagnini.webp",
+        width: 1200,
+        height: 630,
+        alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
+      },
+    ],
+  },
+};
 
 export default function Home() {
   return (
