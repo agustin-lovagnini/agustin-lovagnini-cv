@@ -20,9 +20,49 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 // ITEM - Metadatos generales del portfolio
+// ITEM - Metadatos generales del portfolio
 export const metadata: Metadata = {
-  title: "Agustín Lovagnini | Full Stack Developer",
-  description: "Portfolio profesional de Agustín Lovagnini, desarrollador full stack",
+  metadataBase: new URL(
+    process.env.SITE_URL ?? "http://localhost:3000"
+  ),
+
+  title: {
+    default: "Agustín Lovagnini | Full Stack Developer",
+    template: "%s | Agustín Lovagnini",
+  },
+
+  description:
+    "Portfolio de Agustín Lovagnini, desarrollador Full Stack. Conocé mis proyectos, tecnologías, formación y medios de contacto.",
+
+  openGraph: {
+    title: "Agustín Lovagnini | Full Stack Developer",
+    description:
+      "Conocé mis proyectos, tecnologías y experiencia en desarrollo web.",
+    siteName: "Portfolio de Agustín Lovagnini",
+    locale: "es_AR",
+    type: "website",
+    images: [
+      {
+        url: "/images/og/og-agustin-lovagnini.webp",
+        width: 1200,
+        height: 630,
+        alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Agustín Lovagnini | Full Stack Developer",
+    description:
+      "Conocé mis proyectos, tecnologías y experiencia en desarrollo web.",
+    images: [
+      {
+        url: "/images/og/og-agustin-lovagnini.webp",
+        alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
+      },
+    ],
+  },
 };
 
 // ITEM - Estructura compartida de las páginas

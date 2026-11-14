@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
     BriefcaseBusiness,
     Languages,
@@ -15,6 +16,14 @@ import { competencies } from "../../data/competencies";
 import ScrollPrompt from "../../components/ui/ScrollPrompt/ScrollPrompt";
 import Image from "next/image";
 import fotoPerfil from "../../public/images/img-perfil-agustin.webp";
+
+// ITEM - Metadatos de Sobre mí
+export const metadata: Metadata = {
+    title: "Sobre mí",
+    description:
+        "Conocé la formación, experiencia, certificaciones y tecnologías de Agustín Lovagnini, desarrollador Full Stack.",
+};
+
 
 export default function AboutPage() {
     return (

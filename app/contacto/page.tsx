@@ -1,4 +1,13 @@
+
+import type { Metadata } from "next";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+
+// ITEM - Metadatos de Contacto
+export const metadata: Metadata = {
+    title: "Contacto",
+    description:
+        "Contactá a Agustín Lovagnini para oportunidades laborales, colaboraciones y proyectos de desarrollo web.",
+};
 
 export default function ContactPage() {
     return (
