@@ -249,9 +249,16 @@ Registro actualizado el 2026-11-14 con las comprobaciones realizadas y los resul
 - Estado comprobado al actualizar este registro: rama local `main`, con seguimiento de `origin/main`; `estructura-proyecto` ya no aparece entre las ramas locales ni las referencias remotas disponibles en este checkout. Para próximas tareas, crear una rama desde `main` actualizada; las ramas no se sincronizan entre sí automáticamente.
 - A pedido del propietario, se reorganizó el README para visitantes de GitHub: portada, presentación, funcionalidades, páginas, capturas, tecnologías, instalación, comandos, configuración de `SITE_URL`, estructura y pendientes. Se retiró del inicio la nota antigua que indicaba continuar en `estructura-proyecto`.
 - Se copiaron las ocho capturas WebP del propietario a `docs/screenshots/`, destinadas al README, sin modificar sus imágenes. Se comprobaron las referencias locales y los hashes de las ocho copias. Las capturas incluyen elementos del navegador y del entorno de desarrollo; no acreditan por sí solas una auditoría responsive completa.
-- README, capturas y esta actualización de AGENTS requieren commit y push del propietario; no se realizaron automáticamente. Para conocer su estado posterior, consultar Git en lugar de asumir que siguen pendientes.
-- Se explicaron Vercel y Netlify. Vercel se propuso como opción, pero todavía no se configuró hosting ni se publicó el sitio. Al elegir proveedor, comprobar sus condiciones vigentes para el uso real del portfolio, especialmente si ofrece servicios freelance.
-- Próximo paso: guardar la documentación acordada y continuar con la elección y configuración del hosting. Quedan URL pública, `SITE_URL`, URL canónicas, sitemap y robots; además de los controles pendientes de accesibilidad, dependencias y rendimiento. Tras el despliegue, verificar formulario, enlaces, cabeceras, HTTPS y vista previa de la portada en servicios externos.
+- El propietario guardó y subió README, capturas y el registro anterior. La captura del despliegue mostró el commit `11239f6` en `main`. No se hicieron commits ni push automáticos.
+- El propietario creó el proyecto en Vercel y realizó el primer despliegue de producción manualmente. URL pública estable: **https://agustin-lovagnini-cv.vercel.app**. Las capturas muestran estado `Ready`, `Production` y `Current`. Se explicaron las condiciones del plan Hobby para uso personal no comercial; no se documentó una resolución específica sobre el encuadre del uso freelance.
+- Se configuró `SITE_URL=https://agustin-lovagnini-cv.vercel.app` para `Production` y se realizó un redeploy. La herramienta Open Graph de Vercel mostró `og:image` y `twitter:image` con el dominio público y la portada cargada.
+- El propietario agregó en `app/page.tsx` la canónica `/` y `openGraph.url: "/"`, conservando los campos del bloque Open Graph. El commit `3eab86d` se desplegó automáticamente tras el push a `main`. Vercel mostró `Ready` y la vista Open Graph confirmó `og:url` con la dirección pública. No colocar la canónica de Inicio en el layout compartido, porque se heredaría en las otras páginas.
+- El propietario confirmó que las cuatro páginas y el formulario funcionan desde la URL pública en incógnito. La vista previa de Vercel no equivale a comprobar el enlace directamente en WhatsApp, LinkedIn u otros servicios; esa prueba sigue pendiente.
+- Se revisaron las advertencias visibles del build: configuración npm desconocida `cache-dir` y script de instalación de `unrs-resolver@1.12.2` no cubierto por `allowScripts`. No impidieron el build. No se aprobaron scripts ni se cambiaron dependencias para silenciarlas; revisar su origen si se decide abordarlas.
+- Revisión básica del 2026-11-14: `npm.cmd audit --json` devolvió **0 vulnerabilidades conocidas**. Una petición HTTPS a `/contacto` devolvió `200`, HSTS (`max-age=63072000; includeSubDomains; preload`), `X-Content-Type-Options: nosniff`, `Content-Security-Policy: frame-ancestors 'none'` y `Referrer-Policy: strict-origin-when-cross-origin`. No aparecieron archivos versionados que coincidieran con `.env*`, `*.pem`, `*.key` o `*credentials*`. Esta comprobación por nombres no constituye un escaneo exhaustivo de secretos, y un audit sin avisos no garantiza seguridad absoluta.
+- Estado local al actualizar este registro: `main` con cambios sin commit en las canónicas de Sobre mí, Proyectos y Contacto, y archivos nuevos `app/sitemap.ts` y `app/robots.ts`. Ambos usan `SITE_URL` con alternativa localhost. Sitemap enumera las cuatro rutas; robots permite rastreo y enlaza al sitemap. Se leyeron los archivos, pero todavía no se aportó lint/build posterior ni se verificaron sus respuestas generadas.
+- Próximo paso concreto: ejecutar lint y build con los últimos cambios, comprobar `/sitemap.xml`, `/robots.txt` y canónicas, guardar con commit/push y verificar el despliegue público. En producción, sitemap y robots deben apuntar al dominio público, no a localhost. Actualizar después el README, que todavía indica publicación pendiente.
+- Continúan pendientes la auditoría completa responsive y de accesibilidad, Lighthouse, React Developer Tools y los controles específicos detallados en las etapas siguientes. No marcar las 12 etapas como completas por haber publicado el sitio.
 
 ### Cómo mantener esta lista
 
@@ -304,7 +311,9 @@ Registro actualizado el 2026-11-14 con las comprobaciones realizadas y los resul
 - [ ] **6. Inspeccionar con React Developer Tools — pendiente.**
   - Revisar componentes, props y estado de las interacciones. Analizar renderizados si aparece una necesidad concreta, sin optimizaciones prematuras.
 
-- [ ] **7. Revisar seguridad — revisión local realizada; cierre previo a publicación pendiente.**
+- [ ] **7. Revisar seguridad — revisión básica local y pública realizada; controles complementarios pendientes.**
+  - [x] El 2026-11-14, `npm.cmd audit --json` informó 0 vulnerabilidades conocidas. No se actualizaron paquetes ni se aprobaron scripts de instalación.
+  - [x] Verificadas por HTTPS las tres cabeceras configuradas y HSTS en `/contacto` pública, con respuesta `200`. La comprobación no se extendió individualmente a todas las rutas.
   - [x] El propietario obtuvo 0 vulnerabilidades conocidas tras aplicar el override de `minimatch` a `11.0.1`; lint y build posteriores correctos.
   - [x] Revisados `.gitignore`, archivos versionados y el historial disponible localmente: sin indicadores de secretos encontrados. No se verificaron referencias remotas ausentes de esta PC.
   - [x] Configurados límites del navegador: nombre 100, correo 254 y mensaje 5000 caracteres; campo honeypot `_gotcha` agregado.
@@ -316,7 +325,7 @@ Registro actualizado el 2026-11-14 con las comprobaciones realizadas y los resul
   - [ ] Verificar parches vigentes de Next.js y React antes de publicar; revisar el override cuando la dependencia original incorpore la corrección.
   - [ ] Revisar archivos a publicar, variables del hosting y alcance de la información de privacidad según el uso real del sitio.
   - Límites conocidos: no se configuró máximo de longitud de correo en el proveedor ni una lista de asuntos permitidos; no se probaron individualmente todas las reglas. Una CSP limitada a `frame-ancestors` no restringe scripts ni recursos.
-  - HTTPS y verificación de las protecciones en el dominio definitivo quedan para las etapas 11 y 12.
+  - HTTPS y las cabeceras se comprobaron en `/contacto` pública el 2026-11-14; conservar el alcance limitado de esta verificación.
 
 - [ ] **8. Optimizar imágenes y recursos — parcial.**
   - [x] El 2026-11-12 se reemplazaron las capturas de Portfolio HTML/CSS/Sass y Simulador de Inversiones por los nuevos WebP proporcionados por el propietario, ambos de 600 × 233 px. Actualizadas sus dimensiones en el catálogo; las medidas anteriores quedan sustituidas por estas.
@@ -332,8 +341,10 @@ Registro actualizado el 2026-11-14 con las comprobaciones realizadas y los resul
 - [ ] **9. Preparar SEO — parcial.**
   - [x] El 2026-11-14 se incorporaron título general con plantilla, descripción, Open Graph, Twitter Card y portada, además de títulos y descripciones en Sobre mí, Proyectos y Contacto. Inicio hereda los metadatos generales del layout. Lint y build posteriores correctos, aportados por el propietario.
   - [x] El propietario confirmó acceso local a la portada en producción. Esto no comprueba todavía su lectura por WhatsApp, LinkedIn o Facebook.
-  - [ ] Definir URL pública, configurar `SITE_URL` en el hosting y completar URL canónicas, sitemap y robots.
-  - [ ] Comprobar los metadatos emitidos y la vista previa al compartir desde la URL pública.
+  - [x] Definida la URL pública y configurada `SITE_URL` en Vercel Production; redeploy completado. Canónica y `og:url` de Inicio incorporados en el commit `3eab86d` y publicados.
+  - [x] La herramienta Open Graph de Vercel mostró portada y URLs públicas correctas para Inicio después del despliegue.
+  - [ ] Canónicas de las otras tres páginas, sitemap y robots implementados localmente; falta lint/build, commit/push y comprobar el resultado publicado.
+  - [ ] Probar la vista previa pegando el enlace en servicios externos. No confundir la previsualización de Vercel con la caché de cada red.
 
 - [x] **10. Ejecutar build de producción — última comprobación aportada el 2026-11-14.**
   - [x] El 2026-11-14, después de los metadatos y la portada: `npm.cmd run lint` sin errores ni advertencias y `npm.cmd run build` correcto, con TypeScript y generación de páginas. `npm.cmd run start` inició correctamente; el propietario confirmó la prueba manual descrita en la etapa 2.
@@ -343,11 +354,15 @@ Registro actualizado el 2026-11-14 con las comprobaciones realizadas y los resul
   - `npm run start` inició correctamente y se comprobaron las tres cabeceras en producción local.
   - Repetir lint y build si se realizan nuevos cambios antes de desplegar.
 
-- [ ] **11. Publicar en Vercel — pendiente de confirmar hosting y autorizar despliegue.**
-  - Confirmar el proveedor con el propietario. Revisar condiciones de uso, variables por entorno y dominio/HTTPS antes de publicar. No desplegar automáticamente.
+- [x] **11. Publicar en Vercel — despliegue realizado por el propietario el 2026-11-14.**
+  - Sitio público en https://agustin-lovagnini-cv.vercel.app, conectado a GitHub y a la rama `main`. `SITE_URL` configurada para Production; redeploy realizado y Open Graph comprobado en Vercel.
+  - Confirmado despliegue automático al subir el commit `3eab86d` a `main`. Advertir al explicar futuros push a esta rama que publican cambios. Codex no tiene autorización general para hacer push o desplegar por su cuenta.
+  - No se compró ni configuró un dominio propio. Mantener pendiente la revisión del encuadre de uso profesional/freelance bajo las condiciones vigentes del plan elegido.
 
-- [ ] **12. Verificar el sitio publicado — pendiente.**
-  - Probar las cuatro páginas, enlaces, formulario y respuestas de error. Comprobar HTTPS, cabeceras y recursos externos en la URL pública.
+- [ ] **12. Verificar el sitio publicado — parcial.**
+  - [x] El propietario confirmó funcionamiento de las cuatro páginas y del formulario en incógnito desde la URL pública.
+  - [x] Comprobadas respuesta HTTPS y cabeceras de `/contacto`; portada y metadatos de Inicio mostrados correctamente por Vercel.
+  - [ ] Completar casos específicos de error, recursos externos, vista previa en redes y comprobación pública de los últimos cambios SEO tras su despliegue.
   - Repetir Lighthouse en producción y registrar los resultados. No confundir producción local con publicación en Internet.
 
 **Objetivo principal: construir un portfolio profesional mientras el desarrollador aprende y mantiene el control de todas las decisiones y modificaciones.**

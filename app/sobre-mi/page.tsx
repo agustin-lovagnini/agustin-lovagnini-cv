@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     title: "Sobre mí",
     description:
         "Conocé la formación, experiencia, certificaciones y tecnologías de Agustín Lovagnini, desarrollador Full Stack.",
+    alternates: {
+        canonical: "/sobre-mi",
+    },
 };
 
 

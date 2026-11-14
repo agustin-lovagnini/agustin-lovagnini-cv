@@ -8,9 +8,12 @@ import ProjectMarquee from "../../components/projects/ProjectMarquee/ProjectMarq
 
 // ITEM - Metadatos de Proyectos
 export const metadata: Metadata = {
-  title: "Proyectos",
-  description:
-    "Explorá los proyectos de desarrollo web de Agustín Lovagnini, sus tecnologías, repositorios y demostraciones.",
+    title: "Proyectos",
+    description:
+        "Explorá los proyectos de desarrollo web de Agustín Lovagnini, sus tecnologías, repositorios y demostraciones.",
+    alternates: {
+        canonical: "/proyectos",
+    },
 };
 
 export default function ProjectsPage() {

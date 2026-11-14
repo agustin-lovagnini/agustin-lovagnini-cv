@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     title: "Contacto",
     description:
         "Contactá a Agustín Lovagnini para oportunidades laborales, colaboraciones y proyectos de desarrollo web.",
+    alternates: {
+        canonical: "/contacto",
+    },
 };
 
 export default function ContactPage() {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, FileText } from "lucide-react";
 import TechnologiesMarquee from "../components/ui/TechnologiesMarquee";
 import Image from "next/image";
 import fotoPerfil from "../public/images/img-perfil-agustin.webp";
@@ -95,6 +95,16 @@ export default function Home() {
                 aria-label="GitHub"
               >
                 <FaGithub size={22} aria-hidden="true" />
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1IqUTZjc_qskEoOR5iyi07wqiAYtlPn_V/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="action-button action-social w-auto gap-2 px-4 sm:w-auto sm:gap-2"
+                aria-label="Ver CV en PDF (abre en una pestaña nueva)"
+              >
+                <FileText size={22} className="shrink-0" aria-hidden="true" />
+                <span>Ver CV</span>
               </a>
             </div>
           </div>
