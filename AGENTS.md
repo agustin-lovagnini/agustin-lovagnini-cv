@@ -237,7 +237,21 @@ Se permite inspeccionar y leer archivos para comprender el proyecto, sin modific
 
 ## 11. Seguimiento de revisión y publicación
 
-Registro actualizado el 2026-11-12 con las comprobaciones realizadas en esta sesión y los resultados aportados por el propietario.
+Registro actualizado el 2026-11-14 con las comprobaciones realizadas y los resultados aportados por el propietario. Los registros anteriores conservan su fecha y alcance.
+
+### Continuidad — 14 de noviembre de 2026
+
+- El propietario quiere dejar el portfolio preparado para publicar y prefiere implementar personalmente los cambios con explicaciones por bloques y comandos explicados. Autorizó expresamente copiar la portada y reorganizar README y este registro; esto no autoriza modificaciones generales ni despliegues automáticos.
+- Se incorporó la portada proporcionada por el propietario en `public/images/og/og-agustin-lovagnini.webp` (1200 × 630 px, 40430 bytes). El propietario agregó en el layout título con plantilla, descripción, Open Graph, Twitter Card e imagen, y metadatos propios en Sobre mí, Proyectos y Contacto.
+- `metadataBase` lee `process.env.SITE_URL` y utiliza `http://localhost:3000` como alternativa local. Antes de publicar, configurar `SITE_URL` con el dominio público completo y volver a compilar; no presentar localhost como URL válida para las vistas previas públicas.
+- El propietario aportó salida de `npm.cmd run lint` sin errores ni advertencias y `npm.cmd run build` correcto con Next.js `16.4.3`, TypeScript y generación de las cuatro páginas. Después confirmó las pruebas manuales propuestas en producción local: páginas, menú móvil, enlaces, formulario con recepción del correo y acceso a la portada.
+- Se revisaron los cambios con `git status --short`, `git diff --stat` y `git diff --check`. Los metadatos y la portada quedaron en el commit `eb18b92`, subido a `estructura-proyecto`. El propietario realizó un merge fast-forward a `main` y confirmó el push de `main`.
+- Estado comprobado al actualizar este registro: rama local `main`, con seguimiento de `origin/main`; `estructura-proyecto` ya no aparece entre las ramas locales ni las referencias remotas disponibles en este checkout. Para próximas tareas, crear una rama desde `main` actualizada; las ramas no se sincronizan entre sí automáticamente.
+- A pedido del propietario, se reorganizó el README para visitantes de GitHub: portada, presentación, funcionalidades, páginas, capturas, tecnologías, instalación, comandos, configuración de `SITE_URL`, estructura y pendientes. Se retiró del inicio la nota antigua que indicaba continuar en `estructura-proyecto`.
+- Se copiaron las ocho capturas WebP del propietario a `docs/screenshots/`, destinadas al README, sin modificar sus imágenes. Se comprobaron las referencias locales y los hashes de las ocho copias. Las capturas incluyen elementos del navegador y del entorno de desarrollo; no acreditan por sí solas una auditoría responsive completa.
+- README, capturas y esta actualización de AGENTS requieren commit y push del propietario; no se realizaron automáticamente. Para conocer su estado posterior, consultar Git en lugar de asumir que siguen pendientes.
+- Se explicaron Vercel y Netlify. Vercel se propuso como opción, pero todavía no se configuró hosting ni se publicó el sitio. Al elegir proveedor, comprobar sus condiciones vigentes para el uso real del portfolio, especialmente si ofrece servicios freelance.
+- Próximo paso: guardar la documentación acordada y continuar con la elección y configuración del hosting. Quedan URL pública, `SITE_URL`, URL canónicas, sitemap y robots; además de los controles pendientes de accesibilidad, dependencias y rendimiento. Tras el despliegue, verificar formulario, enlaces, cabeceras, HTTPS y vista previa de la portada en servicios externos.
 
 ### Cómo mantener esta lista
 
@@ -270,7 +284,8 @@ Registro actualizado el 2026-11-12 con las comprobaciones realizadas en esta ses
 - [ ] **2. Comprobar funcionalidad — parcial.**
   - [x] El propietario confirmó envío normal del formulario y recepción del correo.
   - [x] Probada pérdida de conexión: error del navegador y conservación de los campos visibles al volver atrás.
-  - [ ] Comprobar sistemáticamente navegación, enlaces externos, certificados, desplegables, menú y rutas de error.
+  - [x] El 2026-11-14 el propietario confirmó la prueba manual propuesta de las cuatro páginas, menú móvil, enlaces a proyectos, certificados y redes, y envío del formulario con recepción del correo, usando `npm run start` en producción local.
+  - [ ] Completar la comprobación específica de desplegables y rutas de error; la confirmación anterior no documenta estos casos individualmente.
   - Mejorar los errores dentro del portfolio es una decisión de experiencia de uso pendiente; no se ha demostrado una vulnerabilidad por usar la respuesta de Formspree.
 
 - [ ] **3. Probar responsive — parcial.**
@@ -315,9 +330,13 @@ Registro actualizado el 2026-11-12 con las comprobaciones realizadas en esta ses
   - [ ] Comprobar visualmente los recortes, dimensiones y comportamiento responsive, y medir carga y peso real de recursos según su uso.
 
 - [ ] **9. Preparar SEO — parcial.**
-  - Existen metadatos generales; falta comprobar de manera integral metadata por página, Open Graph, URL definitiva, sitemap y robots.
+  - [x] El 2026-11-14 se incorporaron título general con plantilla, descripción, Open Graph, Twitter Card y portada, además de títulos y descripciones en Sobre mí, Proyectos y Contacto. Inicio hereda los metadatos generales del layout. Lint y build posteriores correctos, aportados por el propietario.
+  - [x] El propietario confirmó acceso local a la portada en producción. Esto no comprueba todavía su lectura por WhatsApp, LinkedIn o Facebook.
+  - [ ] Definir URL pública, configurar `SITE_URL` en el hosting y completar URL canónicas, sitemap y robots.
+  - [ ] Comprobar los metadatos emitidos y la vista previa al compartir desde la URL pública.
 
-- [x] **10. Ejecutar build de producción — comprobado el 2026-11-12.**
+- [x] **10. Ejecutar build de producción — última comprobación aportada el 2026-11-14.**
+  - [x] El 2026-11-14, después de los metadatos y la portada: `npm.cmd run lint` sin errores ni advertencias y `npm.cmd run build` correcto, con TypeScript y generación de páginas. `npm.cmd run start` inició correctamente; el propietario confirmó la prueba manual descrita en la etapa 2.
   - Verificación tras actualizar Node.js el 2026-11-12: Node `26.13.1`, npm `11.12.1`; lint sin errores ni advertencias y build correcto, incluida la comprobación de TypeScript y generación de páginas. La versión de Node cumple los requisitos declarados de Next.js instalado.
   - Última comprobación aportada por el propietario el 2026-11-12, tras los cambios de imágenes: lint sin errores ni advertencias.
   - Build posterior a los cambios de imágenes correcto: TypeScript y generación de páginas sin errores.
