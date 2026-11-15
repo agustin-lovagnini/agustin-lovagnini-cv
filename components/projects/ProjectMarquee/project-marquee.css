@@ -1,18 +1,9 @@
 /* SUBSECTION - Deslizamiento manual de proyectos en móvil */
-/* NOTE - Estas reglas solo se aplican por debajo de 640 px con el tamaño inicial habitual de fuente. */
-@media (width < 40rem) {
+/* NOTE - Estas reglas solo se aplican por debajo de 768 px con el tamaño inicial habitual de fuente. */
+@media (width < 48rem) {
   .project-marquee {
     overflow-x: auto;
     scrollbar-color: var(--color-gold) var(--color-background);
-  }
-
-  /* NOTE - En móvil, React controla el avance mediante scrollLeft; se desactiva la animación CSS. */
-  .project-marquee .marquee-track {
-    animation: none;
-  }
-
-  .project-marquee .marquee-track>ul[aria-hidden="true"] {
-    display: none;
   }
 
   /* SUBSECTION - Indicadores de inicio y fin del recorrido */
@@ -35,7 +26,7 @@
     opacity: 0;
   }
 
-  .project-marquee .marquee-track>ul:first-child {
+  .project-marquee-list {
     padding-left: 1rem;
   }
 
@@ -54,5 +45,17 @@
 
   .project-marquee-frame[data-at-end="true"]::after {
     opacity: 1;
+  }
+}
+
+/* SUBSECTION - Gestos del carrusel en tablets y escritorio */
+@media (min-width: 768px) {
+  .project-marquee {
+    touch-action: pan-y pinch-zoom;
+  }
+
+  /* NOTE - Conserva la separación al unir el último proyecto con el primero. */
+  .project-marquee-list > li:last-child {
+    margin-right: 1rem;
   }
 }
