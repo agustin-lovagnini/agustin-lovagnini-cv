@@ -1,6 +1,6 @@
 ﻿# Portfolio profesional · Agustín Lovagnini
 
-![Portada del portfolio de Agustín Lovagnini, Full Stack Developer](public/images/og/og-agustin-lovagnini.webp)
+![Portada del portfolio de Agustín Lovagnini, Full Stack Developer](public/images/og/og-agustin-lovagnini.jpg)
 
 Portfolio personal desarrollado con **Next.js, React, TypeScript y Tailwind CSS**. Reúne mi perfil profesional, formación, certificaciones y proyectos de desarrollo web, con una interfaz oscura y detalles dorados.
 

@@ -237,7 +237,103 @@ Se permite inspeccionar y leer archivos para comprender el proyecto, sin modific
 
 ## 11. Seguimiento de revisión y publicación
 
-Registro actualizado el 2026-11-14 con las comprobaciones realizadas y los resultados aportados por el propietario. Los registros anteriores conservan su fecha y alcance.
+Registro actualizado el 2026-11-17. Priorizar el punto de continuidad siguiente; los registros anteriores conservan su fecha y alcance histórico.
+
+### Continuidad — 17 de noviembre de 2026: revisión de producción
+
+- Rama actual: **`revision-produccion`**, creada desde `main` en `c262f35`. Al iniciar esta actualización todavía no tenía seguimiento remoto. La rama anterior `mejoras-produccion` se descartó; no usar sus antiguas instrucciones de continuidad ni repetir cherry-picks.
+- Producción: https://agustin-lovagnini-cv.vercel.app. Los push a `main` despliegan automáticamente. Trabajar en `revision-produccion` y no integrar ni publicar sin indicación del propietario.
+- El propietario quiere seguir desde otra computadora. Primero guardar los cambios acordados con commit/push; no asumir que archivos guardados localmente ya están en GitHub. Codex no debe hacer commits ni push automáticamente sin autorización para la acción concreta.
+- Cambios locales al actualizar este registro: README referencia la portada JPEG; se eliminó `public/images/og/og-agustin-lovagnini.webp`; Sobre mí cambió la cuadrícula de estadísticas para resolver un desborde con zoom. Este registro también queda modificado. Falta lint/build posterior a este ajuste y no se hizo merge a `main`.
+- **No tocar la marquesina de Tecnologías de Inicio**, por decisión expresa del propietario. Tampoco cambiar las tres sugerencias del editor de `break-words` a `wrap-break-word` (dos en Contacto y una en Sobre mí). Son sugerencias, no fallos de ejecución.
+- Proyectos ya utiliza Embla con controles en tablet/escritorio, pausa por mouse y foco. No proponer reimplementarlo como si esos controles faltaran. En móvil tiene scroll manual y pausa mientras se mantiene el dedo, con reanudación diferida tras soltar.
+- El usuario modificó únicamente el `<dl>` de estadísticas de Sobre mí: `grid-cols-2` pasó a `grid-cols-[repeat(auto-fit,minmax(8.5rem,1fr))]`. Confirmó que se ve bien al 200 % y 250 %. El cambio exterior de dos columnas a una depende del breakpoint existente, no de esa clase del `<dl>`. La indentación de ese bloque quedó pendiente de ordenar, sin impacto funcional identificado.
+
+#### Checklist vigente
+
+**Imagen al compartir**
+
+- [x] Portada JPEG publicada y referencias de Open Graph/Twitter actualizadas en layout e Inicio; commit `c262f35` en `main`.
+- [x] El propietario mostró WhatsApp móvil con la portada grande arriba, después de probar `?preview=jpg2`. No atribuir con certeza el resultado solo al formato: también cambió la URL de prueba/caché. WhatsApp decide la disposición final.
+- [x] WebP de portada eliminado localmente y README actualizado al JPG. Los demás WebP se conservan.
+- [ ] Guardar/subir la limpieza pendiente y verificarla al publicar.
+- [ ] Probar vista previa en LinkedIn.
+
+**Accesibilidad e interacción — pruebas manuales del propietario**
+
+- [x] Recorrido con Tab en Proyectos, tarjetas y foco visibles.
+- [x] Carrusel detenido mientras el foco está en sus enlaces; reanuda al salir del bloque. La aclaración final del propietario descarta el supuesto fallo de reanudación mientras seguía enfocado.
+- [x] Anterior, Siguiente y Pausar/Reanudar funcionan con teclado.
+- [x] Funcionamiento táctil del carrusel móvil confirmado por el propietario.
+- [x] Menú móvil: apertura con teclado, foco inicial en Cerrar, recorrido con Tab/Shift+Tab, Escape y retorno al botón comprobados por el propietario.
+- [ ] Evaluar/agregar «Saltar al contenido» si el propietario lo decide.
+- [ ] Indicar página activa en el menú móvil.
+- [ ] Probar con lector de pantalla. Los resultados automáticos no sustituyen esta prueba.
+- Tecnologías de Inicio queda sin modificaciones por decisión del propietario; no marcar como implementado un botón de pausa que no existe.
+
+**Zoom y responsive**
+
+- [x] El propietario confirmó recorrido de las cuatro páginas al variar el ancho de ventana, incluidos tamaños intermedios, sin problemas observados.
+- [x] Desborde de Compromiso/Certificaciones corregido localmente y confirmado al 200 % y 250 %.
+- [ ] Completar una prueba específica en orientación horizontal.
+- [ ] Verificar el ajuste local de estadísticas después de publicarlo. No extrapolar esta corrección a una auditoría completa de zoom de todas las páginas.
+
+**Lighthouse — producción pública, capturas del propietario del 2026-11-17**
+
+La primera medición móvil de Inicio dio 75 y tenía advertencia explícita de extensiones; se descartó como referencia de rendimiento. Se repitieron las pruebas en incógnito. Las siguientes son mediciones de laboratorio de la versión pública, que todavía no contiene el ajuste local del zoom; no equivalen a datos de usuarios reales ni a certificación de accesibilidad/seguridad.
+
+| Ruta | Rendimiento Mobile | Rendimiento Desktop | Accesibilidad / Buenas prácticas / SEO en ambos |
+| --- | --- | --- | --- |
+| `/` | 98 | 100 | 100 / 100 / 100 |
+| `/sobre-mi` | 97 | 100 | 100 / 100 / 100 |
+| `/proyectos` | 97 | 100 | 100 / 100 / 100 |
+| `/contacto` | 98 | 100 | 100 / 100 / 100 |
+
+| Ruta Mobile | FCP | LCP | TBT | CLS | Speed Index |
+| --- | --- | --- | --- | --- | --- |
+| `/` | 1,1 s | 2,2 s | 100 ms | 0 | 1,1 s |
+| `/sobre-mi` | 1,1 s | 2,2 s | 130 ms | 0 | 1,4 s |
+| `/proyectos` | 1,0 s | 2,2 s | 150 ms | 0 | 1,2 s |
+| `/contacto` | 1,0 s | 2,2 s | 120 ms | 0 | 1,2 s |
+
+En Desktop las cuatro rutas mostraron FCP 0,3 s, LCP 0,5 s, TBT 0 ms y CLS 0; Speed Index entre 0,3 y 0,4 s.
+
+- [x] Ocho mediciones completadas y revisadas, sin necesidad urgente de optimización identificada.
+- Los avisos restantes de CSS bloqueante, JavaScript de compatibilidad y trabajo del hilo principal son oportunidades de diagnóstico; no modificar código solo para perseguir 100. React Developer Tools queda como herramienta si aparece una necesidad concreta.
+
+**SEO y funcionamiento**
+
+- [x] Capturas públicas de sitemap y robots verificadas: sitemap enumera las cuatro páginas con dominio de producción; robots contiene `User-Agent: *`, `Allow: /` y la URL correcta del sitemap. Sin localhost.
+- [ ] Verificar las cuatro canónicas emitidas en producción.
+- [ ] Personalizar Open Graph/Twitter de páginas interiores; actualmente heredan el bloque social general.
+- [ ] Completar comprobaciones de CV/certificados sin sesión, desplegables, rutas inexistentes y errores del formulario. Las pruebas históricas de envío normal siguen registradas abajo.
+- [ ] Evaluar una 404 propia, opcional; la predeterminada ya existe.
+
+**Seguridad y mantenimiento**
+
+- [x] Next.js y eslint-config-next actualizados a `16.4.6`; lint y build exitosos aportados por el propietario. Parche aplicado a `main` mediante cherry-pick como `2a3475a` y captura de Vercel con Ready en Production.
+- [x] `npm audit --omit=dev` devolvió 0 vulnerabilidades conocidas durante esa revisión del 2026-11-17. No confundirlo con el audit completo ni con garantía absoluta de seguridad.
+- [ ] Seguir los 14 avisos de desarrollo relacionados con picomatch: https://github.com/advisories/GHSA-fc5q-39xc-vjpf. Al consultarlo el 2026-11-17 no indicaba versión corregida; volver a verificar antes de proponer una solución. No usar `npm audit fix --force`, que proponía bajar eslint-config-next a 14.2.35.
+- [ ] Revisar las advertencias `cache-dir` y script de unrs-resolver/allowScripts antes de cambiar configuraciones o aprobar scripts.
+- [ ] Evaluar actualización compatible de ESLint por el aviso de fin de soporte mostrado durante `npm ci`.
+- Las comprobaciones HTTPS/cabeceras del 14 de noviembre conservan su alcance histórico; no se repitieron todas hoy.
+
+**Documentación y cierre**
+
+- [x] Actualizado este punto de continuidad con pruebas y pendientes, a pedido del propietario.
+- [ ] Actualizar README con enlace público, estado real y resultados; hoy solo se cambió allí la referencia de la portada.
+- [ ] Ordenar indentación del bloque de estadísticas si el propietario lo autoriza; no modificar las sugerencias Tailwind descartadas.
+- [ ] Ejecutar lint y build de los últimos cambios locales.
+- [ ] Guardar/subir los cambios acordados en `revision-produccion`. Merge a `main` únicamente cuando lo indique el propietario.
+
+#### Retomar en otra computadora
+
+1. Comprobar `git status` y conservar los cambios locales antes de actualizar.
+2. Ejecutar `git fetch origin`. Si no existe rama local: `git switch --track origin/revision-produccion`. Si ya existe: `git switch revision-produccion` y `git pull --ff-only`.
+3. Ejecutar `npm ci` si faltan dependencias o cambiaron package.json/lockfile; `npm run dev` para desarrollar. No copiar node_modules ni .next entre computadoras.
+4. Leer este registro y elegir una sola tarea pendiente. No rehacer funcionalidades ya comprobadas ni tocar Tecnologías de Inicio.
+
+### Registro histórico anterior — no usar sus pendientes como estado actual
 
 ### Continuidad — 14 de noviembre de 2026
 

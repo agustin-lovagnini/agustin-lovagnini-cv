@@ -120,11 +120,10 @@ export default function AboutPage() {
                         <p className="text-gold font-medium text-sm">Full Stack Developer</p>
                         <p className="text-muted text-sm">Desarrollador Full Stack con vocación por el diseño y la tecnología. Me caracterizan la curiosidad, la iniciativa y el compromiso por aportar valor en cada proyecto.</p>
 
-                        <dl className="mt-3 grid w-full max-w-xs grid-cols-2 gap-3 rounded-lg bg-outline p-3 text-sm">
-                            <div className="flex min-w-0 flex-col text-center">
-                                <dt className="order-2 w-full text-xs tracking-widest text-gold-light opacity-80">Compromiso</dt>
-                                <dd className="order-1 w-full text-4xl">100%</dd>
-                            </div>
+                        <dl className="mt-3 grid w-full max-w-xs grid-cols-[repeat(auto-fit,minmax(8.5rem,1fr))] gap-3 rounded-lg bg-outline p-3 text-sm">                            <div className="flex min-w-0 flex-col text-center">
+                            <dt className="order-2 w-full text-xs tracking-widest text-gold-light opacity-80">Compromiso</dt>
+                            <dd className="order-1 w-full text-4xl">100%</dd>
+                        </div>
                             <div className="flex min-w-0 flex-col text-center">
                                 <dt className="order-2 w-full text-xs tracking-widest text-gold-light opacity-80">Certificaciones</dt>
                                 <dd className="order-1 w-full text-4xl text-gold-dark">{certifications.length}</dd>
