@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/og/og-agustin-lovagnini.webp",
+        url: "/images/og/og-agustin-lovagnini.jpg",
         width: 1200,
         height: 630,
         alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
       "Conocé mis proyectos, tecnologías y experiencia en desarrollo web.",
     images: [
       {
-        url: "/images/og/og-agustin-lovagnini.webp",
+        url: "/images/og/og-agustin-lovagnini.jpg",
         alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
       },
     ],
