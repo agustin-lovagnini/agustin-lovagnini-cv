@@ -6,7 +6,7 @@ Portfolio personal desarrollado con **Next.js, React, TypeScript y Tailwind CSS*
 
 [Ver portfolio](https://agustin-lovagnini-cv.vercel.app) · [Capturas](#capturas-de-pantalla) · [Instalación](#instalación-y-ejecución-local) · [Contacto](#contacto)
 
-> **Estado:** portfolio publicado en [Vercel](https://agustin-lovagnini-cv.vercel.app). Las mejoras en revisión pueden diferir de la versión pública hasta su publicación.
+> **Disponible online:** [Visitá mi portfolio](https://agustin-lovagnini-cv.vercel.app).
 
 ## Sobre el proyecto
 
@@ -19,7 +19,9 @@ También representa la evolución de mi [portfolio anterior con HTML, CSS y Sass
 - Cuatro páginas con navegación compartida y menú móvil.
 - Perfil profesional, tecnologías, competencias y certificaciones desplegables.
 - Catálogo de 12 proyectos: tres destacados y nueve prácticas ordenadas cronológicamente.
+- Carrusel de proyectos con controles para avanzar, retroceder, pausar y reanudar en tablet y escritorio, y desplazamiento táctil en móvil.
 - Formulario de contacto integrado con Formspree y canales de contacto directos.
+- Acceso al CV en PDF desde Inicio para consultarlo en Google Drive.
 - Botón para compartir el portfolio o copiar su enlace, según las funciones del navegador.
 - Metadatos por página y portada para compartir mediante Open Graph y Twitter Cards.
 - Diseño responsive, imágenes con `next/image` y reglas para respetar la preferencia de movimiento reducido.
@@ -35,7 +37,7 @@ También representa la evolución de mi [portfolio anterior con HTML, CSS y Sass
 
 ## Capturas de pantalla
 
-Capturas proporcionadas por el autor durante el desarrollo local. Los indicadores de Next.js y las barras del navegador visibles en algunas imágenes pertenecen al entorno de captura.
+Capturas tomadas durante el desarrollo; pueden mostrar una versión anterior a la publicada. Los indicadores de Next.js y las barras del navegador visibles en algunas imágenes pertenecen al entorno de captura.
 
 ### Escritorio
 
@@ -78,6 +80,7 @@ Vista de Inicio. Abrí la imagen para verla en tamaño completo.
 | React | Componentes e interacciones. |
 | TypeScript | Tipado de componentes y catálogos de datos. |
 | Tailwind CSS v4 y CSS | Diseño responsive, estilos compartidos y animaciones. |
+| Embla Carousel | Carrusel interactivo de proyectos y desplazamiento automático en tablet y escritorio. |
 | Lucide React y React Icons | Iconografía. |
 | Formspree | Procesamiento del formulario de contacto, sin backend propio. |
 | Git, GitHub y npm | Versionado y gestión de dependencias. |
@@ -144,17 +147,22 @@ docs/screenshots/       Capturas utilizadas en este README
 
 Los catálogos se mantienen separados de la presentación. Los componentes con CSS propio lo guardan junto a su TSX; las hojas se importan desde `app/globals.css` y conservan clases globales.
 
-## Estado y próximos pasos
+## Calidad y experiencia de uso
 
-Revisión del **17 de noviembre de 2026**:
+El portfolio combina navegación por teclado, estados de foco, textos alternativos y soporte para la preferencia de movimiento reducido. Durante la revisión se realizaron pruebas manuales de navegación, formulario, enlaces, lector de pantalla y visualización responsive, incluida la orientación horizontal en celular.
 
-- El autor comprobó navegación, formulario, enlaces, lector de pantalla y visualización en celular, incluida la orientación horizontal.
-- En la versión pública se comprobaron sitemap, robots y canónicas; la vista previa de Inicio se probó en WhatsApp y LinkedIn.
-- Lighthouse en producción registró rendimiento móvil entre 97 y 98 y escritorio 100 en las cuatro páginas; accesibilidad, buenas prácticas y SEO obtuvieron 100 en esas mediciones de laboratorio.
-- Los cambios locales en revisión pasaron lint y build. Incluyen mejoras de accesibilidad y metadatos sociales por página, pendientes de publicación y verificación pública.
-- Quedan en seguimiento avisos de dependencias de desarrollo y la compatibilidad de ESLint; la auditoría de dependencias de producción no informó vulnerabilidades conocidas durante esta revisión.
+Las mediciones de Lighthouse del **17 de noviembre de 2026**, realizadas sobre el sitio público en incógnito, registraron:
 
-El seguimiento técnico detallado y las pautas de colaboración están en [AGENTS.md](AGENTS.md).
+| Categoría | Móvil | Escritorio |
+| --- | --- | --- |
+| Rendimiento | 97–98 | 100 |
+| Accesibilidad | 100 | 100 |
+| Buenas prácticas | 100 | 100 |
+| SEO | 100 | 100 |
+
+Los resultados corresponden a las cuatro páginas en esas ejecuciones de laboratorio; pueden variar según el dispositivo, la conexión y la versión del sitio. No sustituyen las pruebas manuales de accesibilidad.
+
+El proyecto continúa evolucionando. Las decisiones de desarrollo y el seguimiento técnico se documentan en [AGENTS.md](AGENTS.md).
 
 ## Contacto
 

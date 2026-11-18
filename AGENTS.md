@@ -203,11 +203,9 @@ Antes de continuar una tarea, verificar el estado actual del repositorio y consu
 
 ## 9. Contacto y publicación
 
-El portfolio tendrá un formulario que permita recibir consultas por correo electrónico.
+El portfolio utiliza Formspree para recibir consultas por correo electrónico, sin backend propio.
 
-Se evaluará una solución sencilla, como Formspree, evitando implementar un backend propio sin necesidad.
-
-El hosting todavía no está definido.
+Está publicado en Vercel en https://agustin-lovagnini-cv.vercel.app. Los push a `main` inician despliegues automáticos de producción.
 
 Antes de publicar, verificar las condiciones del servicio elegido para uso profesional y freelance.
 
@@ -249,10 +247,9 @@ Registro actualizado el 2026-11-18. Priorizar el punto de continuidad siguiente;
 - Se inspeccionó el HTML y la guía instalada de Next.js. Una simulación Report-Only con `script-src 'self'` mostró avisos para los scripts inline legítimos de Next.js, sin bloquearlos. El propietario retiró después esa cabecera y aportó nuevo lint/build correcto. La configuración final no contiene Report-Only ni script-src.
 - La investigación de lectura del build encontró scripts inline por ruta: Inicio 36, Sobre mí 26, Proyectos 19 y Contacto 17. SRI para archivos externos no basta por sí solo para autorizar todos esos bloques. No se implementaron hashes, nonces, herramientas de postbuild ni cambios de arquitectura.
 - Decisión del propietario: conservar las cuatro protecciones probadas y posponer una CSP estricta de scripts por su complejidad y mantenimiento. Los nonces afectarían el renderizado estático/PPR según la guía consultada; los hashes requerirían automatización y comprobaciones de builds y navegación. No proponer unsafe-inline ni copiar hashes manuales solo para subir la nota.
-- El propietario autorizó integrar el trabajo de hoy a main, subirlo a GitHub y eliminar seguridad-csp local y remota. Verificar Git para conocer el resultado de esas acciones; el push a main inicia un despliegue, no acredita por sí solo que haya terminado.
-- [ ] Confirmar Ready del despliegue de main y verificar la CSP pública con las cuatro reglas.
-- [ ] Probar el envío normal del formulario después del despliegue público y confirmar recepción.
-- [ ] Quitar la excepción temporal del Preview en Deployment Protection y comprobar que vuelve a pedir autenticación. Borrar la rama de GitHub no garantiza retirar la excepción ni los despliegues existentes.
+- Trabajo integrado y subido a `main`, incluido el registro `f8f659b`. Rama `seguridad-csp` eliminada localmente y en GitHub por autorización del propietario; el repositorio quedó en main, sin cambios pendientes al terminar esa integración.
+- [x] El propietario retiró la excepción temporal del Preview: la captura de Deployment Protection Exceptions mostró la lista vacía. No se registró una comprobación posterior de autenticación en incógnito.
+- README actualizado como presentación del portfolio: enlace público destacado, acceso al CV, controles del carrusel, Embla en tecnologías y resultados Lighthouse con fecha y alcance. El seguimiento de seguridad se conserva en AGENTS, no en la presentación pública del README. Estos últimos cambios de documentación requieren guardado en Git cuando el propietario lo indique.
 - [ ] Mantener como mejora futura, sin implementación acordada, la autorización de scripts compatible con Next.js. El B+ esperado no obliga a cambiar la arquitectura del portfolio.
 - Avisos secundarios observados en desarrollo: WebSocket/HMR, recomendación de carga eager para retrato LCP y atributo data-scroll-behavior para scroll suave. No se corrigieron en esta tarea ni se confundieron con infracciones de nuestra CSP. Los errores CSP de DoubleClick durante la navegación a Formspree pertenecían a la política del proveedor; no se añadieron sus dominios a la política del portfolio.
 
