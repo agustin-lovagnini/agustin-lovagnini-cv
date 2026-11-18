@@ -237,7 +237,26 @@ Se permite inspeccionar y leer archivos para comprender el proyecto, sin modific
 
 ## 11. Seguimiento de revisión y publicación
 
-Registro actualizado el 2026-11-17. Priorizar el punto de continuidad siguiente; los registros anteriores conservan su fecha y alcance histórico.
+Registro actualizado el 2026-11-18. Priorizar el punto de continuidad siguiente; los registros anteriores conservan su fecha y alcance histórico.
+
+### Cierre de revisión CSP — 18 de noviembre de 2026
+
+- Implementada en `next.config.ts` una CSP activa con `frame-ancestors 'none'`, `object-src 'none'`, `base-uri 'self'` y `form-action 'self' https://formspree.io`. El cambio de aplicación se guardó en `fc24b85`. Se conservan las demás cabeceras y la configuración de renderizado.
+- Primero se probaron las tres reglas nuevas en Report-Only: el propietario recorrió las cuatro páginas sin avisos CSP visibles y confirmó envío normal a Formspree con recepción del correo. Cambió temporalmente el action solo en DevTools a `https://example.invalid/prueba-csp`, usando datos ficticios; el navegador informó la infracción sin bloquear y la navegación falló por DNS, como se esperaba.
+- Después se activaron las reglas: la misma prueba negativa quedó bloqueada por form-action sin abandonar Contacto. Tras recargar para restaurar el formulario, el envío normal a Formspree volvió a funcionar y llegó el correo. No se modificó el destino del formulario en los archivos.
+- El propietario aportó lint y build correctos con Next.js 16.4.6, TypeScript y generación estática de las rutas. Confirmó mediante capturas la cabecera activa tanto en desarrollo como con `npm run start`.
+- Se subió la rama seguridad-csp y se abrió temporalmente al público el Preview `agustin-lovagnini-k9omcktjx.vercel.app` mediante una excepción de Deployment Protection. Se verificaron las cuatro directivas en su respuesta HTTPS. Observatory obtuvo B+ (80/100, 11/12), manteniendo la penalización por falta de restricciones de scripts. Esta puntuación no demuestra explotación ni garantiza seguridad.
+- Se inspeccionó el HTML y la guía instalada de Next.js. Una simulación Report-Only con `script-src 'self'` mostró avisos para los scripts inline legítimos de Next.js, sin bloquearlos. El propietario retiró después esa cabecera y aportó nuevo lint/build correcto. La configuración final no contiene Report-Only ni script-src.
+- La investigación de lectura del build encontró scripts inline por ruta: Inicio 36, Sobre mí 26, Proyectos 19 y Contacto 17. SRI para archivos externos no basta por sí solo para autorizar todos esos bloques. No se implementaron hashes, nonces, herramientas de postbuild ni cambios de arquitectura.
+- Decisión del propietario: conservar las cuatro protecciones probadas y posponer una CSP estricta de scripts por su complejidad y mantenimiento. Los nonces afectarían el renderizado estático/PPR según la guía consultada; los hashes requerirían automatización y comprobaciones de builds y navegación. No proponer unsafe-inline ni copiar hashes manuales solo para subir la nota.
+- El propietario autorizó integrar el trabajo de hoy a main, subirlo a GitHub y eliminar seguridad-csp local y remota. Verificar Git para conocer el resultado de esas acciones; el push a main inicia un despliegue, no acredita por sí solo que haya terminado.
+- [ ] Confirmar Ready del despliegue de main y verificar la CSP pública con las cuatro reglas.
+- [ ] Probar el envío normal del formulario después del despliegue público y confirmar recepción.
+- [ ] Quitar la excepción temporal del Preview en Deployment Protection y comprobar que vuelve a pedir autenticación. Borrar la rama de GitHub no garantiza retirar la excepción ni los despliegues existentes.
+- [ ] Mantener como mejora futura, sin implementación acordada, la autorización de scripts compatible con Next.js. El B+ esperado no obliga a cambiar la arquitectura del portfolio.
+- Avisos secundarios observados en desarrollo: WebSocket/HMR, recomendación de carga eager para retrato LCP y atributo data-scroll-behavior para scroll suave. No se corrigieron en esta tarea ni se confundieron con infracciones de nuestra CSP. Los errores CSP de DoubleClick durante la navegación a Formspree pertenecían a la política del proveedor; no se añadieron sus dominios a la política del portfolio.
+
+Las secciones siguientes conservan el contexto histórico; sus propuestas o ramas antiguas no sustituyen este cierre.
 
 ### Próxima revisión — CSP y HTTP Observatory
 
