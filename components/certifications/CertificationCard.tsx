@@ -33,6 +33,7 @@ export default function CertificationCard({ certification, }: CertificationCardP
                     target="_blank"
                     rel="noopener noreferrer"
                     className="action-button action-primary whitespace-normal text-center"
+                    aria-label={`Ver certificado: ${certification.title} (abre en otra pestaña)`}
                 >
                     Ver certificado
                     <ArrowRight size={16} className="shrink-0" aria-hidden="true" />

@@ -239,6 +239,21 @@ Se permite inspeccionar y leer archivos para comprender el proyecto, sin modific
 
 Registro actualizado el 2026-11-17. Priorizar el punto de continuidad siguiente; los registros anteriores conservan su fecha y alcance histórico.
 
+### Continuidad actualizada — 17 de noviembre de 2026: segunda computadora
+
+- Rama `revision-produccion` con seguimiento de `origin/revision-produccion`, base local `615d2f47`. La limpieza de portada, el ajuste de estadísticas y el registro anterior ya están en ese commit. Hay cambios posteriores sin commit; no integrar a `main`, hacer push ni publicar sin autorización concreta. Las referencias remotas locales no se actualizaron mediante fetch en esta sesión.
+- El propietario ejecutó `npm ci` tras liberar un archivo bloqueado; `next` y `eslint-config-next` quedaron instalados en `16.4.6`. Lint y build ejecutados por Codex terminaron correctamente después de los cambios de código de esta sesión.
+- El propietario comprobó las cuatro canónicas públicas, la vista previa de Inicio en LinkedIn, desplegables, CV y certificados en incógnito, formulario y orientación horizontal en su celular. Una ruta inexistente mostró la 404 predeterminada en inglés; una 404 propia sigue siendo opcional.
+- El propietario completó el recorrido con Narrador por las cuatro páginas y comprobó certificados, proyectos y Pausar/Reanudar. En local se identifican los certificados y proyectos por nombre y se aclara la acción del carrusel. El aviso de privacidad se lee con el modo de examen y las flechas; no se agregó código para forzar su lectura con Tab. La opción «Saltar al contenido» quedó para más adelante.
+- El menú móvil indica la página activa con color y `aria-current`; el propietario lo probó en celular. En Sobre mí se aclaró el borde de las etiquetas de tecnologías, confirmado visualmente por el propietario. No tocar la marquesina de Tecnologías de Inicio ni las sugerencias `break-words` descartadas.
+- Las páginas interiores tienen metadatos Open Graph y Twitter propios con la portada compartida. El HTML local de las cuatro rutas mostró títulos, descripciones, imágenes y URLs esperadas; `localhost` es la alternativa local. Falta verificar dominio y vistas previas en producción después de publicar.
+- Imágenes: el propietario confirmó su apariencia en los tamaños probados. Los archivos de proyectos pesan aproximadamente 2–17 KiB, el retrato 12 KiB y la portada social 110 KiB; no se midió la transferencia real por visitante. Los resultados anteriores de Lighthouse describen la versión pública anterior a los cambios locales.
+- Auditoría actual: `npm audit` informó 14 avisos relacionados con picomatch en dependencias de desarrollo; `npm audit --omit=dev` informó 0 vulnerabilidades conocidas. El aviso GHSA-fc5q-39xc-vjpf no indicaba parche al consultarlo. No usar `npm audit fix --force` como solución sin revisar.
+- ESLint 9.39.5 está fuera de soporte. Los complementos instalados `eslint-plugin-react` 7.37.5, `eslint-plugin-import` 2.32.0 y `eslint-plugin-jsx-a11y` 6.10.2 eran las últimas versiones consultadas y no declaraban compatibilidad con ESLint 10. Volver a verificar antes de actualizar; no forzar dependencias. `cache-dir` devolvió `undefined` y no reapareció en el último `npm ci`; `unrs-resolver` tampoco mostró entonces la advertencia anterior. Mantener ambas en observación.
+- Pendiente: revisar y guardar los cambios acordados con commit/push cuando el propietario lo indique; publicar solo con su indicación. Tras publicar, comprobar página activa, estadísticas, metadatos e imágenes sociales públicas. Revisar condiciones del hosting para uso profesional/freelance y seguir los avisos de dependencias. La indentación de estadísticas y la 404 propia son opcionales.
+
+El checklist y las etapas siguientes conservan el contexto anterior; ante diferencias, prevalece esta actualización.
+
 ### Continuidad — 17 de noviembre de 2026: revisión de producción
 
 - Rama actual: **`revision-produccion`**, creada desde `main` en `c262f35`. Al iniciar esta actualización todavía no tenía seguimiento remoto. La rama anterior `mejoras-produccion` se descartó; no usar sus antiguas instrucciones de continuidad ni repetir cherry-picks.

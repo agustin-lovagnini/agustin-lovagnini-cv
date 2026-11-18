@@ -10,6 +10,35 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "/contacto",
     },
+    openGraph: {
+        title: "Contacto | Agustín Lovagnini",
+        description:
+            "Contactame para oportunidades laborales, colaboraciones y proyectos de desarrollo web.",
+        url: "/contacto",
+        siteName: "Portfolio de Agustín Lovagnini",
+        locale: "es_AR",
+        type: "website",
+        images: [
+            {
+                url: "/images/og/og-agustin-lovagnini.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Contacto | Agustín Lovagnini",
+        description:
+            "Contactame para oportunidades laborales, colaboraciones y proyectos de desarrollo web.",
+        images: [
+            {
+                url: "/images/og/og-agustin-lovagnini.jpg",
+                alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
+            },
+        ],
+    },
 };
 
 export default function ContactPage() {

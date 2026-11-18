@@ -25,6 +25,35 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "/sobre-mi",
     },
+    openGraph: {
+        title: "Sobre mí | Agustín Lovagnini",
+        description:
+            "Conocé mi formación, experiencia, certificaciones y tecnologías como desarrollador Full Stack.",
+        url: "/sobre-mi",
+        siteName: "Portfolio de Agustín Lovagnini",
+        locale: "es_AR",
+        type: "website",
+        images: [
+            {
+                url: "/images/og/og-agustin-lovagnini.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Sobre mí | Agustín Lovagnini",
+        description:
+            "Conocé mi formación, experiencia, certificaciones y tecnologías como desarrollador Full Stack.",
+        images: [
+            {
+                url: "/images/og/og-agustin-lovagnini.jpg",
+                alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
+            },
+        ],
+    },
 };
 
 
@@ -203,7 +232,7 @@ export default function AboutPage() {
                             <p className="text-sm leading-relaxed text-muted">{group.description}</p>
                             <ul className="mt-auto flex flex-wrap gap-2 pt-3" aria-label={`Tecnologías de ${group.title}`}>
                                 {group.technologies.map((technology) => (
-                                    <li key={technology} className="max-w-full break-words rounded border border-outline bg-background px-2 py-1 text-xs font-medium text-gold-light">
+                                    <li key={technology} className="max-w-full break-words rounded border border-subtle/70 bg-background px-2 py-1 text-xs font-medium text-gold-light">
                                         {technology}
                                     </li>
                                 ))}

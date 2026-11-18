@@ -4,9 +4,9 @@
 
 Portfolio personal desarrollado con **Next.js, React, TypeScript y Tailwind CSS**. Reúne mi perfil profesional, formación, certificaciones y proyectos de desarrollo web, con una interfaz oscura y detalles dorados.
 
-[Capturas](#capturas-de-pantalla) · [Instalación](#instalación-y-ejecución-local) · [Contacto](#contacto)
+[Ver portfolio](https://agustin-lovagnini-cv.vercel.app) · [Capturas](#capturas-de-pantalla) · [Instalación](#instalación-y-ejecución-local) · [Contacto](#contacto)
 
-> **Estado:** proyecto integrado en `main`, con lint, build y pruebas manuales de producción local completados por el autor. Publicación pendiente; el enlace se agregará después del despliegue.
+> **Estado:** portfolio publicado en [Vercel](https://agustin-lovagnini-cv.vercel.app). Las mejoras en revisión pueden diferir de la versión pública hasta su publicación.
 
 ## Sobre el proyecto
 
@@ -146,16 +146,13 @@ Los catálogos se mantienen separados de la presentación. Los componentes con C
 
 ## Estado y próximos pasos
 
-Verificaciones aportadas por el autor el **14 de noviembre de 2026**:
+Revisión del **17 de noviembre de 2026**:
 
-- [x] Metadatos generales, por página y portada para compartir incorporados.
-- [x] ESLint y build de producción completados sin errores.
-- [x] Navegación, menú móvil, enlaces, formulario y portada comprobados manualmente en producción local.
-- [x] Desarrollo integrado y subido a `main`.
-- [ ] Configurar la URL pública y completar sitemap, robots y URL canónicas.
-- [ ] Completar la revisión de accesibilidad y las mediciones con Lighthouse.
-- [ ] Revisar dependencias y configuración final del hosting.
-- [ ] Publicar y comprobar HTTPS, formulario, metadatos y enlaces en la URL pública.
+- El autor comprobó navegación, formulario, enlaces, lector de pantalla y visualización en celular, incluida la orientación horizontal.
+- En la versión pública se comprobaron sitemap, robots y canónicas; la vista previa de Inicio se probó en WhatsApp y LinkedIn.
+- Lighthouse en producción registró rendimiento móvil entre 97 y 98 y escritorio 100 en las cuatro páginas; accesibilidad, buenas prácticas y SEO obtuvieron 100 en esas mediciones de laboratorio.
+- Los cambios locales en revisión pasaron lint y build. Incluyen mejoras de accesibilidad y metadatos sociales por página, pendientes de publicación y verificación pública.
+- Quedan en seguimiento avisos de dependencias de desarrollo y la compatibilidad de ESLint; la auditoría de dependencias de producción no informó vulnerabilidades conocidas durante esta revisión.
 
 El seguimiento técnico detallado y las pautas de colaboración están en [AGENTS.md](AGENTS.md).
 

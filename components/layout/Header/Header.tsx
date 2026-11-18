@@ -82,16 +82,36 @@ export default function Header() {
                 >
                     <X size={24} />
                 </button>
-                <Link href="/" onClick={toggleMenu}>
+                <Link
+                    href="/"
+                    onClick={toggleMenu}
+                    aria-current={pathname === "/" ? "page" : undefined}
+                    className={pathname === "/" ? "text-gold-light" : undefined}
+                >
                     Inicio
                 </Link>
-                <Link href="/sobre-mi" onClick={toggleMenu}>
+                <Link
+                    href="/sobre-mi"
+                    onClick={toggleMenu}
+                    aria-current={pathname === "/sobre-mi" ? "page" : undefined}
+                    className={pathname === "/sobre-mi" ? "text-gold-light" : undefined}
+                >
                     Sobre mí
                 </Link>
-                <Link href="/proyectos" onClick={toggleMenu}>
+                <Link
+                    href="/proyectos"
+                    onClick={toggleMenu}
+                    aria-current={pathname === "/proyectos" ? "page" : undefined}
+                    className={pathname === "/proyectos" ? "text-gold-light" : undefined}
+                >
                     Proyectos
                 </Link>
-                <Link href="/contacto" onClick={toggleMenu}>
+                <Link
+                    href="/contacto"
+                    onClick={toggleMenu}
+                    aria-current={pathname === "/contacto" ? "page" : undefined}
+                    className={pathname === "/contacto" ? "text-gold-light" : undefined}
+                >
                     Contacto
                 </Link>
                 <ShareButton />

@@ -14,6 +14,35 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "/proyectos",
     },
+    openGraph: {
+        title: "Proyectos | Agustín Lovagnini",
+        description:
+            "Explorá mis proyectos de desarrollo web, sus tecnologías, repositorios y demostraciones.",
+        url: "/proyectos",
+        siteName: "Portfolio de Agustín Lovagnini",
+        locale: "es_AR",
+        type: "website",
+        images: [
+            {
+                url: "/images/og/og-agustin-lovagnini.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Proyectos | Agustín Lovagnini",
+        description:
+            "Explorá mis proyectos de desarrollo web, sus tecnologías, repositorios y demostraciones.",
+        images: [
+            {
+                url: "/images/og/og-agustin-lovagnini.jpg",
+                alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
+            },
+        ],
+    },
 };
 
 export default function ProjectsPage() {

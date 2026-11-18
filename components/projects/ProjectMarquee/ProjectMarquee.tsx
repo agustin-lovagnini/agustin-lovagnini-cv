@@ -237,6 +237,7 @@ export default function ProjectMarquee({
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="action-button action-primary mt-5"
+                                    aria-label={`Ver proyecto: ${project.title} (abre en otra pestaña)`}
                                 >
                                     Ver proyecto
                                 </a>
@@ -288,6 +289,7 @@ export default function ProjectMarquee({
                     type="button"
                     onClick={toggleAutoScroll}
                     className="action-button action-secondary ml-auto"
+                    aria-label={isPlaying ? "Pausar desplazamiento de proyectos" : "Reanudar desplazamiento de proyectos"}
                 >
                     {isPlaying ? "Pausar" : "Reanudar"}
                 </button>
