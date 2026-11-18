@@ -239,6 +239,14 @@ Se permite inspeccionar y leer archivos para comprender el proyecto, sin modific
 
 Registro actualizado el 2026-11-17. Priorizar el punto de continuidad siguiente; los registros anteriores conservan su fecha y alcance histórico.
 
+### Próxima revisión — CSP y HTTP Observatory
+
+- El propietario quiere retomar mañana la revisión de Content Security Policy (CSP), paso a paso y sin cambiar código sin autorización. HTTP Observatory mostró B+ (80/100, 11 de 12 pruebas) y señaló que la CSP no restringe suficientemente scripts u objetos; la puntuación no es una garantía de seguridad ni demuestra una explotación.
+- La configuración actual en `next.config.ts` incluye `frame-ancestors 'none'`, que limita la inserción del sitio en marcos, pero no establece restricciones para scripts u objetos. El formulario envía a Formspree y debe seguir funcionando.
+- Propuesta: inspeccionar los recursos cargados en producción; diseñar una política adaptada; evaluarla primero con `Content-Security-Policy-Report-Only`; revisar la consola y probar las cuatro páginas, menú, carrusel, imágenes y formulario; ajustar y decidir con el propietario si aplicarla. Después ejecutar lint/build y volver a comprobar antes y después de publicar.
+- Consultar la guía de CSP de la versión instalada de Next.js antes de proponer código. Una política con nonces requiere renderizado dinámico y es incompatible con Partial Prerendering según esa guía; evaluar el impacto antes de tomar decisiones. No cambiar la configuración solo para mejorar la puntuación.
+- Estado al registrar esta nota: `main` limpia y con seguimiento de `origin/main` antes de editar este archivo; el commit `8f5c044` se subió a `main` y el propietario mostró Vercel con Ready en Production. La continuidad siguiente describe el estado anterior a esa integración; no asumir que la rama `revision-produccion` siga existiendo sin comprobarlo.
+
 ### Continuidad actualizada — 17 de noviembre de 2026: segunda computadora
 
 - Rama `revision-produccion` con seguimiento de `origin/revision-produccion`, base local `615d2f47`. La limpieza de portada, el ajuste de estadísticas y el registro anterior ya están en ese commit. Hay cambios posteriores sin commit; no integrar a `main`, hacer push ni publicar sin autorización concreta. Las referencias remotas locales no se actualizaron mediante fetch en esta sesión.
