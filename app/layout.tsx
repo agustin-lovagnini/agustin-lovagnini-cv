@@ -1,5 +1,6 @@
 
 import Header from "../components/layout/Header/Header";
+import TranslationProvider from "../components/providers/TranslationProvider";
 import Footer from "../components/layout/Footer/Footer";
 
 import type { Metadata } from "next";
@@ -19,7 +20,6 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
-// ITEM - Metadatos generales del portfolio
 // ITEM - Metadatos generales del portfolio
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -73,11 +73,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${spaceGrotesk.variable} antialiased scroll-smooth motion-reduce:scroll-auto`}
     >
       <body className="min-h-dvh flex flex-col">
-        <Header />
-        {/* NOTE - Next.js coloca en children el contenido de la ruta actual. */}
-        {children}
-        <MobilePageNavigation />
-        <Footer />
+        <TranslationProvider locale="es">
+          <Header />
+          {/* NOTE - Next.js coloca en children el contenido de la ruta actual. */}
+          {children}
+          <MobilePageNavigation />
+          <Footer />
+        </TranslationProvider>
       </body>
     </html>
   );

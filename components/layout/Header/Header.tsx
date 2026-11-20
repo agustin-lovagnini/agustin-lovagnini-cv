@@ -5,8 +5,11 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
+    const { t } = useTranslation("common");
+
     // ITEM - Estado y control del menú móvil
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
@@ -88,7 +91,7 @@ export default function Header() {
                     aria-current={pathname === "/" ? "page" : undefined}
                     className={pathname === "/" ? "text-gold-light" : undefined}
                 >
-                    Inicio
+                    {t("navigation.home")}
                 </Link>
                 <Link
                     href="/sobre-mi"
@@ -96,7 +99,7 @@ export default function Header() {
                     aria-current={pathname === "/sobre-mi" ? "page" : undefined}
                     className={pathname === "/sobre-mi" ? "text-gold-light" : undefined}
                 >
-                    Sobre mí
+                    {t("navigation.about")}
                 </Link>
                 <Link
                     href="/proyectos"
@@ -104,7 +107,7 @@ export default function Header() {
                     aria-current={pathname === "/proyectos" ? "page" : undefined}
                     className={pathname === "/proyectos" ? "text-gold-light" : undefined}
                 >
-                    Proyectos
+                    {t("navigation.projects")}
                 </Link>
                 <Link
                     href="/contacto"
@@ -112,7 +115,7 @@ export default function Header() {
                     aria-current={pathname === "/contacto" ? "page" : undefined}
                     className={pathname === "/contacto" ? "text-gold-light" : undefined}
                 >
-                    Contacto
+                    {t("navigation.contact")}
                 </Link>
                 <ShareButton />
             </nav>
@@ -123,16 +126,16 @@ export default function Header() {
                 className="hidden md:flex items-center gap-6 text-sm lg:text-base font-medium text-foreground"
             >
                 <Link href="/" className="nav-link" aria-current={pathname === "/" ? "page" : undefined}>
-                    Inicio
+                    {t("navigation.home")}
                 </Link>
                 <Link href="/sobre-mi" className="nav-link" aria-current={pathname === "/sobre-mi" ? "page" : undefined}>
-                    Sobre mí
+                    {t("navigation.about")}
                 </Link>
                 <Link href="/proyectos" className="nav-link" aria-current={pathname === "/proyectos" ? "page" : undefined}>
-                    Proyectos
+                    {t("navigation.projects")}
                 </Link>
                 <Link href="/contacto" className="nav-link" aria-current={pathname === "/contacto" ? "page" : undefined}>
-                    Contacto
+                    {t("navigation.contact")}
                 </Link>
             </nav>
 
