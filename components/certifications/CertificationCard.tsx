@@ -10,11 +10,11 @@ export default function CertificationCard({ certification, }: CertificationCardP
     return (
         <article className="flex h-full min-w-0 flex-col gap-3 style-section p-4 rounded-xl">
             <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="text-gold font-bold uppercase text-xs">
+                <span className="text-gold font-bold uppercase text-xs lg:text-sm">
                     {certification.institution}
                 </span>
 
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-gold/20 bg-gold/10 px-2 py-0.5 text-xs font-medium text-gold-light select-none">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-gold/20 bg-gold/10 px-2 py-0.5 text-xs lg:text-sm font-medium text-gold-light select-none">
                     <ShieldCheck size={14} className="shrink-0" aria-hidden="true" />
                     {certification.status}
                 </span>
@@ -23,7 +23,7 @@ export default function CertificationCard({ certification, }: CertificationCardP
                 {certification.title}
             </h4>
 
-            <p className="text-sm leading-relaxed text-muted">
+            <p className="text-sm lg:text-lg leading-relaxed text-muted">
                 {certification.description}
             </p>
 

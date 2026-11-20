@@ -14,7 +14,7 @@
   /* SUBSECTION - Botones de acción: base y foco */
   /* NOTE - Base de los botones: tamaño, alineación, bordes y transiciones. Combinar con una variante. */
   .action-button {
-    @apply inline-flex min-h-12 shrink-0 flex-row flex-nowrap items-center justify-center gap-2 whitespace-nowrap rounded-lg border px-3 py-3 text-sm font-semibold sm:min-h-11 sm:gap-1 sm:px-4 sm:py-2;
+    @apply inline-flex min-h-12 shrink-0 flex-row flex-nowrap items-center justify-center gap-2 whitespace-nowrap rounded-lg border px-3 py-3 text-sm font-semibold sm:min-h-11 sm:gap-1 sm:px-4 sm:py-2 lg:text-base;
     transition:
       color 300ms,
       background-color 300ms,
@@ -117,7 +117,7 @@
   /* SUBSECTION - Etiquetas de presentación y punto decorativo */
   /* NOTE - Cápsula antes del título, como «Contacto directo». */
   .eyebrow-badge {
-    @apply my-1 inline-flex self-start items-center gap-2 rounded-full border border-gold/25 bg-[#986A2B] px-3 py-1.5 text-xs font-semibold tracking-[0.01em] text-white shadow-[0_2px_8px_#00000040] select-none;
+    @apply my-1 inline-flex self-start items-center gap-2 rounded-full border border-gold/25 bg-[#986A2B] px-3 py-1.5 text-xs font-semibold tracking-[0.01em] text-white shadow-[0_2px_8px_#00000040] select-none lg:text-sm;
   }
 
   /* NOTE - Punto dorado decorativo dentro de eyebrow-badge. */

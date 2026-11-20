@@ -7,11 +7,11 @@ export default function Footer() {
             <div className="flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
                 {/* ITEM - Rol y ubicación */}
                 <div className="text-center md:self-start md:text-left">
-                    <p className="mt-1 hidden text-sm font-normal leading-snug text-muted md:block select-none">
+                    <p className="mt-1 hidden text-sm lg:text-lg font-normal leading-snug text-muted md:block select-none">
                         Full Stack Developer
                     </p>
 
-                    <p className="hidden text-sm font-normal leading-snug text-muted md:block select-none">
+                    <p className="hidden text-sm lg:text-lg font-normal leading-snug text-muted md:block select-none">
                         CABA, Argentina
                     </p>
                 </div>
@@ -19,7 +19,7 @@ export default function Footer() {
                 {/* SUBSECTION - Redes profesionales y correo */}
                 <nav
                     aria-label="Redes y contacto"
-                    className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm"
+                    className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm lg:text-base"
                 >
                     <a
                         href="https://www.linkedin.com/in/agustinlovagnini"
@@ -50,7 +50,7 @@ export default function Footer() {
             </div>
 
             {/* ITEM - Autoría del portfolio */}
-            <p className="mt-2 text-center text-xs font-normal leading-relaxed text-muted select-none md:text-sm">
+            <p className="mt-2 text-center text-xs lg:text-sm font-normal leading-relaxed text-muted select-none md:text-sm">
                 &copy; 2026 Agustín Lovagnini · Portfolio profesional
             </p>
         </footer>

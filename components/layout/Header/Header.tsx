@@ -120,7 +120,7 @@ export default function Header() {
             {/* SUBSECTION - Navegación de escritorio */}
             <nav
                 aria-label="Navegación principal"
-                className="hidden md:flex items-center gap-6 text-sm font-medium text-foreground"
+                className="hidden md:flex items-center gap-6 text-sm lg:text-base font-medium text-foreground"
             >
                 <Link href="/" className="nav-link" aria-current={pathname === "/" ? "page" : undefined}>
                     Inicio

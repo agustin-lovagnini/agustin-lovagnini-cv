@@ -67,8 +67,8 @@ export default function Home() {
             Mi trabajo es darle vida.
           </p>
 
-          <p className="text-sm pt-2 leading-relaxed text-muted md:text-base md:pt-0">
-            Soy desarrollador web <strong className="underline">Full Stack</strong>, con especial interés en el Frontend, el diseño y la experiencia de usuario. Me apasiona crear interfaces modernas, intuitivas y funcionales, combinando creatividad y tecnología. Busco aportar valor a un equipo de desarrollo con mis conocimientos, ideas y compromiso, mientras continúo creciendo profesionalmente.
+          <p className="text-sm lg:text-lg pt-2 leading-relaxed text-muted md:text-base md:pt-0">
+            Soy desarrollador web <strong className="underline">Full Stack</strong>, especializado en crear experiencias digitales modernas, intuitivas y funcionales. Me apasionan el Frontend, el diseño y la tecnología, y busco aportar soluciones que combinen creatividad y buenas prácticas.
           </p>
 
           <div className="mt-4 flex flex-col items-center gap-5 md:flex-row md:flex-wrap md:gap-3 ">
@@ -130,6 +130,21 @@ export default function Home() {
 
       <hr className="section-divider" />
 
+      {/* SECTION - Stack principal y marquesina */}
+      <section aria-labelledby="tecnologias-y-habilidades" className="style-section w-full">
+        <div>
+          <span className="mb-3 block w-full border-b border-gold-light pb-1 font-heading text-xl font-semibold tracking-tight text-gold-light md:text-2xl">
+            Stack Principal
+          </span>
+        </div>
+
+        <div className="mt-3 rounded-xl border border-outline bg-background p-4">
+          <TechnologiesMarquee />
+        </div>
+      </section>
+
+      <hr className="section-divider" />
+
       {/* SECTION - Vista rápida de proyectos destacados */}
       <section aria-labelledby="proyectos-destacados" className="w-full">
         <div className="flex items-center gap-4">
@@ -155,26 +170,11 @@ export default function Home() {
         </div>
       </section>
 
-      <hr className="section-divider" />
-
-      {/* SECTION - Stack principal y marquesina */}
-      <section aria-labelledby="tecnologias-y-habilidades" className="style-section w-full">
-        <div>
-          <span className="mb-3 block w-full border-b border-gold-light pb-1 font-heading text-xl font-semibold tracking-tight text-gold-light md:text-2xl">
-            Stack Principal
-          </span>
-        </div>
-
-        <div className="mt-3 rounded-xl border border-outline bg-background p-4">
-          <TechnologiesMarquee />
-        </div>
-      </section>
-
       {/* SECTION - Invitación a contactar */}
       <section aria-labelledby="llamado-accion" className="style-section w-full">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <span className="mb-2 block border-l-2 border-gold pl-3 text-xs font-semibold uppercase tracking-[0.15em] text-gold-light">
+            <span className="mb-2 block border-l-2 border-gold pl-3 text-xs lg:text-sm font-semibold uppercase tracking-[0.15em] text-gold-light">
               Contame tu idea y vamos a darle vida
             </span>
             <h2 id="llamado-accion" className="font-heading text-2xl md:text-3xl font-bold leading-tight tracking-tight pb-1">

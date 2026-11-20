@@ -58,7 +58,7 @@ export default function ContactPage() {
                 </div>
 
                 <p className="max-w-3xl font-heading text-lg text-gold-light opacity-90 leading-snug md:text-xl">
-                    Ya sea por una oportunidad laboral, una colaboración o un proyecto que tengas en mente, me encantaría conocer tu propuesta. Podés escribirme a través del formulario o contactarme directamente por mis redes profesionales.
+                    ¿Tenés una oportunidad laboral, un proyecto o una propuesta de colaboración? Podés escribirme mediante el formulario o contactarme por mis redes profesionales.
                 </p>
             </header>
 
@@ -139,7 +139,7 @@ export default function ContactPage() {
                         <button type="submit" className="action-button action-primary cursor-pointer">
                             Enviar mensaje
                         </button>
-                        <p className="text-sm leading-relaxed text-muted text-center">
+                        <p className="text-sm lg:text-lg leading-relaxed text-muted text-center">
                             Usaré tu nombre, correo y mensaje para responder a tu consulta. El envío se procesa mediante{" "}
                             <a
                                 href="https://formspree.io/legal/privacy-policy/"
@@ -176,7 +176,7 @@ export default function ContactPage() {
                     <section className="style-section" aria-labelledby="disponibilidad-actual">
                         <h2
                             id="disponibilidad-actual"
-                            className="text-xs font-semibold uppercase tracking-wide text-gold-light"
+                            className="text-xs lg:text-sm font-semibold uppercase tracking-wide text-gold-light"
                         >
                             Disponibilidad actual
                         </h2>
@@ -185,8 +185,8 @@ export default function ContactPage() {
                             Abierto a nuevas oportunidades
                         </p>
 
-                        <p className="mt-2 text-sm leading-relaxed text-muted">
-                            Me interesa incorporarme a equipos de desarrollo y participar en proyectos Frontend o Full Stack. También estoy disponible para conversar sobre colaboraciones y propuestas freelance.
+                        <p className="mt-2 text-sm lg:text-lg leading-relaxed text-muted">
+                            Busco sumarme a un equipo de desarrollo y participar en proyectos Frontend o Full Stack. También estoy abierto a colaboraciones freelance.
                         </p>
                     </section>
 
@@ -194,7 +194,7 @@ export default function ContactPage() {
                     <section className="style-section" aria-labelledby="canales-de-contacto">
                         <h2
                             id="canales-de-contacto"
-                            className="text-xs font-semibold uppercase tracking-wide text-gold-light"
+                            className="text-xs lg:text-sm font-semibold uppercase tracking-wide text-gold-light"
                         >
                             Canales directos
                         </h2>
@@ -210,10 +210,10 @@ export default function ContactPage() {
                                     className="shrink-0 text-gold-light"
                                 />
                                 <span className="min-w-0">
-                                    <span className="block text-xs text-gold-light">
+                                    <span className="block text-xs lg:text-sm text-gold-light">
                                         Correo electrónico
                                     </span>
-                                    <span className="block break-words text-sm">
+                                    <span className="block break-words text-sm lg:text-base">
                                         agustin.lovagnini.a@gmail.com
                                     </span>
                                 </span>
@@ -231,10 +231,10 @@ export default function ContactPage() {
                                     className="shrink-0 text-gold-light"
                                 />
                                 <span>
-                                    <span className="block text-xs text-gold-light">
+                                    <span className="block text-xs lg:text-sm text-gold-light">
                                         Perfil profesional
                                     </span>
-                                    <span className="block text-sm">
+                                    <span className="block text-sm lg:text-base">
                                         LinkedIn
                                     </span>
                                 </span>
@@ -252,10 +252,10 @@ export default function ContactPage() {
                                     className="shrink-0 text-gold-light"
                                 />
                                 <span>
-                                    <span className="block text-xs text-gold-light">
+                                    <span className="block text-xs lg:text-sm text-gold-light">
                                         Repositorios y código
                                     </span>
-                                    <span className="block text-sm">
+                                    <span className="block text-sm lg:text-base">
                                         GitHub
                                     </span>
                                 </span>
@@ -267,19 +267,14 @@ export default function ContactPage() {
                     <section className="style-section" aria-labelledby="garantia-del-contrato">
                         <h2
                             id="garantia-del-contrato"
-                            className="text-xs font-semibold uppercase tracking-wide text-gold-light"
+                            className="text-xs lg:text-sm font-semibold uppercase tracking-wide text-gold-light"
                         >
                             Mi forma de trabajar
                         </h2>
 
-                        <ul className="mt-4 flex flex-col gap-3 text-sm leading-relaxed text-muted">
-                            <li>
-                                Me gusta escuchar cada propuesta, comprender sus objetivos y aportar ideas para encontrar la mejor solución.
-                            </li>
-                            <li>
-                                Valoro la comunicación clara, la organización y el compromiso durante cada etapa del proyecto.
-                            </li>
-                        </ul>
+                        <p className="mt-4 text-sm lg:text-lg leading-relaxed text-muted">
+                            Me gusta comprender cada proyecto, aportar soluciones y trabajar con comunicación clara, organización y compromiso.
+                        </p>
                     </section>
                 </div>
             </div>

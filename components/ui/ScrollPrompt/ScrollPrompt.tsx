@@ -20,7 +20,7 @@ export default function ScrollPrompt({
                 href={href}
                 className="text-subtle transition-colors duration-300 hover:text-gold-light focus-visible:text-gold-light"
             >
-                <span className="text-sm font-medium tracking-[0.2em] uppercase">
+                <span className="text-sm lg:text-base font-medium tracking-[0.2em] uppercase">
                     {text}
                 </span>
             </a>

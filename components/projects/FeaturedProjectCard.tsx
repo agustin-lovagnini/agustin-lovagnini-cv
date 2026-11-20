@@ -14,7 +14,7 @@ export default function FeaturedProjectCard({
     return (
         <article className={`style-section grid grid-cols-1 items-center gap-6 rounded-xl ${compact ? "grid-rows-[auto_1fr]" : "lg:grid-cols-2"}`}>
             <div className={`flex min-w-0 flex-col items-start gap-3 ${compact ? "h-full" : ""}`}>
-                <div className="flex flex-wrap items-center gap-2 text-xs font-semibold tracking-wide">
+                <div className="flex flex-wrap items-center gap-2 text-xs lg:text-sm font-semibold tracking-wide">
                     <span className="uppercase text-gold-light">Proyecto destacado</span>
                     <span aria-hidden="true" className="text-subtle">·</span>
                     <time dateTime={project.date} className="text-muted">
@@ -26,13 +26,13 @@ export default function FeaturedProjectCard({
                     {project.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed text-muted md:text-base">
+                <p className="text-sm lg:text-lg leading-relaxed text-muted md:text-base">
                     {project.description}
                 </p>
 
                 <ul className="flex flex-wrap gap-2 pt-1" aria-label={`Tecnologías de ${project.title}`}>
                     {project.technologies.map((technology) => (
-                        <li key={technology} className="rounded border border-gold/20 bg-outline px-2.5 py-1 text-xs font-medium text-gold-light shadow-sm">
+                        <li key={technology} className="rounded border border-gold/20 bg-outline px-2.5 py-1 text-xs lg:text-sm font-medium text-gold-light shadow-sm">
                             {technology}
                         </li>
                     ))}
@@ -42,7 +42,7 @@ export default function FeaturedProjectCard({
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`action-button action-primary ${compact ? "mt-auto" : "mt-3"}`}
+                    className={`action-button action-primary ${compact ? "mt-auto self-center" : "mt-3"}`}
                     aria-label={`Ver proyecto: ${project.title} (abre en otra pestaña)`}
                 >
                     Ver proyecto

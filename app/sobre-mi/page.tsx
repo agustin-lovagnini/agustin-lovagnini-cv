@@ -8,12 +8,12 @@ import {
     BadgeCheck,
     ArrowUpRight,
 } from "lucide-react";
+import ScrollPrompt from "../../components/ui/ScrollPrompt/ScrollPrompt";
 import CertificationsList from "../../components/certifications/CertificationsList";
 import { certifications } from "@/data/certifications";
 import Link from "next/link";
 import { technologyGroups } from "../../data/technologyGroups";
 import { competencies } from "../../data/competencies";
-import ScrollPrompt from "../../components/ui/ScrollPrompt/ScrollPrompt";
 import Image from "next/image";
 import fotoPerfil from "../../public/images/img-perfil-agustin.webp";
 
@@ -61,45 +61,37 @@ export default function AboutPage() {
     return (
         <main className="mx-auto flex w-full max-w-360 flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
             {/* SECTION - Introducción de Sobre mí */}
-            <header className="flex flex-col items-start gap-5 md:gap-6">
-                <span className="eyebrow-badge">
-                    <span aria-hidden="true" className="eyebrow-dot" />
-                    Trayectoria y enfoque
-                </span>
-
+            <header className="text-center">
                 <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl">
-                    Sobre mí<span className="text-gold-light">.</span>
+                    Sobre <span className="text-gold">Mí</span>
                 </h1>
-
-                <p className="max-w-3xl font-heading text-lg text-gold-light opacity-90 leading-snug md:text-xl">
-                    Desarrollador Full Stack con especial interés en el Frontend y la experiencia de usuario. Combino diseño y funcionalidad con conocimientos en Backend para desarrollar aplicaciones web completas, utilizando tecnologías como React, Next.js, Node.js y Express.
-                </p>
             </header>
 
-            {/* ITEM - Invitación a explorar */}
-            <ScrollPrompt href="#sobre-mi" />
-
-            <hr className="section-divider" />
+            <ScrollPrompt href="#proyectos-destacados" />
+            
+                        <hr className="section-divider" />
 
             {/* SECTION - Perfil profesional */}
-            <section id="sobre-mi" aria-labelledby="sobre-mi-descripcion" className=" w-full max-w-7xl mx-auto grid grid-cols-1 items-stretch gap-8 md:grid-cols-[2fr_1fr] md:gap-10">
+            <section id="sobre-mi" aria-labelledby="sobre-mi-descripcion" className="w-full mx-auto grid grid-cols-1 items-center gap-8 md:grid-cols-[2fr_1fr] md:gap-10">
 
                 <div className="flex flex-col style-section p-0">
                     <div className="flex flex-1 flex-col gap-4 p-5">
                         <div className="flex flex-col gap-2">
                             <h2 id="sobre-mi-descripcion" className="mb-1 block w-full border-b border-gold-light pb-1 font-heading text-xl font-semibold tracking-tight text-gold-light md:text-2xl">Perfil profesional
                             </h2>
-                            <p className="leading-relaxed tracking-wide">Soy desarrollador web <span className="font-bold text-gold-light">Full Stack</span>, formado en tecnologías Frontend y Backend. A lo largo de mi formación desarrollé aplicaciones integrando autenticación, APIs REST y bases de datos relacionales y no relacionales. Aunque mi mayor interés siempre estuvo en el aspecto visual, decidí profundizar también en Backend para comprender cómo funciona una aplicación de principio a fin y poder aportar soluciones completas y sólidas.</p>
+                            <p className="leading-relaxed tracking-wide lg:text-lg">Soy desarrollador web <span className="font-bold text-gold-light">Full Stack</span>, con especial interés en el <strong>Frontend, el diseño y la experiencia de usuario</strong>. Trabajo con tecnologías como React, Next.js, Node.js y Express, integrando interfaces modernas con APIs REST, autenticación y bases de datos. Mi objetivo es desarrollar aplicaciones web completas, funcionales y escalables, combinando diseño, tecnología y buenas prácticas.</p>
+
+                            
                         </div>
 
-                        <blockquote className="my-1 border-l-2 border-gold-light pl-4 italic text-muted bg-background rounded-r-lg py-4">
-                            &quot;Lo que me apasiona de la programación es que no tiene límites, está en constante evolución, siempre presenta nuevos desafíos y oportunidades para aprender, crear y mejorar. Creo en desarrollar experiencias funcionales, intuitivas y accesibles para todos, que crezcan y evolucionen junto a cada marca.&quot;.
+                        <blockquote className="my-1 border-l-2 border-gold-light pl-4 italic text-muted bg-background rounded-r-lg py-4 lg:text-lg">
+                            &ldquo;Me apasiona transformar ideas en experiencias digitales intuitivas y accesibles.&rdquo;
                         </blockquote>
 
-                        <p className="leading-relaxed tracking-wide">Resido en la Ciudad Autónoma de Buenos Aires, Argentina. Busco formar parte de un equipo donde pueda aportar mis conocimientos, ideas e iniciativa, participar en proyectos reales y crecer junto a otros profesionales. También disfruto desarrollar proyectos propios, explorar nuevas posibilidades y llevar mis ideas a la práctica.</p>
+                        <p className="leading-relaxed tracking-wide lg:text-lg">Resido en CABA, Argentina. Busco formar parte de un equipo donde pueda aportar mis conocimientos, colaborar en proyectos y seguir creciendo profesionalmente.</p>
                     </div>
                     <div className="relative">
-                        <dl className="grid w-full grid-cols-1 gap-4 bg-background p-8 text-sm md:grid-cols-2 xl:grid-cols-[auto_auto_auto] xl:justify-between">
+                        <dl className="grid w-full grid-cols-1 gap-4 bg-background p-8 text-sm lg:text-base md:grid-cols-2 xl:grid-cols-[auto_auto_auto] xl:justify-between">
 
                             <div>
                                 <span aria-hidden="true" className="edge-line top-0 opacity-45" />
@@ -146,15 +138,15 @@ export default function AboutPage() {
                         </div>
 
                         <h3 className="font-bold text-lg">Agustín Lovagnini</h3>
-                        <p className="text-gold font-medium text-sm">Full Stack Developer</p>
-                        <p className="text-muted text-sm">Desarrollador Full Stack con vocación por el diseño y la tecnología. Me caracterizan la curiosidad, la iniciativa y el compromiso por aportar valor en cada proyecto.</p>
+                        <p className="text-gold font-medium text-sm lg:text-lg">Full Stack Developer</p>
+                        <p className="text-muted text-sm lg:text-lg">Me caracterizan la curiosidad, el compromiso y las ganas de aprender. Disfruto crear soluciones y afrontar nuevos desafíos.</p>
 
-                        <dl className="mt-3 grid w-full max-w-xs grid-cols-[repeat(auto-fit,minmax(8.5rem,1fr))] gap-3 rounded-lg bg-outline p-3 text-sm">                            <div className="flex min-w-0 flex-col text-center">
-                            <dt className="order-2 w-full text-xs tracking-widest text-gold-light opacity-80">Compromiso</dt>
+                        <dl className="mt-3 grid w-full max-w-xs grid-cols-[repeat(auto-fit,minmax(8.5rem,1fr))] gap-3 rounded-lg bg-outline p-3 text-sm lg:text-base">                            <div className="flex min-w-0 flex-col text-center">
+                            <dt className="order-2 w-full text-xs lg:text-sm tracking-widest text-gold-light opacity-80">Compromiso</dt>
                             <dd className="order-1 w-full text-4xl">100%</dd>
                         </div>
                             <div className="flex min-w-0 flex-col text-center">
-                                <dt className="order-2 w-full text-xs tracking-widest text-gold-light opacity-80">Certificaciones</dt>
+                                <dt className="order-2 w-full text-xs lg:text-sm tracking-widest text-gold-light opacity-80">Certificaciones</dt>
                                 <dd className="order-1 w-full text-4xl text-gold-dark">{certifications.length}</dd>
                             </div>
                         </dl>
@@ -166,9 +158,9 @@ export default function AboutPage() {
                             <h3 className="font-bold text-lg">Mi enfoque de desarrollo:</h3>
                         </div>
 
-                        <p className="text-muted text-sm">Priorizo la organización del código, la reutilización de componentes y las buenas prácticas de desarrollo. Busco construir soluciones mantenibles, escalables y preparadas para adaptarse a nuevas necesidades.</p>
+                        <p className="text-muted text-sm lg:text-lg">Priorizo el código limpio, la accesibilidad y las buenas prácticas para desarrollar aplicaciones mantenibles y escalables.</p>
 
-                        <p className="text-gold text-sm font-medium mt-3">Código limpio · Accesibilidad · Aprendizaje continuo</p>
+                        <p className="text-gold text-sm lg:text-lg font-medium mt-3">Código limpio · Accesibilidad · Aprendizaje continuo</p>
                     </div>
                 </div>
             </section>
@@ -184,13 +176,13 @@ export default function AboutPage() {
                             <h2 id="formacion-y-certificaciones" className="font-heading text-xl font-bold leading-tight tracking-tight md:text-2xl">
                                 Formación y Certificaciones
                             </h2>
-                            <p className="mt-0.5 text-sm leading-relaxed text-muted">
+                            <p className="mt-0.5 text-sm lg:text-lg leading-relaxed text-muted">
                                 Trayecto académico y profesional en desarrollo de software.
                             </p>
                         </div>
                     </div>
 
-                    <span className="inline-flex self-start items-center gap-2 rounded-full border border-gold bg-surface px-3 py-1.5 text-xs font-medium text-gold-light shadow-[0_0_12px_rgb(233_183_103/0.25)] lg:shrink-0 lg:self-center">
+                    <span className="inline-flex self-start items-center gap-2 rounded-full border border-gold bg-surface px-3 py-1.5 text-xs lg:text-sm font-medium text-gold-light shadow-[0_0_12px_rgb(233_183_103/0.25)] lg:shrink-0 lg:self-center">
                         <BadgeCheck size={16} className="shrink-0 text-gold-light" aria-hidden="true" />
                         Instituciones reconocidas
                     </span>
@@ -198,7 +190,7 @@ export default function AboutPage() {
                 {/* SUBSECTION - Certificaciones académicas de Coderhouse */}
                 <div className="mb-6">
                     <h3 className="mb-2 font-heading text-lg font-semibold text-gold-light">Certificaciones académicas</h3>
-                    <p className="mb-4 text-sm text-muted">Coderhouse · Cursos y carrera aprobados.</p>
+                    <p className="mb-4 text-sm lg:text-lg text-muted">Coderhouse · Cursos y carrera aprobados.</p>
                     <CertificationsList />
                 </div>
             </section>
@@ -215,7 +207,7 @@ export default function AboutPage() {
                         <h2 id="tecnologias-principales" className="font-heading text-xl font-bold tracking-tight md:text-2xl">
                             Tecnologías principales
                         </h2>
-                        <p className="mt-1 text-sm text-muted">Herramientas y lenguajes que utilizo en mis proyectos.</p>
+                        <p className="mt-1 text-sm lg:text-lg text-muted">Herramientas y lenguajes que utilizo en mis proyectos.</p>
                     </div>
                 </header>
 
@@ -229,10 +221,10 @@ export default function AboutPage() {
                                 <h3 className="font-heading text-lg font-semibold">{group.title}</h3>
                                 <group.icon size={20} className="mt-1 shrink-0 text-gold-light" aria-hidden="true" />
                             </div>
-                            <p className="text-sm leading-relaxed text-muted">{group.description}</p>
+                            <p className="text-sm lg:text-lg leading-relaxed text-muted">{group.description}</p>
                             <ul className="mt-auto flex flex-wrap gap-2 pt-3" aria-label={`Tecnologías de ${group.title}`}>
                                 {group.technologies.map((technology) => (
-                                    <li key={technology} className="max-w-full break-words rounded border border-subtle/70 bg-background px-2 py-1 text-xs font-medium text-gold-light">
+                                    <li key={technology} className="max-w-full break-words rounded border border-subtle/70 bg-background px-2 py-1 text-xs lg:text-sm font-medium text-gold-light">
                                         {technology}
                                     </li>
                                 ))}
@@ -254,8 +246,8 @@ export default function AboutPage() {
                         <h2 id="competencias-profesionales" className="font-heading text-xl font-bold tracking-tight md:text-2xl">
                             Competencias profesionales
                         </h2>
-                        <p className="mt-1 text-sm text-muted">
-                            Mi forma de resolver desafíos, organizar proyectos y colaborar con otras personas.
+                        <p className="mt-1 text-sm lg:text-lg text-muted">
+                            Habilidades que aplico en cada proyecto y al trabajar en equipo.
                         </p>
                     </div>
                 </header>
@@ -269,7 +261,7 @@ export default function AboutPage() {
                                     {competency.title}
                                 </h3>
                             </div>
-                            <p className="text-sm leading-relaxed text-muted">
+                            <p className="text-sm lg:text-lg leading-relaxed text-muted">
                                 {competency.description}
                             </p>
                         </article>
@@ -283,15 +275,15 @@ export default function AboutPage() {
             <section aria-labelledby="llamado-accion" className="style-section w-full">
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                     <div>
-                        <span className="mb-2 block border-l-2 border-gold pl-3 text-xs font-semibold uppercase tracking-[0.15em] text-gold-light">
+                        <span className="mb-2 block border-l-2 border-gold pl-3 text-xs lg:text-sm font-semibold uppercase tracking-[0.15em] text-gold-light">
                             El próximo paso
                         </span>
                         <h2 id="llamado-accion" className="font-heading text-2xl md:text-3xl font-bold leading-tight tracking-tight pb-1">
                             ¿Trabajamos juntos?
                         </h2>
 
-                        <p className="text-sm md:text-base font-normal leading-relaxed text-muted">
-                            Ya sea para formar parte de un equipo o desarrollar una nueva idea, estoy abierto a conectar, intercambiar propuestas y explorar oportunidades de colaboración.
+                        <p className="text-sm lg:text-lg md:text-base font-normal leading-relaxed text-muted">
+                            Estoy abierto a nuevas oportunidades y proyectos donde pueda aportar valor y seguir creciendo profesionalmente.
                         </p>
                     </div>
                     <Link href="/contacto" className="action-button action-primary">

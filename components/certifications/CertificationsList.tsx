@@ -62,7 +62,7 @@ export default function CertificationsList() {
                                 Certificaciones complementarias
                             </h3>
 
-                            <p className="mb-4 text-sm text-muted">
+                            <p className="mb-4 text-sm lg:text-lg text-muted">
                                 freeCodeCamp · Formación práctica y autodidacta.
                             </p>
 

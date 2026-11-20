@@ -210,7 +210,7 @@ export default function ProjectMarquee({
                                 </div>
                                 <time
                                     dateTime={project.date}
-                                    className="mb-2 text-xs font-medium text-gold-light"
+                                    className="mb-2 text-xs lg:text-sm font-medium text-gold-light"
                                 >
                                     {project.date.split("-").reverse().join("/")}
                                 </time>
@@ -219,14 +219,14 @@ export default function ProjectMarquee({
                                     {project.title}
                                 </h3>
 
-                                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                                <p className="mt-3 flex-1 text-sm lg:text-lg leading-relaxed text-muted">
                                     {project.description}
                                 </p>
                                 <ul className="mt-3 flex flex-wrap gap-2">
                                     {project.technologies.map((technology) => (
                                         <li
                                             key={technology}
-                                            className="rounded border border-gold/20 bg-outline px-2 py-1 text-xs font-medium text-gold-light"
+                                            className="rounded border border-gold/20 bg-outline px-2 py-1 text-xs lg:text-sm font-medium text-gold-light"
                                         >
                                             {technology}
                                         </li>
