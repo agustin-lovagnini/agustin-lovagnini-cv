@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { ArrowRight, ArrowUpRight, FileText } from "lucide-react";
+import { ArrowRight, ArrowUpRight, FileText, FolderGit2 } from "lucide-react";
 import TechnologiesMarquee from "../components/ui/TechnologiesMarquee";
 import Image from "next/image";
 import fotoPerfil from "../public/images/img-perfil-agustin.webp";
+import { projects } from "../data/projects";
+import FeaturedProjectCard from "../components/projects/FeaturedProjectCard";
 
 // ITEM - Metadatos de Inicio
 export const metadata: Metadata = {
@@ -31,12 +33,15 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+
+  const featuredProjects = projects.filter((project) => project.featured);
+
   return (
     <main className="mx-auto flex w-full max-w-384 flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
       {/* SECTION - Presentación personal */}
       <section
         aria-labelledby="presentacion-personal"
-        className="grid grid-cols-1 items-center gap-8 md:grid-cols-[2fr_1fr] md:gap-10"
+        className="grid grid-cols-1 items-center gap-8 md:grid-cols-[2fr_1fr] md:items-stretch md:gap-10"
       >
         <div className="flex flex-col gap-1 style-section">
           <span className="eyebrow-badge">
@@ -63,7 +68,7 @@ export default function Home() {
           </p>
 
           <p className="text-sm pt-2 leading-relaxed text-muted md:text-base md:pt-0">
-            Soy desarrollador web <strong className="underline">Full Stack</strong>, apasionado por el Frontend, el diseño y la experiencia de usuario. Siempre me atrajo crear interfaces modernas, intuitivas y responsivas que combinen estética y funcionalidad. Decidí formarme también en Backend para comprender el desarrollo de aplicaciones de principio a fin y crear soluciones completas. Mi objetivo es marcar la diferencia y aportar valor a una empresa o equipo de desarrollo, contribuyendo con conocimientos, ideas, soluciones y compromiso, mientras continúo aprendiendo y creciendo profesionalmente junto a mis compañeros.
+            Soy desarrollador web <strong className="underline">Full Stack</strong>, con especial interés en el Frontend, el diseño y la experiencia de usuario. Me apasiona crear interfaces modernas, intuitivas y funcionales, combinando creatividad y tecnología. Busco aportar valor a un equipo de desarrollo con mis conocimientos, ideas y compromiso, mientras continúo creciendo profesionalmente.
           </p>
 
           <div className="mt-4 flex flex-col items-center gap-5 md:flex-row md:flex-wrap md:gap-3 ">
@@ -112,16 +117,45 @@ export default function Home() {
 
         {/* ITEM - Retrato con sombra dorada */}
         <div className="relative isolate mx-auto flex w-full max-w-55 items-center justify-center md:max-w-85">
-          <div className="w-full max-w-85 overflow-hidden rounded-full border border-outline bg-surface shadow-[0_0_20px_rgba(233,183,103,0.12),0_8px_24px_rgba(0,0,0,0.3)] md:rounded-lg">
+          <div className="relative w-full max-w-85 overflow-hidden rounded-full border border-outline bg-surface shadow-[0_0_20px_rgba(233,183,103,0.12),0_8px_24px_rgba(0,0,0,0.3)] md:h-full md:rounded-lg">
             <Image
               src={fotoPerfil}
               alt="Retrato de Agustín Lovagnini"
               sizes="(min-width: 768px) 340px, 220px"
-              className="aspect-square w-full object-cover object-center md:aspect-3/4"
+              className="aspect-square w-full object-cover object-center md:absolute md:inset-0 md:h-full md:aspect-auto"
             />
           </div>
         </div>
       </section>
+
+      <hr className="section-divider" />
+
+      {/* SECTION - Vista rápida de proyectos destacados */}
+      <section aria-labelledby="proyectos-destacados" className="w-full">
+        <div className="flex items-center gap-4">
+          <div className="rounded-xl border border-outline bg-surface p-3 text-gold-light">
+            <FolderGit2 size={24} aria-hidden="true" />
+          </div>
+
+          <div>
+            <h2 id="proyectos-destacados" className="font-heading text-2xl font-bold">
+              Proyectos destacados
+            </h2>
+          </div>
+        </div>
+
+        <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
+          {featuredProjects.map((project) => (
+            <FeaturedProjectCard
+              key={project.id}
+              project={project}
+              compact
+            />
+          ))}
+        </div>
+      </section>
+
+      <hr className="section-divider" />
 
       {/* SECTION - Stack principal y marquesina */}
       <section aria-labelledby="tecnologias-y-habilidades" className="style-section w-full">
@@ -129,25 +163,11 @@ export default function Home() {
           <span className="mb-3 block w-full border-b border-gold-light pb-1 font-heading text-xl font-semibold tracking-tight text-gold-light md:text-2xl">
             Stack Principal
           </span>
-
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-[1fr_1fr] md:items-center md:gap-8">
-            <h2
-              id="tecnologias-y-habilidades"
-              className="font-heading text-xl font-semibold tracking-tight md:text-2xl"
-            >
-              Tecnologías y Habilidades
-            </h2>
-
-            <p className="text-sm leading-relaxed text-muted">
-              Me motiva formar parte de un ecosistema de desarrollo moderno, enfocado en crear aplicaciones robustas, escalables y con componentes reutilizables.
-            </p>
-          </div>
         </div>
 
         <div className="mt-3 rounded-xl border border-outline bg-background p-4">
           <TechnologiesMarquee />
         </div>
-
       </section>
 
       {/* SECTION - Invitación a contactar */}

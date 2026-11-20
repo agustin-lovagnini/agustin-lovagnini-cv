@@ -4,14 +4,16 @@ import { ArrowUpRight } from "lucide-react";
 
 interface FeaturedProjectCardProps {
     project: Project;
+    compact?: boolean;
 }
 
 export default function FeaturedProjectCard({
     project,
+    compact = false,
 }: FeaturedProjectCardProps) {
     return (
-        <article className="style-section grid grid-cols-1 items-center gap-6 rounded-xl lg:grid-cols-2">
-            <div className="flex min-w-0 flex-col items-start gap-3">
+        <article className={`style-section grid grid-cols-1 items-center gap-6 rounded-xl ${compact ? "grid-rows-[auto_1fr]" : "lg:grid-cols-2"}`}>
+            <div className={`flex min-w-0 flex-col items-start gap-3 ${compact ? "h-full" : ""}`}>
                 <div className="flex flex-wrap items-center gap-2 text-xs font-semibold tracking-wide">
                     <span className="uppercase text-gold-light">Proyecto destacado</span>
                     <span aria-hidden="true" className="text-subtle">·</span>
@@ -40,14 +42,14 @@ export default function FeaturedProjectCard({
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="action-button action-primary mt-3"
+                    className={`action-button action-primary ${compact ? "mt-auto" : "mt-3"}`}
                     aria-label={`Ver proyecto: ${project.title} (abre en otra pestaña)`}
                 >
                     Ver proyecto
                     <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
                 </a>
             </div>
-            <div className="mx-auto w-full max-w-md overflow-hidden rounded-lg border border-outline lg:w-9/10">
+            <div className={`mx-auto w-full max-w-md overflow-hidden rounded-lg border border-outline ${compact ? "-order-1" : "lg:w-9/10"}`}>
                 <Image
                     src={project.image}
                     alt={`Vista previa de ${project.title}`}

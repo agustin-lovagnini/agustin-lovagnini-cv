@@ -12,12 +12,14 @@ Simplificar el contenido, destacar los proyectos y conservar la información pro
 - [x] Crear `CHANGELOG.md` para registrar cambios importantes entre versiones.
 - [x] Actualizar `AGENTS.md` para consultar este plan y el estado de Git al iniciar una sesión.
 - [x] Revisar el dominio y la documentación general en `README.md`.
-- [ ] Revisar los cambios de documentación y guardarlos en un commit autorizado.
-- [ ] Subir `develop-v2` a GitHub con autorización para continuar desde ambas computadoras.
+- [x] Revisar los cambios de documentación y guardarlos en un commit autorizado.
+- [x] Subir `develop-v2` a GitHub para continuar desde ambas computadoras.
 
 ## Etapa 1 — Simplificación del portfolio
 
-- [ ] Analizar el contenido de Inicio, Sobre mí, Proyectos y Contacto.
+- **Estado:** En desarrollo, en `develop-v2`.
+- [x] Revisar Inicio: presentación simplificada, retrato ajustado y proyectos destacados en tarjetas compactas. El propietario confirmó el resultado visual en móvil y escritorio.
+- [ ] Analizar el contenido de Sobre mí, Proyectos y Contacto.
 - [ ] Presentar propuestas para reducir repeticiones y textos extensos.
 - [ ] Decidir qué contenido conservar o modificar antes de eliminarlo.
 - [ ] Definir cómo dar más protagonismo a los proyectos.
