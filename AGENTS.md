@@ -201,6 +201,8 @@ No asumir que el historial de conversaciones de Codex está sincronizado.
 
 Antes de continuar una tarea, verificar el estado actual del repositorio y consultar qué se estaba desarrollando si falta contexto.
 
+Durante el desarrollo de la V2, consultar también `docs/PLAN-V2.md` al comenzar una sesión. Mantenerlo actualizado cuando se complete una etapa importante, con autorización del propietario.
+
 ## 9. Contacto y publicación
 
 El portfolio utiliza Formspree para recibir consultas por correo electrónico, sin backend propio.

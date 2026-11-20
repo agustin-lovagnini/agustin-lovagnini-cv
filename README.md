@@ -4,9 +4,9 @@
 
 Portfolio personal desarrollado con **Next.js, React, TypeScript y Tailwind CSS**. Reúne mi perfil profesional, formación, certificaciones y proyectos de desarrollo web, con una interfaz oscura y detalles dorados.
 
-[Ver portfolio](https://agustin-lovagnini-cv.vercel.app) · [Capturas](#capturas-de-pantalla) · [Instalación](#instalación-y-ejecución-local) · [Contacto](#contacto)
+[Ver portfolio](https://agustinlovagnini.com/) · [Capturas](#capturas-de-pantalla) · [Instalación](#instalación-y-ejecución-local) · [Contacto](#contacto)
 
-> **Disponible online:** [Visitá mi portfolio](https://agustin-lovagnini-cv.vercel.app).
+> **Disponible online:** [Visitá mi portfolio](https://agustinlovagnini.com/).
 
 ## Sobre el proyecto
 
@@ -162,7 +162,7 @@ Las mediciones de Lighthouse del **17 de noviembre de 2026**, realizadas sobre e
 
 Los resultados corresponden a las cuatro páginas en esas ejecuciones de laboratorio; pueden variar según el dispositivo, la conexión y la versión del sitio. No sustituyen las pruebas manuales de accesibilidad.
 
-El proyecto continúa evolucionando. Las decisiones de desarrollo y el seguimiento técnico se documentan en [AGENTS.md](AGENTS.md).
+El proyecto continúa evolucionando. Las instrucciones de desarrollo están en [AGENTS.md](AGENTS.md), el seguimiento de la V2 en [PLAN-V2.md](docs/PLAN-V2.md) y los cambios por versión en [CHANGELOG.md](CHANGELOG.md).
 
 ## Contacto
 
