@@ -1,6 +1,7 @@
 import type { Project } from "../../data/projects";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 interface FeaturedProjectCardProps {
     project: Project;
@@ -38,16 +39,27 @@ export default function FeaturedProjectCard({
                     ))}
                 </ul>
 
-                <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`action-button action-primary ${compact ? "mt-auto self-center" : "mt-3"}`}
-                    aria-label={`Ver proyecto: ${project.title} (abre en otra pestaña)`}
-                >
-                    Ver proyecto
-                    <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
-                </a>
+                <div className={`flex items-center gap-2 sm:gap-3 ${compact ? "mt-auto self-center" : "mt-3"}`}>
+                    <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="action-button action-primary"
+                        aria-label={`Ver proyecto: ${project.title} (abre en otra pestaña)`}
+                    >
+                        Ver proyecto
+                        <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
+                    </a>
+                    <a
+                        href={project.repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="action-button action-social"
+                        aria-label={`Ver repositorio en GitHub: ${project.title} (abre en otra pestaña)`}
+                    >
+                        <FaGithub size={22} aria-hidden="true" />
+                    </a>
+                </div>
             </div>
             <div className={`mx-auto w-full max-w-md overflow-hidden rounded-lg border border-outline ${compact ? "-order-1" : "lg:w-9/10"}`}>
                 <Image

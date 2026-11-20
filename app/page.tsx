@@ -77,10 +77,6 @@ export default function Home() {
                 <span>Ver proyectos</span>
                 <ArrowRight size={16} className="shrink-0" aria-hidden="true" />
               </Link>
-              <Link href="/contacto" className="action-button action-secondary">
-                <span>Contactar</span>
-                <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
-              </Link>
             </div>
             <div className="flex items-center gap-2 sm:gap-3">
               <a
@@ -175,14 +171,14 @@ export default function Home() {
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <span className="mb-2 block border-l-2 border-gold pl-3 text-xs lg:text-sm font-semibold uppercase tracking-[0.15em] text-gold-light">
-              Contame tu idea y vamos a darle vida
+              Contacto
             </span>
             <h2 id="llamado-accion" className="font-heading text-2xl md:text-3xl font-bold leading-tight tracking-tight pb-1">
-              ¿Tenés un proyecto en mente?
+              Hablemos de tu próximo proyecto
             </h2>
           </div>
           <Link href="/contacto" className="action-button action-primary">
-            <span>Iniciar Conversación</span>
+            <span>Contactar</span>
             <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
           </Link>
         </div>

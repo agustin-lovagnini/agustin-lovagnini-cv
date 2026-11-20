@@ -4,6 +4,7 @@ export interface Project {
     title: string;
     description: string;
     demoUrl: string;
+    repoUrl: string;
     featured: boolean;
     date: string;
     image: string;
@@ -27,6 +28,7 @@ export const projects: Project[] = [
             "Evolución de mi portfolio personal, con secciones dedicadas a mi perfil y la presentación de proyectos.",
         demoUrl:
             "https://agustin-lovagnini.github.io/agustin-lovagnini-cv-web/pages/proyectos.html",
+        repoUrl: "https://github.com/agustin-lovagnini/agustin-lovagnini-cv-web",
     },
     {
         id: "luzu-tv",
@@ -41,6 +43,7 @@ export const projects: Project[] = [
             "Rediseño de una plataforma de streaming, enfocado en la organización del contenido, el diseño visual y la navegación.",
         demoUrl:
             "https://agustin-lovagnini.github.io/proyecto-paginaweb-luzu-radio-streaming/",
+        repoUrl: "https://github.com/agustin-lovagnini/proyecto-paginaweb-luzu-radio-streaming",
     },
     {
         id: "simulador-inversiones",
@@ -55,6 +58,7 @@ export const projects: Project[] = [
             "Simulador interactivo para gestionar depósitos, inversiones y retiros, con validaciones, persistencia de datos e historial de operaciones.",
         demoUrl:
             "https://agustin-lovagnini.github.io/simulador-inversiones/",
+        repoUrl: "https://github.com/agustin-lovagnini/simulador-inversiones",
     },
     {
         id: "formulario-contacto",
@@ -69,6 +73,7 @@ export const projects: Project[] = [
             "Práctica de estructura HTML, campos de entrada y presentación visual de un formulario de contacto.",
         demoUrl:
             "https://agustin-lovagnini.github.io/proyecto-formlario-de-contactos/",
+        repoUrl: "https://github.com/agustin-lovagnini/proyecto-formlario-de-contactos",
     },
     {
         id: "primer-portfolio",
@@ -83,6 +88,7 @@ export const projects: Project[] = [
             "Primera presentación web de mi perfil profesional y mis proyectos.",
         demoUrl:
             "https://agustin-lovagnini.github.io/portfolio-AgustinLovagnini/",
+        repoUrl: "https://github.com/agustin-lovagnini/portfolio-AgustinLovagnini",
     },
     {
         id: "chatbox",
@@ -97,6 +103,7 @@ export const projects: Project[] = [
             "Interfaz de chat desarrollada con HTML y CSS.",
         demoUrl:
             "https://agustin-lovagnini.github.io/proyecto-chatbox/",
+        repoUrl: "https://github.com/agustin-lovagnini/proyecto-chatbox",
     },
     {
         id: "flip-card",
@@ -111,6 +118,7 @@ export const projects: Project[] = [
             "Tarjeta interactiva con giro 3D y transiciones.",
         demoUrl:
             "https://agustin-lovagnini.github.io/proyecto-flipCard/",
+        repoUrl: "https://github.com/agustin-lovagnini/proyecto-flipCard",
     },
     {
         id: "menu-acordeon",
@@ -125,6 +133,7 @@ export const projects: Project[] = [
             "Organización de contenido mediante un menú acordeón.",
         demoUrl:
             "https://agustin-lovagnini.github.io/proyecto-menu-acordeon/",
+        repoUrl: "https://github.com/agustin-lovagnini/proyecto-menu-acordeon",
     },
     {
         id: "vista-previa",
@@ -139,6 +148,7 @@ export const projects: Project[] = [
             "Experimento visual con video de fondo y efectos de desplazamiento.",
         demoUrl:
             "https://agustin-lovagnini.github.io/proyecto-pagina-de-vista/",
+        repoUrl: "https://github.com/agustin-lovagnini/proyecto-pagina-de-vista",
     },
     {
         id: "presentacion-web",
@@ -153,6 +163,7 @@ export const projects: Project[] = [
             "Práctica de composición, tipografía y espaciado en una presentación personal.",
         demoUrl:
             "https://agustin-lovagnini.github.io/proyecto-pagina-web-presentacion-personal-ejercicio/",
+        repoUrl: "https://github.com/agustin-lovagnini/proyecto-pagina-web-presentacion-personal-ejercicio",
     },
     {
         id: "sidebar-menu",
@@ -167,6 +178,7 @@ export const projects: Project[] = [
             "Menú lateral y navegación desarrollados con HTML y CSS.",
         demoUrl:
             "https://agustin-lovagnini.github.io/proyecto-sidebar-menu/",
+        repoUrl: "https://github.com/agustin-lovagnini/proyecto-sidebar-menu",
     },
     {
         id: "tarjeta-presentacion",
@@ -181,5 +193,6 @@ export const projects: Project[] = [
             "Diseño de una tarjeta profesional con información de contacto.",
         demoUrl:
             "https://agustin-lovagnini.github.io/proyecto-tarjeta-de-presentacion/",
+        repoUrl: "https://github.com/agustin-lovagnini/proyecto-tarjeta-de-presentacion",
     },
 ];

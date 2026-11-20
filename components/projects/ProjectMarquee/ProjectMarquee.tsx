@@ -4,7 +4,8 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Project } from "../../../data/projects";
 import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import AutoScroll from "embla-carousel-auto-scroll";
 
 interface ProjectMarqueeProps {
@@ -232,15 +233,27 @@ export default function ProjectMarquee({
                                         </li>
                                     ))}
                                 </ul>
-                                <a
-                                    href={project.demoUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="action-button action-primary mt-5"
-                                    aria-label={`Ver proyecto: ${project.title} (abre en otra pestaña)`}
-                                >
-                                    Ver proyecto
-                                </a>
+                                <div className="mt-5 flex items-center justify-center gap-2 gap-2 sm:gap-3">
+                                    <a
+                                        href={project.demoUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="action-button action-primary"
+                                        aria-label={`Ver proyecto: ${project.title} (abre en otra pestaña)`}
+                                    >
+                                        Ver proyecto
+                                        <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
+                                    </a>
+                                    <a
+                                        href={project.repoUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="action-button action-social"
+                                        aria-label={`Ver repositorio en GitHub: ${project.title} (abre en otra pestaña)`}
+                                    >
+                                        <FaGithub size={22} aria-hidden="true" />
+                                    </a>
+                                </div>
                             </article>
                         </li>
                     ))}

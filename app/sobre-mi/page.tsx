@@ -68,8 +68,8 @@ export default function AboutPage() {
             </header>
 
             <ScrollPrompt href="#proyectos-destacados" />
-            
-                        <hr className="section-divider" />
+
+            <hr className="section-divider" />
 
             {/* SECTION - Perfil profesional */}
             <section id="sobre-mi" aria-labelledby="sobre-mi-descripcion" className="w-full mx-auto grid grid-cols-1 items-center gap-8 md:grid-cols-[2fr_1fr] md:gap-10">
@@ -81,7 +81,7 @@ export default function AboutPage() {
                             </h2>
                             <p className="leading-relaxed tracking-wide lg:text-lg">Soy desarrollador web <span className="font-bold text-gold-light">Full Stack</span>, con especial interés en el <strong>Frontend, el diseño y la experiencia de usuario</strong>. Trabajo con tecnologías como React, Next.js, Node.js y Express, integrando interfaces modernas con APIs REST, autenticación y bases de datos. Mi objetivo es desarrollar aplicaciones web completas, funcionales y escalables, combinando diseño, tecnología y buenas prácticas.</p>
 
-                            
+
                         </div>
 
                         <blockquote className="my-1 border-l-2 border-gold-light pl-4 italic text-muted bg-background rounded-r-lg py-4 lg:text-lg">
@@ -165,6 +165,45 @@ export default function AboutPage() {
                 </div>
             </section>
 
+            <hr className="section-divider" />
+
+            {/* SECTION - Tecnologías principales */}
+            <section aria-labelledby="tecnologias-principales" className="mx-auto w-full max-w-360">
+                <header className="flex items-start gap-3">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-outline bg-surface text-gold-light">
+                        <Layers3 size={22} aria-hidden="true" />
+                    </span>
+                    <div>
+                        <h2 id="tecnologias-principales" className="font-heading text-xl font-bold tracking-tight md:text-2xl">
+                            Tecnologías principales
+                        </h2>
+                        <p className="mt-1 text-sm lg:text-lg text-muted">Herramientas y lenguajes que utilizo en mis proyectos.</p>
+                    </div>
+                </header>
+
+                {/* SUBSECTION - Tecnologías organizadas por área */}
+                <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                    {technologyGroups.map((group) => (
+                        <article key={group.id} className="flex min-w-0 flex-col gap-4 rounded-2xl border border-outline bg-surface p-5">
+                            <div className="flex items-start justify-between gap-3">
+                                <h3 className="font-heading text-lg font-semibold">{group.title}</h3>
+                                <group.icon size={20} className="mt-1 shrink-0 text-gold-light" aria-hidden="true" />
+                            </div>
+                            <p className="text-sm lg:text-lg leading-relaxed text-muted">{group.description}</p>
+                            <ul className="mt-auto flex flex-wrap gap-2 pt-3" aria-label={`Tecnologías de ${group.title}`}>
+                                {group.technologies.map((technology) => (
+                                    <li key={technology} className="max-w-full break-words rounded border border-subtle/70 bg-background px-2 py-1 text-xs lg:text-sm font-medium text-gold-light">
+                                        {technology}
+                                    </li>
+                                ))}
+                            </ul>
+                        </article>
+                    ))}
+                </div>
+            </section>
+
+            <hr className="section-divider" />
+
             {/* SECTION - Formación y certificaciones */}
             <section aria-labelledby="formacion-y-certificaciones" className="mx-auto w-full max-w-360 style-section p-4 md:p-5">
                 <div className="mb-5 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:gap-5">
@@ -194,47 +233,6 @@ export default function AboutPage() {
                     <CertificationsList />
                 </div>
             </section>
-
-            <hr className="section-divider" />
-
-            {/* SECTION - Tecnologías principales */}
-            <section aria-labelledby="tecnologias-principales" className="mx-auto w-full max-w-360">
-                <header className="flex items-start gap-3">
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-outline bg-surface text-gold-light">
-                        <Layers3 size={22} aria-hidden="true" />
-                    </span>
-                    <div>
-                        <h2 id="tecnologias-principales" className="font-heading text-xl font-bold tracking-tight md:text-2xl">
-                            Tecnologías principales
-                        </h2>
-                        <p className="mt-1 text-sm lg:text-lg text-muted">Herramientas y lenguajes que utilizo en mis proyectos.</p>
-                    </div>
-                </header>
-
-
-
-                {/* SUBSECTION - Tecnologías organizadas por área */}
-                <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-                    {technologyGroups.map((group) => (
-                        <article key={group.id} className="flex min-w-0 flex-col gap-4 rounded-2xl border border-outline bg-surface p-5">
-                            <div className="flex items-start justify-between gap-3">
-                                <h3 className="font-heading text-lg font-semibold">{group.title}</h3>
-                                <group.icon size={20} className="mt-1 shrink-0 text-gold-light" aria-hidden="true" />
-                            </div>
-                            <p className="text-sm lg:text-lg leading-relaxed text-muted">{group.description}</p>
-                            <ul className="mt-auto flex flex-wrap gap-2 pt-3" aria-label={`Tecnologías de ${group.title}`}>
-                                {group.technologies.map((technology) => (
-                                    <li key={technology} className="max-w-full break-words rounded border border-subtle/70 bg-background px-2 py-1 text-xs lg:text-sm font-medium text-gold-light">
-                                        {technology}
-                                    </li>
-                                ))}
-                            </ul>
-                        </article>
-                    ))}
-                </div>
-            </section>
-
-            <hr className="section-divider" />
 
             {/* SECTION - Competencias profesionales */}
             <section aria-labelledby="competencias-profesionales" className="w-full">
