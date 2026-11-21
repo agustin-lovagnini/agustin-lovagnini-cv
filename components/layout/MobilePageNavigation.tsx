@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { defaultLocale, isLocale } from "../../i18n/resources";
 
 const pages = [
     { href: "/", label: "navigation.home" },
@@ -16,7 +17,8 @@ export default function MobilePageNavigation() {
     const { t } = useTranslation("common");
 
     const pathname = usePathname();
-    const lang = pathname.split("/")[1];
+    const languageSegment = pathname.split("/")[1];
+    const lang = isLocale(languageSegment) ? languageSegment : defaultLocale;
 
     const currentIndex = pages.findIndex(
         (page) => `/${lang}${page.href === "/" ? "" : page.href}` === pathname

@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import { defaultLocale, isLocale } from "../../../i18n/resources";
 
 export default function Header() {
     const { t } = useTranslation("common");
@@ -13,7 +14,8 @@ export default function Header() {
     // ITEM - Estado y control del menú móvil
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
-    const lang = pathname.split("/")[1];
+    const languageSegment = pathname.split("/")[1];
+    const lang = isLocale(languageSegment) ? languageSegment : defaultLocale;
 
     const menuButtonRef = useRef<HTMLButtonElement>(null);
     const closeButtonRef = useRef<HTMLButtonElement>(null);

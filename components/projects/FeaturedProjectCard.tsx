@@ -2,21 +2,35 @@ import type { Project } from "../../data/projects";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
+import type { Locale } from "../../i18n/resources";
+import { createTranslation } from "../../i18n/createTranslation";
 
 interface FeaturedProjectCardProps {
     project: Project;
     compact?: boolean;
+    locale: Locale;
 }
 
 export default function FeaturedProjectCard({
     project,
     compact = false,
+    locale,
 }: FeaturedProjectCardProps) {
+    const translation = createTranslation(locale);
+
+    const title = translation.t(`projects.${project.id}.title`, {
+        defaultValue: project.title,
+    });
+
+    const description = translation.t(`projects.${project.id}.description`, {
+        defaultValue: project.description,
+    });
+
     return (
         <article className={`style-section grid grid-cols-1 items-center gap-6 rounded-xl ${compact ? "grid-rows-[auto_1fr]" : "lg:grid-cols-2"}`}>
             <div className={`flex min-w-0 flex-col items-start gap-3 ${compact ? "h-full" : ""}`}>
                 <div className="flex flex-wrap items-center gap-2 text-xs lg:text-sm font-semibold tracking-wide">
-                    <span className="uppercase text-gold-light">Proyecto destacado</span>
+                    <span className="uppercase text-gold-light">{translation.t("projectCard.featured")}</span>
                     <span aria-hidden="true" className="text-subtle">·</span>
                     <time dateTime={project.date} className="text-muted">
                         {project.date.slice(0, 4)}
@@ -24,14 +38,14 @@ export default function FeaturedProjectCard({
                 </div>
 
                 <h3 className="font-heading text-2xl font-bold leading-tight tracking-tight md:text-3xl">
-                    {project.title}
+                    {title}
                 </h3>
 
                 <p className="text-sm lg:text-lg leading-relaxed text-muted md:text-base">
-                    {project.description}
+                    {description}
                 </p>
 
-                <ul className="flex flex-wrap gap-2 pt-1" aria-label={`Tecnologías de ${project.title}`}>
+                <ul className="flex flex-wrap gap-2 pt-1" aria-label={translation.t("projectCard.technologiesLabel", { title })}>
                     {project.technologies.map((technology) => (
                         <li key={technology} className="rounded border border-gold/20 bg-outline px-2.5 py-1 text-xs lg:text-sm font-medium text-gold-light shadow-sm">
                             {technology}
@@ -45,9 +59,9 @@ export default function FeaturedProjectCard({
                         target="_blank"
                         rel="noopener noreferrer"
                         className="action-button action-primary"
-                        aria-label={`Ver proyecto: ${project.title} (abre en otra pestaña)`}
+                        aria-label={translation.t("projectCard.demoLabel", { title })}
                     >
-                        Ver proyecto
+                        {translation.t("projectCard.viewProject")}
                         <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
                     </a>
                     <a
@@ -55,7 +69,7 @@ export default function FeaturedProjectCard({
                         target="_blank"
                         rel="noopener noreferrer"
                         className="action-button action-social"
-                        aria-label={`Ver repositorio en GitHub: ${project.title} (abre en otra pestaña)`}
+                        aria-label={translation.t("projectCard.repositoryLabel", { title })}
                     >
                         <FaGithub size={22} aria-hidden="true" />
                     </a>
@@ -64,7 +78,7 @@ export default function FeaturedProjectCard({
             <div className={`mx-auto w-full max-w-md overflow-hidden rounded-lg border border-outline ${compact ? "-order-1" : "lg:w-9/10"}`}>
                 <Image
                     src={project.image}
-                    alt={`Vista previa de ${project.title}`}
+                    alt={translation.t("projectCard.previewAlt", { title })}
                     width={project.imageWidth}
                     height={project.imageHeight}
                     sizes="(min-width: 1024px) 448px, (min-width: 480px) 448px, 100vw"

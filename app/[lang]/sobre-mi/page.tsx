@@ -16,6 +16,8 @@ import { technologyGroups } from "../../../data/technologyGroups";
 import { competencies } from "../../../data/competencies";
 import Image from "next/image";
 import fotoPerfil from "../../../public/images/img-perfil-agustin.webp";
+import { notFound } from "next/navigation";
+import { isLocale } from "../../../i18n/resources";
 
 // ITEM - Metadatos de Sobre mí
 export const metadata: Metadata = {
@@ -57,7 +59,14 @@ export const metadata: Metadata = {
 };
 
 
-export default function AboutPage() {
+export default async function AboutPage({
+    params,
+}: PageProps<"/[lang]/sobre-mi">) {
+    const { lang } = await params;
+
+    if (!isLocale(lang)) {
+        notFound();
+    }
     return (
         <main className="mx-auto flex w-full max-w-360 flex-col gap-8 px-4 pt-8 pb-2 md:px-8 md:py-12">
             {/* SECTION - Introducción de Sobre mí */}
@@ -284,7 +293,7 @@ export default function AboutPage() {
                             Estoy abierto a nuevas oportunidades y proyectos donde pueda aportar valor y seguir creciendo profesionalmente.
                         </p>
                     </div>
-                    <Link href="/contacto" className="action-button action-primary">
+                    <Link href={`/${lang}/contacto`} className="action-button action-primary">
                         <span>Iniciar Conversación</span>
                         <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
                     </Link>

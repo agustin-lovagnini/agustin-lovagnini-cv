@@ -7,6 +7,12 @@ import Image from "next/image";
 import fotoPerfil from "../../public/images/img-perfil-agustin.webp";
 import { projects } from "../../data/projects";
 import FeaturedProjectCard from "../../components/projects/FeaturedProjectCard";
+import { notFound } from "next/navigation";
+import { isLocale } from "../../i18n/resources";
+import { createTranslation } from "../../i18n/createTranslation";
+import { Trans } from "react-i18next";
+
+
 
 // ITEM - Metadatos de Inicio
 export const metadata: Metadata = {
@@ -32,7 +38,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home({
+  params,
+}: PageProps<"/[lang]">) {
+  const { lang } = await params;
+
+  if (!isLocale(lang)) {
+    notFound();
+  }
+
+  const translation = createTranslation(lang);
 
   const featuredProjects = projects.filter((project) => project.featured);
 
@@ -49,7 +64,7 @@ export default function Home() {
               aria-hidden="true"
               className="eyebrow-dot"
             />
-            Full Stack Developer +3 años de código
+            {translation.t("home.badge")}
           </span>
 
           <h1
@@ -62,19 +77,26 @@ export default function Home() {
 
           <p className="font-heading text-lg font-medium leading-snug md:text-xl">
             <span className="text-gold-light">
-              Cada idea tiene una identidad.
+              {translation.t("home.taglineLead")}
             </span>{" "}
-            Mi trabajo es darle vida.
+            {translation.t("home.taglineEnd")}
           </p>
 
           <p className="text-sm lg:text-lg pt-2 leading-relaxed text-muted md:text-base md:pt-0">
-            Soy desarrollador web <strong className="underline">Full Stack</strong>, especializado en crear experiencias digitales modernas, intuitivas y funcionales. Me apasionan el Frontend, el diseño y la tecnología, y busco aportar soluciones que combinen creatividad y buenas prácticas.
+            <Trans
+              i18n={translation}
+              ns="common"
+              i18nKey="home.description"
+              components={{
+                strong: <strong className="underline" />,
+              }}
+            />
           </p>
 
           <div className="mt-4 flex flex-col items-center gap-5 md:flex-row md:flex-wrap md:gap-3 ">
             <div className="flex items-center gap-2 sm:gap-3">
-              <Link href="/proyectos" className="action-button action-primary">
-                <span>Ver proyectos</span>
+              <Link href={`/${lang}/proyectos`} className="action-button action-primary">
+                <span>{translation.t("home.viewProjects")}</span>
                 <ArrowRight size={16} className="shrink-0" aria-hidden="true" />
               </Link>
             </div>
@@ -102,10 +124,10 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="action-button action-social w-auto gap-2 px-4 sm:w-auto sm:gap-2"
-                aria-label="Ver CV en PDF (abre en una pestaña nueva)"
+                aria-label={translation.t("home.viewCvLabel")}
               >
                 <FileText size={22} className="shrink-0" aria-hidden="true" />
-                <span>Ver CV</span>
+                <span>{translation.t("home.viewCv")}</span>
               </a>
             </div>
           </div>
@@ -116,7 +138,7 @@ export default function Home() {
           <div className="relative w-full max-w-85 overflow-hidden rounded-full border border-outline bg-surface shadow-[0_0_20px_rgba(233,183,103,0.12),0_8px_24px_rgba(0,0,0,0.3)] md:h-full md:rounded-lg">
             <Image
               src={fotoPerfil}
-              alt="Retrato de Agustín Lovagnini"
+              alt={translation.t("home.portraitAlt")}
               sizes="(min-width: 768px) 340px, 220px"
               className="aspect-square w-full object-cover object-center md:absolute md:inset-0 md:h-full md:aspect-auto"
             />
@@ -130,7 +152,7 @@ export default function Home() {
       <section aria-labelledby="tecnologias-y-habilidades" className="style-section w-full">
         <div>
           <span className="mb-3 block w-full border-b border-gold-light pb-1 font-heading text-xl font-semibold tracking-tight text-gold-light md:text-2xl">
-            Stack Principal
+            {translation.t("home.mainStack")}
           </span>
         </div>
 
@@ -150,7 +172,7 @@ export default function Home() {
 
           <div>
             <h2 id="proyectos-destacados" className="font-heading text-2xl font-bold">
-              Proyectos destacados
+              {translation.t("home.featuredProjects")}
             </h2>
           </div>
         </div>
@@ -160,6 +182,7 @@ export default function Home() {
             <FeaturedProjectCard
               key={project.id}
               project={project}
+              locale={lang}
               compact
             />
           ))}
@@ -171,14 +194,14 @@ export default function Home() {
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <span className="mb-2 block border-l-2 border-gold pl-3 text-xs lg:text-sm font-semibold uppercase tracking-[0.15em] text-gold-light">
-              Contacto
+              {translation.t("home.contactEyebrow")}
             </span>
             <h2 id="llamado-accion" className="font-heading text-2xl md:text-3xl font-bold leading-tight tracking-tight pb-1">
-              Hablemos de tu próximo proyecto
+              {translation.t("home.contactTitle")}
             </h2>
           </div>
-          <Link href="/contacto" className="action-button action-primary">
-            <span>Contactar</span>
+          <Link href={`/${lang}/contacto`} className="action-button action-primary">
+            <span>{translation.t("home.contactButton")}</span>
             <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
           </Link>
         </div>

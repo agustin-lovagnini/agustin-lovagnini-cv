@@ -26,5 +26,42 @@
     "socialNavigation": "Social media and contact",
     "email": "Email",
     "professionalPortfolio": "Professional portfolio"
+  },
+  "home": {
+    "badge": "Full Stack Developer · 3+ years of coding",
+    "taglineLead": "Every idea has an identity.",
+    "taglineEnd": "My job is to bring it to life.",
+    "description": "I'm a <strong>Full Stack</strong> web developer specializing in modern, intuitive, and functional digital experiences. I'm passionate about frontend development, design, and technology, and I aim to deliver solutions that combine creativity with good development practices.",
+    "viewProjects": "View projects",
+    "viewCv": "View CV",
+    "viewCvLabel": "View CV in PDF (opens in a new tab)",
+    "portraitAlt": "Portrait of Agustín Lovagnini",
+    "mainStack": "Main Stack",
+    "featuredProjects": "Featured projects",
+    "contactEyebrow": "Contact",
+    "contactTitle": "Let's talk about your next project",
+    "contactButton": "Get in touch"
+  },
+  "projectCard": {
+    "featured": "Featured project",
+    "viewProject": "View project",
+    "technologiesLabel": "Technologies used in {{title}}",
+    "demoLabel": "View project: {{title}} (opens in a new tab)",
+    "repositoryLabel": "View GitHub repository: {{title}} (opens in a new tab)",
+    "previewAlt": "Preview of {{title}}"
+  },
+  "projects": {
+    "portfolio-html-css-sass": {
+      "title": "Portfolio with HTML, CSS and Sass",
+      "description": "An evolution of my personal portfolio, with sections dedicated to my profile and projects."
+    },
+    "luzu-tv": {
+      "title": "Luzu TV",
+      "description": "A streaming platform redesign focused on content organization, visual design, and navigation."
+    },
+    "simulador-inversiones": {
+      "title": "Investment Simulator",
+      "description": "An interactive simulator for managing deposits, investments, and withdrawals, with validation, data persistence, and transaction history."
+    }
   }
 }

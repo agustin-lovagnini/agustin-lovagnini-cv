@@ -2,6 +2,7 @@ import Header from "../../components/layout/Header/Header";
 import TranslationProvider from "../../components/providers/TranslationProvider";
 import Footer from "../../components/layout/Footer/Footer";
 import { notFound } from "next/navigation";
+import { isLocale } from "../../i18n/resources";
 
 
 import type { Metadata } from "next";
@@ -71,7 +72,7 @@ export function generateStaticParams() {
 
 export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {
   const { lang } = await params;
-  if (lang !== "es" && lang !== "en") {
+  if (!isLocale(lang)) {
   notFound();
 }
   return (

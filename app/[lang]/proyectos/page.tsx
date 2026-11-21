@@ -5,6 +5,8 @@ import { ArrowUpRight } from "lucide-react";
 import { projects } from "../../../data/projects";
 import FeaturedProjectCard from "../../../components/projects/FeaturedProjectCard";
 import ProjectMarquee from "../../../components/projects/ProjectMarquee/ProjectMarquee";
+import { notFound } from "next/navigation";
+import { isLocale } from "../../../i18n/resources";
 
 // ITEM - Metadatos de Proyectos
 export const metadata: Metadata = {
@@ -45,7 +47,14 @@ export const metadata: Metadata = {
     },
 };
 
-export default function ProjectsPage() {
+export default async function ProjectsPage({
+    params,
+}: PageProps<"/[lang]/proyectos">) {
+    const { lang } = await params;
+
+    if (!isLocale(lang)) {
+        notFound();
+    }
 
     const featuredProjects = projects.filter(
         (project) => project.featured
@@ -98,6 +107,7 @@ export default function ProjectsPage() {
                     <FeaturedProjectCard
                         key={project.id}
                         project={project}
+                        locale={lang}
                     />
                 ))}
             </section>
@@ -142,7 +152,7 @@ export default function ProjectsPage() {
                             Estoy abierto a oportunidades laborales y colaboraciones en Frontend y Full Stack. Si tenés una propuesta, me encantaría conocerla.
                         </p>
                     </div>
-                    <Link href="/contacto" className="action-button action-primary self-start md:self-center">
+                    <Link href={`/${lang}/contacto`} className="action-button action-primary self-start md:self-center">
                         <span>Contactame</span>
                         <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
                     </Link>
