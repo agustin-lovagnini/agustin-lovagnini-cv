@@ -1,13 +1,13 @@
+import Header from "../../components/layout/Header/Header";
+import TranslationProvider from "../../components/providers/TranslationProvider";
+import Footer from "../../components/layout/Footer/Footer";
+import { notFound } from "next/navigation";
 
-import Header from "../components/layout/Header/Header";
-import TranslationProvider from "../components/providers/TranslationProvider";
-import Footer from "../components/layout/Footer/Footer";
 
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
-import "./globals.css";
-import MobilePageNavigation from "../components/layout/MobilePageNavigation";
-
+import "../globals.css";
+import MobilePageNavigation from "../../components/layout/MobilePageNavigation";
 
 // ITEM - Fuentes compartidas
 const inter = Inter({
@@ -65,15 +65,22 @@ export const metadata: Metadata = {
   },
 };
 
-// ITEM - Estructura compartida de las páginas
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export function generateStaticParams() {
+  return [{ lang: "es" }, { lang: "en" }];
+}
+
+export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {
+  const { lang } = await params;
+  if (lang !== "es" && lang !== "en") {
+  notFound();
+}
   return (
     <html
-      lang="es"
+      lang={lang}
       className={`${inter.variable} ${spaceGrotesk.variable} antialiased scroll-smooth motion-reduce:scroll-auto`}
     >
       <body className="min-h-dvh flex flex-col">
-        <TranslationProvider locale="es">
+        <TranslationProvider locale={lang}>
           <Header />
           {/* NOTE - Next.js coloca en children el contenido de la ruta actual. */}
           {children}

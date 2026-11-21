@@ -1,6 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  redirects() {
+  return [
+    {
+      source: "/",
+      destination: "/es",
+      permanent: false,
+    },
+  ];
+},
   headers() {
     return [
       {

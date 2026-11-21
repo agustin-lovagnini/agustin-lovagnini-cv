@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import ScrollPrompt from "../../components/ui/ScrollPrompt/ScrollPrompt";
+import ScrollPrompt from "../../../components/ui/ScrollPrompt/ScrollPrompt";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { projects } from "../../data/projects";
-import FeaturedProjectCard from "../../components/projects/FeaturedProjectCard";
-import ProjectMarquee from "../../components/projects/ProjectMarquee/ProjectMarquee";
+import { projects } from "../../../data/projects";
+import FeaturedProjectCard from "../../../components/projects/FeaturedProjectCard";
+import ProjectMarquee from "../../../components/projects/ProjectMarquee/ProjectMarquee";
 
 // ITEM - Metadatos de Proyectos
 export const metadata: Metadata = {

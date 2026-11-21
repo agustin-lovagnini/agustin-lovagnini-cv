@@ -3,6 +3,28 @@
     "home": "Home",
     "about": "About me",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "mobile": "Mobile navigation",
+    "main": "Main navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "pageNavigation": "Page navigation",
+    "previousPage": "Previous page: {{page}}",
+    "nextPage": "Next page: {{page}}"
+  },
+  "share": {
+    "button": "Share portfolio",
+    "copiedTitle": "Link copied",
+    "copiedMessage": "Link copied. You can now paste and share it.",
+    "copyError": "Could not copy the link. You can copy the address from your browser.",
+    "shareError": "Could not share. Try again or copy the site's address.",
+    "errorTitle": "Could not complete the action",
+    "closeNotice": "Close notice",
+    "shareText": "Check out my professional portfolio."
+  },
+  "footer": {
+    "socialNavigation": "Social media and contact",
+    "email": "Email",
+    "professionalPortfolio": "Professional portfolio"
   }
 }

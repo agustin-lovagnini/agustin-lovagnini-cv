@@ -8,14 +8,14 @@ import {
     BadgeCheck,
     ArrowUpRight,
 } from "lucide-react";
-import ScrollPrompt from "../../components/ui/ScrollPrompt/ScrollPrompt";
-import CertificationsList from "../../components/certifications/CertificationsList";
+import ScrollPrompt from "../../../components/ui/ScrollPrompt/ScrollPrompt";
+import CertificationsList from "../../../components/certifications/CertificationsList";
 import { certifications } from "@/data/certifications";
 import Link from "next/link";
-import { technologyGroups } from "../../data/technologyGroups";
-import { competencies } from "../../data/competencies";
+import { technologyGroups } from "../../../data/technologyGroups";
+import { competencies } from "../../../data/competencies";
 import Image from "next/image";
-import fotoPerfil from "../../public/images/img-perfil-agustin.webp";
+import fotoPerfil from "../../../public/images/img-perfil-agustin.webp";
 
 // ITEM - Metadatos de Sobre mí
 export const metadata: Metadata = {

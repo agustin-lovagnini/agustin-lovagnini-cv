@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { ArrowRight, ArrowUpRight, FileText, FolderGit2 } from "lucide-react";
-import TechnologiesMarquee from "../components/ui/TechnologiesMarquee";
+import TechnologiesMarquee from "../../components/ui/TechnologiesMarquee";
 import Image from "next/image";
-import fotoPerfil from "../public/images/img-perfil-agustin.webp";
-import { projects } from "../data/projects";
-import FeaturedProjectCard from "../components/projects/FeaturedProjectCard";
+import fotoPerfil from "../../../public/images/img-perfil-agustin.webp";
+import { projects } from "../../data/projects";
+import FeaturedProjectCard from "../../components/projects/FeaturedProjectCard";
 
 // ITEM - Metadatos de Inicio
 export const metadata: Metadata = {

@@ -3,6 +3,28 @@
     "home": "Inicio",
     "about": "Sobre mí",
     "projects": "Proyectos",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "mobile": "Navegación móvil",
+    "main": "Navegación principal",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "pageNavigation": "Navegación entre páginas",
+    "previousPage": "Página anterior: {{page}}",
+    "nextPage": "Página siguiente: {{page}}"
+  },
+  "share": {
+    "button": "Compartir portfolio",
+    "copiedTitle": "Enlace copiado",
+    "copiedMessage": "Enlace copiado. Ya podés pegarlo y compartirlo.",
+    "copyError": "No se pudo copiar. Podés copiar la dirección del navegador.",
+    "shareError": "No se pudo compartir. Intentá nuevamente o copiá la dirección del sitio.",
+    "errorTitle": "No se pudo completar la acción",
+    "closeNotice": "Cerrar aviso",
+    "shareText": "Conocé mi portfolio profesional."
+  },
+  "footer": {
+    "socialNavigation": "Redes y contacto",
+    "email": "Correo electrónico",
+    "professionalPortfolio": "Portfolio profesional"
   }
 }

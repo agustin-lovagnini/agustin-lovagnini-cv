@@ -13,6 +13,7 @@ export default function Header() {
     // ITEM - Estado y control del menú móvil
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
+    const lang = pathname.split("/")[1];
 
     const menuButtonRef = useRef<HTMLButtonElement>(null);
     const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -42,7 +43,7 @@ export default function Header() {
         <header className="px-8 py-2.5 flex items-center justify-between bg-surface relative">
             <span aria-hidden="true" className="edge-line bottom-0" />
             {/* ITEM - Logo y acceso a Inicio */}
-            <Link href="/">
+            <Link href={`/${lang}`}>
                 <Image
                     src="/images/logo.svg"
                     alt="Agustín Lovagnini"
@@ -56,7 +57,7 @@ export default function Header() {
             {/* ITEM - Botón de apertura del menú móvil */}
             <button
                 type="button"
-                aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+                aria-label={isMenuOpen ? t("navigation.closeMenu") : t("navigation.openMenu")}
                 ref={menuButtonRef}
                 className="flex size-11 items-center justify-center md:hidden cursor-pointer"
                 onClick={toggleMenu}
@@ -71,7 +72,7 @@ export default function Header() {
             <nav
                 id="menu-mobile"
                 onKeyDown={handleMenuKeyDown}
-                aria-label="Navegación móvil"
+                aria-label={t("navigation.mobile")}
                 inert={!isMenuOpen}
                 className={`fixed top-0 right-0 z-50 h-dvh overflow-y-auto w-72 max-w-full flex flex-col items-center gap-6 bg-surface p-6 md:hidden transition-transform duration-300 motion-reduce:transition-none text-xl font-medium tracking-tight ${isMenuOpen ? "translate-x-0" : "translate-x-full"
                     }`}
@@ -79,41 +80,41 @@ export default function Header() {
                 <button
                     ref={closeButtonRef}
                     type="button"
-                    aria-label="Cerrar menú"
+                    aria-label={t("navigation.closeMenu")}
                     onClick={closeMenu}
                     className="flex size-11 shrink-0 self-end items-center justify-center cursor-pointer"
                 >
                     <X size={24} />
                 </button>
                 <Link
-                    href="/"
+                    href={`/${lang}`}
                     onClick={toggleMenu}
-                    aria-current={pathname === "/" ? "page" : undefined}
-                    className={pathname === "/" ? "text-gold-light" : undefined}
+                    aria-current={pathname === `/${lang}` ? "page" : undefined}
+                    className={pathname === `/${lang}` ? "text-gold-light" : undefined}
                 >
                     {t("navigation.home")}
                 </Link>
                 <Link
-                    href="/sobre-mi"
+                    href={`/${lang}/sobre-mi`}
                     onClick={toggleMenu}
-                    aria-current={pathname === "/sobre-mi" ? "page" : undefined}
-                    className={pathname === "/sobre-mi" ? "text-gold-light" : undefined}
+                    aria-current={pathname === `/${lang}/sobre-mi` ? "page" : undefined}
+                    className={pathname === `/${lang}/sobre-mi` ? "text-gold-light" : undefined}
                 >
                     {t("navigation.about")}
                 </Link>
                 <Link
-                    href="/proyectos"
+                    href={`/${lang}/proyectos`}
                     onClick={toggleMenu}
-                    aria-current={pathname === "/proyectos" ? "page" : undefined}
-                    className={pathname === "/proyectos" ? "text-gold-light" : undefined}
+                    aria-current={pathname === `/${lang}/proyectos` ? "page" : undefined}
+                    className={pathname === `/${lang}/proyectos` ? "text-gold-light" : undefined}
                 >
                     {t("navigation.projects")}
                 </Link>
                 <Link
-                    href="/contacto"
+                    href={`/${lang}/contacto`}
                     onClick={toggleMenu}
-                    aria-current={pathname === "/contacto" ? "page" : undefined}
-                    className={pathname === "/contacto" ? "text-gold-light" : undefined}
+                    aria-current={pathname === `/${lang}/contacto` ? "page" : undefined}
+                    className={pathname === `/${lang}/contacto` ? "text-gold-light" : undefined}
                 >
                     {t("navigation.contact")}
                 </Link>
@@ -122,19 +123,19 @@ export default function Header() {
 
             {/* SUBSECTION - Navegación de escritorio */}
             <nav
-                aria-label="Navegación principal"
+                aria-label={t("navigation.main")}
                 className="hidden md:flex items-center gap-6 text-sm lg:text-base font-medium text-foreground"
             >
-                <Link href="/" className="nav-link" aria-current={pathname === "/" ? "page" : undefined}>
+                <Link href={`/${lang}`} className="nav-link" aria-current={pathname === `/${lang}` ? "page" : undefined}>
                     {t("navigation.home")}
                 </Link>
-                <Link href="/sobre-mi" className="nav-link" aria-current={pathname === "/sobre-mi" ? "page" : undefined}>
+                <Link href={`/${lang}/sobre-mi`} className="nav-link" aria-current={pathname === `/${lang}/sobre-mi` ? "page" : undefined}>
                     {t("navigation.about")}
                 </Link>
-                <Link href="/proyectos" className="nav-link" aria-current={pathname === "/proyectos" ? "page" : undefined}>
+                <Link href={`/${lang}/proyectos`} className="nav-link" aria-current={pathname === `/${lang}/proyectos` ? "page" : undefined}>
                     {t("navigation.projects")}
                 </Link>
-                <Link href="/contacto" className="nav-link" aria-current={pathname === "/contacto" ? "page" : undefined}>
+                <Link href={`/${lang}/contacto`} className="nav-link" aria-current={pathname === `/${lang}/contacto` ? "page" : undefined}>
                     {t("navigation.contact")}
                 </Link>
             </nav>

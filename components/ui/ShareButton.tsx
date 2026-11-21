@@ -4,8 +4,14 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import { CheckCircle2, CircleX, Share2, X } from "lucide-react";
 import type { MouseEvent } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function ShareButton() {
+
+
+    const { t } = useTranslation("common");
+
+    // El resto del código continúa acá
     // ITEM - Estado del aviso
     const [message, setMessage] = useState("");
     const [isError, setIsError] = useState(false);
@@ -27,11 +33,11 @@ export default function ShareButton() {
         if (!navigator.share) {
             try {
                 await navigator.clipboard.writeText(window.location.origin);
-                setMessage("Enlace copiado. Ya podés pegarlo y compartirlo.");
+                setMessage(t("share.copiedMessage"));
             } catch (error) {
                 setIsError(true);
                 console.error("No se pudo copiar el enlace:", error);
-                setMessage("No se pudo copiar. Podés copiar la dirección del navegador.");
+                setMessage(t("share.copyError"));
             }
 
             return;
@@ -41,7 +47,7 @@ export default function ShareButton() {
         try {
             await navigator.share({
                 title: "Agustín Lovagnini | Portfolio",
-                text: "Conocé mi portfolio profesional.",
+                text: t("share.shareText"),
                 url: window.location.origin,
             });
         } catch (error) {
@@ -51,7 +57,7 @@ export default function ShareButton() {
 
             console.error("No se pudo compartir:", error);
             setIsError(true);
-            setMessage("No se pudo compartir. Intentá nuevamente o copiá la dirección del sitio.");
+            setMessage(t("share.shareError"));
         }
     };
 
@@ -60,7 +66,7 @@ export default function ShareButton() {
             {/* ITEM - Botón de compartir */}
             <button
                 type="button"
-                aria-label="Compartir portfolio"
+                aria-label={t("share.button")}
                 onClick={handleShare}
                 className="flex items-center gap-2 cursor-pointer"
             >
@@ -78,12 +84,12 @@ export default function ShareButton() {
                             ? <CircleX aria-hidden="true" className="size-8 shrink-0 text-red-400" />
                             : <CheckCircle2 aria-hidden="true" className="size-8 shrink-0 text-gold" />}
                         <div role={isError ? "alert" : "status"} aria-atomic="true" className="min-w-0 flex-1 break-words">
-                            <p className="mb-2 text-lg font-semibold">{isError ? "No se pudo completar la acción" : "Enlace copiado"}</p>
+                            <p className="mb-2 text-lg font-semibold">{isError ? t("share.errorTitle") : t("share.copiedTitle")}</p>
                             <p className="text-base leading-relaxed text-muted">{message}</p>
                         </div>
                         <button
                             type="button"
-                            aria-label="Cerrar aviso"
+                            aria-label={t("share.closeNotice")}
                             onClick={() => setMessage("")}
                             className="flex size-9 shrink-0 cursor-pointer items-center justify-center rounded text-foreground hover:bg-outline focus-visible:outline-2 focus-visible:outline-gold"
                         >

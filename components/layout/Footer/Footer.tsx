@@ -1,6 +1,11 @@
+"use client"
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+    
+    const { t } = useTranslation("common");
+
     return (
         <footer className="relative bg-surface px-8 py-4 text-subtle md:px-12">
             <span aria-hidden="true" className="edge-line top-0" />
@@ -18,7 +23,7 @@ export default function Footer() {
 
                 {/* SUBSECTION - Redes profesionales y correo */}
                 <nav
-                    aria-label="Redes y contacto"
+                    aria-label={t("footer.socialNavigation")}
                     className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm lg:text-base"
                 >
                     <a
@@ -42,7 +47,7 @@ export default function Footer() {
                     <a
                         href="mailto:agustin.lovagnini.a@gmail.com"
                         className="footer-link hover:drop-shadow-[0_0_1px_#fff] transition-[filter] duration-300"
-                        aria-label="Correo electrónico"
+                        aria-label={t("footer.email")}
                     >
                         <FaEnvelope size={30} aria-hidden="true" />
                     </a>
@@ -51,7 +56,7 @@ export default function Footer() {
 
             {/* ITEM - Autoría del portfolio */}
             <p className="mt-2 text-center text-xs lg:text-sm font-normal leading-relaxed text-muted select-none md:text-sm">
-                &copy; 2026 Agustín Lovagnini · Portfolio profesional
+                &copy; 2026 Agustín Lovagnini · {t("footer.professionalPortfolio")}
             </p>
         </footer>
     );

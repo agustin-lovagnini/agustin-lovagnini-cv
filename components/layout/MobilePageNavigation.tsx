@@ -3,19 +3,23 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const pages = [
-    { href: "/", label: "Inicio" },
-    { href: "/sobre-mi", label: "Sobre mí" },
-    { href: "/proyectos", label: "Proyectos" },
-    { href: "/contacto", label: "Contacto" },
+    { href: "/", label: "navigation.home" },
+    { href: "/sobre-mi", label: "navigation.about" },
+    { href: "/proyectos", label: "navigation.projects" },
+    { href: "/contacto", label: "navigation.contact" },
 ];
 
 export default function MobilePageNavigation() {
+    const { t } = useTranslation("common");
+
     const pathname = usePathname();
+    const lang = pathname.split("/")[1];
 
     const currentIndex = pages.findIndex(
-        (page) => page.href === pathname
+        (page) => `/${lang}${page.href === "/" ? "" : page.href}` === pathname
     );
 
     if (currentIndex === -1) {
@@ -31,24 +35,24 @@ export default function MobilePageNavigation() {
 
     return (
         <nav
-            aria-label="Navegación entre páginas"
+            aria-label={t("navigation.pageNavigation")}
             className="mx-auto flex w-full max-w-360 items-center justify-between gap-3 px-4 py-6 md:hidden"
         >
             <Link
-                href={previousPage.href}
+                href={`/${lang}${previousPage.href === "/" ? "" : previousPage.href}`}
                 className="action-button border-muted bg-muted text-background"
-                aria-label={`Página anterior: ${previousPage.label}`}
+                aria-label={t("navigation.previousPage", { page: t(previousPage.label) })}
             >
                 <ArrowLeft size={16} aria-hidden="true" />
-                {previousPage.label}
+                {t(previousPage.label)}
             </Link>
 
             <Link
-                href={nextPage.href}
+                href={`/${lang}${nextPage.href === "/" ? "" : nextPage.href}`}
                 className="action-button border-gold bg-gold text-background"
-                aria-label={`Página siguiente: ${nextPage.label}`}
+                aria-label={t("navigation.nextPage", { page: t(nextPage.label) })}
             >
-                {nextPage.label}
+                {t(nextPage.label)}
                 <ArrowRight size={16} aria-hidden="true" />
             </Link>
         </nav>
