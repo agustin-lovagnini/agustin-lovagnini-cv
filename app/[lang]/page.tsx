@@ -15,28 +15,58 @@ import { Trans } from "react-i18next";
 
 
 // ITEM - Metadatos de Inicio
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    url: "/",
-    title: "Agustín Lovagnini | Full Stack Developer",
-    description:
-      "Conocé mis proyectos, tecnologías y experiencia en desarrollo web.",
-    siteName: "Portfolio de Agustín Lovagnini",
-    locale: "es_AR",
-    type: "website",
-    images: [
-      {
-        url: "/images/og/og-agustin-lovagnini.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
+export async function generateMetadata({
+  params,
+}: PageProps<"/[lang]">): Promise<Metadata> {
+  const { lang } = await params;
+
+  if (!isLocale(lang)) {
+    notFound();
+  }
+
+  const translation = createTranslation(lang);
+
+  return {
+    title: {
+      absolute: translation.t("home.metadata.title"),
+    },
+    description: translation.t("home.metadata.description"),
+    alternates: {
+      canonical: `/${lang}`,
+      languages: {
+        es: "/es",
+        en: "/en",
       },
-    ],
-  },
-};
+    },
+    openGraph: {
+      url: `/${lang}`,
+      title: translation.t("home.metadata.title"),
+      description: translation.t("home.metadata.socialDescription"),
+      siteName: translation.t("home.metadata.siteName"),
+      locale: lang === "es" ? "es_AR" : "en_US",
+      type: "website",
+      images: [
+        {
+          url: "/images/og/og-agustin-lovagnini.jpg",
+          width: 1200,
+          height: 630,
+          alt: translation.t("home.metadata.imageAlt"),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: translation.t("home.metadata.title"),
+      description: translation.t("home.metadata.socialDescription"),
+      images: [
+        {
+          url: "/images/og/og-agustin-lovagnini.jpg",
+          alt: translation.t("home.metadata.imageAlt"),
+        },
+      ],
+    },
+  };
+}
 
 export default async function Home({
   params,

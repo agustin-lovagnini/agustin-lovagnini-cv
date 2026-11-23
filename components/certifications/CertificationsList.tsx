@@ -4,8 +4,10 @@ import { useId, useState } from "react";
 import { certifications } from "../../data/certifications";
 import CertificationCard from "./CertificationCard";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function CertificationsList() {
+    const { t } = useTranslation("common");
     const [isExpanded, setIsExpanded] = useState(false);
     const expandedContentId = useId();
 
@@ -59,11 +61,11 @@ export default function CertificationsList() {
 
                         <div className="mt-6">
                             <h3 className="mb-2 font-heading text-lg font-semibold text-gold-light">
-                                Certificaciones complementarias
+                                {t("about.education.complementaryTitle")}
                             </h3>
 
                             <p className="mb-4 text-sm lg:text-lg text-muted">
-                                freeCodeCamp · Formación práctica y autodidacta.
+                                {t("about.education.complementaryDescription")}
                             </p>
 
                             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -86,7 +88,9 @@ export default function CertificationsList() {
                 aria-controls={expandedContentId}
                 className="mx-auto mt-8 flex cursor-pointer items-center gap-2 rounded-lg border border-gold px-4 py-2 text-gold-light focus-visible:outline-2 focus-visible:outline-gold"
             >
-                {isExpanded ? "Ver menos" : "Ver más"}
+                {isExpanded
+                    ? t("about.education.showLess")
+                    : t("about.education.showMore")}
 
                 {isExpanded
                     ? <ChevronUp aria-hidden="true" size={18} />

@@ -40,7 +40,76 @@
     "featuredProjects": "Featured projects",
     "contactEyebrow": "Contact",
     "contactTitle": "Let's talk about your next project",
-    "contactButton": "Get in touch"
+    "contactButton": "Get in touch",
+    "metadata": {
+      "title": "Agustín Lovagnini | Full Stack Developer",
+      "description": "Agustín Lovagnini's portfolio, Full Stack developer. Explore my projects, technologies, education, and contact information.",
+      "socialDescription": "Explore my projects, technologies, and web development experience.",
+      "siteName": "Agustín Lovagnini's Portfolio",
+      "imageAlt": "Portfolio of Agustín Lovagnini, Full Stack Developer"
+    }
+  },
+  "about": {
+    "heading": "About <highlight>Me</highlight>",
+    "scrollPrompt": "Scroll to explore",
+    "profile": {
+      "title": "Professional Profile",
+      "description": "I'm a <role>Full Stack</role> web developer with a particular interest in <strong>frontend development, design, and user experience</strong>. I work with technologies such as React, Next.js, Node.js, and Express, combining modern interfaces with REST APIs, authentication, and databases. My goal is to develop complete, functional, and scalable web applications that combine design, technology, and good development practices.",
+      "quote": "I'm passionate about turning ideas into intuitive and accessible digital experiences.",
+      "locationDescription": "I'm based in Buenos Aires City, Argentina. I'm looking to join a team where I can contribute my knowledge, collaborate on projects, and continue growing professionally.",
+      "locationLabel": "Location",
+      "locationValue": "Buenos Aires City, Argentina",
+      "languagesLabel": "Languages",
+      "languagesValue": "Native Spanish · Currently learning English",
+      "workModeLabel": "Work arrangement",
+      "workModeValue": "Remote · Hybrid · On-site"
+    },
+    "personalCard": {
+      "portraitAlt": "Portrait of Agustín Lovagnini",
+      "description": "I'm curious, committed, and eager to learn. I enjoy creating solutions and taking on new challenges.",
+      "commitment": "Commitment",
+      "certifications": "Certifications"
+    },
+    "approach": {
+      "title": "My development approach:",
+      "description": "I prioritize clean code, accessibility, and good development practices to build maintainable and scalable applications.",
+      "values": "Clean code · Accessibility · Continuous learning"
+    },
+    "technologies": {
+      "title": "Core Technologies",
+      "description": "Tools and languages I use in my projects.",
+      "groups": {
+        "frontend": {
+          "title": "Frontend",
+          "description": "Responsive and accessible interfaces, with reusable components and a focus on user experience."
+        },
+        "backend": {
+          "title": "Backend",
+          "description": "Server-side applications, REST APIs, authentication, and code organized by responsibility."
+        },
+        "databases": {
+          "title": "Databases",
+          "description": "Data persistence, data modeling, and queries in relational and non-relational databases."
+        },
+        "workflow": {
+          "title": "Development Tools",
+          "description": "Version control, API testing, and tools to develop, organize, and share my projects."
+        }
+      },
+      "groupLabel": "Technologies used in {{title}}",
+      "authentication": "Authentication"
+    },
+    "education": {
+      "title": "Education and Certifications",
+      "description": "Academic and professional learning in software development.",
+      "badge": "Recognized institutions",
+      "academicTitle": "Academic Certifications",
+      "academicDescription": "Coderhouse · Completed courses and career program.",
+      "complementaryTitle": "Additional Certifications",
+"complementaryDescription": "freeCodeCamp · Practical, self-directed learning.",
+"showMore": "Show more",
+"showLess": "Show less"
+    }
   },
   "projectCard": {
     "featured": "Featured project",

@@ -40,7 +40,76 @@
     "featuredProjects": "Proyectos destacados",
     "contactEyebrow": "Contacto",
     "contactTitle": "Hablemos de tu próximo proyecto",
-    "contactButton": "Contactar"
+    "contactButton": "Contactar",
+    "metadata": {
+      "title": "Agustín Lovagnini | Full Stack Developer",
+      "description": "Portfolio de Agustín Lovagnini, desarrollador Full Stack. Conocé mis proyectos, tecnologías, formación y medios de contacto.",
+      "socialDescription": "Conocé mis proyectos, tecnologías y experiencia en desarrollo web.",
+      "siteName": "Portfolio de Agustín Lovagnini",
+      "imageAlt": "Portfolio de Agustín Lovagnini, Full Stack Developer"
+    }
+  },
+  "about": {
+    "heading": "Sobre <highlight>Mí</highlight>",
+    "scrollPrompt": "Deslizá para explorar",
+    "profile": {
+      "title": "Perfil profesional",
+      "description": "Soy desarrollador web <role>Full Stack</role>, con especial interés en el <strong>Frontend, el diseño y la experiencia de usuario</strong>. Trabajo con tecnologías como React, Next.js, Node.js y Express, integrando interfaces modernas con APIs REST, autenticación y bases de datos. Mi objetivo es desarrollar aplicaciones web completas, funcionales y escalables, combinando diseño, tecnología y buenas prácticas.",
+      "quote": "Me apasiona transformar ideas en experiencias digitales intuitivas y accesibles.",
+      "locationDescription": "Resido en CABA, Argentina. Busco formar parte de un equipo donde pueda aportar mis conocimientos, colaborar en proyectos y seguir creciendo profesionalmente.",
+      "locationLabel": "Ubicación",
+      "locationValue": "CABA, Argentina",
+      "languagesLabel": "Idiomas",
+      "languagesValue": "Español nativo · Inglés en formación",
+      "workModeLabel": "Modalidad",
+      "workModeValue": "Remoto · Híbrido · Presencial"
+    },
+    "personalCard": {
+      "portraitAlt": "Retrato de Agustín Lovagnini",
+      "description": "Me caracterizan la curiosidad, el compromiso y las ganas de aprender. Disfruto crear soluciones y afrontar nuevos desafíos.",
+      "commitment": "Compromiso",
+      "certifications": "Certificaciones"
+    },
+    "approach": {
+      "title": "Mi enfoque de desarrollo:",
+      "description": "Priorizo el código limpio, la accesibilidad y las buenas prácticas para desarrollar aplicaciones mantenibles y escalables.",
+      "values": "Código limpio · Accesibilidad · Aprendizaje continuo"
+    },
+    "technologies": {
+      "title": "Tecnologías principales",
+      "description": "Herramientas y lenguajes que utilizo en mis proyectos.",
+      "groups": {
+        "frontend": {
+          "title": "Frontend",
+          "description": "Interfaces responsivas y accesibles, con componentes reutilizables y atención a la experiencia de usuario."
+        },
+        "backend": {
+          "title": "Backend",
+          "description": "Aplicaciones del lado del servidor, APIs REST, autenticación y organización del código por responsabilidades."
+        },
+        "databases": {
+          "title": "Bases de datos",
+          "description": "Persistencia de información, modelado de datos y consultas en bases relacionales y no relacionales."
+        },
+        "workflow": {
+          "title": "Herramientas de trabajo",
+          "description": "Control de versiones, pruebas de APIs y herramientas para desarrollar, organizar y compartir mis proyectos."
+        }
+      },
+      "groupLabel": "Tecnologías de {{title}}",
+      "authentication": "Autenticación"
+    },
+    "education": {
+      "title": "Formación y Certificaciones",
+      "description": "Trayecto académico y profesional en desarrollo de software.",
+      "badge": "Instituciones reconocidas",
+      "academicTitle": "Certificaciones académicas",
+      "academicDescription": "Coderhouse · Cursos y carrera aprobados.",
+      "complementaryTitle": "Certificaciones complementarias",
+"complementaryDescription": "freeCodeCamp · Formación práctica y autodidacta.",
+"showMore": "Ver más",
+"showLess": "Ver menos"
+    }
   },
   "projectCard": {
     "featured": "Proyecto destacado",
