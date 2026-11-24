@@ -22,44 +22,56 @@ import { createTranslation } from "../../../i18n/createTranslation";
 import { Trans } from "react-i18next";
 
 // ITEM - Metadatos de Sobre mí
-export const metadata: Metadata = {
-    title: "Sobre mí",
-    description:
-        "Conocé la formación, experiencia, certificaciones y tecnologías de Agustín Lovagnini, desarrollador Full Stack.",
-    alternates: {
-        canonical: "/sobre-mi",
-    },
-    openGraph: {
-        title: "Sobre mí | Agustín Lovagnini",
-        description:
-            "Conocé mi formación, experiencia, certificaciones y tecnologías como desarrollador Full Stack.",
-        url: "/sobre-mi",
-        siteName: "Portfolio de Agustín Lovagnini",
-        locale: "es_AR",
-        type: "website",
-        images: [
-            {
-                url: "/images/og/og-agustin-lovagnini.jpg",
-                width: 1200,
-                height: 630,
-                alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "Sobre mí | Agustín Lovagnini",
-        description:
-            "Conocé mi formación, experiencia, certificaciones y tecnologías como desarrollador Full Stack.",
-        images: [
-            {
-                url: "/images/og/og-agustin-lovagnini.jpg",
-                alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
-            },
-        ],
-    },
-};
+export async function generateMetadata({
+    params,
+}: PageProps<"/[lang]/sobre-mi">): Promise<Metadata> {
+    const { lang } = await params;
 
+    if (!isLocale(lang)) {
+        notFound();
+    }
+
+    const translation = createTranslation(lang);
+
+    return {
+        title: translation.t("about.metadata.title"),
+        description: translation.t("about.metadata.description"),
+        alternates: {
+            canonical: `/${lang}/sobre-mi`,
+            languages: {
+                es: "/es/sobre-mi",
+                en: "/en/sobre-mi",
+            },
+        },
+        openGraph: {
+            title: translation.t("about.metadata.socialTitle"),
+            description: translation.t("about.metadata.socialDescription"),
+            url: `/${lang}/sobre-mi`,
+            siteName: translation.t("home.metadata.siteName"),
+            locale: lang === "es" ? "es_AR" : "en_US",
+            type: "website",
+            images: [
+                {
+                    url: "/images/og/og-agustin-lovagnini.jpg",
+                    width: 1200,
+                    height: 630,
+                    alt: translation.t("home.metadata.imageAlt"),
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: translation.t("about.metadata.socialTitle"),
+            description: translation.t("about.metadata.socialDescription"),
+            images: [
+                {
+                    url: "/images/og/og-agustin-lovagnini.jpg",
+                    alt: translation.t("home.metadata.imageAlt"),
+                },
+            ],
+        },
+    }
+};
 
 export default async function AboutPage({
     params,
@@ -296,10 +308,10 @@ export default async function AboutPage({
                     </span>
                     <div>
                         <h2 id="competencias-profesionales" className="font-heading text-xl font-bold tracking-tight md:text-2xl">
-                            Competencias profesionales
+                            {translation.t("competencies.title")}
                         </h2>
                         <p className="mt-1 text-sm lg:text-lg text-muted">
-                            Habilidades que aplico en cada proyecto y al trabajar en equipo.
+                            {translation.t("competencies.description")}
                         </p>
                     </div>
                 </header>
@@ -310,11 +322,15 @@ export default async function AboutPage({
                             <div className="flex items-start gap-3">
                                 <competency.icon size={22} className="mt-0.5 shrink-0 text-gold-light" aria-hidden="true" />
                                 <h3 className="font-heading text-lg font-semibold">
-                                    {competency.title}
+                                    {translation.t(`competencies.items.${competency.id}.title`, {
+                                        defaultValue: competency.title,
+                                    })}
                                 </h3>
                             </div>
                             <p className="text-sm lg:text-lg leading-relaxed text-muted">
-                                {competency.description}
+                                {translation.t(`competencies.items.${competency.id}.description`, {
+                                    defaultValue: competency.description,
+                                })}
                             </p>
                         </article>
                     ))}
@@ -328,18 +344,18 @@ export default async function AboutPage({
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                     <div>
                         <span className="mb-2 block border-l-2 border-gold pl-3 text-xs lg:text-sm font-semibold uppercase tracking-[0.15em] text-gold-light">
-                            El próximo paso
+                            {translation.t("about.contactInvitation.eyebrow")}
                         </span>
                         <h2 id="llamado-accion" className="font-heading text-2xl md:text-3xl font-bold leading-tight tracking-tight pb-1">
-                            ¿Trabajamos juntos?
+                            {translation.t("about.contactInvitation.title")}
                         </h2>
 
                         <p className="text-sm lg:text-lg md:text-base font-normal leading-relaxed text-muted">
-                            Estoy abierto a nuevas oportunidades y proyectos donde pueda aportar valor y seguir creciendo profesionalmente.
+                            {translation.t("about.contactInvitation.description")}
                         </p>
                     </div>
                     <Link href={`/${lang}/contacto`} className="action-button action-primary">
-                        <span>Iniciar Conversación</span>
+                        <span>{translation.t("about.contactInvitation.button")}</span>
                         <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
                     </Link>
                 </div>

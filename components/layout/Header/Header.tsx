@@ -41,6 +41,37 @@ export default function Header() {
         }
     }
 
+    function getLanguagePath(language: "es" | "en") {
+        const segments = pathname.split("/");
+        segments[1] = language;
+
+        return segments.join("/");
+    }
+
+    function changeLanguage() {
+        const language = lang === "es" ? "en" : "es";
+
+        document.cookie = `preferred-language=${language}; Path=/; Max-Age=31536000; SameSite=Lax`;
+        window.location.assign(
+            getLanguagePath(language) + window.location.search + window.location.hash
+        );
+    }
+
+    const languageButton = (
+        <button
+            type="button"
+            onClick={changeLanguage}
+            aria-label={`${t("navigation.language")}: ${t(lang === "es" ? "navigation.spanish" : "navigation.english")} → ${t(lang === "es" ? "navigation.english" : "navigation.spanish")}`}
+            className="cursor-pointer rounded-full border border-gold/40 bg-background px-4 py-2 text-base font-medium text-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold md:px-3 md:py-1.5 md:text-sm"
+        >
+            <span aria-hidden="true">
+                <span className={lang === "es" ? "text-gold" : "text-subtle"}>ES</span>
+                <span className="mx-1 text-subtle">/</span>
+                <span className={lang === "en" ? "text-gold" : "text-subtle"}>EN</span>
+            </span>
+        </button>
+    );
+
     return (
         <header className="px-8 py-2.5 flex items-center justify-between bg-surface relative">
             <span aria-hidden="true" className="edge-line bottom-0" />
@@ -120,7 +151,10 @@ export default function Header() {
                 >
                     {t("navigation.contact")}
                 </Link>
-                <ShareButton />
+                <div className="flex flex-col items-center gap-6">
+                    {languageButton}
+                    <ShareButton />
+                </div>
             </nav>
 
             {/* SUBSECTION - Navegación de escritorio */}
@@ -143,8 +177,11 @@ export default function Header() {
             </nav>
 
             {/* ITEM - Compartir desde escritorio */}
-            <div className="hidden md:block p-1 hover:drop-shadow-[0_0_10px_#fff] transition-[filter] duration-300">
-                <ShareButton />
+            <div className="hidden items-center gap-3 md:flex">
+                {languageButton}
+                <div className="p-1 hover:drop-shadow-[0_0_10px_#fff] transition-[filter] duration-300">
+                    <ShareButton />
+                </div>
             </div>
         </header>
     );

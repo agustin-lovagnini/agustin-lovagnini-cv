@@ -7,45 +7,60 @@ import FeaturedProjectCard from "../../../components/projects/FeaturedProjectCar
 import ProjectMarquee from "../../../components/projects/ProjectMarquee/ProjectMarquee";
 import { notFound } from "next/navigation";
 import { isLocale } from "../../../i18n/resources";
+import { createTranslation } from "../../../i18n/createTranslation";
+import { Trans } from "react-i18next";
 
 // ITEM - Metadatos de Proyectos
-export const metadata: Metadata = {
-    title: "Proyectos",
-    description:
-        "Explorá los proyectos de desarrollo web de Agustín Lovagnini, sus tecnologías, repositorios y demostraciones.",
-    alternates: {
-        canonical: "/proyectos",
-    },
-    openGraph: {
-        title: "Proyectos | Agustín Lovagnini",
-        description:
-            "Explorá mis proyectos de desarrollo web, sus tecnologías, repositorios y demostraciones.",
-        url: "/proyectos",
-        siteName: "Portfolio de Agustín Lovagnini",
-        locale: "es_AR",
-        type: "website",
-        images: [
-            {
-                url: "/images/og/og-agustin-lovagnini.jpg",
-                width: 1200,
-                height: 630,
-                alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
+export async function generateMetadata({
+    params,
+}: PageProps<"/[lang]/proyectos">): Promise<Metadata> {
+    const { lang } = await params;
+
+    if (!isLocale(lang)) {
+        notFound();
+    }
+
+    const translation = createTranslation(lang);
+
+    return {
+        title: translation.t("projects.metadata.title"),
+        description: translation.t("projects.metadata.description"),
+        alternates: {
+            canonical: `/${lang}/proyectos`,
+            languages: {
+                es: "/es/proyectos",
+                en: "/en/proyectos",
             },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "Proyectos | Agustín Lovagnini",
-        description:
-            "Explorá mis proyectos de desarrollo web, sus tecnologías, repositorios y demostraciones.",
-        images: [
-            {
-                url: "/images/og/og-agustin-lovagnini.jpg",
-                alt: "Portfolio de Agustín Lovagnini, Full Stack Developer",
-            },
-        ],
-    },
-};
+        },
+        openGraph: {
+            title: translation.t("projects.metadata.socialTitle"),
+            description: translation.t("projects.metadata.socialDescription"),
+            url: `/${lang}/proyectos`,
+            siteName: translation.t("home.metadata.siteName"),
+            locale: lang === "es" ? "es_AR" : "en_US",
+            type: "website",
+            images: [
+                {
+                    url: "/images/og/og-agustin-lovagnini.jpg",
+                    width: 1200,
+                    height: 630,
+                    alt: translation.t("home.metadata.imageAlt"),
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: translation.t("projects.metadata.socialTitle"),
+            description: translation.t("projects.metadata.socialDescription"),
+            images: [
+                {
+                    url: "/images/og/og-agustin-lovagnini.jpg",
+                    alt: translation.t("home.metadata.imageAlt"),
+                },
+            ],
+        },
+    };
+}
 
 export default async function ProjectsPage({
     params,
@@ -55,6 +70,8 @@ export default async function ProjectsPage({
     if (!isLocale(lang)) {
         notFound();
     }
+
+    const translation = createTranslation(lang);
 
     const featuredProjects = projects.filter(
         (project) => project.featured
@@ -71,22 +88,32 @@ export default async function ProjectsPage({
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs lg:text-sm font-medium tracking-wide">
                     <span className="eyebrow-badge self-center">
                         <span aria-hidden="true" className="eyebrow-dot" />
-                        Portfolio seleccionado
+                        {translation.t("projects.page.badge")}
                     </span>
-                    <span className="text-subtle">/ Frontend y Backend</span>
+                    <span className="text-subtle">{translation.t("projects.page.areas")}</span>
                 </div>
 
                 <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl">
-                    Proyectos <span className="text-gold">Destacados</span>
+                    <Trans
+                        i18n={translation}
+                        ns="common"
+                        i18nKey="projects.page.heading"
+                        components={{
+                            highlight: <span className="text-gold" />,
+                        }}
+                    />
                 </h1>
 
                 <p className="max-w-3xl font-heading text-lg text-gold-light opacity-90 leading-snug md:text-xl">
-                    Explorá mis proyectos de desarrollo web, desde interfaces interactivas hasta aplicaciones Full Stack. Cada uno refleja los desafíos, tecnologías y aprendizajes de mi recorrido.
+                    {translation.t("projects.page.description")}
                 </p>
             </header>
 
             {/* ITEM - Invitación a explorar */}
-            <ScrollPrompt href="#proyectos-destacados" />
+            <ScrollPrompt
+                href="#proyectos-destacados"
+                text={translation.t("projects.page.scrollPrompt")}
+            />
 
             <hr className="section-divider" />
 
@@ -100,7 +127,8 @@ export default async function ProjectsPage({
                     id="titulo-proyectos-destacados"
                     className="text-center font-heading text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"
                 >
-                    Proyectos que representan mi trabajo<span className="text-gold-light">.</span>
+                    {translation.t("projects.page.featuredHeading")}
+                    <span className="text-gold-light">.</span>
                 </h2>
 
                 {featuredProjects.map((project) => (
@@ -124,11 +152,11 @@ export default async function ProjectsPage({
                         id="titulo-evolucion"
                         className="font-heading text-2xl font-bold md:text-3xl"
                     >
-                        Mi evolución como desarrollador
+                        {translation.t("projects.page.evolutionTitle")}
                     </h2>
 
                     <p className="mt-2 text-sm lg:text-lg leading-relaxed text-muted">
-                        Mis primeros proyectos y la evolución de mis habilidades a lo largo del tiempo.
+                        {translation.t("projects.page.evolutionDescription")}
                     </p>
                 </div>
 
@@ -142,18 +170,18 @@ export default async function ProjectsPage({
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                     <div>
                         <span className="mb-2 block border-l-2 border-gold pl-3 text-xs lg:text-sm font-semibold uppercase tracking-[0.15em] text-gold-light">
-                            Tu próximo proyecto empieza acá
+                            {translation.t("projects.contactEyebrow")}
                         </span>
                         <h2 id="llamado-accion" className="font-heading text-2xl md:text-3xl font-bold leading-tight tracking-tight pb-1">
-                            ¿Tenés un proyecto en mente o buscás sumar un desarrollador a tu equipo?
+                            {translation.t("projects.contactTitle")}
                         </h2>
 
                         <p className="text-sm lg:text-lg md:text-base font-normal leading-relaxed text-muted">
-                            Estoy abierto a oportunidades laborales y colaboraciones en Frontend y Full Stack. Si tenés una propuesta, me encantaría conocerla.
+                            {translation.t("projects.contactDescription")}
                         </p>
                     </div>
                     <Link href={`/${lang}/contacto`} className="action-button action-primary self-start md:self-center">
-                        <span>Contactame</span>
+                        <span>{translation.t("projects.contactButton")}</span>
                         <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
                     </Link>
                 </div>

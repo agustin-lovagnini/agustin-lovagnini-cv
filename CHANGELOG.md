@@ -7,6 +7,9 @@ Los cambios importantes del portfolio se registran aquí por versión.
 - Preparación de la organización y documentación para el desarrollo de la V2.
 - Simplificación del encabezado y los textos de Sobre mí, conservando las secciones de formación y tecnologías.
 - Simplificación de textos en Inicio, Proyectos y Contacto.
+- Incorporación de español e inglés con i18next, rutas con prefijo de idioma y traducciones de las páginas, certificados, proyectos y textos accesibles.
+- Adaptación de los metadatos de las cuatro páginas y sus alternativas por idioma.
+- Selector ES / EN en el encabezado, preferencia manual mediante cookie y redirección inicial según preferencia o idioma del navegador.
 
 ## v1.0.0
 

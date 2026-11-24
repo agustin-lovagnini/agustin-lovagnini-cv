@@ -7,6 +7,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import AutoScroll from "embla-carousel-auto-scroll";
+import { useTranslation } from "react-i18next";
 
 interface ProjectMarqueeProps {
     projects: Project[];
@@ -20,6 +21,8 @@ export default function ProjectMarquee({
 
     // NOTE - Guarda hasta cuándo se pausa el avance sin provocar un renderizado al cambiar el plazo.
     const pauseUntilRef = useRef(0);
+
+    const { t } = useTranslation("common");
 
     // NOTE - Evita que salir con el mouse anule la pausa manual.
     const manuallyPausedRef = useRef(false);
@@ -193,70 +196,78 @@ export default function ProjectMarquee({
                 className="project-marquee overflow-hidden py-3"
             >
                 <ul className="project-marquee-list flex w-max gap-4 pr-4 md:w-auto">
-                    {projects.map((project) => (
-                        <li
-                            key={project.id}
-                            className="w-72 shrink-0"
-                        >
-                            <article className="style-section flex h-full flex-col rounded-xl">
-                                <div className="mb-4 overflow-hidden rounded-lg border border-outline">
-                                    <Image
-                                        src={project.image}
-                                        alt={`Vista previa de ${project.title}`}
-                                        width={project.imageWidth}
-                                        height={project.imageHeight}
-                                        sizes="246px"
-                                        className="block h-auto w-full"
-                                    />
-                                </div>
-                                <time
-                                    dateTime={project.date}
-                                    className="mb-2 text-xs lg:text-sm font-medium text-gold-light"
-                                >
-                                    {project.date.split("-").reverse().join("/")}
-                                </time>
+                    {projects.map((project) => {
+                        const title = t(`projects.${project.id}.title`, {
+                            defaultValue: project.title,
+                        });
 
-                                <h3 className="font-heading text-xl font-semibold">
-                                    {project.title}
-                                </h3>
+                        return (
+                            <li
+                                key={project.id}
+                                className="w-72 shrink-0"
+                            >
+                                <article className="style-section flex h-full flex-col rounded-xl">
+                                    <div className="mb-4 overflow-hidden rounded-lg border border-outline">
+                                        <Image
+                                            src={project.image}
+                                            alt={t("projectCard.previewAlt", { title })}
+                                            width={project.imageWidth}
+                                            height={project.imageHeight}
+                                            sizes="246px"
+                                            className="block h-auto w-full"
+                                        />
+                                    </div>
+                                    <time
+                                        dateTime={project.date}
+                                        className="mb-2 text-xs lg:text-sm font-medium text-gold-light"
+                                    >
+                                        {project.date.split("-").reverse().join("/")}
+                                    </time>
 
-                                <p className="mt-3 flex-1 text-sm lg:text-lg leading-relaxed text-muted">
-                                    {project.description}
-                                </p>
-                                <ul className="mt-3 flex flex-wrap gap-2">
-                                    {project.technologies.map((technology) => (
-                                        <li
-                                            key={technology}
-                                            className="rounded border border-gold/20 bg-outline px-2 py-1 text-xs lg:text-sm font-medium text-gold-light"
+                                    <h3 className="font-heading text-xl font-semibold">
+                                        {title}
+                                    </h3>
+
+                                    <p className="mt-3 flex-1 text-sm lg:text-lg leading-relaxed text-muted">
+                                        {t(`projects.${project.id}.description`, {
+                                            defaultValue: project.description,
+                                        })}
+                                    </p>
+                                    <ul className="mt-3 flex flex-wrap gap-2">
+                                        {project.technologies.map((technology) => (
+                                            <li
+                                                key={technology}
+                                                className="rounded border border-gold/20 bg-outline px-2 py-1 text-xs lg:text-sm font-medium text-gold-light"
+                                            >
+                                                {technology}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <div className="mt-5 flex items-center justify-center gap-2 sm:gap-3">
+                                        <a
+                                            href={project.demoUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="action-button action-primary"
+                                            aria-label={t("projectCard.demoLabel", { title })}
                                         >
-                                            {technology}
-                                        </li>
-                                    ))}
-                                </ul>
-                                <div className="mt-5 flex items-center justify-center gap-2 gap-2 sm:gap-3">
-                                    <a
-                                        href={project.demoUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="action-button action-primary"
-                                        aria-label={`Ver proyecto: ${project.title} (abre en otra pestaña)`}
-                                    >
-                                        Ver proyecto
-                                        <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
-                                    </a>
-                                    <a
-                                        href={project.repoUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="action-button action-social"
-                                        aria-label={`Ver repositorio en GitHub: ${project.title} (abre en otra pestaña)`}
-                                    >
-                                        <FaGithub size={22} aria-hidden="true" />
-                                    </a>
-                                </div>
-                            </article>
-                        </li>
-                    ))}
+                                            {t("projectCard.viewProject")}
+                                            <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
+                                        </a>
+                                        <a
+                                            href={project.repoUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="action-button action-social"
+                                            aria-label={t("projectCard.repositoryLabel", { title })}
+                                        >
+                                            <FaGithub size={22} aria-hidden="true" />
+                                        </a>
+                                    </div>
+                                </article>
+                            </li>
+                        );
+                    })}
                 </ul>
             </div>
 
@@ -264,7 +275,7 @@ export default function ProjectMarquee({
             <div className="mt-4 hidden gap-3 md:flex">
                 <button
                     type="button"
-                    aria-label="Ver proyecto anterior"
+                    aria-label={t("projectMarquee.previous")}
                     onClick={() => {
                         const autoScroll = emblaApi?.plugins()?.autoScroll;
 
@@ -282,7 +293,7 @@ export default function ProjectMarquee({
 
                 <button
                     type="button"
-                    aria-label="Ver proyecto siguiente"
+                    aria-label={t("projectMarquee.next")}
                     onClick={() => {
                         const autoScroll = emblaApi?.plugins()?.autoScroll;
 
@@ -302,9 +313,13 @@ export default function ProjectMarquee({
                     type="button"
                     onClick={toggleAutoScroll}
                     className="action-button action-secondary ml-auto"
-                    aria-label={isPlaying ? "Pausar desplazamiento de proyectos" : "Reanudar desplazamiento de proyectos"}
+                    aria-label={
+                        isPlaying
+                            ? t("projectMarquee.pauseLabel")
+                            : t("projectMarquee.resumeLabel")
+                    }
                 >
-                    {isPlaying ? "Pausar" : "Reanudar"}
+                    {isPlaying ? t("projectMarquee.pause") : t("projectMarquee.resume")}
                 </button>
             </div>
         </div>

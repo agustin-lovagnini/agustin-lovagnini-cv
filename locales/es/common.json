@@ -10,7 +10,10 @@
     "closeMenu": "Cerrar menú",
     "pageNavigation": "Navegación entre páginas",
     "previousPage": "Página anterior: {{page}}",
-    "nextPage": "Página siguiente: {{page}}"
+    "nextPage": "Página siguiente: {{page}}",
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés"
   },
   "share": {
     "button": "Compartir portfolio",
@@ -106,9 +109,21 @@
       "academicTitle": "Certificaciones académicas",
       "academicDescription": "Coderhouse · Cursos y carrera aprobados.",
       "complementaryTitle": "Certificaciones complementarias",
-"complementaryDescription": "freeCodeCamp · Formación práctica y autodidacta.",
-"showMore": "Ver más",
-"showLess": "Ver menos"
+      "complementaryDescription": "freeCodeCamp · Formación práctica y autodidacta.",
+      "showMore": "Ver más",
+      "showLess": "Ver menos"
+    },
+    "contactInvitation": {
+      "eyebrow": "El próximo paso",
+      "title": "¿Trabajamos juntos?",
+      "description": "Estoy abierto a nuevas oportunidades y proyectos donde pueda aportar valor y seguir creciendo profesionalmente.",
+      "button": "Iniciar Conversación"
+    },
+    "metadata": {
+      "title": "Sobre mí",
+      "socialTitle": "Sobre mí | Agustín Lovagnini",
+      "description": "Conocé la formación, experiencia, certificaciones y tecnologías de Agustín Lovagnini, desarrollador Full Stack.",
+      "socialDescription": "Conocé mi formación, experiencia, certificaciones y tecnologías como desarrollador Full Stack."
     }
   },
   "projectCard": {
@@ -120,6 +135,52 @@
     "previewAlt": "Vista previa de {{title}}"
   },
   "projects": {
+    "sidebar-menu": {
+      "title": "Sidebar Menu",
+      "description": "Menú lateral y navegación desarrollados con HTML y CSS."
+    },
+    "chatbox": {
+      "title": "ChatBox",
+      "description": "Interfaz de chat desarrollada con HTML y CSS."
+    },
+    "flip-card": {
+      "title": "Flip Card",
+      "description": "Tarjeta interactiva con giro 3D y transiciones."
+    },
+    "vista-previa": {
+      "title": "Vista Previa",
+      "description": "Experimento visual con video de fondo y efectos de desplazamiento."
+    },
+    "menu-acordeon": {
+      "title": "Menú Acordeón",
+      "description": "Organización de contenido mediante un menú acordeón."
+    },
+    "formulario-contacto": {
+      "title": "Formulario de contacto",
+      "description": "Práctica de estructura HTML, campos de entrada y presentación visual de un formulario de contacto."
+    },
+    "primer-portfolio": {
+      "title": "Primer portfolio personal",
+      "description": "Primera presentación web de mi perfil profesional y mis proyectos."
+    },
+    "presentacion-web": {
+      "title": "Presentación Web",
+      "description": "Práctica de composición, tipografía y espaciado en una presentación personal."
+    },
+    "tarjeta-presentacion": {
+      "title": "Tarjeta de Presentación",
+      "description": "Diseño de una tarjeta profesional con información de contacto."
+    },
+    "page": {
+      "badge": "Portfolio seleccionado",
+      "areas": "/ Frontend y Backend",
+      "heading": "Proyectos <highlight>Destacados</highlight>",
+      "description": "Explorá mis proyectos de desarrollo web, desde interfaces interactivas hasta aplicaciones Full Stack. Cada uno refleja los desafíos, tecnologías y aprendizajes de mi recorrido.",
+      "scrollPrompt": "Deslizá para explorar",
+      "featuredHeading": "Proyectos que representan mi trabajo",
+      "evolutionTitle": "Mi evolución como desarrollador",
+      "evolutionDescription": "Mis primeros proyectos y la evolución de mis habilidades a lo largo del tiempo."
+    },
     "portfolio-html-css-sass": {
       "title": "Portfolio con HTML, CSS y Sass",
       "description": "Evolución de mi portfolio personal, con secciones dedicadas a mi perfil y la presentación de proyectos."
@@ -131,6 +192,147 @@
     "simulador-inversiones": {
       "title": "Simulador de Inversiones",
       "description": "Simulador interactivo para gestionar depósitos, inversiones y retiros, con validaciones, persistencia de datos e historial de operaciones."
+    },
+    "contactEyebrow": "Tu próximo proyecto empieza acá",
+    "contactTitle": "¿Tenés un proyecto en mente o buscás sumar un desarrollador a tu equipo?",
+    "contactDescription": "Estoy abierto a oportunidades laborales y colaboraciones en Frontend y Full Stack. Si tenés una propuesta, me encantaría conocerla.",
+    "contactButton": "Contactame",
+    "metadata": {
+      "title": "Proyectos",
+      "socialTitle": "Proyectos | Agustín Lovagnini",
+      "description": "Explorá los proyectos de desarrollo web de Agustín Lovagnini, sus tecnologías, repositorios y demostraciones.",
+      "socialDescription": "Explorá mis proyectos de desarrollo web, sus tecnologías, repositorios y demostraciones."
+    }
+  },
+  "projectMarquee": {
+    "previous": "Ver proyecto anterior",
+    "next": "Ver proyecto siguiente",
+    "pause": "Pausar",
+    "resume": "Reanudar",
+    "pauseLabel": "Pausar desplazamiento de proyectos",
+    "resumeLabel": "Reanudar desplazamiento de proyectos"
+  },
+  "certifications": {
+    "viewCertificate": "Ver certificado",
+    "viewCertificateLabel": "Ver certificado: {{title}} (abre en otra pestaña)",
+    "coderhouse-fullstack": {
+      "status": "Carrera completada",
+      "title": "Carrera de Desarrollo Full Stack",
+      "description": "Formación integral en desarrollo web Frontend y Backend, abarcando HTML, CSS, JavaScript, React, Node.js, Express, APIs REST, autenticación y bases de datos."
+    },
+    "backend-3": {
+      "status": "Certificado oficial",
+      "title": "Backend III — Testing y Escalabilidad",
+      "description": "Formación en desarrollo backend, testing, escalabilidad y buenas prácticas para construir aplicaciones robustas y mantenibles."
+    },
+    "backend-2": {
+      "status": "Certificado oficial",
+      "title": "Backend II — Diseño y Arquitectura",
+      "description": "Desarrollo de aplicaciones backend con Node.js, Express y MongoDB, implementando autenticación, autorización, arquitectura por capas y APIs REST."
+    },
+    "backend-1": {
+      "status": "Certificado oficial",
+      "title": "Backend I — Desarrollo Avanzado",
+      "description": "Fundamentos del desarrollo backend con Node.js y Express, creación de servidores, gestión de rutas, WebSockets y persistencia de datos."
+    },
+    "react-js": {
+      "status": "Certificado oficial",
+      "title": "React JS",
+      "description": "Desarrollo de aplicaciones SPA con componentes reutilizables, hooks, Context API, React Router e integración con Firebase."
+    },
+    "sql": {
+      "status": "Certificado oficial",
+      "title": "SQL y Bases de Datos",
+      "description": "Diseño y modelado de bases de datos relacionales, consultas SQL, vistas, procedimientos almacenados, funciones y triggers."
+    },
+    "javascript": {
+      "status": "Certificado oficial",
+      "title": "JavaScript",
+      "description": "Programación con JavaScript ES6+, manipulación del DOM, eventos, asincronía, consumo de APIs y desarrollo de aplicaciones interactivas."
+    },
+    "desarrollo-web": {
+      "status": "Certificado oficial",
+      "title": "Desarrollo Web",
+      "description": "Desarrollo de sitios web responsivos utilizando HTML5, CSS3, Sass, Bootstrap, Flexbox, Grid y buenas prácticas de maquetación."
+    },
+    "freecodecamp-javascript": {
+      "status": "Certificación",
+      "title": "JavaScript",
+      "description": "Fundamentos de programación con JavaScript, estructuras de datos, algoritmos, funciones y resolución de desafíos prácticos."
+    },
+    "freecodecamp-frontend-libraries": {
+      "status": "Certificación",
+      "title": "Bibliotecas de Desarrollo Frontend",
+      "description": "Desarrollo de aplicaciones e interfaces interactivas con React, Hooks, React Router, TypeScript, Next.js y Tailwind CSS. Aplicación de testing y componentes reutilizables mediante proyectos prácticos."
+    },
+    "freecodecamp-responsive": {
+      "status": "Certificación",
+      "title": "Responsive Web Design",
+      "description": "Diseño y desarrollo de interfaces web adaptables utilizando HTML y CSS, principios de accesibilidad y diseño responsivo."
+    }
+  },
+  "competencies": {
+    "title": "Competencias profesionales",
+    "description": "Habilidades que aplico en cada proyecto y al trabajar en equipo.",
+    "items": {
+      "resolucion-problemas": {
+        "title": "Resolución de problemas técnicos",
+        "description": "Analizo desafíos, investigo sus causas y desarrollo soluciones eficientes y mantenibles."
+      },
+      "organizacion-metodologias": {
+        "title": "Organización y metodologías",
+        "description": "Planifico mis proyectos, organizo tareas y utilizo control de versiones y buenas prácticas."
+      },
+      "trabajo-equipo": {
+        "title": "Trabajo en equipo y comunicación",
+        "description": "Valoro la comunicación clara, el intercambio de ideas y la colaboración para alcanzar objetivos comunes."
+      },
+      "aprendizaje-continuo": {
+        "title": "Adaptabilidad y aprendizaje continuo",
+        "description": "Me adapto a nuevas tecnologías y desafíos, buscando mejorar continuamente mis habilidades."
+      }
+    }
+  },
+  "contact": {
+    "badge": "Contacto directo",
+    "heading": "¿Tenés una idea o propuesta?<highlight>Hablemos.</highlight>",
+    "description": "¿Tenés una oportunidad laboral, un proyecto o una propuesta de colaboración? Podés escribirme mediante el formulario o contactarme por mis redes profesionales.",
+    "form": {
+      "title": "Enviar mensaje directo",
+      "nameLabel": "Nombre completo o empresa",
+      "namePlaceholder": "Tu nombre o empresa",
+      "emailLabel": "Correo electrónico",
+      "subjectLabel": "Asunto",
+      "subjectPlaceholder": "Seleccioná un asunto",
+      "subjectJob": "Oportunidad laboral",
+      "subjectFreelance": "Proyecto freelance",
+      "subjectOther": "Otra consulta",
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "Contame sobre tu propuesta o consulta...",
+      "submit": "Enviar mensaje",
+      "privacy": "Usaré tu nombre, correo y mensaje para responder a tu consulta. El envío se procesa mediante <formspree>Formspree</formspree>. No incluyas contraseñas ni información sensible. Si preferís no usar este formulario, podés contactarme por <linkedin>LinkedIn</linkedin> o escribirme directamente a <email>agustin.lovagnini.a@gmail.com</email>.",
+      "linkedinLabel": "LinkedIn (abre en otra pestaña)"
+    },
+    "availability": {
+      "heading": "Disponibilidad actual",
+      "title": "Abierto a nuevas oportunidades",
+      "description": "Busco sumarme a un equipo de desarrollo y participar en proyectos Frontend o Full Stack. También estoy abierto a colaboraciones freelance."
+    },
+    "channels": {
+      "heading": "Canales directos",
+      "email": "Correo electrónico",
+      "linkedin": "Perfil profesional",
+      "github": "Repositorios y código"
+    },
+    "workStyle": {
+      "heading": "Mi forma de trabajar",
+      "description": "Me gusta comprender cada proyecto, aportar soluciones y trabajar con comunicación clara, organización y compromiso."
+    },
+    "metadata": {
+      "title": "Contacto",
+      "socialTitle": "Contacto | Agustín Lovagnini",
+      "description": "Contactá a Agustín Lovagnini para oportunidades laborales, colaboraciones y proyectos de desarrollo web.",
+      "socialDescription": "Contactame para oportunidades laborales, colaboraciones y proyectos de desarrollo web."
     }
   }
 }

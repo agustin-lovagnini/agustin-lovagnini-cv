@@ -237,7 +237,18 @@ Se permite inspeccionar y leer archivos para comprender el proyecto, sin modific
 
 ## 11. Seguimiento de revisión y publicación
 
-Registro actualizado el 2026-11-21. Priorizar el punto de continuidad siguiente; los registros anteriores conservan su fecha y alcance histórico.
+Registro actualizado el 2026-11-24. Priorizar el punto de continuidad siguiente; los registros anteriores conservan su fecha y alcance histórico.
+
+### Continuidad V2 — 24 de noviembre de 2026: i18next en revisión
+
+- Rama comprobada: `feature/i18next`, con seguimiento de `origin/feature/i18next` y cambios locales sin commit en las páginas, componentes, diccionarios y configuración; `app/route.ts` es nuevo. No se hizo fetch. El propietario realiza el commit: no hacer commit, push, merge ni publicación automáticamente.
+- Inicio, Sobre mí, Proyectos y Contacto tienen textos y metadatos conectados a los diccionarios español e inglés. Incluye certificados, competencias, nueve proyectos secundarios, etiquetas accesibles de tarjetas y controles del carrusel, campos y aviso de privacidad de Contacto. Las traducciones de certificados y competencias mantienen textos españoles en sus catálogos como respaldo; no retirar sin acordar y revisar sus usos.
+- El Header tiene un botón ES / EN junto a Compartir en escritorio y en el menú móvil, con idioma activo dorado. Alterna el idioma mediante navegación completa, conserva ruta, consulta y fragmento, y guarda la elección manual en la cookie `preferred-language` por un año. Las rutas explícitas no escriben la cookie. Comprobar visualmente el último ajuste de tamaño y separación en móvil y probar teclado, selector y cookie en ambos idiomas.
+- `app/route.ts` reemplaza la redirección fija de `/` retirada de `next.config.ts`: prioriza cookie válida, después idioma compatible de `Accept-Language` ordenado por prioridad, y finalmente español. En el servidor local se comprobaron redirecciones temporales 307 para preferencia inglesa, prioridad de cookie española, cookie inválida, idioma no admitido y orden por prioridad. Falta revisar casos límite de la cabecera y comprobar persistencia real en navegador y URLs explícitas. El componente `TranslationProvider` inicializa su instancia una vez; comprobar sincronización al navegar entre rutas de idioma, además del cambio mediante recarga completa del botón.
+- Pendiente antes de cerrar i18next: actualizar `app/sitemap.ts`, que aún enumera `/`, `/sobre-mi`, `/proyectos` y `/contacto`, con las rutas y alternativas acordadas; implementar y probar las redirecciones permanentes de las tres URLs antiguas. Revisar el comportamiento deseado de Compartir: actualmente usa solo `window.location.origin`. Revisar que las redirecciones de `/` no se almacenen indebidamente en caché y el tratamiento de parámetros cuando corresponda.
+- Falta comprobar manualmente las cuatro páginas en ambos idiomas, navegación, responsive, accesibilidad y metadatos generados; probar formulario y aviso de privacidad con Formspree; ejecutar lint, TypeScript y build completos. ESLint pasó únicamente para `Header.tsx` antes de los últimos ajustes visuales; no hay resultado final de los controles generales. No afirmar que la etapa i18next está terminada ni integrada hasta completar y revisar estos puntos.
+- Después de probar i18next, integrar a `develop-v2` solo con autorización; luego crear `feature/rediseno` desde esa base. V1 sigue en producción; backend propio y v2.1.0 quedan para después de publicar v2.0.0. El plan `docs/PLAN-V2.md` todavía requiere conciliarse con los avances reales al cerrar la etapa.
+- Continuar como mentor en español: explicar conceptos y señalar archivo, ubicación, cambio y motivo; avanzar paso a paso. El propietario programa personalmente salvo autorización explícita para cambios concretos.
 
 ### Continuidad V2 — 21 de noviembre de 2026: i18next, Inicio
 
