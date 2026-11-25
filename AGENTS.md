@@ -237,7 +237,18 @@ Se permite inspeccionar y leer archivos para comprender el proyecto, sin modific
 
 ## 11. Seguimiento de revisión y publicación
 
-Registro actualizado el 2026-11-24. Priorizar el punto de continuidad siguiente; los registros anteriores conservan su fecha y alcance histórico.
+Registro actualizado el 2026-11-25. Priorizar el punto de continuidad siguiente; los registros anteriores conservan su fecha y alcance histórico.
+
+### Continuidad V2 — 25 de noviembre de 2026: i18next implementado, revisión pendiente
+
+- Rama comprobada: `feature/i18next`, limpia antes de actualizar esta documentación, con seguimiento de `origin/feature/i18next`; último commit local `3d42e140` (`feat: terminé las traducciones y agregué el selector/button de idioma`). No se hizo fetch. Los cambios posteriores a esta comprobación corresponden a esta actualización de documentación. No hacer commit, push, merge ni publicación sin autorización concreta.
+- Las cuatro páginas, sus metadatos, el selector ES / EN y la detección inicial de idioma están implementados. El propietario confirmó que el cambio de idioma y la preferencia funcionaron en el navegador y que el recorrido manual funcionó bien; no detalló resultados específicos de cada prueba de accesibilidad, responsive o metadatos.
+- `app/sitemap.ts` genera las ocho rutas con sus alternativas en español e inglés; el XML local se comprobó. `next.config.ts` redirige permanentemente `/sobre-mi`, `/proyectos` y `/contacto` a sus versiones `/es/...`; se comprobaron localmente respuestas 308 para las tres. Comprobar `SITE_URL` en producción antes de publicar.
+- Lint, TypeScript (`npx tsc --noEmit --incremental false`) y build de producción pasaron el 24 de noviembre. El primer build falló por acceso a Google Fonts; se repitió con acceso de red autorizado y compiló correctamente las ocho rutas. No se hicieron nuevas pruebas de código en esta actualización documental.
+- El propietario decidió conservar Compartir con el dominio principal (`window.location.origin`); no volver a proponer cambiarlo como pendiente de i18next sin una nueva solicitud.
+- Pendiente: confirmar específicamente envío del formulario por Formspree y recepción del mensaje tras los cambios de idioma; completar revisión específica de accesibilidad, responsive y metadatos generados, y revisar casos límite de `Accept-Language`, caché y parámetros de la redirección inicial y sincronización del proveedor cuando cambie la ruta sin recarga completa. No inferir estos resultados de la confirmación general del recorrido.
+- Revisar e integrar `feature/i18next` a `develop-v2` solo con autorización. Después crear `feature/rediseno` desde la base integrada; V1 sigue en producción y el backend propio queda para v2.1.0. `docs/PLAN-V2.md` refleja los avances y pendientes conocidos.
+- Continuar como mentor en español y avanzar de a un paso; el propietario programa personalmente salvo autorización explícita para cambios concretos.
 
 ### Continuidad V2 — 24 de noviembre de 2026: i18next en revisión
 

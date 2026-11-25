@@ -48,14 +48,15 @@ Integrar una funcionalidad a `develop-v2` no significa publicarla. Los push a `m
 
 ## v2.0.0 — Etapa 2: español e inglés con i18next
 
-- [ ] Explicar los conceptos y acordar rutas, idioma predeterminado y estructura de traducciones antes de modificar la arquitectura.
-- [ ] Crear `feature/i18next` desde `develop-v2`, después de comprobar el estado de Git.
-- [ ] Justificar y autorizar las dependencias necesarias antes de instalarlas.
-- [ ] Implementar traducciones de las cuatro páginas, componentes, textos accesibles y mensajes del formulario.
-- [ ] Incorporar un selector de idioma y comprobar navegación y persistencia del idioma según el comportamiento acordado.
-- [ ] Adaptar metadatos, idioma del documento, canónicas, alternativas por idioma y sitemap.
-- [ ] Conservar enlaces, datos compartidos, certificados y funcionamiento de Formspree.
-- [ ] Probar ambos idiomas, responsive, accesibilidad, lint y build.
+- [x] Acordar rutas con prefijo de idioma, español de respaldo y estructura de traducciones.
+- [x] Trabajar en la rama `feature/i18next` con i18next y su proveedor de traducción.
+- [x] Conectar traducciones de las cuatro páginas, componentes, textos accesibles y campos del formulario.
+- [x] Incorporar el selector ES / EN y la preferencia manual mediante cookie. El propietario confirmó el cambio de idioma y la preferencia en el navegador.
+- [x] Adaptar metadatos, idioma del documento, canónicas, alternativas por idioma y sitemap; comprobar localmente el sitemap y las redirecciones permanentes de las tres rutas antiguas.
+- [x] Ejecutar lint, TypeScript y build de producción correctamente; el build requirió acceso a Google Fonts.
+- [ ] Confirmar específicamente un envío del formulario con Formspree y la recepción del mensaje tras los cambios de idioma.
+- [ ] Completar la revisión específica de accesibilidad, responsive, metadatos generados y casos límite de detección de idioma. El propietario confirmó que el recorrido manual y el selector funcionaron, sin detallar cada una de estas pruebas.
+- [ ] Revisar el comportamiento de caché y parámetros de la redirección inicial y la sincronización del proveedor en navegación entre idiomas sin recarga completa.
 - [ ] Revisar e integrar la rama a `develop-v2` con autorización.
 
 ## v2.0.0 — Etapa 3: rediseño con Impeccable
