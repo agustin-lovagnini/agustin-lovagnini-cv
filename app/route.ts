@@ -35,5 +35,7 @@ export function GET(request: NextRequest) {
 
     const destination = new URL(`/${lang}`, request.url);
 
+    destination.search = request.nextUrl.search;
+
     return NextResponse.redirect(destination);
 }
