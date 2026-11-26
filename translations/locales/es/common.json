@@ -1,0 +1,38 @@
+{
+  "share": {
+    "button": "Compartir portfolio",
+    "copiedTitle": "Enlace copiado",
+    "copiedMessage": "Enlace copiado. Ya podés pegarlo y compartirlo.",
+    "copyError": "No se pudo copiar. Podés copiar la dirección del navegador.",
+    "shareError": "No se pudo compartir. Intentá nuevamente o copiá la dirección del sitio.",
+    "errorTitle": "No se pudo completar la acción",
+    "closeNotice": "Cerrar aviso",
+    "shareText": "Conocé mi portfolio profesional."
+  },
+  "projectCard": {
+    "featured": "Proyecto destacado",
+    "viewProject": "Ver proyecto",
+    "technologiesLabel": "Tecnologías de {{title}}",
+    "demoLabel": "Ver proyecto: {{title}} (abre en otra pestaña)",
+    "repositoryLabel": "Ver repositorio en GitHub: {{title}} (abre en otra pestaña)",
+    "previewAlt": "Vista previa de {{title}}"
+  },
+  "projects": {
+    "portfolio-html-css-sass": {
+      "title": "Portfolio con HTML, CSS y Sass",
+      "description": "Evolución de mi portfolio personal, con secciones dedicadas a mi perfil y la presentación de proyectos."
+    },
+    "luzu-tv": {
+      "title": "Luzu TV",
+      "description": "Rediseño de una plataforma de streaming, enfocado en la organización del contenido, el diseño visual y la navegación."
+    },
+    "simulador-inversiones": {
+      "title": "Simulador de Inversiones",
+      "description": "Simulador interactivo para gestionar depósitos, inversiones y retiros, con validaciones, persistencia de datos e historial de operaciones."
+    }
+  },
+  "siteMetadata": {
+    "siteName": "Portfolio de Agustín Lovagnini",
+    "imageAlt": "Portfolio de Agustín Lovagnini, Full Stack Developer"
+  }
+}

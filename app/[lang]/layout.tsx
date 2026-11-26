@@ -2,7 +2,7 @@ import Header from "../../components/layout/Header/Header";
 import TranslationProvider from "../../components/providers/TranslationProvider";
 import Footer from "../../components/layout/Footer/Footer";
 import { notFound } from "next/navigation";
-import { isLocale } from "../../i18n/resources";
+import { isLocale } from "../../translations/i18n/resources";
 
 
 import type { Metadata } from "next";

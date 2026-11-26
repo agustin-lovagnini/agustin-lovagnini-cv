@@ -1,0 +1,42 @@
+{
+  "badge": "Direct contact",
+  "heading": "Have an idea or proposal?<highlight>Let's talk.</highlight>",
+  "description": "Do you have a job opportunity, project, or collaboration proposal? You can write to me using the form or reach out through my professional networks.",
+  "form": {
+    "title": "Send a direct message",
+    "nameLabel": "Full name or company",
+    "namePlaceholder": "Your name or company",
+    "emailLabel": "Email address",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Select a subject",
+    "subjectJob": "Job opportunity",
+    "subjectFreelance": "Freelance project",
+    "subjectOther": "Other inquiry",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about your proposal or inquiry...",
+    "submit": "Send message",
+    "privacy": "I'll use your name, email address, and message to respond to your inquiry. Your submission is processed by <formspree>Formspree</formspree>. Please don't include passwords or sensitive information. If you prefer not to use this form, you can contact me on <linkedin>LinkedIn</linkedin> or email me directly at <email>agustin.lovagnini.a@gmail.com</email>.",
+    "linkedinLabel": "LinkedIn (opens in a new tab)"
+  },
+  "availability": {
+    "heading": "Current availability",
+    "title": "Open to new opportunities",
+    "description": "I'm looking to join a development team and work on frontend or full stack projects. I'm also open to freelance collaborations."
+  },
+  "channels": {
+    "heading": "Direct contact",
+    "email": "Email",
+    "linkedin": "Professional profile",
+    "github": "Repositories and code"
+  },
+  "workStyle": {
+    "heading": "How I work",
+    "description": "I like to understand each project, provide solutions, and work with clear communication, organization, and commitment."
+  },
+  "metadata": {
+    "title": "Contact",
+    "socialTitle": "Contact | Agustín Lovagnini",
+    "description": "Contact Agustín Lovagnini about job opportunities, collaborations, and web development projects.",
+    "socialDescription": "Contact me about job opportunities, collaborations, and web development projects."
+  }
+}

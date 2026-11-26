@@ -1,0 +1,157 @@
+{
+  "about": {
+    "heading": "About <highlight>Me</highlight>",
+    "scrollPrompt": "Scroll to explore",
+    "profile": {
+      "title": "Professional Profile",
+      "description": "I'm a <role>Full Stack</role> web developer with a particular interest in <strong>frontend development, design, and user experience</strong>. I work with technologies such as React, Next.js, Node.js, and Express, combining modern interfaces with REST APIs, authentication, and databases. My goal is to develop complete, functional, and scalable web applications that combine design, technology, and good development practices.",
+      "quote": "I'm passionate about turning ideas into intuitive and accessible digital experiences.",
+      "locationDescription": "I'm based in Buenos Aires City, Argentina. I'm looking to join a team where I can contribute my knowledge, collaborate on projects, and continue growing professionally.",
+      "locationLabel": "Location",
+      "locationValue": "Buenos Aires City, Argentina",
+      "languagesLabel": "Languages",
+      "languagesValue": "Native Spanish · Currently learning English",
+      "workModeLabel": "Work arrangement",
+      "workModeValue": "Remote · Hybrid · On-site"
+    },
+    "personalCard": {
+      "portraitAlt": "Portrait of Agustín Lovagnini",
+      "description": "I'm curious, committed, and eager to learn. I enjoy creating solutions and taking on new challenges.",
+      "commitment": "Commitment",
+      "certifications": "Certifications"
+    },
+    "approach": {
+      "title": "My development approach:",
+      "description": "I prioritize clean code, accessibility, and good development practices to build maintainable and scalable applications.",
+      "values": "Clean code · Accessibility · Continuous learning"
+    },
+    "technologies": {
+      "title": "Core Technologies",
+      "description": "Tools and languages I use in my projects.",
+      "groups": {
+        "frontend": {
+          "title": "Frontend",
+          "description": "Responsive and accessible interfaces, with reusable components and a focus on user experience."
+        },
+        "backend": {
+          "title": "Backend",
+          "description": "Server-side applications, REST APIs, authentication, and code organized by responsibility."
+        },
+        "databases": {
+          "title": "Databases",
+          "description": "Data persistence, data modeling, and queries in relational and non-relational databases."
+        },
+        "workflow": {
+          "title": "Development Tools",
+          "description": "Version control, API testing, and tools to develop, organize, and share my projects."
+        }
+      },
+      "groupLabel": "Technologies used in {{title}}",
+      "authentication": "Authentication"
+    },
+    "education": {
+      "title": "Education and Certifications",
+      "description": "Academic and professional learning in software development.",
+      "badge": "Recognized institutions",
+      "academicTitle": "Academic Certifications",
+      "academicDescription": "Coderhouse · Completed courses and career program.",
+      "complementaryTitle": "Additional Certifications",
+      "complementaryDescription": "freeCodeCamp · Practical, self-directed learning.",
+      "showMore": "Show more",
+      "showLess": "Show less"
+    },
+    "contactInvitation": {
+      "eyebrow": "The next step",
+      "title": "Shall we work together?",
+      "description": "I'm open to new opportunities and projects where I can contribute and continue growing professionally.",
+      "button": "Start a Conversation"
+    },
+    "metadata": {
+      "title": "About Me",
+      "socialTitle": "About Me | Agustín Lovagnini",
+      "description": "Explore the education, experience, certifications, and technologies of Agustín Lovagnini, Full Stack developer.",
+      "socialDescription": "Explore my education, experience, certifications, and technologies as a Full Stack developer."
+    }
+  },
+  "certifications": {
+    "viewCertificate": "View certificate",
+    "viewCertificateLabel": "View certificate: {{title}} (opens in a new tab)",
+    "coderhouse-fullstack": {
+      "status": "Career program completed",
+      "title": "Full Stack Development Career Program",
+      "description": "Comprehensive training in frontend and backend web development, covering HTML, CSS, JavaScript, React, Node.js, Express, REST APIs, authentication, and databases."
+    },
+    "backend-3": {
+      "status": "Official certificate",
+      "title": "Backend III — Testing and Scalability",
+      "description": "Training in backend development, testing, scalability, and best practices for building robust and maintainable applications."
+    },
+    "backend-2": {
+      "status": "Official certificate",
+      "title": "Backend II — Design and Architecture",
+      "description": "Backend application development with Node.js, Express, and MongoDB, implementing authentication, authorization, layered architecture, and REST APIs."
+    },
+    "backend-1": {
+      "status": "Official certificate",
+      "title": "Backend I — Advanced Development",
+      "description": "Backend development fundamentals with Node.js and Express, including server creation, route management, WebSockets, and data persistence."
+    },
+    "react-js": {
+      "status": "Official certificate",
+      "title": "React JS",
+      "description": "Single-page application development using reusable components, hooks, Context API, React Router, and Firebase integration."
+    },
+    "sql": {
+      "status": "Official certificate",
+      "title": "SQL and Databases",
+      "description": "Relational database design and modeling, SQL queries, views, stored procedures, functions, and triggers."
+    },
+    "javascript": {
+      "status": "Official certificate",
+      "title": "JavaScript",
+      "description": "Programming with JavaScript ES6+, DOM manipulation, events, asynchronous operations, API integration, and interactive application development."
+    },
+    "desarrollo-web": {
+      "status": "Official certificate",
+      "title": "Web Development",
+      "description": "Responsive website development using HTML5, CSS3, Sass, Bootstrap, Flexbox, Grid, and layout best practices."
+    },
+    "freecodecamp-javascript": {
+      "status": "Certification",
+      "title": "JavaScript",
+      "description": "JavaScript programming fundamentals, data structures, algorithms, functions, and practical coding challenges."
+    },
+    "freecodecamp-frontend-libraries": {
+      "status": "Certification",
+      "title": "Front End Development Libraries",
+      "description": "Development of interactive applications and interfaces with React, Hooks, React Router, TypeScript, Next.js, and Tailwind CSS. Applying testing and reusable components through practical projects."
+    },
+    "freecodecamp-responsive": {
+      "status": "Certification",
+      "title": "Responsive Web Design",
+      "description": "Design and development of adaptable web interfaces using HTML and CSS, accessibility principles, and responsive design."
+    }
+  },
+  "competencies": {
+    "title": "Professional Skills",
+    "description": "Skills I apply to every project and when working with a team.",
+    "items": {
+      "resolucion-problemas": {
+        "title": "Technical Problem Solving",
+        "description": "I analyze challenges, investigate their causes, and develop efficient and maintainable solutions."
+      },
+      "organizacion-metodologias": {
+        "title": "Organization and Methodologies",
+        "description": "I plan my projects, organize tasks, and use version control and best practices."
+      },
+      "trabajo-equipo": {
+        "title": "Teamwork and Communication",
+        "description": "I value clear communication, exchanging ideas, and collaborating to achieve shared goals."
+      },
+      "aprendizaje-continuo": {
+        "title": "Adaptability and Continuous Learning",
+        "description": "I adapt to new technologies and challenges while continually improving my skills."
+      }
+    }
+  }
+}

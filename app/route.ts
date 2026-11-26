@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { defaultLocale, isLocale } from "../i18n/resources";
+import { defaultLocale, isLocale } from "../translations/i18n/resources";
 
 export function GET(request: NextRequest) {
     const preference = request.cookies.get("preferred-language")?.value;

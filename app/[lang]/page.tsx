@@ -8,8 +8,8 @@ import fotoPerfil from "../../public/images/img-perfil-agustin.webp";
 import { projects } from "../../data/projects";
 import FeaturedProjectCard from "../../components/projects/FeaturedProjectCard";
 import { notFound } from "next/navigation";
-import { isLocale } from "../../i18n/resources";
-import { createTranslation } from "../../i18n/createTranslation";
+import { isLocale } from "../../translations/i18n/resources";
+import { createTranslation } from "../../translations/i18n/createTranslation";
 import { Trans } from "react-i18next";
 
 
@@ -42,7 +42,7 @@ export async function generateMetadata({
       url: `/${lang}`,
       title: translation.t("home.metadata.title"),
       description: translation.t("home.metadata.socialDescription"),
-      siteName: translation.t("home.metadata.siteName"),
+      siteName: translation.t("siteMetadata.siteName"),
       locale: lang === "es" ? "es_AR" : "en_US",
       type: "website",
       images: [
@@ -50,7 +50,7 @@ export async function generateMetadata({
           url: "/images/og/og-agustin-lovagnini.jpg",
           width: 1200,
           height: 630,
-          alt: translation.t("home.metadata.imageAlt"),
+          alt: translation.t("siteMetadata.imageAlt")
         },
       ],
     },
@@ -61,7 +61,7 @@ export async function generateMetadata({
       images: [
         {
           url: "/images/og/og-agustin-lovagnini.jpg",
-          alt: translation.t("home.metadata.imageAlt"),
+          alt: translation.t("siteMetadata.imageAlt"),
         },
       ],
     },

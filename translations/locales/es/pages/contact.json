@@ -1,0 +1,42 @@
+{
+  "badge": "Contacto directo",
+  "heading": "¿Tenés una idea o propuesta?<highlight>Hablemos.</highlight>",
+  "description": "¿Tenés una oportunidad laboral, un proyecto o una propuesta de colaboración? Podés escribirme mediante el formulario o contactarme por mis redes profesionales.",
+  "form": {
+    "title": "Enviar mensaje directo",
+    "nameLabel": "Nombre completo o empresa",
+    "namePlaceholder": "Tu nombre o empresa",
+    "emailLabel": "Correo electrónico",
+    "subjectLabel": "Asunto",
+    "subjectPlaceholder": "Seleccioná un asunto",
+    "subjectJob": "Oportunidad laboral",
+    "subjectFreelance": "Proyecto freelance",
+    "subjectOther": "Otra consulta",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Contame sobre tu propuesta o consulta...",
+    "submit": "Enviar mensaje",
+    "privacy": "Usaré tu nombre, correo y mensaje para responder a tu consulta. El envío se procesa mediante <formspree>Formspree</formspree>. No incluyas contraseñas ni información sensible. Si preferís no usar este formulario, podés contactarme por <linkedin>LinkedIn</linkedin> o escribirme directamente a <email>agustin.lovagnini.a@gmail.com</email>.",
+    "linkedinLabel": "LinkedIn (abre en otra pestaña)"
+  },
+  "availability": {
+    "heading": "Disponibilidad actual",
+    "title": "Abierto a nuevas oportunidades",
+    "description": "Busco sumarme a un equipo de desarrollo y participar en proyectos Frontend o Full Stack. También estoy abierto a colaboraciones freelance."
+  },
+  "channels": {
+    "heading": "Canales directos",
+    "email": "Correo electrónico",
+    "linkedin": "Perfil profesional",
+    "github": "Repositorios y código"
+  },
+  "workStyle": {
+    "heading": "Mi forma de trabajar",
+    "description": "Me gusta comprender cada proyecto, aportar soluciones y trabajar con comunicación clara, organización y compromiso."
+  },
+  "metadata": {
+    "title": "Contacto",
+    "socialTitle": "Contacto | Agustín Lovagnini",
+    "description": "Contactá a Agustín Lovagnini para oportunidades laborales, colaboraciones y proyectos de desarrollo web.",
+    "socialDescription": "Contactame para oportunidades laborales, colaboraciones y proyectos de desarrollo web."
+  }
+}

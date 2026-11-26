@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { defaultLocale, isLocale } from "../../i18n/resources";
+import { defaultLocale, isLocale } from "../../translations/i18n/resources";
 
 const pages = [
     { href: "/", label: "navigation.home" },

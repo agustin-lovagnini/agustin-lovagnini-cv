@@ -1,5 +1,5 @@
-import es from "../locales/es/common.json";
-import en from "../locales/en/common.json";
+import { spanishTranslations } from "../locales/es";
+import { englishTranslations } from "../locales/en";
 
 export type Locale = "es" | "en";
 
@@ -10,10 +10,9 @@ export function isLocale(value: string): value is Locale {
 
 export const resources = {
     es: {
-        common: es,
+        common: spanishTranslations,
     },
     en: {
-        common: en,
+        common: englishTranslations,
     },
 };
-

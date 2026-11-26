@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
-import { defaultLocale, isLocale } from "../../../i18n/resources";
+import { defaultLocale, isLocale } from "../../../translations/i18n/resources";
 
 export default function Header() {
     const { t } = useTranslation("common");

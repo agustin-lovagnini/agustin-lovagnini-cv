@@ -2,8 +2,8 @@ import type { Project } from "../../data/projects";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
-import type { Locale } from "../../i18n/resources";
-import { createTranslation } from "../../i18n/createTranslation";
+import type { Locale } from "../../translations/i18n/resources";
+import { createTranslation } from "../../translations/i18n/createTranslation";
 
 interface FeaturedProjectCardProps {
     project: Project;

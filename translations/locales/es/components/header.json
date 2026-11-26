@@ -1,0 +1,18 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "mobile": "Navegación móvil",
+    "main": "Navegación principal",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "pageNavigation": "Navegación entre páginas",
+    "previousPage": "Página anterior: {{page}}",
+    "nextPage": "Página siguiente: {{page}}",
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés"
+  }
+}

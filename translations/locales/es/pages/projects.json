@@ -1,0 +1,68 @@
+{
+  "projects": {
+    "sidebar-menu": {
+      "title": "Sidebar Menu",
+      "description": "Menú lateral y navegación desarrollados con HTML y CSS."
+    },
+    "chatbox": {
+      "title": "ChatBox",
+      "description": "Interfaz de chat desarrollada con HTML y CSS."
+    },
+    "flip-card": {
+      "title": "Flip Card",
+      "description": "Tarjeta interactiva con giro 3D y transiciones."
+    },
+    "vista-previa": {
+      "title": "Vista Previa",
+      "description": "Experimento visual con video de fondo y efectos de desplazamiento."
+    },
+    "menu-acordeon": {
+      "title": "Menú Acordeón",
+      "description": "Organización de contenido mediante un menú acordeón."
+    },
+    "formulario-contacto": {
+      "title": "Formulario de contacto",
+      "description": "Práctica de estructura HTML, campos de entrada y presentación visual de un formulario de contacto."
+    },
+    "primer-portfolio": {
+      "title": "Primer portfolio personal",
+      "description": "Primera presentación web de mi perfil profesional y mis proyectos."
+    },
+    "presentacion-web": {
+      "title": "Presentación Web",
+      "description": "Práctica de composición, tipografía y espaciado en una presentación personal."
+    },
+    "tarjeta-presentacion": {
+      "title": "Tarjeta de Presentación",
+      "description": "Diseño de una tarjeta profesional con información de contacto."
+    },
+    "page": {
+      "badge": "Portfolio seleccionado",
+      "areas": "/ Frontend y Backend",
+      "heading": "Proyectos <highlight>Destacados</highlight>",
+      "description": "Explorá mis proyectos de desarrollo web, desde interfaces interactivas hasta aplicaciones Full Stack. Cada uno refleja los desafíos, tecnologías y aprendizajes de mi recorrido.",
+      "scrollPrompt": "Deslizá para explorar",
+      "featuredHeading": "Proyectos que representan mi trabajo",
+      "evolutionTitle": "Mi evolución como desarrollador",
+      "evolutionDescription": "Mis primeros proyectos y la evolución de mis habilidades a lo largo del tiempo."
+    },
+    "contactEyebrow": "Tu próximo proyecto empieza acá",
+    "contactTitle": "¿Tenés un proyecto en mente o buscás sumar un desarrollador a tu equipo?",
+    "contactDescription": "Estoy abierto a oportunidades laborales y colaboraciones en Frontend y Full Stack. Si tenés una propuesta, me encantaría conocerla.",
+    "contactButton": "Contactame",
+    "metadata": {
+      "title": "Proyectos",
+      "socialTitle": "Proyectos | Agustín Lovagnini",
+      "description": "Explorá los proyectos de desarrollo web de Agustín Lovagnini, sus tecnologías, repositorios y demostraciones.",
+      "socialDescription": "Explorá mis proyectos de desarrollo web, sus tecnologías, repositorios y demostraciones."
+    }
+  },
+  "projectMarquee": {
+    "previous": "Ver proyecto anterior",
+    "next": "Ver proyecto siguiente",
+    "pause": "Pausar",
+    "resume": "Reanudar",
+    "pauseLabel": "Pausar desplazamiento de proyectos",
+    "resumeLabel": "Reanudar desplazamiento de proyectos"
+  }
+}

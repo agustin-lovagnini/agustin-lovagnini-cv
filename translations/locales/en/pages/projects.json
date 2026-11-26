@@ -1,0 +1,68 @@
+{
+  "projects": {
+    "sidebar-menu": {
+      "title": "Sidebar Menu",
+      "description": "Sidebar menu and navigation built with HTML and CSS."
+    },
+    "chatbox": {
+      "title": "ChatBox",
+      "description": "Chat interface built with HTML and CSS."
+    },
+    "flip-card": {
+      "title": "Flip Card",
+      "description": "Interactive card with a 3D flip and transitions."
+    },
+    "vista-previa": {
+      "title": "Preview Page",
+      "description": "Visual experiment with a background video and scroll effects."
+    },
+    "menu-acordeon": {
+      "title": "Accordion Menu",
+      "description": "Content organized using an accordion menu."
+    },
+    "formulario-contacto": {
+      "title": "Contact Form",
+      "description": "Practice with HTML structure, input fields, and the visual presentation of a contact form."
+    },
+    "primer-portfolio": {
+      "title": "First Personal Portfolio",
+      "description": "My first website presenting my professional profile and projects."
+    },
+    "presentacion-web": {
+      "title": "Web Presentation",
+      "description": "Practice with composition, typography, and spacing in a personal presentation."
+    },
+    "tarjeta-presentacion": {
+      "title": "Business Card",
+      "description": "Design of a professional card with contact information."
+    },
+    "page": {
+      "badge": "Selected Portfolio",
+      "areas": "/ Frontend and Backend",
+      "heading": "Featured <highlight>Projects</highlight>",
+      "description": "Explore my web development projects, from interactive interfaces to full stack applications. Each one reflects the challenges, technologies, and lessons from my journey.",
+      "scrollPrompt": "Scroll to explore",
+      "featuredHeading": "Projects that represent my work",
+      "evolutionTitle": "My evolution as a developer",
+      "evolutionDescription": "My first projects and the evolution of my skills over time."
+    },
+    "contactEyebrow": "Your next project starts here",
+    "contactTitle": "Do you have a project in mind or need a developer for your team?",
+    "contactDescription": "I'm open to job opportunities and frontend and full stack collaborations. If you have a proposal, I'd love to hear about it.",
+    "contactButton": "Contact me",
+    "metadata": {
+      "title": "Projects",
+      "socialTitle": "Projects | Agustín Lovagnini",
+      "description": "Explore Agustín Lovagnini's web development projects, technologies, repositories, and demos.",
+      "socialDescription": "Explore my web development projects, technologies, repositories, and demos."
+    }
+  },
+  "projectMarquee": {
+    "previous": "View previous project",
+    "next": "View next project",
+    "pause": "Pause",
+    "resume": "Resume",
+    "pauseLabel": "Pause project scrolling",
+    "resumeLabel": "Resume project scrolling"
+  }
+}

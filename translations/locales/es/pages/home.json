@@ -1,0 +1,20 @@
+{
+  "badge": "Full Stack Developer +3 años de código",
+  "taglineLead": "Cada idea tiene una identidad.",
+  "taglineEnd": "Mi trabajo es darle vida.",
+  "description": "Soy desarrollador web <strong>Full Stack</strong>, especializado en crear experiencias digitales modernas, intuitivas y funcionales. Me apasionan el Frontend, el diseño y la tecnología, y busco aportar soluciones que combinen creatividad y buenas prácticas.",
+  "viewProjects": "Ver proyectos",
+  "viewCv": "Ver CV",
+  "viewCvLabel": "Ver CV en PDF (abre en una pestaña nueva)",
+  "portraitAlt": "Retrato de Agustín Lovagnini",
+  "mainStack": "Stack Principal",
+  "featuredProjects": "Proyectos destacados",
+  "contactEyebrow": "Contacto",
+  "contactTitle": "Hablemos de tu próximo proyecto",
+  "contactButton": "Contactar",
+  "metadata": {
+    "title": "Agustín Lovagnini | Full Stack Developer",
+    "description": "Portfolio de Agustín Lovagnini, desarrollador Full Stack. Conocé mis proyectos, tecnologías, formación y medios de contacto.",
+    "socialDescription": "Conocé mis proyectos, tecnologías y experiencia en desarrollo web."
+  }
+}

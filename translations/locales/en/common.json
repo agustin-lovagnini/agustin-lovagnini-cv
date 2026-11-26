@@ -1,0 +1,38 @@
+{
+  "share": {
+    "button": "Share portfolio",
+    "copiedTitle": "Link copied",
+    "copiedMessage": "Link copied. You can now paste and share it.",
+    "copyError": "Could not copy the link. You can copy the address from your browser.",
+    "shareError": "Could not share. Try again or copy the site's address.",
+    "errorTitle": "Could not complete the action",
+    "closeNotice": "Close notice",
+    "shareText": "Check out my professional portfolio."
+  },
+  "projectCard": {
+    "featured": "Featured project",
+    "viewProject": "View project",
+    "technologiesLabel": "Technologies used in {{title}}",
+    "demoLabel": "View project: {{title}} (opens in a new tab)",
+    "repositoryLabel": "View GitHub repository: {{title}} (opens in a new tab)",
+    "previewAlt": "Preview of {{title}}"
+  },
+  "projects": {
+    "portfolio-html-css-sass": {
+      "title": "Portfolio with HTML, CSS and Sass",
+      "description": "An evolution of my personal portfolio, with sections dedicated to my profile and projects."
+    },
+    "luzu-tv": {
+      "title": "Luzu TV",
+      "description": "A streaming platform redesign focused on content organization, visual design, and navigation."
+    },
+    "simulador-inversiones": {
+      "title": "Investment Simulator",
+      "description": "An interactive simulator for managing deposits, investments, and withdrawals, with validation, data persistence, and transaction history."
+    }
+  },
+  "siteMetadata": {
+    "siteName": "Agustín Lovagnini's Portfolio",
+    "imageAlt": "Portfolio of Agustín Lovagnini, Full Stack Developer"
+  }
+}

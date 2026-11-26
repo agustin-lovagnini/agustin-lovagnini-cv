@@ -17,8 +17,8 @@ import { competencies } from "../../../data/competencies";
 import Image from "next/image";
 import fotoPerfil from "../../../public/images/img-perfil-agustin.webp";
 import { notFound } from "next/navigation";
-import { isLocale } from "../../../i18n/resources";
-import { createTranslation } from "../../../i18n/createTranslation";
+import { isLocale } from "../../../translations/i18n/resources";
+import { createTranslation } from "../../../translations/i18n/createTranslation";
 import { Trans } from "react-i18next";
 
 // ITEM - Metadatos de Sobre mí
@@ -47,7 +47,7 @@ export async function generateMetadata({
             title: translation.t("about.metadata.socialTitle"),
             description: translation.t("about.metadata.socialDescription"),
             url: `/${lang}/sobre-mi`,
-            siteName: translation.t("home.metadata.siteName"),
+            siteName: translation.t("siteMetadata.siteName"),
             locale: lang === "es" ? "es_AR" : "en_US",
             type: "website",
             images: [
@@ -55,7 +55,7 @@ export async function generateMetadata({
                     url: "/images/og/og-agustin-lovagnini.jpg",
                     width: 1200,
                     height: 630,
-                    alt: translation.t("home.metadata.imageAlt"),
+                    alt: translation.t("siteMetadata.imageAlt"),
                 },
             ],
         },
@@ -66,7 +66,7 @@ export async function generateMetadata({
             images: [
                 {
                     url: "/images/og/og-agustin-lovagnini.jpg",
-                    alt: translation.t("home.metadata.imageAlt"),
+                    alt: translation.t("siteMetadata.imageAlt"),
                 },
             ],
         },
