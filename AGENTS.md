@@ -237,7 +237,15 @@ Se permite inspeccionar y leer archivos para comprender el proyecto, sin modific
 
 ## 11. Seguimiento de revisión y publicación
 
-Registro actualizado el 2026-11-25. Priorizar el punto de continuidad siguiente; los registros anteriores conservan su fecha y alcance histórico.
+Registro actualizado el 2026-11-26. Priorizar el punto de continuidad siguiente; los registros anteriores conservan su fecha y alcance histórico.
+
+### Continuidad V2 — 26 de noviembre de 2026: idiomas cerrados y backend para v2.1.0
+
+- El propietario confirmó que todo lo relacionado con idiomas está terminado. La etapa i18next queda cerrada e integrada en `develop-v2`; los pendientes de idiomas de registros anteriores quedan superados por esta confirmación. No se ejecutaron nuevas pruebas técnicas en esta actualización documental.
+- `v2.0.0` conserva el formulario actual con Formspree. El backend propio queda para **`v2.1.0`**, después de publicar `v2.0.0`: se incorpora como una funcionalidad nueva compatible con el portfolio existente. Esta es la numeración final acordada con el propietario. No desarrollar ni instalar herramientas del backend durante el trabajo de `v2.0.0`.
+- Próximo trabajo: rediseño con Impeccable en `feature/rediseno`, desde `develop-v2` actualizada, con propuestas e incorporaciones autorizadas y una página por vez. Después completar las revisiones restantes de simplificación y la revisión final de V2 antes de publicar. Mantener ambos idiomas y comprobar su funcionamiento tras los cambios del rediseño.
+- Se comprobó `develop-v2` sin cambios locales y sincronizada con la referencia local de `origin/develop-v2` antes de editar estos documentos. El propietario confirmó la eliminación de `feature/i18next` localmente y en GitHub durante esta sesión. No se hizo un nuevo fetch en esta actualización.
+- Se autorizaron únicamente estos cambios en `AGENTS.md` y `docs/PLAN-V2.md`. No hacer commit, push, merge, creación de ramas ni publicación sin autorización concreta. Continuar como mentor en español, paso a paso.
 
 ### Continuidad V2 — 25 de noviembre de 2026: i18next integrado, rediseño para la próxima sesión
 

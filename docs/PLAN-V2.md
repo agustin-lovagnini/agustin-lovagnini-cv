@@ -8,13 +8,13 @@ Completar v2.0.0 con contenido simplificado, español e inglés mediante i18next
 
 - **v1.0.0:** versión actualmente publicada. Se mantiene en producción hasta que v2.0.0 esté terminada, probada y aprobada.
 - **v2.0.0:** simplificación del contenido, idiomas y rediseño. El formulario continúa utilizando Formspree.
-- **v2.1.0:** backend propio del formulario. Se comienza únicamente después de terminar y publicar v2.0.0, partiendo de su código actualizado.
-- `develop-v2` es la rama de integración de v2.0.0. Primero se trabaja en `feature/i18next`, se prueba y se integra a `develop-v2`; después se crea `feature/rediseno` desde esa base actualizada, se prueba y se integra a `develop-v2`.
-- Los nombres `feature/i18next` y `feature/rediseno` describen ramas previstas; comprobar su existencia antes de crearlas.
+- **v2.1.0:** backend propio del formulario, como funcionalidad nueva compatible con el portfolio existente. Se comienza después de publicar v2.0.0; en v2.0.0 se conserva el formulario actual con Formspree.
+- `develop-v2` es la rama de integración de v2.0.0. La etapa `feature/i18next` está terminada e integrada. El siguiente trabajo es crear `feature/rediseno` desde esa base actualizada, probarla e integrarla a `develop-v2` con autorización.
+- El propietario confirmó la eliminación de `feature/i18next` localmente y en GitHub. Comprobar la existencia de `feature/rediseno` antes de crearla.
 
 ```text
 develop-v2
-  → feature/i18next → revisión y merge a develop-v2
+  → feature/i18next → terminada e integrada
   → feature/rediseno (desde develop-v2 actualizada) → revisión y merge a develop-v2
   → revisión final de v2.0.0 → publicación autorizada en main → tag v2.0.0
   → desarrollo posterior desde v2.0.0 → feature/formulario-backend
@@ -48,6 +48,7 @@ Integrar una funcionalidad a `develop-v2` no significa publicarla. Los push a `m
 
 ## v2.0.0 — Etapa 2: español e inglés con i18next
 
+- **Estado:** terminada e integrada en `develop-v2`. El propietario confirmó el cierre de todo lo relacionado con idiomas el 2026-11-26. Esta actualización documental no incluye nuevas pruebas técnicas.
 - [x] Acordar rutas con prefijo de idioma, español de respaldo y estructura de traducciones.
 - [x] Trabajar en la rama `feature/i18next` con i18next y su proveedor de traducción.
 - [x] Conectar traducciones de las cuatro páginas, componentes, textos accesibles y campos del formulario.
@@ -58,8 +59,7 @@ Integrar una funcionalidad a `develop-v2` no significa publicarla. Los push a `m
 - [x] Organizar las traducciones por idioma, páginas y componentes, y comprobar ambos idiomas, lint, TypeScript y build.
 - [x] Comprobar localmente los metadatos generados de las ocho rutas y conservar la consulta en la redirección inicial y al cambiar el idioma.
 - [x] Integrar `feature/i18next` a `develop-v2` mediante avance directo y subir `develop-v2` a GitHub.
-- [ ] Completar la revisión específica de accesibilidad y responsive; el propietario confirmó el recorrido general, sin detallar cada prueba.
-- [ ] Revisar los casos límite de detección de idioma, el comportamiento de caché de la redirección inicial y la sincronización del proveedor cuando cambie la ruta sin recarga completa.
+- [x] Cerrar la etapa de idiomas por confirmación del propietario el 2026-11-26; los pendientes anteriores de esta etapa quedan superados. Mantener las comprobaciones generales posteriores al rediseño en la revisión final de V2.
 
 ## v2.0.0 — Etapa 3: rediseño con Impeccable
 
@@ -82,7 +82,7 @@ Integrar una funcionalidad a `develop-v2` no significa publicarla. Los push a `m
 - [ ] Confirmar el commit de publicación y autorizar la creación del tag `v2.0.0`.
 - [ ] Comprobar la versión publicada antes de comenzar v2.1.0.
 
-## v2.1.0 — Formulario con backend propio
+## v2.1.0 — Formulario con backend propio (versión futura)
 
 **No comenzar esta versión hasta publicar v2.0.0.** Mantener su diseño y ambos idiomas. No almacenar mensajes en una base de datos; las consultas deben llegar a `agustin.lovagnini.a@gmail.com`.
 
