@@ -54,10 +54,12 @@ Integrar una funcionalidad a `develop-v2` no significa publicarla. Los push a `m
 - [x] Incorporar el selector ES / EN y la preferencia manual mediante cookie. El propietario confirmó el cambio de idioma y la preferencia en el navegador.
 - [x] Adaptar metadatos, idioma del documento, canónicas, alternativas por idioma y sitemap; comprobar localmente el sitemap y las redirecciones permanentes de las tres rutas antiguas.
 - [x] Ejecutar lint, TypeScript y build de producción correctamente; el build requirió acceso a Google Fonts.
-- [ ] Confirmar específicamente un envío del formulario con Formspree y la recepción del mensaje tras los cambios de idioma.
-- [ ] Completar la revisión específica de accesibilidad, responsive, metadatos generados y casos límite de detección de idioma. El propietario confirmó que el recorrido manual y el selector funcionaron, sin detallar cada una de estas pruebas.
-- [ ] Revisar el comportamiento de caché y parámetros de la redirección inicial y la sincronización del proveedor en navegación entre idiomas sin recarga completa.
-- [ ] Revisar e integrar la rama a `develop-v2` con autorización.
+- [x] Confirmar un envío del formulario en inglés mediante Formspree y la recepción del mensaje; comprobado por el propietario.
+- [x] Organizar las traducciones por idioma, páginas y componentes, y comprobar ambos idiomas, lint, TypeScript y build.
+- [x] Comprobar localmente los metadatos generados de las ocho rutas y conservar la consulta en la redirección inicial y al cambiar el idioma.
+- [x] Integrar `feature/i18next` a `develop-v2` mediante avance directo y subir `develop-v2` a GitHub.
+- [ ] Completar la revisión específica de accesibilidad y responsive; el propietario confirmó el recorrido general, sin detallar cada prueba.
+- [ ] Revisar los casos límite de detección de idioma, el comportamiento de caché de la redirección inicial y la sincronización del proveedor cuando cambie la ruta sin recarga completa.
 
 ## v2.0.0 — Etapa 3: rediseño con Impeccable
 

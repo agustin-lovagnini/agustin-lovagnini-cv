@@ -239,6 +239,15 @@ Se permite inspeccionar y leer archivos para comprender el proyecto, sin modific
 
 Registro actualizado el 2026-11-25. Priorizar el punto de continuidad siguiente; los registros anteriores conservan su fecha y alcance histórico.
 
+### Continuidad V2 — 25 de noviembre de 2026: i18next integrado, rediseño para la próxima sesión
+
+- `feature/i18next` se integró a `develop-v2` mediante `git merge --ff-only`; el propietario subió `develop-v2` a GitHub. Antes de este registro la rama local estaba limpia y Git mostraba seguimiento sincronizado con `origin/develop-v2` en `b8fe4e8c`. La rama `feature/i18next` se eliminó localmente; su rama remota no se eliminó. No hacer push, merge ni publicación sin autorización concreta.
+- Traducciones organizadas bajo `translations/`: configuración en `i18n/`; JSON en `locales/es/` y `locales/en/`, con `common.json`, `pages/`, `components/` e `index.ts` por idioma. Las claves se reúnen para i18next y se comprobaron contra los textos anteriores. La rama temporal de prueba se integró y se eliminó localmente.
+- El propietario comprobó el recorrido general en ambos idiomas y confirmó un envío desde Contacto en inglés y la recepción del correo por Formspree. Se verificó que el selector conserva consulta y fragmento; la entrada inicial `/` conserva la consulta desde `b8fe4e8c`. El sitemap y las tres redirecciones antiguas se comprobaron localmente, al igual que títulos, canónicas, alternativas de idioma, descripciones y URLs Open Graph de las ocho rutas.
+- Lint y TypeScript pasaron después del último cambio de código; el propietario ejecutó un build satisfactorio después de ese cambio y se generaron las ocho rutas. Quedan para la revisión de V2 las pruebas específicas de accesibilidad y responsive, los casos límite de detección de idioma, la caché de la redirección y la sincronización del proveedor ante cambios de ruta sin recarga completa; no atribuir pruebas no confirmadas.
+- El propietario decidió dejar el rediseño para mañana. Al retomar, comprobar Git y el plan; crear `feature/rediseno` desde `develop-v2` actualizada cuando corresponda y preparar el uso temporal de Impeccable, explicando y autorizando cada incorporación. No implementar diseños completos ni instalar dependencias sin aprobación. `main` sigue como producción de V1 y el backend propio queda para v2.1.0.
+- Compartir continúa usando el dominio principal por decisión del propietario. Continuar como mentor en español: guiar de a un paso y modificar archivos solo con autorización explícita.
+
 ### Continuidad V2 — 25 de noviembre de 2026: i18next implementado, revisión pendiente
 
 - Rama comprobada: `feature/i18next`, limpia antes de actualizar esta documentación, con seguimiento de `origin/feature/i18next`; último commit local `3d42e140` (`feat: terminé las traducciones y agregué el selector/button de idioma`). No se hizo fetch. Los cambios posteriores a esta comprobación corresponden a esta actualización de documentación. No hacer commit, push, merge ni publicación sin autorización concreta.
