@@ -9,7 +9,7 @@ Completar v2.0.0 con contenido simplificado, español e inglés mediante i18next
 - **v1.0.0:** versión actualmente publicada. Se mantiene en producción hasta que v2.0.0 esté terminada, probada y aprobada.
 - **v2.0.0:** simplificación del contenido, idiomas y rediseño. El formulario continúa utilizando Formspree.
 - **v2.1.0:** backend propio del formulario, como funcionalidad nueva compatible con el portfolio existente. Se comienza después de publicar v2.0.0; en v2.0.0 se conserva el formulario actual con Formspree.
-- `develop-v2` es la rama de integración de v2.0.0. La etapa `feature/i18next` está terminada e integrada. El siguiente trabajo es crear `feature/rediseno` desde esa base actualizada, probarla e integrarla a `develop-v2` con autorización.
+- `develop-v2` es la rama de integración de v2.0.0. La etapa `feature/i18next` está terminada e integrada. `feature/rediseno` ya existe y contiene el rediseño de Inicio en desarrollo; probarla e integrarla a `develop-v2` solo con autorización.
 - El propietario confirmó la eliminación de `feature/i18next` localmente y en GitHub. Comprobar la existencia de `feature/rediseno` antes de crearla.
 
 ```text
@@ -63,14 +63,22 @@ Integrar una funcionalidad a `develop-v2` no significa publicarla. Los push a `m
 
 ## v2.0.0 — Etapa 3: rediseño con Impeccable
 
-- [ ] Crear `feature/rediseno` desde `develop-v2` después de integrar los idiomas.
-- [ ] Preparar el uso temporal de Impeccable, explicando y autorizando su incorporación.
-- [ ] Acordar la dirección visual y aprobar las propuestas antes de implementarlas.
+- [x] Crear `feature/rediseno`; comprobada como rama activa el 2026-11-27. No se verificó de nuevo su ascendencia ni se hizo fetch en esta actualización.
+- [x] Preparar el uso temporal de Impeccable, explicando y autorizando su incorporación: skill 4.11.1 y hooks locales al proyecto; contexto aprobado en `PRODUCT.md`.
+- [x] Aprobar las propuestas de Inicio: A para escritorio y segunda revisión móvil. Referencias en `docs/design/inicio-propuesta-a.png` (panel de escritorio) y `docs/design/inicio-mobile-aprobado.png`. Las otras páginas todavía no tienen propuestas aprobadas.
 - [ ] Trabajar Inicio, Sobre mí, Proyectos y Contacto de a una página por vez.
 - [ ] Conservar proyectos destacados y secundarios, certificados, tecnologías, enlaces y funcionalidades existentes.
 - [ ] Mantener ambos idiomas, accesibilidad, responsive y SEO.
 - [ ] Conservar Formspree y comprobar que continúa enviando mensajes.
 - [ ] Revisar e integrar la rama a `develop-v2` con autorización.
+
+### Punto de continuidad — 2026-11-27
+
+El propietario implementa personalmente Inicio con guía por archivo y línea. Están adaptados presentación, retrato, acciones, orden de secciones, tarjetas compactas y parte del cierre de contacto. El botón Pausar/Reanudar está traducido y el propietario confirmó su funcionamiento visual, incluido el estado dorado persistente de pausa.
+
+**Retomar aquí:** terminar el aspecto compacto de `components/ui/TechnologiesMarquee.tsx`. Solo cambió el contenedor exterior a `bg-surface px-4 py-3`; faltan tecnologías en horizontal sin tarjetas individuales, iconos de 28px y nombres `text-sm font-medium`, aplicados igual a ambas listas. La última propuesta no se completó; no asumirla realizada. También sigue presente la etiqueta «Contacto» del cierre que se propuso quitar.
+
+Controles del avance antes del commit autorizado: TypeScript pasó (`npx.cmd tsc --noEmit --incremental false`); lint terminó con 0 errores y 93 advertencias en scripts de terceros de Impeccable. No se ejecutó build. Pendiente comparar el sitio real con las previews, revisar móvil/escritorio y ambos idiomas, verificar Proyectos por el componente compartido, y completar controles técnicos al finalizar el rediseño. No hay revisión visual completa confirmada. Los resultados de idiomas anteriores no certifican estos cambios nuevos. Sobre mí, Proyectos y Contacto todavía no fueron rediseñados. El propietario autorizó commit y push del avance a `feature/rediseno`; no autorizó integración ni publicación. Ver el registro del 27 de noviembre en `AGENTS.md` para el detalle y la continuidad entre computadoras.
 
 ## v2.0.0 — Revisión final y publicación
 

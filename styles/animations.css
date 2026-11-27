@@ -6,7 +6,8 @@
     animation: marquee-scroll 45s linear infinite;
   }
 
-  .marquee:active .marquee-track {
+  .marquee:active .marquee-track,
+  .marquee[data-paused="true"] .marquee-track {
     animation-play-state: paused;
   }
 }

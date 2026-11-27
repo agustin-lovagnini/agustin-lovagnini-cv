@@ -27,8 +27,16 @@ export default function FeaturedProjectCard({
     });
 
     return (
-        <article className={`style-section grid grid-cols-1 items-center gap-6 rounded-xl ${compact ? "grid-rows-[auto_1fr]" : "lg:grid-cols-2"}`}>
-            <div className={`flex min-w-0 flex-col items-start gap-3 ${compact ? "h-full" : ""}`}>
+        <article
+            className={`grid grid-cols-1 rounded-xl ${compact
+                ? "grid-rows-[auto_1fr] overflow-hidden border border-outline bg-surface"
+                : "style-section items-center gap-6 lg:grid-cols-2"
+                }`}
+        >
+            <div
+                className={`flex min-w-0 flex-col items-start gap-3 ${compact ? "h-full p-4" : ""
+                    }`}
+            >
                 <div className="flex flex-wrap items-center gap-2 text-xs lg:text-sm font-semibold tracking-wide">
                     <span className="uppercase text-gold-light">{translation.t("projectCard.featured")}</span>
                     <span aria-hidden="true" className="text-subtle">·</span>
@@ -37,11 +45,17 @@ export default function FeaturedProjectCard({
                     </time>
                 </div>
 
-                <h3 className="font-heading text-2xl font-bold leading-tight tracking-tight md:text-3xl">
+                <h3
+                    className={`font-heading font-bold leading-tight tracking-tight ${compact ? "text-xl" : "text-2xl md:text-3xl"
+                        }`}
+                >
                     {title}
                 </h3>
 
-                <p className="text-sm lg:text-lg leading-relaxed text-muted md:text-base">
+                <p
+                    className={`leading-relaxed text-muted ${compact ? "text-base" : "text-sm md:text-base lg:text-lg"
+                        }`}
+                >
                     {description}
                 </p>
 
@@ -53,12 +67,18 @@ export default function FeaturedProjectCard({
                     ))}
                 </ul>
 
-                <div className={`flex items-center gap-2 sm:gap-3 ${compact ? "mt-auto self-center" : "mt-3"}`}>
+                <div
+                    className={`flex gap-3 ${compact
+                        ? "mt-auto w-full flex-col pt-3 lg:flex-row lg:flex-wrap"
+                        : "mt-3 items-center"
+                        }`}
+                >
                     <a
                         href={project.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="action-button action-primary"
+                        className={`action-button action-primary ${compact ? "w-full lg:w-auto" : ""
+                            }`}
                         aria-label={translation.t("projectCard.demoLabel", { title })}
                     >
                         {translation.t("projectCard.viewProject")}
@@ -68,14 +88,25 @@ export default function FeaturedProjectCard({
                         href={project.repoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="action-button action-social"
+                        className={
+                            compact
+                                ? "action-button w-full border-muted bg-background text-foreground hover:border-gold hover:text-gold-light lg:w-auto"
+                                : "action-button action-social"
+                        }
                         aria-label={translation.t("projectCard.repositoryLabel", { title })}
                     >
                         <FaGithub size={22} aria-hidden="true" />
+                        {compact && <span>GitHub</span>}
                     </a>
                 </div>
             </div>
-            <div className={`mx-auto w-full max-w-md overflow-hidden rounded-lg border border-outline ${compact ? "-order-1" : "lg:w-9/10"}`}>
+            <div
+                className={
+                    compact
+                        ? "-order-1 w-full overflow-hidden"
+                        : "mx-auto w-full max-w-md overflow-hidden rounded-lg border border-outline lg:w-9/10"
+                }
+            >
                 <Image
                     src={project.image}
                     alt={translation.t("projectCard.previewAlt", { title })}
