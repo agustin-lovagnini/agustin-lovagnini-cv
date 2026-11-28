@@ -180,7 +180,7 @@ export default async function Home({
       <section aria-labelledby="proyectos-destacados" className="w-full">
         <h2
           id="proyectos-destacados"
-          className="font-heading text-2xl font-bold md:text-3xl"
+          className="font-heading text-2xl font-bold after:mt-2 after:block after:h-0.5 after:w-12 after:bg-gold md:text-3xl"
         >
           {translation.t("home.featuredProjects")}
         </h2>
@@ -204,7 +204,7 @@ export default async function Home({
       >
         <h2
           id="tecnologias-y-habilidades"
-          className="font-heading text-2xl font-bold md:text-3xl"
+          className="font-heading text-2xl font-bold after:mt-2 after:block after:h-0.5 after:w-12 after:bg-gold md:text-3xl"
         >
           {translation.t("home.mainStack")}
         </h2>
@@ -223,9 +223,6 @@ export default async function Home({
       >
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <span className="mb-2 block border-l-2 border-gold pl-3 text-xs lg:text-sm font-semibold uppercase tracking-[0.15em] text-gold-light">
-              {translation.t("home.contactEyebrow")}
-            </span>
             <h2
               id="llamado-accion"
               className="font-heading text-2xl font-bold leading-tight tracking-tight md:text-3xl"

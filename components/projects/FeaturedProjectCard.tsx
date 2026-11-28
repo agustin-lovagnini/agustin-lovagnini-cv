@@ -37,13 +37,15 @@ export default function FeaturedProjectCard({
                 className={`flex min-w-0 flex-col items-start gap-3 ${compact ? "h-full p-4" : ""
                     }`}
             >
-                <div className="flex flex-wrap items-center gap-2 text-xs lg:text-sm font-semibold tracking-wide">
-                    <span className="uppercase text-gold-light">{translation.t("projectCard.featured")}</span>
-                    <span aria-hidden="true" className="text-subtle">·</span>
-                    <time dateTime={project.date} className="text-muted">
-                        {project.date.slice(0, 4)}
-                    </time>
-                </div>
+                {!compact && (
+                    <div className="flex flex-wrap items-center gap-2 text-xs lg:text-sm font-semibold tracking-wide">
+                        <span className="uppercase text-gold-light">{translation.t("projectCard.featured")}</span>
+                        <span aria-hidden="true" className="text-subtle">·</span>
+                        <time dateTime={project.date} className="text-muted">
+                            {project.date.slice(0, 4)}
+                        </time>
+                    </div>
+                )}
 
                 <h3
                     className={`font-heading font-bold leading-tight tracking-tight ${compact ? "text-xl" : "text-2xl md:text-3xl"
@@ -59,13 +61,15 @@ export default function FeaturedProjectCard({
                     {description}
                 </p>
 
-                <ul className="flex flex-wrap gap-2 pt-1" aria-label={translation.t("projectCard.technologiesLabel", { title })}>
-                    {project.technologies.map((technology) => (
-                        <li key={technology} className="rounded border border-gold/20 bg-outline px-2.5 py-1 text-xs lg:text-sm font-medium text-gold-light shadow-sm">
-                            {technology}
-                        </li>
-                    ))}
-                </ul>
+                {!compact && (
+                    <ul className="flex flex-wrap gap-2 pt-1" aria-label={translation.t("projectCard.technologiesLabel", { title })}>
+                        {project.technologies.map((technology) => (
+                            <li key={technology} className="rounded border border-gold/20 bg-outline px-2.5 py-1 text-xs lg:text-sm font-medium text-gold-light shadow-sm">
+                                {technology}
+                            </li>
+                        ))}
+                    </ul>
+                )}
 
                 <div
                     className={`flex gap-3 ${compact

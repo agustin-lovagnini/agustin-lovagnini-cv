@@ -12,7 +12,7 @@ export default function TechnologiesMarquee() {
     return (
         <div className="flex flex-col gap-3">
             <div
-                className="marquee overflow-hidden rounded-xl border border-outline bg-surface px-4 py-3"
+                className="marquee overflow-hidden rounded-xl border border-outline bg-surface px-4 py-5"
                 data-paused={isPaused}
             >
                 {/* ITEM - Pista de desplazamiento continuo */}
@@ -20,14 +20,14 @@ export default function TechnologiesMarquee() {
                     {/* SUBSECTION - Lista principal de tecnologías */}
                     <ul className="flex w-max shrink-0 gap-4 pr-4">
                         {technologies.map((technology) => (
-                            <li key={technology.id} className="flex flex-col items-center gap-2 shrink-0 whitespace-nowrap rounded-lg border border-outline bg-surface px-4 py-3">
+                            <li key={technology.id} className="flex shrink-0 items-center gap-2 whitespace-nowrap">
                                 {technology.icon && (
                                     <technology.icon
                                         aria-hidden="true"
-                                        className="size-10 text-gold"
+                                        className="size-7 text-gold"
                                     />
                                 )}
-                                <span>{technology.name}</span>
+                                <span className="text-sm font-medium">{technology.name}</span>
                             </li>
                         ))}
                     </ul>
@@ -36,14 +36,14 @@ export default function TechnologiesMarquee() {
                     {/* NOTE - La copia tiene el mismo ancho y se oculta a lectores de pantalla para no repetir los nombres. */}
                     <ul aria-hidden="true" className="flex w-max shrink-0 gap-4 pr-4">
                         {technologies.map((technology) => (
-                            <li key={technology.id} className="flex flex-col items-center gap-2 shrink-0 whitespace-nowrap rounded-lg border border-outline bg-surface px-4 py-3">
+                            <li key={technology.id} className="flex shrink-0 items-center gap-2 whitespace-nowrap">
                                 {technology.icon && (
                                     <technology.icon
                                         aria-hidden="true"
-                                        className="size-10 text-gold"
+                                        className="size-7 text-gold"
                                     />
                                 )}
-                                <span>{technology.name}</span>
+                                <span className="text-sm font-medium">{technology.name}</span>
                             </li>
                         ))}
                     </ul>

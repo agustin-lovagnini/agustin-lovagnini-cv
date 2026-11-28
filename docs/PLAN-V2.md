@@ -72,7 +72,15 @@ Integrar una funcionalidad a `develop-v2` no significa publicarla. Los push a `m
 - [ ] Conservar Formspree y comprobar que continúa enviando mensajes.
 - [ ] Revisar e integrar la rama a `develop-v2` con autorización.
 
-### Punto de continuidad — 2026-11-27
+### Punto de continuidad — 2026-11-28
+
+Inicio recibió tarjetas compactas sin año ni tecnologías, líneas doradas bajo los títulos, cierre de contacto simplificado y marquesina horizontal con iconos de 28 px y altura `py-5`. El propietario eligió mantener el botón de pausa debajo. La versión completa de las tarjetas conserva año y tecnologías según el código.
+
+El propietario confirmó el recorrido en inglés, los enlaces de Inicio y la vista móvil antes del último cambio de altura; después aprobó visualmente Inicio tras los últimos ajustes. Se revisaron capturas de Inicio con Impeccable a 1440×900 y 390×844, incluida la marquesina estática. Queda comprobar su movimiento y Proyectos tras los cambios compartidos. Las capturas mostraron dos avisos de desarrollo cuyo contenido no se inspeccionó. Lint terminó con 0 errores y 93 advertencias en scripts de Impeccable; TypeScript y build de producción pasaron. El detector de Impeccable no informó advertencias en los archivos de Inicio revisados; la crítica independiente completa quedó limitada por falta de herramientas en los subagentes y de revisión interactiva. Accesibilidad, movimiento reducido, responsive, SEO y rendimiento siguen pendientes de revisión específica.
+
+Próximo paso: preparar el rediseño de Sobre mí con Impeccable y conservar las comprobaciones específicas pendientes. La rama es `feature/rediseno`; no hacer commit, push, merge ni publicación sin autorización. Ver el registro del 28 de noviembre en `AGENTS.md`.
+
+### Registro anterior — 2026-11-27
 
 El propietario implementa personalmente Inicio con guía por archivo y línea. Están adaptados presentación, retrato, acciones, orden de secciones, tarjetas compactas y parte del cierre de contacto. El botón Pausar/Reanudar está traducido y el propietario confirmó su funcionamiento visual, incluido el estado dorado persistente de pausa.
 
